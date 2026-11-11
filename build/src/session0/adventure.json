@@ -1,5 +1,5 @@
 {
- "_id": "AYLqxp8H2BhvrwUv",
+ "_id": "vHWCbaGMKkFhQ3jY",
  "name": "公若渡河 · 第零次聚会 / Session 0: Crossing the Han",
  "img": "modules/gongruo-session0/assets/maps/river.webp",
  "caption": "南宋末年武侠 CoC7 · bilingual session-0 kit",
@@ -9,7 +9,7 @@
    "_id": "hsw1poAt9abXtrq1",
    "name": "HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)",
    "type": "character",
-   "img": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp",
+   "img": "modules/gongruo-session0/assets/portraits/pc_wanderer.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -1036,7 +1036,7 @@
    "_id": "94GkCpmO4AqF19jM",
    "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
    "type": "character",
-   "img": "modules/gongruo-session0/assets/tokens/pc_merchant.webp",
+   "img": "modules/gongruo-session0/assets/portraits/pc_merchant.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -2108,7 +2108,7 @@
    "_id": "j5loFXPFARX6SYye",
    "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
    "type": "character",
-   "img": "modules/gongruo-session0/assets/tokens/pc_official.webp",
+   "img": "modules/gongruo-session0/assets/portraits/pc_official.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -3185,7 +3185,7 @@
    "_id": "sowaBHTwqi9zZLSj",
    "name": "兀良哈·阿术 Marshal Ashu",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/ashu.webp",
+   "img": "modules/gongruo-session0/assets/portraits/ashu.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -3539,7 +3539,7 @@
    "_id": "emCJnmX2wrF2dIqx",
    "name": "段游衍 Duan Driftwood",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/duan.webp",
+   "img": "modules/gongruo-session0/assets/portraits/duan.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -3876,7 +3876,7 @@
    "_id": "ysd60Z4WKNMtgkKR",
    "name": "牛富 Niu the Archer",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/niu.webp",
+   "img": "modules/gongruo-session0/assets/portraits/niu.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -4192,7 +4192,7 @@
    "_id": "RfJoRDm9dF4wg6NF",
    "name": "刘卿堂 Captain Liu",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/liu.webp",
+   "img": "modules/gongruo-session0/assets/portraits/liu.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -4487,7 +4487,7 @@
    "_id": "BjcvJ53tLA6ceYBT",
    "name": "越南柯 Doctor Yue, the Hollow Physician",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/yue.webp",
+   "img": "modules/gongruo-session0/assets/portraits/yue.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -4795,7 +4795,7 @@
    "_id": "sN4KmXAJbsEJar74",
    "name": "蒙古士兵 Mongol soldier",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/soldier.webp",
+   "img": "modules/gongruo-session0/assets/portraits/soldier.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -5143,7 +5143,7 @@
    "_id": "m9YsCYtaKGAX6Nbu",
    "name": "蒙古骑兵 Mongol horseman",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/rider.webp",
+   "img": "modules/gongruo-session0/assets/portraits/rider.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -5472,7 +5472,7 @@
    "_id": "b4Gx3yA5KnpxwyLc",
    "name": "姜楼 Tower Jiang",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/jiang_tower.webp",
+   "img": "modules/gongruo-session0/assets/portraits/jiang_tower.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -5749,7 +5749,7 @@
    "_id": "WWxdn1yJozuo47KB",
    "name": "姜阁 Loft Jiang",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/jiang_loft.webp",
+   "img": "modules/gongruo-session0/assets/portraits/jiang_loft.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -6024,7 +6024,7 @@
    "_id": "ziGmCvym0ng3AAq6",
    "name": "曲流 Winding Stream",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/qu.webp",
+   "img": "modules/gongruo-session0/assets/portraits/qu.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -6287,7 +6287,7 @@
    "_id": "di0enMMUDVwmijCn",
    "name": "船夫王 Boatman Wang",
    "type": "npc",
-   "img": "modules/gongruo-session0/assets/tokens/boatman.webp",
+   "img": "modules/gongruo-session0/assets/portraits/boatman.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -6522,7 +6522,7 @@
    "_id": "7Rr15PV90qSnosZP",
    "name": "格拉基脊刺 Gla'aki's spine",
    "type": "creature",
-   "img": "modules/gongruo-session0/assets/tokens/spine.webp",
+   "img": "modules/gongruo-session0/assets/portraits/spine.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -6679,7 +6679,7 @@
    "_id": "WG6pNn32nZsjP9C3",
    "name": "不死仆从 Undying Servant",
    "type": "creature",
-   "img": "modules/gongruo-session0/assets/tokens/servant.webp",
+   "img": "modules/gongruo-session0/assets/portraits/servant.webp",
    "system": {
     "characteristics": {
      "str": {
@@ -7430,7 +7430,9 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": ""
+   "description": "",
+   "playlist": "AYLqxp8H2BhvrwUv",
+   "playlistSound": "o6zlyqYGntzGeosb"
   },
   {
    "_id": "YTCyuns8lIMgnPoo",
@@ -7639,7 +7641,9 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": ""
+   "description": "",
+   "playlist": "AYLqxp8H2BhvrwUv",
+   "playlistSound": "o2xXFXW5Y8upJlbL"
   },
   {
    "_id": "gpYQ2sRdm8Xim0yp",
@@ -7875,7 +7879,9 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": ""
+   "description": "",
+   "playlist": "AYLqxp8H2BhvrwUv",
+   "playlistSound": "pBgMMyDh4qZDgeYd"
   },
   {
    "_id": "a3iEuhJIme2tLIXv",
@@ -8192,7 +8198,9 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": "其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away."
+   "description": "其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away.",
+   "playlist": "AYLqxp8H2BhvrwUv",
+   "playlistSound": "0AvfVBpLzF8xKpEm"
   },
   {
    "_id": "hMPjRoCwcAg5FyHL",
@@ -8401,7 +8409,9 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": ""
+   "description": "",
+   "playlist": "AYLqxp8H2BhvrwUv",
+   "playlistSound": "sHCD9MnhQcmn50Bq"
   }
  ],
  "folders": [
@@ -8469,10 +8479,104 @@
  "items": [],
  "tables": [],
  "macros": [],
- "playlists": [],
+ "playlists": [
+  {
+   "_id": "AYLqxp8H2BhvrwUv",
+   "name": "公若渡河 · Session 0 music",
+   "description": "Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0",
+   "mode": 0,
+   "playing": false,
+   "fade": 2000,
+   "channel": "music",
+   "sort": 0,
+   "seed": 0,
+   "flags": {},
+   "folder": null,
+   "sounds": [
+    {
+     "_id": "o6zlyqYGntzGeosb",
+     "name": "Eastern Thought — 庆功宴 Banquet",
+     "path": "modules/gongruo-session0/assets/music/Eastern_Thought.ogg",
+     "channel": "music",
+     "playing": false,
+     "repeat": true,
+     "volume": 0.5,
+     "fade": 2000,
+     "sort": 0,
+     "flags": {},
+     "description": "Eastern Thought Kevin MacLeod (incompetech.com) CC BY 4.0"
+    },
+    {
+     "_id": "o2xXFXW5Y8upJlbL",
+     "name": "Teller of the Tales — 北门 North Gate",
+     "path": "modules/gongruo-session0/assets/music/Teller_of_the_Tales.ogg",
+     "channel": "music",
+     "playing": false,
+     "repeat": true,
+     "volume": 0.5,
+     "fade": 2000,
+     "sort": 1,
+     "flags": {},
+     "description": "Teller of the Tales Kevin MacLeod (incompetech.com) CC BY 4.0"
+    },
+    {
+     "_id": "pBgMMyDh4qZDgeYd",
+     "name": "Asian Drums — 衙署 Magistracy raid",
+     "path": "modules/gongruo-session0/assets/music/Asian_Drums.ogg",
+     "channel": "music",
+     "playing": false,
+     "repeat": true,
+     "volume": 0.5,
+     "fade": 2000,
+     "sort": 2,
+     "flags": {},
+     "description": "Asian Drums Kevin MacLeod (incompetech.com) CC BY 4.0"
+    },
+    {
+     "_id": "0AvfVBpLzF8xKpEm",
+     "name": "Temple of the Manes — 汉江夜渡 Night Crossing",
+     "path": "modules/gongruo-session0/assets/music/Temple_of_the_Manes.ogg",
+     "channel": "music",
+     "playing": false,
+     "repeat": true,
+     "volume": 0.5,
+     "fade": 2000,
+     "sort": 3,
+     "flags": {},
+     "description": "Temple of the Manes Kevin MacLeod (incompetech.com) CC BY 4.0"
+    },
+    {
+     "_id": "sHCD9MnhQcmn50Bq",
+     "name": "Lotus — 棺材铺 Coffin Shop",
+     "path": "modules/gongruo-session0/assets/music/Lotus.ogg",
+     "channel": "music",
+     "playing": false,
+     "repeat": true,
+     "volume": 0.5,
+     "fade": 2000,
+     "sort": 4,
+     "flags": {},
+     "description": "Lotus Kevin MacLeod (incompetech.com) CC BY 4.0"
+    },
+    {
+     "_id": "oQa6IWMdqaeZt21F",
+     "name": "Lightless Dawn — 备用 · 格拉基 Alternate: Gla'aki dread",
+     "path": "modules/gongruo-session0/assets/music/Lightless_Dawn.ogg",
+     "channel": "music",
+     "playing": false,
+     "repeat": true,
+     "volume": 0.5,
+     "fade": 2000,
+     "sort": 5,
+     "flags": {},
+     "description": "Lightless Dawn Kevin MacLeod (incompetech.com) CC BY 4.0"
+    }
+   ]
+  }
+ ],
  "cards": [],
  "combats": [],
  "sort": 0,
  "flags": {},
- "_key": "!adventures!AYLqxp8H2BhvrwUv"
+ "_key": "!adventures!vHWCbaGMKkFhQ3jY"
 }
