@@ -1,0 +1,208 @@
+# -*- coding: utf-8 -*-
+import json, os, glob, random, string, re, shutil, copy
+from PIL import Image, ImageDraw, ImageFont
+import content as C
+random.seed(20260111)
+MOD = C.MOD
+import os
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, 'build', 'src', 'session0')
+shutil.rmtree(SRC, ignore_errors=True); os.makedirs(SRC)
+os.makedirs(f'{ROOT}/assets/tokens', exist_ok=True); os.makedirs(f'{ROOT}/styles', exist_ok=True)
+def rid(): return ''.join(random.choice(string.ascii_letters+string.digits) for _ in range(16))
+SK = {}
+for f in glob.glob('/tmp/coc7/unpacked/en-skills/*.json'):
+    j = json.load(open(f)); SK[j['flags']['CoC7']['cocidFlag']['id']] = j
+CJK = '/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc'
+def token_img(name, ch, color):
+    p = f'{ROOT}/assets/tokens/{name}.webp'
+    im = Image.new('RGBA', (256, 256), (0,0,0,0)); d = ImageDraw.Draw(im)
+    d.ellipse([6,6,250,250], fill=color, outline=(30,25,20,255), width=10)
+    d.ellipse([22,22,234,234], outline=(255,245,220,120), width=4)
+    f = ImageFont.truetype(CJK, 150); d.text((128,120), ch, font=f, fill=(255,248,230,255), anchor='mm')
+    im.save(p, quality=90); return f'modules/{MOD}/assets/tokens/{name}.webp'
+def eval_base(base, ch):
+    if isinstance(base, (int, float)): return int(base)
+    s = str(base)
+    if '@' not in s: return int(float(s)) if s.strip() else 0
+    for k, v in ch.items(): s = s.replace('@'+k.upper(), str(v)).replace('@'+k, str(v))
+    try: return int(eval(s))
+    except Exception: return 0
+def skill(cocid, total, ch, personal=True):
+    t = copy.deepcopy(SK[cocid]); t['_id'] = rid(); t.pop('_key', None); t.pop('folder', None)
+    t['system']['description'] = {'value': ''}
+    base = t['system'].get('base', 0); b = eval_base(base, ch)
+    t['system']['adjustments'] = {'base': base if isinstance(base, str) else b, ('personal' if personal else 'occupation'): max(0, total - b)}
+    t['flags']['CoC7']['cocidFlag']['lang'] = 'en'
+    return t
+def custom_skill(name_zh, name_en, total, spec='', props=None):
+    nm = f'{name_en} {name_zh}'
+    return {'_id': rid(), 'name': nm if not spec else f'{spec} ({nm})', 'type': 'skill', 'img': 'systems/CoC7/assets/icons/skills/fighting_brawl.svg',
+            'system': {'description': {'value': ''}, 'base': 0, 'adjustments': {'base': 0, 'personal': total}, 'skillName': nm, 'specialization': spec,
+                       'properties': dict({'push': True}, **(props or {}))}, 'flags': {}, 'effects': []}
+def weapon(name, damage, skill_cocid=None, skill_id=None, rngd=False, rng=None, addb=False, ahdb=False, img='icons/weapons/swords/sword-guard-steel.webp'):
+    sys = {'description': {'value': ''}, 'skill': {'main': ({'id': skill_id} if skill_id else {'name': skill_cocid})}, 'range': {'normal': {'damage': damage}},
+           'properties': {'rngd': rngd, 'addb': addb, 'ahdb': ahdb}}
+    if rng: sys['range']['normal']['value'] = rng; sys['bullets'] = 1; sys['usesPerRound'] = {'normal': 1}
+    return {'_id': rid(), 'name': name, 'type': 'weapon', 'img': img, 'system': sys, 'flags': {}, 'effects': []}
+def item(name, desc=''):
+    return {'_id': rid(), 'name': name, 'type': 'item', 'img': 'icons/svg/item-bag.svg', 'system': {'description': {'value': desc}}, 'flags': {}, 'effects': []}
+def chars(**k): return {c: {'value': v} for c, v in k.items()}
+def hpcalc(ch): return (ch['con'] + ch['siz']) // 10
+def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', disposition=0, extra=None, link=True, san=None, luck=50, armor=None, sanloss=None, occupation='', age=''):
+    hp = hpcalc(ch); mp = ch['pow'] // 5
+    sys = {'characteristics': chars(**ch), 'attribs': {'hp': {'value': hp, 'max': hp}, 'mp': {'value': mp, 'max': mp}, 'lck': {'value': luck}, 'san': {'value': san if san is not None else ch['pow'], 'max': 99, 'dailyLimit': 10}},
+           'infos': {'occupation': occupation, 'age': age}, 'flags': {'locked': True}}
+    if armor is not None: sys['attribs']['armor'] = {'value': armor}
+    if atype == 'character':
+        sys['biography'] = [{'title': 'Personal Description 外貌', 'value': bio_zh}, {'title': 'Background 背景', 'value': bio_en}]
+        sys['flags'] = {'skillListMode': False, 'skillShowUncommon': True}
+    else:
+        sys['biography'] = {'personalDescription': {'value': bio_zh + bio_en}}
+        if sanloss: sys['special'] = {'sanLoss': {'checkPassed': sanloss[0], 'checkFailled': sanloss[1]}, 'attacksPerRound': 1}
+    if extra: sys.update(extra)
+    its = skills + weapons + items
+    a = {'_id': rid(), 'name': name, 'type': atype, 'img': tok, 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
+         'prototypeToken': {'name': name, 'actorLink': link, 'disposition': disposition, 'texture': {'src': tok}, 'width': 1, 'height': 1, 'sight': {'enabled': atype == 'character'}, 'displayName': 30, 'displayBars': 40 if atype != 'character' else 50, 'bar1': {'attribute': 'attribs.hp'}}}
+    return a
+ACT = {}
+# ---------------- pregens ----------------
+ch1 = dict(str=70, con=65, siz=60, dex=80, app=60, int=65, pow=65, edu=55)
+t1 = token_img('pc_wanderer', '侠', (70, 90, 140, 255))
+sw = skill('i.skill.fighting-sword', 75, ch1); dodge = skill('i.skill.dodge', 60, ch1)
+sk1 = [sw, dodge, skill('i.skill.climb', 60, ch1), skill('i.skill.jump', 50, ch1), skill('i.skill.stealth', 60, ch1), skill('i.skill.spot-hidden', 55, ch1), skill('i.skill.listen', 45, ch1),
+       skill('i.skill.disguise', 40, ch1), skill('i.skill.throw', 40, ch1), skill('i.skill.swim', 40, ch1), skill('i.skill.ride', 40, ch1), skill('i.skill.intimidate', 40, ch1),
+       skill('i.skill.first-aid', 40, ch1), skill('i.skill.natural-world', 30, ch1), skill('i.skill.credit-rating', 20, ch1), skill('i.skill.language-own', 55, ch1), skill('i.skill.fighting-brawl', 50, ch1),
+       skill('i.skill.track', 30, ch1), skill('i.skill.navigate', 30, ch1), skill('i.skill.psychology', 30, ch1), custom_skill('点穴', 'Acupoint Strike', 10)]
+w1 = [weapon('止水 Stillwater (poisoned sword)', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/sword-flanged-lightning.webp'),
+      weapon('佩刀 Own sabre', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/scimitar-worn-blue.webp'),
+      weapon('飞刀 Throwing knives', '1D4', 'i.skill.throw', rngd=True, rng=10, ahdb=True, img='icons/weapons/thrown/dagger-ringed-steel.webp'),
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
+ACT['pc1'] = actor('HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)', 'character', ch1, sk1, w1, [item('止水 Stillwater', '师父的名剑，淬有雨师墨。The master\'s sword, coated with Rainmaster\'s Ink.'), item('行囊 Pack', '全副身家。Everything you own.')], t1,
+    bio_zh='<p>二十余岁，衣着朴素，行动如飞凫。岘山山阳道人的弟子。</p>', bio_en='<p>Twenties, plainly dressed, moves like a water-bird taking flight. Disciple of the Hermit of Mount Crag. Rename and reshape freely; the bonuses (DEX+10, STR+10, Sword+20, Climb+15) are already included.</p>', disposition=1, luck=60, occupation='游侠 Wanderer', age='24')
+ch2 = dict(str=50, con=60, siz=55, dex=65, app=70, int=75, pow=70, edu=70)
+t2 = token_img('pc_merchant', '商', (150, 95, 60, 255))
+dx = custom_skill('点穴', 'Acupoint Strike', 60)
+sk2 = [dx, skill('i.skill.credit-rating', 60, ch2), skill('i.skill.medicine', 65, ch2), skill('i.skill.fighting-brawl', 50, ch2), skill('i.skill.dodge', 45, ch2), skill('i.skill.persuade', 55, ch2),
+       skill('i.skill.fast-talk', 50, ch2), skill('i.skill.charm', 50, ch2), skill('i.skill.psychology', 50, ch2), skill('i.skill.appraise', 50, ch2), skill('i.skill.accounting', 45, ch2), skill('i.skill.spot-hidden', 50, ch2),
+       skill('i.skill.listen', 40, ch2), skill('i.skill.science-pharmacy', 55, ch2), skill('i.skill.first-aid', 50, ch2), skill('i.skill.library-use', 40, ch2), skill('i.skill.language-own', 70, ch2), skill('i.skill.ride', 30, ch2),
+       skill('i.skill.swim', 35, ch2), skill('i.skill.natural-world', 40, ch2), skill('i.skill.climb', 25, ch2), skill('i.skill.jump', 25, ch2), skill('i.skill.stealth', 30, ch2)]
+w2 = [weapon('点穴 Acupoint Strike', '1D3', skill_id=dx['_id'], img='icons/skills/melee/unarmed-punch-fist.webp'),
+      weapon('匕首 Dagger', '1D4+2', 'i.skill.fighting-brawl', addb=True, img='icons/weapons/daggers/dagger-straight-blue.webp'),
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
+ACT['pc2'] = actor('HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)', 'character', ch2, sk2, w2, [item('药箱 Medicine chest'), item('药行印信 Pharmacy seal', '樊城分号掌柜认得你。The Fencewall branch manager knows you.')], t2,
+    bio_zh='<p>二十岁上下，衣料考究。临安名药行的少东家。药行名字与经营理念由你拟定。</p>', bio_en='<p>About twenty, expensively dressed. Heir of a famous pharmacy house in the capital. Name the house and decide its ethos. Bonuses (Credit+10, Medicine+30, Acupoint Strike 50 base) are included.</p>', disposition=1, luck=65, occupation='商贾 Merchant heir', age='20')
+ch3 = dict(str=55, con=55, siz=65, dex=60, app=75, int=70, pow=65, edu=80)
+t3 = token_img('pc_official', '官', (120, 60, 90, 255))
+sk3 = [skill('i.skill.firearms-bow', 75, ch3), skill('i.skill.credit-rating', 75, ch3), skill('i.skill.persuade', 65, ch3), skill('i.skill.charm', 55, ch3), skill('i.skill.intimidate', 50, ch3), skill('i.skill.history', 55, ch3),
+       skill('i.skill.law', 50, ch3), skill('i.skill.library-use', 55, ch3), skill('i.skill.ride', 55, ch3), skill('i.skill.spot-hidden', 50, ch3), skill('i.skill.listen', 45, ch3), skill('i.skill.psychology', 45, ch3),
+       skill('i.skill.fighting-sword', 45, ch3), skill('i.skill.dodge', 40, ch3), skill('i.skill.stealth', 35, ch3), skill('i.skill.swim', 30, ch3), skill('i.skill.art-craft-any', 40, ch3), skill('i.skill.language-own', 80, ch3),
+       skill('i.skill.navigate', 30, ch3), skill('i.skill.fighting-brawl', 30, ch3), skill('i.skill.climb', 25, ch3), skill('i.skill.jump', 25, ch3), custom_skill('点穴', 'Acupoint Strike', 10)]
+for s in sk3:
+    if s['name'].startswith('Art/Craft'): s['name'] = 'Art/Craft (Calligraphy 书法)'; s['system']['skillName'] = 'Calligraphy 书法'
+w3 = [weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=True, img='icons/weapons/bows/shortbow-recurve.webp'),
+      weapon('佩剑 Sword', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/sword-guard-steel.webp'),
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
+ACT['pc3'] = actor('HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)', 'character', ch3, sk3, w3, [item('宣抚使印绶 Commissioner\'s seal'), item('未愈的伤 An unhealed wound', '突围时所受，自行拟定。From the breakout; you decide what it is.')], t3,
+    bio_zh='<p>年轻的宣抚使，出身临安高门，气度雍容。</p>', bio_en='<p>A young Commissioner from one of the capital\'s great families; graceful, well-spoken. Bonuses (Bow+30, APP+10, EDU+10) are included.</p>', disposition=1, luck=55, occupation='宣抚使 Commissioner', age='22')
+# ---------------- NPCs ----------------
+def npc(key, name, ch, sk, wp, ch_tok, color, notes_zh, notes_en, armor=None, disposition=-1, atype='npc', sanloss=None, link=False, hp=None):
+    tok = token_img(key, ch_tok, color)
+    skills = [skill(c, v, ch, personal=True) for c, v in sk if c in SK] + [custom_skill(z, e, v) for c, v in sk if c not in SK for z, e in [c.split('|')]]
+    a = actor(name, atype, ch, skills, wp, [], tok, notes_zh, notes_en, disposition=disposition, armor=armor, sanloss=sanloss, link=link)
+    if hp: a['system']['attribs']['hp'] = {'value': hp, 'max': hp}
+    ACT[key] = a; return a
+npc('ashu', '兀良哈·阿术 Marshal Ashu', dict(str=80, con=80, siz=85, dex=70, app=50, int=75, pow=60, edu=60), [('i.skill.fighting-brawl', 75), ('i.skill.fighting-sword', 75), ('i.skill.dodge', 70), ('i.skill.spot-hidden', 60), ('i.skill.ride', 80), ('i.skill.intimidate', 70)],
+    [weapon('马刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/scimitar-broad-worn.webp'), weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True)], '术', (140, 40, 40, 255),
+    '<p>征南都元帅。身高八尺，体格健壮，皮肤粗糙，留须，毡帽软甲，手边一把厚重马刀。被止水刺伤后所有检定带一个惩罚骰。</p>', '<p>Commander-in-chief. Over six feet, heavy, weathered, bearded; felt hat, soft armour, a huge sabre at hand. After Stillwater: every roll with a penalty die. Fights with wits, is courteous to his officers and arrogant to the Song. Meant to feel unbeatable.</p>', armor=1, hp=16, link=True)
+npc('duan', '段游衍 Duan Driftwood', dict(str=65, con=65, siz=70, dex=60, app=70, int=70, pow=50, edu=65), [('i.skill.fighting-sword', 70), ('i.skill.dodge', 60), ('i.skill.spot-hidden', 60), ('i.skill.fast-talk', 60), ('i.skill.persuade', 70), ('i.skill.library-use', 50)],
+    [weapon('剑 Sword', '1D8', 'i.skill.fighting-sword', addb=True)], '段', (90, 110, 70, 255),
+    '<p>南宋降将，大理段氏，HO1的旧同窗。贪生怕死、圆滑，对两朝皆无忠诚，却向往江湖、钦慕HO1。宴会上会挡在阿术与HO1之间搅乱场面。</p>', '<p>Song turncoat general, HO1\'s old classmate. Cowardly and smooth, loyal to neither dynasty, secretly longs for the jianghu and admires HO1. At the banquet he blocks Ashu and makes chaos so HO1 can escape. Appointed to lead the river assault; will look for a way to disperse Gla\'aki.</p>', disposition=0, link=True)
+npc('niu', '牛富 Niu the Archer', dict(str=70, con=70, siz=65, dex=75, app=50, int=60, pow=65, edu=50), [('i.skill.firearms-bow', 85), ('i.skill.fighting-sword', 65), ('i.skill.dodge', 55), ('i.skill.spot-hidden', 60), ('i.skill.intimidate', 60)],
+    [weapon('神臂弓 God-Arm Bow', '1D8+2', 'i.skill.firearms-bow', rngd=True, rng=300, ahdb=True, img='icons/weapons/bows/longbow-recurve-leather-brown.webp'), weapon('刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True)], '牛', (60, 60, 60, 255),
+    '<p>樊城钤辖，神射手。黝黑精瘦，目光如炬。原文未给数值，此处为主持人估值。城破后拒降，被挑断手筋，囚于监牢。</p>', '<p>Garrison officer and famous bowman. Dark, lean, eyes like torches. The original gives no stats; these are GM estimates. Refused to surrender; tendons cut; in the gaol. His God-Arm Bow (400 paces) is the only bow that reaches mid-river.</p>', disposition=1, link=True)
+npc('liu', '刘卿堂 Captain Liu', dict(str=70, con=70, siz=70, dex=70, app=65, int=60, pow=60, edu=70), [('i.skill.fighting-brawl', 75), ('i.skill.fighting-axe', 75), ('i.skill.dodge', 60), ('i.skill.spot-hidden', 55), ('i.skill.library-use', 50)],
+    [weapon('斧 Axe', '1D8+2', 'i.skill.fighting-axe', addb=True, img='icons/weapons/axes/axe-battle-black.webp')], '刘', (70, 100, 120, 255),
+    '<p>HO3的发小，将门之后。逃脱控制的不死者：无脉搏，毒病无效；不死仆从优先攻击他。</p>', '<p>HO3\'s childhood friend, a general\'s son. An undying man outside Gla\'aki\'s control: no pulse, immune to poison and disease; the Servants target him first. Does not remember the attack on his flotilla.</p>', disposition=1, link=True)
+npc('yue', '越南柯 Doctor Yue, the Hollow Physician', dict(str=50, con=55, siz=65, dex=50, app=75, int=75, pow=60, edu=60), [('i.skill.sleight-of-hand', 75), ('i.skill.fast-talk', 70), ('i.skill.spot-hidden', 70), ('i.skill.dodge', 40), ('i.skill.library-use', 50), ('i.skill.charm', 65)],
+    [], '越', (160, 120, 50, 255), '<p>“空空郎中”。不会武、不懂医，擅造假药与偷盗，钱散穷人。HO2的师兄。1月3日误触仪式，心怀愧疚。</p>', '<p>The Hollow Physician. Can\'t fight, can\'t heal; sells fake elixirs to the rich, steals, gives to the poor. HO2\'s foster brother. Blundered into the rite on 3 January and is quietly guilty about it.</p>', disposition=1, link=True)
+npc('soldier', '蒙古士兵 Mongol soldier', dict(str=60, con=60, siz=70, dex=45, app=45, int=45, pow=50, edu=40), [('i.skill.fighting-brawl', 40), ('i.skill.fighting-sword', 40), ('i.skill.firearms-bow', 45), ('i.skill.dodge', 40), ('i.skill.spot-hidden', 40)],
+    [weapon('弯刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True), weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=True), weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True)], '兵', (110, 70, 50, 255),
+    '<p>步兵。身上有武器、身份令牌、钱、指令文书；妙手可窃。护甲2。</p>', '<p>Foot soldier. Carries weapons, an identity token, money and written orders; Sleight of Hand to steal them. Armour 2.</p>', armor=2, hp=12)
+npc('rider', '蒙古骑兵 Mongol horseman', dict(str=60, con=60, siz=70, dex=45, app=45, int=45, pow=50, edu=40), [('i.skill.fighting-brawl', 45), ('i.skill.fighting-sword', 45), ('i.skill.firearms-bow', 45), ('i.skill.dodge', 40), ('i.skill.ride', 70)],
+    [weapon('弯刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True), weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=True)], '骑', (90, 50, 40, 255),
+    '<p>骑兵。衙署抄家与第四日劫法场事件出现。护甲2。</p>', '<p>Cavalry. Raid the Magistracy; appear again at the execution on day 4. Armour 2.</p>', armor=2, hp=12)
+npc('jiang_tower', '姜楼 Tower Jiang', dict(str=65, con=60, siz=65, dex=60, app=60, int=55, pow=55, edu=55), [('i.skill.swim', 70), ('i.skill.fighting-brawl', 65), ('i.skill.dodge', 40), ('i.skill.climb', 55)], [weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True)], '楼', (60, 120, 90, 255), '<p>双胞胎中的兄长，沉稳。水性极好。</p>', '<p>The elder twin, steady. A superb swimmer.</p>', disposition=1, link=True)
+npc('jiang_loft', '姜阁 Loft Jiang', dict(str=65, con=60, siz=65, dex=60, app=60, int=55, pow=55, edu=55), [('i.skill.swim', 70), ('i.skill.fighting-brawl', 65), ('i.skill.dodge', 40), ('i.skill.jump', 65)], [weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True)], '阁', (60, 140, 110, 255), '<p>双胞胎中的弟弟，跳脱莽撞。水性极好。</p>', '<p>The younger twin, restless and reckless. A superb swimmer.</p>', disposition=1, link=True)
+npc('qu', '曲流 Winding Stream', dict(str=70, con=65, siz=70, dex=65, app=55, int=65, pow=60, edu=65), [('i.skill.fighting-brawl', 70), ('i.skill.dodge', 65), ('i.skill.jump', 60), ('i.skill.first-aid', 60)], [weapon('大刀 Big blade', '1D8', 'i.skill.fighting-brawl', addb=True, img='icons/weapons/swords/sword-broad-red.webp')], '曲', (120, 80, 110, 255),
+    '<p>棺材铺老板，前镖师。身材健硕，性格温和，始终照顾调查员。十年前一刀结果了偷腥的丈夫。</p>', '<p>Coffin-maker, former caravan guard. Big and strong, gentle in manner; looks after the PCs throughout. Killed her cheating husband ten years ago.</p>', disposition=1, link=True)
+npc('boatman', '船夫王 Boatman Wang', dict(str=50, con=55, siz=60, dex=50, app=40, int=50, pow=45, edu=30), [('i.skill.swim', 60), ('i.skill.dodge', 30), ('i.skill.natural-world', 40), ('驾船|Boat handling', 60)], [], '船', (80, 80, 60, 255),
+    '<p>独臂船夫，粗麻布衣，斗笠。痛骂蒙古与朝廷。沉船后独自逃走。</p>', '<p>One-armed boatman in hemp and a straw hat. Curses the Mongols and the court. Abandons the PCs when the boat sinks.</p>', disposition=0)
+npc('spine', '格拉基脊刺 Gla\'aki\'s spine', dict(str=200, con=100, siz=450, dex=50, app=0, int=50, pow=300, edu=0), [('i.skill.fighting-brawl', 40)],
+    [weapon('脊刺 Spine thrust', '2+1D5', 'i.skill.fighting-brawl', img='icons/creatures/tentacles/tentacle-thorned-green.webp')], '刺', (40, 90, 80, 255),
+    '<p>从雾中江面刺出的一根脊刺。护甲4、生命6（与本体共享：每根脊刺削减格拉基8点）。斩断后格拉基一轮内无法再刺。畏火与强光，火焰穿透护甲。直视格拉基本体：理智1D3/1D20。</p>', '<p>A single spine thrusting out of the fog. Armour 4, HP 6 (shared with the body: each severed spine costs Gla\'aki 8 HP). Once cut, no spine attack for a round. Fears fire and bright light; fire ignores its armour. Seeing the body itself: SAN 1D3/1D20. Tonight it only destroys the other boat; the PCs roll SAN 0/1.</p>', atype='creature', armor=4, hp=6, sanloss=('0', '1'))
+npc('servant', '不死仆从 Undying Servant', dict(str=50, con=105, siz=65, dex=15, app=30, int=50, pow=50, edu=30), [('i.skill.fighting-brawl', 40), ('i.skill.dodge', 10)],
+    [weapon('生前武器 Weapon from life', '1D6', 'i.skill.fighting-brawl', addb=True)], '仆', (70, 110, 60, 255),
+    '<p>格拉基之仆。人形时生命首次降至一半即显露不死形态（理智1/1D8；目睹分解1/1D10）。弱点：脊背注入点，点穴命中即死；强光使其绿腐。</p>', '<p>Gla\'aki\'s thrall. In human form until first dropped to half HP, then reveals the undying shape (SAN 1/1D8; watching it dissolve 1/1D10). Weak point: the injection scar on the spine; an Acupoint Strike hit kills it outright. Sunlight brings on the Green Decay. Not used in session 0; included for later.</p>', atype='creature', hp=17, sanloss=('1', '1D8'))
+# ---------------- journals ----------------
+def journal(name, pages, default_perm=0, folder=None):
+    return {'_id': rid(), 'name': name, 'folder': folder, 'ownership': {'default': default_perm},
+            'pages': [{'_id': rid(), 'name': pn, 'type': 'text', 'title': {'show': False, 'level': 1}, 'text': {'format': 1, 'content': html}, 'ownership': {'default': -1}, 'sort': i*100000} for i, (pn, html) in enumerate(pages)], 'flags': {}, 'sort': 0}
+FOLD = {k: {'_id': rid(), 'name': n, 'type': t, 'folder': None, 'sorting': 'a', 'sort': 0, 'color': c, 'flags': {}} for k, (n, t, c) in {
+    'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'),
+    'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
+for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
+for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
+for k in ACT:
+    if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
+JR = [
+ journal('玩家入门 · Player Primer', [('入门 Primer', C.primer_html()), ('规则速查 Cheat Sheet', C.cheat_html()), ('名词对照 Glossary', C.glossary_html())], 2, FOLD['f_player']['_id']),
+ journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.ho_html(1))], 0, FOLD['f_player']['_id']),
+ journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.ho_html(2))], 0, FOLD['f_player']['_id']),
+ journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.ho_html(3))], 0, FOLD['f_player']['_id']),
+ journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('时间线与真相 Timeline & truth', C.timeline_html())], 0, FOLD['f_gm']['_id']),
+]
+# ---------------- scenes ----------------
+# AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
+def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1):
+    return {'_id': rid(), 'name': name or a['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['img']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
+            'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'displayName': 30, 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
+def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048):
+    toks = [tok(*t[0], G, **t[1]) for t in tokens]
+    return {'_id': rid(), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
+            'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
+            'tokenVision': False, 'fog': {'exploration': False}, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
+            'tokens': toks, 'walls': [], 'lights': [], 'notes': [], 'drawings': [], 'sounds': [], 'templates': [], 'tiles': [], 'regions': [], 'flags': {}, 'sort': 0, 'initial': None, 'description': notes}
+A = ACT
+T = lambda a, x, y, **k: ((a, x, y), k)
+SC = [
+ # 24 x 16 squares
+ scene('1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)', 'banquet.webp', 128,
+       [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='HO1 游侠 (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
+ scene('2 · 樊城·北门 The North Gate (HO2)', 'gate.webp', 128,
+       [T(A['pc2'], 9.8, 2.2), T(A['niu'], 12.5, 11.3)] + [T(A['soldier'], x, y, name=f'守门兵 Gate guard {i+1}') for i, (x, y) in enumerate([(12.4, 1.6), (13.7, 2.4), (10.6, 9.8), (13.6, 9.8)])], 0.0),
+ scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
+       [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
+ scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 128,
+       [T(A['pc1'], 3, 6.2), T(A['pc2'], 4.5, 6.2), T(A['pc3'], 6, 6.2), T(A['boatman'], 7.2, 6.4), T(A['spine'], 17.5, 2, hidden=True, w=2, h=2),
+        T(A['soldier'], 16, 12.5, name='岸上弓手 Archer 1'), T(A['soldier'], 21.5, 13.5, name='岸上弓手 Archer 2'),
+        T(A['jiang_tower'], 2.2, 10.2, hidden=True), T(A['jiang_loft'], 3.3, 10.8, hidden=True), T(A['qu'], 4.4, 11.4, hidden=True)], 0.75,
+       '其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away.'),
+ # 12 x 8 squares: a small shop, bigger squares
+ scene('5 · 曲流的棺材铺 The Coffin Shop', 'coffinshop.webp', 256,
+       [T(A['pc1'], 6.3, 1.4), T(A['pc2'], 7.3, 1.4), T(A['pc3'], 8.1, 2.2), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6)], 0.3),
+]
+# ---------------- adventure + module ----------------
+adv = {'_id': rid(), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/maps/river.webp',
+       'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
+       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': [], 'playlists': [], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
+adv['_key'] = f"!adventures!{adv['_id']}"
+json.dump(adv, open(f'{SRC}/adventure.json', 'w'), ensure_ascii=False, indent=1)
+modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
+        'version': '0.1.0', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
+        'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
+        'styles': ['styles/gongruo.css'], 'manifest': '', 'download': ''}
+json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
+open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:#4a4a55;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:#4a4a55}.journal-page-content table td{vertical-align:top;font-size:0.92em}\n')
+print('actors', len(ACT), 'journals', len(JR), 'scenes', len(SC), 'tokens', sum(len(s['tokens']) for s in SC))

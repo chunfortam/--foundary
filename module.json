@@ -1,0 +1,45 @@
+{
+  "id": "gongruo-session0",
+  "title": "公若渡河 Session 0 (CoC7, bilingual)",
+  "description": "Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.",
+  "version": "0.2.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Devin for chunfortam"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "CoC7",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8"
+        }
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "session0",
+      "label": "公若渡河 · Session 0",
+      "path": "packs/session0",
+      "type": "Adventure",
+      "system": "CoC7",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "styles": [
+    "styles/gongruo.css"
+  ],
+  "manifest": "https://raw.githubusercontent.com/chunfortam/--foundary/main/module.json",
+  "download": "https://github.com/chunfortam/--foundary/releases/latest/download/gongruo-session0.zip",
+  "url": "https://github.com/chunfortam/--foundary"
+}

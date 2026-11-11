@@ -1,0 +1,40 @@
+# 公若渡河 · Session 0 kit (Foundry VTT, CoC7)
+
+Bilingual (中文 / English) Foundry VTT adventure module for the first session of the wuxia Call of Cthulhu scenario **公若渡河** by 江涔 (Dicecho / 魔都). For private use at your own table; the scenario text belongs to its author.
+
+## Requirements 需求
+- Foundry VTT v12–v14
+- Call of Cthulhu 7th edition system **CoC7** (8.x) installed
+
+## Install
+
+**Option A (recommended): manifest URL.** Foundry launcher → Add-on Modules → Install Module → paste into "Manifest URL":
+`https://raw.githubusercontent.com/chunfortam/--foundary/main/module.json`
+
+**Option B: git.** `git clone https://github.com/chunfortam/--foundary.git <FoundryData>/Data/modules/gongruo-session0` and `git pull` to update.
+
+**Option C: zip.** Download the release zip and unzip so that `Data/modules/gongruo-session0/module.json` exists.
+
+### Original instructions 安装
+1. Copy the `gongruo-session0` folder into your Foundry user data folder: `Data/modules/gongruo-session0/` (the folder must contain `module.json`).
+2. Restart Foundry, open your CoC7 world, enable **公若渡河 Session 0** in Manage Modules.
+3. Compendiums → **公若渡河 · Session 0** → open the adventure → **Import**.
+4. Give each player **Observer** permission on their own HO journal only (right-click the journal → Configure Ownership). The Player Primer is already visible to all players.
+
+## Contents 内容
+- Actors: 3 pre-built investigators (HO1 游侠 / HO2 商贾 / HO3 命官) with the scenario's mandatory bonuses and the custom skill 点穴 Acupoint Strike; NPCs for session 0 (Marshal Ashu, Duan Driftwood, Niu the Archer, Captain Liu, Doctor Yue, Mongol soldiers and horsemen, the Jiang twins, Winding Stream, the boatman); creatures (Gla'aki's spine, Undying Servant).
+- Scenes (80 px grid = 1 inch on a 55" 4K table): the Victory Banquet, the North Gate, the Magistracy, Night Crossing of the Han River, the Coffin Shop.
+- Journals: Player Primer + Cheat Sheet + Glossary (players); HO1/HO2/HO3 handouts (private); GM Runbook with the three personal intros and the Night Crossing, NPC quick reference, timeline and truth.
+
+## Known gaps 已知缺口
+- The scenario's 点穴 rules attachment is not in the published PDF; the cheat sheet contains a house rule to use until you get the attachment from the author's QQ group (1095875707).
+- Niu the Archer has no stats in the original; the sheet uses GM estimates.
+- Maps are AI-generated (OpenAI gpt-image) for this kit, 3072x2048, gridless art with the Foundry grid set per scene (128 px = 1.5 m; coffin shop 256 px). Nudge the grid in Scene Configuration if squares feel off.
+
+
+## Rebuilding the pack 重新打包
+Edit `build/content.py` (text) or `build/build.py` (actors/scenes), then from the repo root:
+```
+python3 build/build.py && rm -rf packs/session0 && fvtt package pack -n session0 --in build/src/session0 --out packs --type Module --id gongruo-session0
+```
+Requires Python 3 with Pillow and `npm i -g @foundryvtt/foundryvtt-cli`.
