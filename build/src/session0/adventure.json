@@ -1,7 +1,7 @@
 {
  "_id": "j3PDAbZmhwquadWd",
  "name": "公若渡河 · 第零次聚会 / Session 0: Crossing the Han",
- "img": "modules/gongruo-session0/assets/maps/river.webp",
+ "img": "modules/gongruo-session0/assets/cover.webp",
  "caption": "南宋末年武侠 CoC7 · bilingual session-0 kit",
  "description": "<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>",
  "actors": [
@@ -7088,6 +7088,54 @@
   }
  ],
  "scenes": [
+  {
+   "_id": "3vzF0fwW7TBzP8zs",
+   "name": "0 · 公若渡河 Crossing the Han (title screen)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/cover.webp"
+   },
+   "width": 1536,
+   "height": 1024,
+   "padding": 0,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 128,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {},
+   "sort": 0,
+   "initial": null,
+   "description": "<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "Ihz231IHFbvmdfPQ"
+  },
   {
    "_id": "ZRjpg4xbna3cLcnN",
    "name": "1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)",
