@@ -127,7 +127,7 @@ HO[1] = dict(
             "You are the disciple of the Hermit of Mount Crag, and you are very good at what you do. For players who love classic wuxia and act on their heart. Any one combat skill +20."),
   secret=(
     bi("你师承荆楚岘山的山阳道人，随他修习多年。山阳道人乃当世隐士，相传得神农时期雨师赤松子真传，能入火不焚，御风而行。虽说多为附会之辞，但你的确从他那里习得了一身游侠的本事。",
-       "Your master is the Hermit of Mount Crag (his real name is Chen Yangshan). People say he inherited the arts of Red Pine the Rain Master and can walk through fire and ride the wind. Most of that is talk, but he did make you a true wanderer.") +
+       "Your master is the Hermit of Mount Crag (his real name is Chen Yangshan 陈阳山). People say he inherited the arts of Red Pine the Rain Master and can walk through fire and ride the wind. Most of that is talk, but he did make you a true wanderer.") +
     bi("你有一位名叫段游衍的昔日同窗，大理人氏，曾追随山阳道人求学一年后离开。师父称赞他思维敏捷、见识过人，但不建议你与他深交。",
        "You had a classmate, Duan Driftwood, from the Dali clan, who studied under your master for a year and left. Your master praised his quick mind and wide learning, but told you not to grow close to him.") +
     bi("此番听闻樊城城破，师父赠你名剑【止水】，命你效仿聂政、荆轲，行刺元军统帅兀良哈·阿术。剑上淬有奇毒“雨师墨”，师父再三叮嘱不可轻率使用。",
@@ -149,7 +149,7 @@ HO[2] = dict(
     bi("你是临安府著名药行的少东家。家庭背景、药行的名字、经营理念和行事风格均自行拟定（官商勾结、为富不仁，或扶危济困……）。药行自庆历年间发家，分号遍布大江南北，地方分号难免有欺下瞒上、大肆敛财之事。",
        "Your family's pharmacy house in the capital is famous. You decide its name, its reputation and how it does business: in bed with officials, grasping and heartless, or charitable. It has branches across the empire since the 1040s, and some branch managers are crooks.") +
     bi("你有一位名叫越南柯的师兄，是你父亲故旧的孩子，与你一同长大。几年前他不辞而别独自闯荡江湖，你们之间只剩书信往来。",
-       "You have a foster brother, Yue Nanke, the son of your father's old friend, raised with you. A few years ago he vanished into the jianghu without a word; since then, only letters.") +
+       "You have a foster brother, Yue Nanke 越南柯, the son of your father's old friend, raised with you. A few years ago he vanished into the jianghu without a word; since then, only letters.") +
     bi("一二六七年腊月末，你和父亲奉朝廷之命押送一批药材作为军资，不幸在樊城外遭蒙古军队截获。父亲被蒙古人杀害，你趁乱只身逃入樊城。",
        "In the last month of 1267 you and your father escorted a convoy of medicine for the army. Outside Fencewall the Mongols stopped you. Your father was killed in front of you; you fled alone into the city.") +
     bi("父亲既已身故，药行群龙无首，你必须尽快离开樊城。",
@@ -168,7 +168,7 @@ HO[3] = dict(
     bi("你出身临安高门大户，身份显赫，一路顺风顺水，在朝廷领着一份闲差。一二六七年，出于某种原因（自行拟定：遭权臣构陷，或主动请命），你临危受命督军援救襄樊。",
        "You come from one of the great families of the capital. Life has been easy; you hold a comfortable sinecure. In 1267, for reasons you decide (a rival's scheme, or your own idealism), you were made Commissioner and sent to relieve the siege of the twin cities.") +
     bi("你有一位名叫刘卿堂的发小，急公好义，颇具江湖豪气。听闻你督军，他主动请缨同往，率五千兵马随你出发。",
-       "Your childhood friend Liu Qingtang, hot-blooded and generous, volunteered to come with you and led your five thousand men.") +
+       "Your childhood friend Liu Qingtang 刘卿堂, hot-blooded and generous, volunteered to come with you and led your five thousand men.") +
     bi("宋军疲软，蒙古兵精粮足。你们直至一二六七年末方奋力突围进入樊城，仅余八百人，损失惨重。次年一月元军大举攻城，范天顺要求你们先撤往襄阳暂避。但你突围时受伤未愈（伤势自行拟定），难耐奔波，只得暂缓。一月三日，刘卿堂先率八百余人渡江赴襄阳。次日，范玉楼主事，樊城开城投降。",
        "The Mongols cut you to pieces. By the end of 1267 you broke through into Fencewall with eight hundred men left. In January the assault began and Commander Fan ordered you across to Southbright. You were still carrying a wound from the breakout (you decide what) and could not travel. On 3 January Liu took the eight hundred across the river. The next day Magistrate Fan surrendered the city.") +
     bi("汉江以北已尽入蒙古之手。你必须渡江南返，与同袍会合。",
