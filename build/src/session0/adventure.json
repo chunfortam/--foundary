@@ -1,12 +1,12 @@
 {
- "_id": "vHWCbaGMKkFhQ3jY",
+ "_id": "j3PDAbZmhwquadWd",
  "name": "公若渡河 · 第零次聚会 / Session 0: Crossing the Han",
  "img": "modules/gongruo-session0/assets/maps/river.webp",
  "caption": "南宋末年武侠 CoC7 · bilingual session-0 kit",
  "description": "<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>",
  "actors": [
   {
-   "_id": "hsw1poAt9abXtrq1",
+   "_id": "P3bXoyW19h7TmI25",
    "name": "HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)",
    "type": "character",
    "img": "modules/gongruo-session0/assets/portraits/pc_wanderer.webp",
@@ -1012,7 +1012,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "Vg0ITNctBFbL0vtb",
+   "folder": "rW50EKDLbyOkXqu6",
    "prototypeToken": {
     "name": "HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)",
     "actorLink": true,
@@ -1033,7 +1033,7 @@
    }
   },
   {
-   "_id": "94GkCpmO4AqF19jM",
+   "_id": "oRmSv0KvVnzXP8kV",
    "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
    "type": "character",
    "img": "modules/gongruo-session0/assets/portraits/pc_merchant.webp",
@@ -1103,7 +1103,7 @@
    },
    "items": [
     {
-     "_id": "i62vXUfPcO0BIR6S",
+     "_id": "U1nO0mZZwpwv0dWb",
      "name": "Acupoint Strike 点穴",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -1126,7 +1126,7 @@
      "effects": []
     },
     {
-     "_id": "AhazLz0TFVvHTjcB",
+     "_id": "cZu2zxqNuLsIbTsh",
      "name": "Credit Rating",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/credit_rating.svg",
@@ -1168,7 +1168,7 @@
      "effects": []
     },
     {
-     "_id": "9BYP8JGE82rccHjI",
+     "_id": "a48eQkDIr7lBHouo",
      "name": "Medicine",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/medicine.svg",
@@ -1199,7 +1199,7 @@
      "effects": []
     },
     {
-     "_id": "BhyowAttOkaOSgEz",
+     "_id": "HBBgMsbJSKs69Jyk",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -1231,7 +1231,7 @@
      "effects": []
     },
     {
-     "_id": "WNYFcDcvftjEUfmA",
+     "_id": "Trsfr2dU59qLIkYm",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -1273,7 +1273,7 @@
      "effects": []
     },
     {
-     "_id": "eXRQnUznRxAgDkGU",
+     "_id": "NZlPKVJDzxVtWWR6",
      "name": "Persuade",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/persuade.svg",
@@ -1316,7 +1316,7 @@
      "effects": []
     },
     {
-     "_id": "kuJCzmkb6yjULRfs",
+     "_id": "QCokr04JUo4lywSN",
      "name": "Fast Talk",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fast_talk.svg",
@@ -1347,7 +1347,7 @@
      "effects": []
     },
     {
-     "_id": "zJISySMqeCCrhZFK",
+     "_id": "1FrjhvXjgRRfOsiT",
      "name": "Charm",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/charm.svg",
@@ -1378,7 +1378,7 @@
      "effects": []
     },
     {
-     "_id": "zZP9ighzgXhHVS3n",
+     "_id": "y5RJa7ZQopoWNsG8",
      "name": "Psychology",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/psychology.svg",
@@ -1421,7 +1421,7 @@
      "effects": []
     },
     {
-     "_id": "YsbEzvpLwGw7qBsh",
+     "_id": "iWmw7cc5AtSdArHp",
      "name": "Appraise",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/appraise.svg",
@@ -1452,7 +1452,7 @@
      "effects": []
     },
     {
-     "_id": "T0OrMCevpV3XANvT",
+     "_id": "eBFpWCyRxJvz72Mf",
      "name": "Accounting",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/accounting.svg",
@@ -1495,7 +1495,7 @@
      "effects": []
     },
     {
-     "_id": "OKoMCgWSiV1vYDa8",
+     "_id": "gNNstckAnBUoMGKU",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -1526,7 +1526,7 @@
      "effects": []
     },
     {
-     "_id": "aY1DqnRbET6mZQOq",
+     "_id": "sm20tMLZhPVFNkMS",
      "name": "Listen",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/listen.svg",
@@ -1569,7 +1569,7 @@
      "effects": []
     },
     {
-     "_id": "LSqR6eA1I4Ta3LaA",
+     "_id": "hdq9xGSwoRUJpoJB",
      "name": "Science (Pharmacy)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/science_pharmacy.svg",
@@ -1607,7 +1607,7 @@
      "effects": []
     },
     {
-     "_id": "6dqZFimfrHv8YvXS",
+     "_id": "UmM6eOQ5hERIvIY3",
      "name": "First Aid",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/first_aid.svg",
@@ -1638,7 +1638,7 @@
      "effects": []
     },
     {
-     "_id": "qYzmIcZ0azyAmjMf",
+     "_id": "KhVH3teDXhfVkNvg",
      "name": "Library Use",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/library_use.svg",
@@ -1681,7 +1681,7 @@
      "effects": []
     },
     {
-     "_id": "Q8v1cLqfZrlkngat",
+     "_id": "MiGN7QeKFJTDcGLf",
      "name": "Language (Own)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/language.svg",
@@ -1716,7 +1716,7 @@
      "effects": []
     },
     {
-     "_id": "IhZlvC3pAGHhaoU8",
+     "_id": "47iBMDSIWFhUOOif",
      "name": "Ride",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/ride.svg",
@@ -1756,7 +1756,7 @@
      "effects": []
     },
     {
-     "_id": "r9pLuUgfD7tE7juZ",
+     "_id": "Y7iHQQK5rARnJ1DI",
      "name": "Swim",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/swim.svg",
@@ -1799,7 +1799,7 @@
      "effects": []
     },
     {
-     "_id": "VnHFZK859f9K7bzl",
+     "_id": "u8RBFOlG3SVym79v",
      "name": "Natural World",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/natural_world.svg",
@@ -1839,7 +1839,7 @@
      "effects": []
     },
     {
-     "_id": "8ohXNoQQHno6zUCQ",
+     "_id": "oKlU5TGCyTEEQA5P",
      "name": "Climb",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/climb.svg",
@@ -1884,7 +1884,7 @@
      "effects": []
     },
     {
-     "_id": "DXQO5p09Yu66vPEs",
+     "_id": "UMluQb2E1V6bIaUb",
      "name": "Jump",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/jump.svg",
@@ -1927,7 +1927,7 @@
      "effects": []
     },
     {
-     "_id": "iZWuCk7LpclojH7c",
+     "_id": "JnabL5fvmgWwBXgW",
      "name": "Stealth",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/stealth.svg",
@@ -1972,7 +1972,7 @@
      "effects": []
     },
     {
-     "_id": "7LQPh4CMALWy07rj",
+     "_id": "St9LRFsgFRBgTaPd",
      "name": "点穴 Acupoint Strike",
      "type": "weapon",
      "img": "icons/skills/melee/unarmed-punch-fist.webp",
@@ -1982,7 +1982,7 @@
       },
       "skill": {
        "main": {
-        "id": "i62vXUfPcO0BIR6S"
+        "id": "U1nO0mZZwpwv0dWb"
        }
       },
       "range": {
@@ -2000,7 +2000,7 @@
      "effects": []
     },
     {
-     "_id": "rB7D48YSCgNXGXhO",
+     "_id": "l9ymt3b8Ecak0OZW",
      "name": "匕首 Dagger",
      "type": "weapon",
      "img": "icons/weapons/daggers/dagger-straight-blue.webp",
@@ -2028,7 +2028,7 @@
      "effects": []
     },
     {
-     "_id": "hWatA2Aege4FvNmk",
+     "_id": "Jkr2RlesTKE0uFle",
      "name": "拳脚 Fists",
      "type": "weapon",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -2056,7 +2056,7 @@
      "effects": []
     },
     {
-     "_id": "S54NacbQysn0SZjT",
+     "_id": "dnuT9ayq3QOl6hCI",
      "name": "药箱 Medicine chest",
      "type": "item",
      "img": "icons/svg/item-bag.svg",
@@ -2069,7 +2069,7 @@
      "effects": []
     },
     {
-     "_id": "jntubpelI8XStMwr",
+     "_id": "7hnePpPgyJBX9GPU",
      "name": "药行印信 Pharmacy seal",
      "type": "item",
      "img": "icons/svg/item-bag.svg",
@@ -2084,7 +2084,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "Vg0ITNctBFbL0vtb",
+   "folder": "rW50EKDLbyOkXqu6",
    "prototypeToken": {
     "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
     "actorLink": true,
@@ -2105,7 +2105,7 @@
    }
   },
   {
-   "_id": "j5loFXPFARX6SYye",
+   "_id": "VmvhocFAZXbtTNxc",
    "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
    "type": "character",
    "img": "modules/gongruo-session0/assets/portraits/pc_official.webp",
@@ -2175,7 +2175,7 @@
    },
    "items": [
     {
-     "_id": "7I30PEFmLv6y1zWV",
+     "_id": "lIDbnGs15E3dfRXc",
      "name": "Firearms (Bow)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/firearms_bow.svg",
@@ -2207,7 +2207,7 @@
      "effects": []
     },
     {
-     "_id": "6xdvhUUsXViJx90l",
+     "_id": "usSGcnEvyeyPlvvh",
      "name": "Credit Rating",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/credit_rating.svg",
@@ -2249,7 +2249,7 @@
      "effects": []
     },
     {
-     "_id": "MnVdAFXGjINA6XlZ",
+     "_id": "lO4blfGcMaCXc1Lb",
      "name": "Persuade",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/persuade.svg",
@@ -2292,7 +2292,7 @@
      "effects": []
     },
     {
-     "_id": "SdbFWldgOxjmUwKN",
+     "_id": "urhNVlFIltPpwWS0",
      "name": "Charm",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/charm.svg",
@@ -2323,7 +2323,7 @@
      "effects": []
     },
     {
-     "_id": "j7IM4IT5WKNRX59o",
+     "_id": "wOCD77uGQpGPUJpe",
      "name": "Intimidate",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/intimidate.svg",
@@ -2354,7 +2354,7 @@
      "effects": []
     },
     {
-     "_id": "xqmDhLQkp7aEmIB4",
+     "_id": "tlkNztaV9JvsXA6O",
      "name": "History",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/history.svg",
@@ -2397,7 +2397,7 @@
      "effects": []
     },
     {
-     "_id": "1VuE3Jd5mrzbkeSY",
+     "_id": "HeJJs1AfbYK4wAQn",
      "name": "Law",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/law.svg",
@@ -2440,7 +2440,7 @@
      "effects": []
     },
     {
-     "_id": "MFnSQn6twfwGyghw",
+     "_id": "kGoosUiW1Dnxjewi",
      "name": "Library Use",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/library_use.svg",
@@ -2483,7 +2483,7 @@
      "effects": []
     },
     {
-     "_id": "ad98TpjNm7DZlOfE",
+     "_id": "XRo8J5OXRM8MK8hH",
      "name": "Ride",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/ride.svg",
@@ -2523,7 +2523,7 @@
      "effects": []
     },
     {
-     "_id": "vwDF5oE6gQfRxq2P",
+     "_id": "mtHk3EjypBPBE0O3",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -2554,7 +2554,7 @@
      "effects": []
     },
     {
-     "_id": "AKu0vPeJR4AXFycr",
+     "_id": "ifGf8L6p4PHyrbZv",
      "name": "Listen",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/listen.svg",
@@ -2597,7 +2597,7 @@
      "effects": []
     },
     {
-     "_id": "HpwMh0RpC8FdGHK1",
+     "_id": "ExYb4RiiYeLydc2k",
      "name": "Psychology",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/psychology.svg",
@@ -2640,7 +2640,7 @@
      "effects": []
     },
     {
-     "_id": "JMiWZzajNTDe5Q8A",
+     "_id": "MTIMZ3Hw0CloW3lG",
      "name": "Fighting (Sword)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_sword.svg",
@@ -2672,7 +2672,7 @@
      "effects": []
     },
     {
-     "_id": "3jiHt0DNA1BZcDp6",
+     "_id": "8T5fFLr5X0SuTwyQ",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -2714,7 +2714,7 @@
      "effects": []
     },
     {
-     "_id": "etxOKgdG7l6MIoM8",
+     "_id": "EUMylWvbVocJ29q8",
      "name": "Stealth",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/stealth.svg",
@@ -2759,7 +2759,7 @@
      "effects": []
     },
     {
-     "_id": "IqUS12vUxQFYIrZR",
+     "_id": "iBhQh5kQRji24jPe",
      "name": "Swim",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/swim.svg",
@@ -2802,7 +2802,7 @@
      "effects": []
     },
     {
-     "_id": "AVEh8Wb1lDey6N7t",
+     "_id": "8LLgjj4kjUu41wLK",
      "name": "Art/Craft (Calligraphy 书法)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/art_craft_any.svg",
@@ -2835,7 +2835,7 @@
      "effects": []
     },
     {
-     "_id": "947LNYH4PFtUSEpB",
+     "_id": "y8KSU5G3qOo5ADWd",
      "name": "Language (Own)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/language.svg",
@@ -2870,7 +2870,7 @@
      "effects": []
     },
     {
-     "_id": "lj9g83EtRhAqUPja",
+     "_id": "dQJkGiGaXBwlZO6M",
      "name": "Navigate",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/navigate.svg",
@@ -2901,7 +2901,7 @@
      "effects": []
     },
     {
-     "_id": "YXvm2xPJTUdNVBMm",
+     "_id": "QNmWZHxSdCLdQSU7",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -2933,7 +2933,7 @@
      "effects": []
     },
     {
-     "_id": "hGAE8FTpA5NJcLbP",
+     "_id": "UPYNljQCzSxmYyhg",
      "name": "Climb",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/climb.svg",
@@ -2978,7 +2978,7 @@
      "effects": []
     },
     {
-     "_id": "tp7XgwO5mfDyYjOC",
+     "_id": "EpFOabKWckTn1uTz",
      "name": "Jump",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/jump.svg",
@@ -3021,7 +3021,7 @@
      "effects": []
     },
     {
-     "_id": "JfHlhBBk7eM48Dwk",
+     "_id": "O9xhu8d74SyBv1iO",
      "name": "Acupoint Strike 点穴",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -3044,7 +3044,7 @@
      "effects": []
     },
     {
-     "_id": "7QEAYFMALphb1uqq",
+     "_id": "JivnAMR4T44N7FMA",
      "name": "弓 Bow",
      "type": "weapon",
      "img": "icons/weapons/bows/shortbow-recurve.webp",
@@ -3077,7 +3077,7 @@
      "effects": []
     },
     {
-     "_id": "DS3YBHD2g2ecuvCN",
+     "_id": "A4b3ADn5MNDR7KwY",
      "name": "佩剑 Sword",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -3105,7 +3105,7 @@
      "effects": []
     },
     {
-     "_id": "3Pie2sbSh7NxeKiz",
+     "_id": "nPjIiwF7zJhWramv",
      "name": "拳脚 Fists",
      "type": "weapon",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -3133,7 +3133,7 @@
      "effects": []
     },
     {
-     "_id": "jAyKisPUNvZRCtUH",
+     "_id": "LGuQ06nHT8BWN7cz",
      "name": "宣抚使印绶 Commissioner's seal",
      "type": "item",
      "img": "icons/svg/item-bag.svg",
@@ -3146,7 +3146,7 @@
      "effects": []
     },
     {
-     "_id": "f77pwzVQwjsqLb1B",
+     "_id": "l5r3BVf0gWIJ2tH4",
      "name": "未愈的伤 An unhealed wound",
      "type": "item",
      "img": "icons/svg/item-bag.svg",
@@ -3161,7 +3161,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "Vg0ITNctBFbL0vtb",
+   "folder": "rW50EKDLbyOkXqu6",
    "prototypeToken": {
     "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
     "actorLink": true,
@@ -3182,7 +3182,7 @@
    }
   },
   {
-   "_id": "sowaBHTwqi9zZLSj",
+   "_id": "o5EHJ9BDT7pyz4Be",
    "name": "兀良哈·阿术 Marshal Ashu",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/ashu.webp",
@@ -3249,7 +3249,7 @@
    },
    "items": [
     {
-     "_id": "V8eH6wIJxzUdeaaA",
+     "_id": "Nrm54OimroZ4PiXK",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -3281,7 +3281,7 @@
      "effects": []
     },
     {
-     "_id": "EDBEJteJRiNimMdp",
+     "_id": "E6K0Fhq8mBlxWjI3",
      "name": "Fighting (Sword)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_sword.svg",
@@ -3313,7 +3313,7 @@
      "effects": []
     },
     {
-     "_id": "R8aHnfWtQEvSpeUJ",
+     "_id": "KLxFkqq0n89P4IcO",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -3355,7 +3355,7 @@
      "effects": []
     },
     {
-     "_id": "ArfLrkDj9irq8XiL",
+     "_id": "eajNxKhIWytMIoiA",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -3386,7 +3386,7 @@
      "effects": []
     },
     {
-     "_id": "8TBK1OaJ9mGuQBJv",
+     "_id": "ENgLePDI3IKmZD9g",
      "name": "Ride",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/ride.svg",
@@ -3426,7 +3426,7 @@
      "effects": []
     },
     {
-     "_id": "dqmb2xyqa3bk3wpQ",
+     "_id": "ClekRPHnrHNp8iBp",
      "name": "Intimidate",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/intimidate.svg",
@@ -3457,7 +3457,7 @@
      "effects": []
     },
     {
-     "_id": "Axvv4zKchgDIMXH9",
+     "_id": "QPM2CF5D2KTgeGaE",
      "name": "马刀 Sabre",
      "type": "weapon",
      "img": "icons/weapons/swords/scimitar-broad-worn.webp",
@@ -3485,7 +3485,7 @@
      "effects": []
     },
     {
-     "_id": "3IcrAZm4yxHLikp2",
+     "_id": "sAd1g762ek9mlicC",
      "name": "拳脚 Fists",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -3515,7 +3515,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "兀良哈·阿术 Marshal Ashu",
     "actorLink": true,
@@ -3536,7 +3536,7 @@
    }
   },
   {
-   "_id": "emCJnmX2wrF2dIqx",
+   "_id": "E96GK825kFXk3LZk",
    "name": "段游衍 Duan Driftwood",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/duan.webp",
@@ -3600,7 +3600,7 @@
    },
    "items": [
     {
-     "_id": "D11s1bX3vjm5Q5qQ",
+     "_id": "J7mvUxFxhscl7jXx",
      "name": "Fighting (Sword)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_sword.svg",
@@ -3632,7 +3632,7 @@
      "effects": []
     },
     {
-     "_id": "7sMVDXS0yjV3tB2x",
+     "_id": "IGcKK6utNoAicgmw",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -3674,7 +3674,7 @@
      "effects": []
     },
     {
-     "_id": "BsYl15jYLI4BmCqB",
+     "_id": "97hyq1RFITRAHNlI",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -3705,7 +3705,7 @@
      "effects": []
     },
     {
-     "_id": "MzILDOyn61Llx19I",
+     "_id": "X5Ob47v1ugkkMxpa",
      "name": "Fast Talk",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fast_talk.svg",
@@ -3736,7 +3736,7 @@
      "effects": []
     },
     {
-     "_id": "PT4VfzEfOP8Nl7hT",
+     "_id": "xo6rllJtuRpgSvJx",
      "name": "Persuade",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/persuade.svg",
@@ -3779,7 +3779,7 @@
      "effects": []
     },
     {
-     "_id": "iQetoHGluoZiOSjL",
+     "_id": "1YeWqkZAPGMR7VlV",
      "name": "Library Use",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/library_use.svg",
@@ -3822,7 +3822,7 @@
      "effects": []
     },
     {
-     "_id": "jgFFTDsjNSIkQpQB",
+     "_id": "UiDZWOKpJTosFH5K",
      "name": "剑 Sword",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -3852,7 +3852,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "段游衍 Duan Driftwood",
     "actorLink": true,
@@ -3873,7 +3873,7 @@
    }
   },
   {
-   "_id": "ysd60Z4WKNMtgkKR",
+   "_id": "3IbyPoTCGAi5gArl",
    "name": "牛富 Niu the Archer",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/niu.webp",
@@ -3937,7 +3937,7 @@
    },
    "items": [
     {
-     "_id": "1HmEhOcMQIiMASTb",
+     "_id": "c6FmTZd2NwyvB4eS",
      "name": "Firearms (Bow)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/firearms_bow.svg",
@@ -3969,7 +3969,7 @@
      "effects": []
     },
     {
-     "_id": "Z4KI6bFMOgCVY9W2",
+     "_id": "fKofQmC0WjOCpAXR",
      "name": "Fighting (Sword)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_sword.svg",
@@ -4001,7 +4001,7 @@
      "effects": []
     },
     {
-     "_id": "BdkEm9NHSKyU9Lve",
+     "_id": "j7pq8GGS36oQqmcp",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -4043,7 +4043,7 @@
      "effects": []
     },
     {
-     "_id": "3REkxzTuPP9Sa8xX",
+     "_id": "6ZvdgPWEnyWv1S5c",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -4074,7 +4074,7 @@
      "effects": []
     },
     {
-     "_id": "Lt380Ne56LARMuN6",
+     "_id": "YRZxZu0Ng6GcgxUX",
      "name": "Intimidate",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/intimidate.svg",
@@ -4105,7 +4105,7 @@
      "effects": []
     },
     {
-     "_id": "Bp3LJjINtKSQG8v9",
+     "_id": "qNfG2Qr68fCEBzVe",
      "name": "神臂弓 God-Arm Bow",
      "type": "weapon",
      "img": "icons/weapons/bows/longbow-recurve-leather-brown.webp",
@@ -4138,7 +4138,7 @@
      "effects": []
     },
     {
-     "_id": "7ARHKL4FGxHGeTwX",
+     "_id": "dsY6VKmMvGxpH3VI",
      "name": "刀 Sabre",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -4168,7 +4168,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "牛富 Niu the Archer",
     "actorLink": true,
@@ -4189,7 +4189,7 @@
    }
   },
   {
-   "_id": "RfJoRDm9dF4wg6NF",
+   "_id": "eEm8g9KvTGvXOaTY",
    "name": "刘卿堂 Captain Liu",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/liu.webp",
@@ -4253,7 +4253,7 @@
    },
    "items": [
     {
-     "_id": "wz6jG1hEVIY3fzVn",
+     "_id": "9cmC11xMFY5BsiVf",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -4285,7 +4285,7 @@
      "effects": []
     },
     {
-     "_id": "rJ6NFbYxoadktURK",
+     "_id": "Y2a1tzOrQailWyQ4",
      "name": "Fighting (Axe)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_axe.svg",
@@ -4317,7 +4317,7 @@
      "effects": []
     },
     {
-     "_id": "NHK5XVkU1djT9Kwi",
+     "_id": "ZNpNBYDDFJKvVufM",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -4359,7 +4359,7 @@
      "effects": []
     },
     {
-     "_id": "GGwCZTWMVOio3AiP",
+     "_id": "BXvvUm5Z2OvQqUaM",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -4390,7 +4390,7 @@
      "effects": []
     },
     {
-     "_id": "IRr8AbW7VYVWNWhd",
+     "_id": "o0DF6aaru16ZshGO",
      "name": "Library Use",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/library_use.svg",
@@ -4433,7 +4433,7 @@
      "effects": []
     },
     {
-     "_id": "M1C6NHZfu7G9jfuU",
+     "_id": "qLhkFEh9iGCGxkSp",
      "name": "斧 Axe",
      "type": "weapon",
      "img": "icons/weapons/axes/axe-battle-black.webp",
@@ -4463,7 +4463,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "刘卿堂 Captain Liu",
     "actorLink": true,
@@ -4484,7 +4484,7 @@
    }
   },
   {
-   "_id": "BjcvJ53tLA6ceYBT",
+   "_id": "2ScGZAIJUmuOMp3l",
    "name": "越南柯 Doctor Yue, the Hollow Physician",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/yue.webp",
@@ -4548,7 +4548,7 @@
    },
    "items": [
     {
-     "_id": "5PGN03mk8ScLaql8",
+     "_id": "lTH2UHhn1aV9JKDb",
      "name": "Sleight of Hand",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/sleight_of_hand.svg",
@@ -4591,7 +4591,7 @@
      "effects": []
     },
     {
-     "_id": "ldjBuUH3W972JI0k",
+     "_id": "lUI2AYG82jzfAuWe",
      "name": "Fast Talk",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fast_talk.svg",
@@ -4622,7 +4622,7 @@
      "effects": []
     },
     {
-     "_id": "QmAgMqfFVyxCCjPa",
+     "_id": "uricRiPppSSGNthU",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -4653,7 +4653,7 @@
      "effects": []
     },
     {
-     "_id": "11O57MuUJfNKt3TQ",
+     "_id": "VDXeWwp1Sm1gpLm7",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -4695,7 +4695,7 @@
      "effects": []
     },
     {
-     "_id": "9aekALbhtUEJbOwP",
+     "_id": "HDWGUHeG5hXgAgD4",
      "name": "Library Use",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/library_use.svg",
@@ -4738,7 +4738,7 @@
      "effects": []
     },
     {
-     "_id": "UqQ6NPFm2HQ8xJDC",
+     "_id": "gOvFzBoDt89nRO40",
      "name": "Charm",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/charm.svg",
@@ -4771,7 +4771,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "越南柯 Doctor Yue, the Hollow Physician",
     "actorLink": true,
@@ -4792,7 +4792,7 @@
    }
   },
   {
-   "_id": "sN4KmXAJbsEJar74",
+   "_id": "b6vHHCpCU4LXDaEa",
    "name": "蒙古士兵 Mongol soldier",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/soldier.webp",
@@ -4859,7 +4859,7 @@
    },
    "items": [
     {
-     "_id": "OBlJi6GVlBBtNSIX",
+     "_id": "A1R4zyIeC1ZAn5vE",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -4891,7 +4891,7 @@
      "effects": []
     },
     {
-     "_id": "N4jCurIk7itnK9pk",
+     "_id": "PX6ci0OdbPOVCN5c",
      "name": "Fighting (Sword)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_sword.svg",
@@ -4923,7 +4923,7 @@
      "effects": []
     },
     {
-     "_id": "xUU4dEuEAxFBculp",
+     "_id": "JBcj4br1xLgQVUYF",
      "name": "Firearms (Bow)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/firearms_bow.svg",
@@ -4955,7 +4955,7 @@
      "effects": []
     },
     {
-     "_id": "BO1hSwxrHL6Jc08e",
+     "_id": "vWNfFgdQYzOVqCZl",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -4997,7 +4997,7 @@
      "effects": []
     },
     {
-     "_id": "9MQn8lL6UNQ8QkUU",
+     "_id": "x2TbeWBCThe4Fdy9",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -5028,7 +5028,7 @@
      "effects": []
     },
     {
-     "_id": "EQ3OVjkqOhv1vfvA",
+     "_id": "y1OBgZPgAFvebxPi",
      "name": "弯刀 Sabre",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -5056,7 +5056,7 @@
      "effects": []
     },
     {
-     "_id": "7Kwe1HJwRdDWGY94",
+     "_id": "E9gqrKlhjs9PkpgY",
      "name": "弓 Bow",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -5089,7 +5089,7 @@
      "effects": []
     },
     {
-     "_id": "igkWMIICBaPyeSVA",
+     "_id": "QGb3MTKiAL8yoJqr",
      "name": "拳脚 Fists",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -5119,7 +5119,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "蒙古士兵 Mongol soldier",
     "actorLink": false,
@@ -5140,7 +5140,7 @@
    }
   },
   {
-   "_id": "m9YsCYtaKGAX6Nbu",
+   "_id": "sMAiUNPacfgVOBNK",
    "name": "蒙古骑兵 Mongol horseman",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/rider.webp",
@@ -5207,7 +5207,7 @@
    },
    "items": [
     {
-     "_id": "cBKUGuO0rNIaF1Na",
+     "_id": "dutXW333OoESLQSQ",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -5239,7 +5239,7 @@
      "effects": []
     },
     {
-     "_id": "m3tX90DjDh9k54ul",
+     "_id": "e177bpSZUpBdrQra",
      "name": "Fighting (Sword)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_sword.svg",
@@ -5271,7 +5271,7 @@
      "effects": []
     },
     {
-     "_id": "6edgEyYQYQCKb36h",
+     "_id": "6R1eXHNYNWgdvqTW",
      "name": "Firearms (Bow)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/firearms_bow.svg",
@@ -5303,7 +5303,7 @@
      "effects": []
     },
     {
-     "_id": "0LaxHWLLe4ay5CUN",
+     "_id": "3wTGkr44DJVBtYcj",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -5345,7 +5345,7 @@
      "effects": []
     },
     {
-     "_id": "nULHvIlKizPGQQxE",
+     "_id": "Yq3H027SVUHPGp9Y",
      "name": "Ride",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/ride.svg",
@@ -5385,7 +5385,7 @@
      "effects": []
     },
     {
-     "_id": "DGXKvtOw7NHCQbS2",
+     "_id": "TxWf4awBpb0Wo0po",
      "name": "弯刀 Sabre",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -5413,7 +5413,7 @@
      "effects": []
     },
     {
-     "_id": "m4srR6szRYWSvfpg",
+     "_id": "qfvvgLmIk8KkFwmu",
      "name": "弓 Bow",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -5448,7 +5448,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "蒙古骑兵 Mongol horseman",
     "actorLink": false,
@@ -5469,7 +5469,7 @@
    }
   },
   {
-   "_id": "b4Gx3yA5KnpxwyLc",
+   "_id": "TXjrjBcnzeKJ1zb6",
    "name": "姜楼 Tower Jiang",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/jiang_tower.webp",
@@ -5533,7 +5533,7 @@
    },
    "items": [
     {
-     "_id": "w58uvCXayQbWSqwV",
+     "_id": "9uVshygLfo39KJLb",
      "name": "Swim",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/swim.svg",
@@ -5576,7 +5576,7 @@
      "effects": []
     },
     {
-     "_id": "tE1Twn4EkJOOpywm",
+     "_id": "1aEp6fZ6qSkbjuRZ",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -5608,7 +5608,7 @@
      "effects": []
     },
     {
-     "_id": "Sek0IErvzOe0HIqc",
+     "_id": "Ej8t9EJDyOROyZXh",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -5650,7 +5650,7 @@
      "effects": []
     },
     {
-     "_id": "MQk9AlPG9A6aeyqx",
+     "_id": "xDpis0ZExxpJS6ZT",
      "name": "Climb",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/climb.svg",
@@ -5695,7 +5695,7 @@
      "effects": []
     },
     {
-     "_id": "k51IBHaeMEIkT3XU",
+     "_id": "2CsFLv8sk2wipRT6",
      "name": "拳脚 Fists",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -5725,7 +5725,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "姜楼 Tower Jiang",
     "actorLink": true,
@@ -5746,7 +5746,7 @@
    }
   },
   {
-   "_id": "WWxdn1yJozuo47KB",
+   "_id": "KhKQL7eZEmUZbKGu",
    "name": "姜阁 Loft Jiang",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/jiang_loft.webp",
@@ -5810,7 +5810,7 @@
    },
    "items": [
     {
-     "_id": "jisFFsXTxqolONPc",
+     "_id": "1TnIM2DvZbFbko6g",
      "name": "Swim",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/swim.svg",
@@ -5853,7 +5853,7 @@
      "effects": []
     },
     {
-     "_id": "UzzLSKEhUBvCvVs1",
+     "_id": "VYb9wc1H8KTJk1Gx",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -5885,7 +5885,7 @@
      "effects": []
     },
     {
-     "_id": "wLnQmo77luXR3Emm",
+     "_id": "43cXpRV7rlWX1gy5",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -5927,7 +5927,7 @@
      "effects": []
     },
     {
-     "_id": "PVdRh0dMHSi3K88g",
+     "_id": "GV4Jc8wTq7rUDtWK",
      "name": "Jump",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/jump.svg",
@@ -5970,7 +5970,7 @@
      "effects": []
     },
     {
-     "_id": "OMFW7hWbP4q8oabh",
+     "_id": "daWciycAbyQ5juSG",
      "name": "拳脚 Fists",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -6000,7 +6000,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "姜阁 Loft Jiang",
     "actorLink": true,
@@ -6021,7 +6021,7 @@
    }
   },
   {
-   "_id": "ziGmCvym0ng3AAq6",
+   "_id": "cz33T31uYlNeFKCN",
    "name": "曲流 Winding Stream",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/qu.webp",
@@ -6085,7 +6085,7 @@
    },
    "items": [
     {
-     "_id": "jqJEKqF6w1EifvYt",
+     "_id": "rBSd4R7jF084hyIe",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -6117,7 +6117,7 @@
      "effects": []
     },
     {
-     "_id": "tN5O2lRXttb6mvKK",
+     "_id": "fNpJ28A7wm9q8lqE",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -6159,7 +6159,7 @@
      "effects": []
     },
     {
-     "_id": "wFHCTzOj8mSEuKmB",
+     "_id": "qh1IkQnQsEDgRw8V",
      "name": "Jump",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/jump.svg",
@@ -6202,7 +6202,7 @@
      "effects": []
     },
     {
-     "_id": "8RLxzHzYTaHft869",
+     "_id": "NWX8mYaOe5CV7PiY",
      "name": "First Aid",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/first_aid.svg",
@@ -6233,7 +6233,7 @@
      "effects": []
     },
     {
-     "_id": "lizYUnyBbw6hNmAb",
+     "_id": "nPVCNsnRPD8VMmiT",
      "name": "大刀 Big blade",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-broad-red.webp",
@@ -6263,7 +6263,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "曲流 Winding Stream",
     "actorLink": true,
@@ -6284,7 +6284,7 @@
    }
   },
   {
-   "_id": "di0enMMUDVwmijCn",
+   "_id": "L0rdXChlWKWBchIC",
    "name": "船夫王 Boatman Wang",
    "type": "npc",
    "img": "modules/gongruo-session0/assets/portraits/boatman.webp",
@@ -6348,7 +6348,7 @@
    },
    "items": [
     {
-     "_id": "Not6Pkqgc9v1bflB",
+     "_id": "TpYTgcPGqqpvgfbK",
      "name": "Swim",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/swim.svg",
@@ -6391,7 +6391,7 @@
      "effects": []
     },
     {
-     "_id": "4PDgu3GYZfoGPc8t",
+     "_id": "hO2v5H6CNG5nAZ40",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -6433,7 +6433,7 @@
      "effects": []
     },
     {
-     "_id": "N6HWzGhiMo4T6A3z",
+     "_id": "Rvl5bEEhh1b6rhDA",
      "name": "Natural World",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/natural_world.svg",
@@ -6473,7 +6473,7 @@
      "effects": []
     },
     {
-     "_id": "W4gFS5cE41DoFucY",
+     "_id": "aQw5A7fYDhG8R8P9",
      "name": "Boat handling 驾船",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -6498,7 +6498,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "igNgbZM9UHPb6t0V",
+   "folder": "oE2Glm5x0CYp65sn",
    "prototypeToken": {
     "name": "船夫王 Boatman Wang",
     "actorLink": false,
@@ -6519,7 +6519,7 @@
    }
   },
   {
-   "_id": "7Rr15PV90qSnosZP",
+   "_id": "GWjWiX7DTF0B365I",
    "name": "格拉基脊刺 Gla'aki's spine",
    "type": "creature",
    "img": "modules/gongruo-session0/assets/portraits/spine.webp",
@@ -6593,7 +6593,7 @@
    },
    "items": [
     {
-     "_id": "xQ5xgdGBciznR3KS",
+     "_id": "6ph9zfHFDO1VjCUk",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -6625,7 +6625,7 @@
      "effects": []
     },
     {
-     "_id": "oNdm4vGxd6wfgLKF",
+     "_id": "B0r6Yqsnc74sKrD1",
      "name": "脊刺 Spine thrust",
      "type": "weapon",
      "img": "icons/creatures/tentacles/tentacle-thorned-green.webp",
@@ -6655,7 +6655,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "huA9zbWlpxVRG1XY",
+   "folder": "wwnongBdmB6yUFDD",
    "prototypeToken": {
     "name": "格拉基脊刺 Gla'aki's spine",
     "actorLink": false,
@@ -6676,7 +6676,7 @@
    }
   },
   {
-   "_id": "WG6pNn32nZsjP9C3",
+   "_id": "6cuZ2fchw56oQwoe",
    "name": "不死仆从 Undying Servant",
    "type": "creature",
    "img": "modules/gongruo-session0/assets/portraits/servant.webp",
@@ -6747,7 +6747,7 @@
    },
    "items": [
     {
-     "_id": "yFS63iApgsBwMqO5",
+     "_id": "30QNl1Yh5HvqYrAR",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -6779,7 +6779,7 @@
      "effects": []
     },
     {
-     "_id": "z3rDUAJWY5tHVcOS",
+     "_id": "NLtaFsccIqFnF2Wf",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -6821,7 +6821,7 @@
      "effects": []
     },
     {
-     "_id": "mKCtXpWGgFEd4lR3",
+     "_id": "vJ3phKs3i3xgF8q5",
      "name": "生前武器 Weapon from life",
      "type": "weapon",
      "img": "icons/weapons/swords/sword-guard-steel.webp",
@@ -6851,7 +6851,7 @@
    ],
    "effects": [],
    "flags": {},
-   "folder": "huA9zbWlpxVRG1XY",
+   "folder": "wwnongBdmB6yUFDD",
    "prototypeToken": {
     "name": "不死仆从 Undying Servant",
     "actorLink": false,
@@ -6874,15 +6874,15 @@
  ],
  "journal": [
   {
-   "_id": "9chqty6TvJJe0523",
+   "_id": "HYDq12WAiPjYzwwW",
    "name": "玩家入门 · Player Primer",
-   "folder": "prUBKEwVp8vUXrU7",
+   "folder": "gqdSlVdJZa80vLwo",
    "ownership": {
     "default": 2
    },
    "pages": [
     {
-     "_id": "toDsQOzSsQ5Rc1NZ",
+     "_id": "iJN7GqxiKy8CsX2A",
      "name": "入门 Primer",
      "type": "text",
      "title": {
@@ -6899,7 +6899,7 @@
      "sort": 0
     },
     {
-     "_id": "PjxzBMyge7kPcdDr",
+     "_id": "bakzhAEhtPifgXBV",
      "name": "规则速查 Cheat Sheet",
      "type": "text",
      "title": {
@@ -6916,7 +6916,7 @@
      "sort": 100000
     },
     {
-     "_id": "DReUPsvqw1ZsgEHZ",
+     "_id": "5LB5eHRMXNmSV545",
      "name": "名词对照 Glossary",
      "type": "text",
      "title": {
@@ -6937,15 +6937,15 @@
    "sort": 0
   },
   {
-   "_id": "zuPq1VkQDjcs2Hq9",
+   "_id": "ZZDqXjtLZbJJQAo8",
    "name": "HO1 游侠 · The Wanderer（仅HO1玩家）",
-   "folder": "prUBKEwVp8vUXrU7",
+   "folder": "gqdSlVdJZa80vLwo",
    "ownership": {
     "default": 0
    },
    "pages": [
     {
-     "_id": "iojg8zDGj2mkY8ie",
+     "_id": "Ng0maOyneTxXVcvW",
      "name": "HO1",
      "type": "text",
      "title": {
@@ -6966,15 +6966,15 @@
    "sort": 0
   },
   {
-   "_id": "pTyIXv6df6W4B1DE",
+   "_id": "ZrFf9PbaRpXJAFNs",
    "name": "HO2 商贾 · The Merchant Heir（仅HO2玩家）",
-   "folder": "prUBKEwVp8vUXrU7",
+   "folder": "gqdSlVdJZa80vLwo",
    "ownership": {
     "default": 0
    },
    "pages": [
     {
-     "_id": "lEHFpoOEjN4JRKuI",
+     "_id": "inJWXnhsXnemjgBt",
      "name": "HO2",
      "type": "text",
      "title": {
@@ -6995,15 +6995,15 @@
    "sort": 0
   },
   {
-   "_id": "iQ5rMgz4K3NvTj5F",
+   "_id": "UIfalhEz9jcRkC0E",
    "name": "HO3 命官 · The Commissioner（仅HO3玩家）",
-   "folder": "prUBKEwVp8vUXrU7",
+   "folder": "gqdSlVdJZa80vLwo",
    "ownership": {
     "default": 0
    },
    "pages": [
     {
-     "_id": "UAZaGddgoTj6p6yl",
+     "_id": "nE7gj7Gpifobneo8",
      "name": "HO3",
      "type": "text",
      "title": {
@@ -7024,15 +7024,15 @@
    "sort": 0
   },
   {
-   "_id": "Go0WYLdlhGGWFNRm",
+   "_id": "R0gcfJmQE5qSrxk4",
    "name": "主持人 · GM: Session 0 Runbook",
-   "folder": "tDtX5J5N22DiI8W4",
+   "folder": "rFfDIOSD8bXFxuNh",
    "ownership": {
     "default": 0
    },
    "pages": [
     {
-     "_id": "4m2DSD8GFCsGowKI",
+     "_id": "ys8a0Bb8RLD1RuQH",
      "name": "流程 Runbook",
      "type": "text",
      "title": {
@@ -7049,7 +7049,7 @@
      "sort": 0
     },
     {
-     "_id": "edqibcdJm6ovLU1k",
+     "_id": "pv6XxbQGpaPZaqcb",
      "name": "人物速查 NPC reference",
      "type": "text",
      "title": {
@@ -7066,7 +7066,7 @@
      "sort": 100000
     },
     {
-     "_id": "IRpxKxgsVRZW3uKE",
+     "_id": "YhVkuYygWPGFTkSd",
      "name": "时间线与真相 Timeline & truth",
      "type": "text",
      "title": {
@@ -7089,9 +7089,9 @@
  ],
  "scenes": [
   {
-   "_id": "sHbBeVoApyjMaRNU",
+   "_id": "ZRjpg4xbna3cLcnN",
    "name": "1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)",
-   "folder": "EWPrsmKpL63YwHIm",
+   "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/banquet.webp"
    },
@@ -7122,9 +7122,9 @@
    },
    "tokens": [
     {
-     "_id": "ykuqPzJbSjigraud",
+     "_id": "8UcdcWbkClrsnJjZ",
      "name": "兀良哈·阿术 Marshal Ashu",
-     "actorId": "sowaBHTwqi9zZLSj",
+     "actorId": "o5EHJ9BDT7pyz4Be",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/ashu.webp"
@@ -7149,9 +7149,9 @@
      "flags": {}
     },
     {
-     "_id": "YOsTRlngYmSreHfH",
+     "_id": "qETzYiwWAYHQQbOP",
      "name": "段游衍 Duan Driftwood",
-     "actorId": "emCJnmX2wrF2dIqx",
+     "actorId": "E96GK825kFXk3LZk",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/duan.webp"
@@ -7176,9 +7176,9 @@
      "flags": {}
     },
     {
-     "_id": "gWuAvbZC8V9lGRQw",
+     "_id": "MnoMi4rpkezUVEw6",
      "name": "HO1 游侠 (disguised)",
-     "actorId": "hsw1poAt9abXtrq1",
+     "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
@@ -7203,9 +7203,9 @@
      "flags": {}
     },
     {
-     "_id": "btxdjjf71oM4MIOx",
+     "_id": "MaN9nJ8o8FpVMkil",
      "name": "卫兵 Guard 1",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7230,9 +7230,9 @@
      "flags": {}
     },
     {
-     "_id": "otkVxvytb840Vhxi",
+     "_id": "kWgsbAGsFxLCt6FM",
      "name": "卫兵 Guard 2",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7257,9 +7257,9 @@
      "flags": {}
     },
     {
-     "_id": "rLnNTuM3sgTVJ2ew",
+     "_id": "GVOa5HmyfGRl0snO",
      "name": "卫兵 Guard 3",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7284,9 +7284,9 @@
      "flags": {}
     },
     {
-     "_id": "xNTAQIzBIGqikCr3",
+     "_id": "rZgVTNqhbtHttdOE",
      "name": "卫兵 Guard 4",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7311,9 +7311,9 @@
      "flags": {}
     },
     {
-     "_id": "kOypBWzqPJpc3PU3",
+     "_id": "AlxkuWWqh70qYajx",
      "name": "卫兵 Guard 5",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7338,9 +7338,9 @@
      "flags": {}
     },
     {
-     "_id": "oI61mtXElQVHTqQ7",
+     "_id": "7Egqopf6fki1jsGV",
      "name": "卫兵 Guard 6",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7365,9 +7365,9 @@
      "flags": {}
     },
     {
-     "_id": "zhZQ2p5m7QeZqG1L",
+     "_id": "2NPFfO4NXPjU7x8J",
      "name": "卫兵 Guard 7",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7392,9 +7392,9 @@
      "flags": {}
     },
     {
-     "_id": "aLrSDI9kkWuK85Ug",
+     "_id": "AgS2F6cPXmeMeTbU",
      "name": "卫兵 Guard 8",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7431,13 +7431,13 @@
    "sort": 0,
    "initial": null,
    "description": "",
-   "playlist": "AYLqxp8H2BhvrwUv",
-   "playlistSound": "o6zlyqYGntzGeosb"
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "Ihz231IHFbvmdfPQ"
   },
   {
-   "_id": "YTCyuns8lIMgnPoo",
+   "_id": "dhEN6XyCdeZih8kp",
    "name": "2 · 樊城·北门 The North Gate (HO2)",
-   "folder": "EWPrsmKpL63YwHIm",
+   "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/gate.webp"
    },
@@ -7468,9 +7468,9 @@
    },
    "tokens": [
     {
-     "_id": "xL6qRXo9Mrvm6WKb",
+     "_id": "EU5VFtNzVBzXxQdl",
      "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
-     "actorId": "94GkCpmO4AqF19jM",
+     "actorId": "oRmSv0KvVnzXP8kV",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
@@ -7495,9 +7495,9 @@
      "flags": {}
     },
     {
-     "_id": "Esjei46ornY40n1u",
+     "_id": "7xc7BExzU8OOB4Mi",
      "name": "牛富 Niu the Archer",
-     "actorId": "ysd60Z4WKNMtgkKR",
+     "actorId": "3IbyPoTCGAi5gArl",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/niu.webp"
@@ -7522,9 +7522,9 @@
      "flags": {}
     },
     {
-     "_id": "VIqVdPTt0ewd8p4g",
+     "_id": "Hbjt9vflTEUDnCNN",
      "name": "守门兵 Gate guard 1",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7549,9 +7549,9 @@
      "flags": {}
     },
     {
-     "_id": "92crdSoMgGAndZOG",
+     "_id": "3t7cjHukDg0euzHu",
      "name": "守门兵 Gate guard 2",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7576,9 +7576,9 @@
      "flags": {}
     },
     {
-     "_id": "kXypDorcDkm2u9lE",
+     "_id": "CANt4emA2fe07sfk",
      "name": "守门兵 Gate guard 3",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7603,9 +7603,9 @@
      "flags": {}
     },
     {
-     "_id": "23m1gkVFsODeM9o3",
+     "_id": "aw0Gty14lx8hBo9J",
      "name": "守门兵 Gate guard 4",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -7642,13 +7642,13 @@
    "sort": 0,
    "initial": null,
    "description": "",
-   "playlist": "AYLqxp8H2BhvrwUv",
-   "playlistSound": "o2xXFXW5Y8upJlbL"
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "lTFLfWMKVMabOfbk"
   },
   {
-   "_id": "gpYQ2sRdm8Xim0yp",
+   "_id": "hQYhhQytNrF9CYjp",
    "name": "3 · 樊城衙署 The Magistracy (HO3)",
-   "folder": "EWPrsmKpL63YwHIm",
+   "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/magistracy.webp"
    },
@@ -7679,9 +7679,9 @@
    },
    "tokens": [
     {
-     "_id": "gEecJjX4lpVzNFTo",
+     "_id": "kLnOnO6JaZWiO4DU",
      "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
-     "actorId": "j5loFXPFARX6SYye",
+     "actorId": "VmvhocFAZXbtTNxc",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
@@ -7706,9 +7706,9 @@
      "flags": {}
     },
     {
-     "_id": "YvJcA5rVvmr2VcCK",
+     "_id": "2ET02DmZ3K9gbhVX",
      "name": "骑兵 Horseman 1",
-     "actorId": "m9YsCYtaKGAX6Nbu",
+     "actorId": "sMAiUNPacfgVOBNK",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/rider.webp"
@@ -7733,9 +7733,9 @@
      "flags": {}
     },
     {
-     "_id": "xTLKvgaIkf5kH06n",
+     "_id": "MDLL3yX4gIYB7oTc",
      "name": "骑兵 Horseman 2",
-     "actorId": "m9YsCYtaKGAX6Nbu",
+     "actorId": "sMAiUNPacfgVOBNK",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/rider.webp"
@@ -7760,9 +7760,9 @@
      "flags": {}
     },
     {
-     "_id": "eMmpDdFqVSR9fuNF",
+     "_id": "l919UwatiIQJzMeH",
      "name": "骑兵 Horseman 3",
-     "actorId": "m9YsCYtaKGAX6Nbu",
+     "actorId": "sMAiUNPacfgVOBNK",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/rider.webp"
@@ -7787,9 +7787,9 @@
      "flags": {}
     },
     {
-     "_id": "b9yXDNEQfbR1LiFN",
+     "_id": "mv9g7odgJGbhYhXY",
      "name": "骑兵 Horseman 4",
-     "actorId": "m9YsCYtaKGAX6Nbu",
+     "actorId": "sMAiUNPacfgVOBNK",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/rider.webp"
@@ -7814,9 +7814,9 @@
      "flags": {}
     },
     {
-     "_id": "aOJ17n4SE7jDToKZ",
+     "_id": "Pthjsu6f8lzYXYdP",
      "name": "骑兵 Horseman 5",
-     "actorId": "m9YsCYtaKGAX6Nbu",
+     "actorId": "sMAiUNPacfgVOBNK",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/rider.webp"
@@ -7841,9 +7841,9 @@
      "flags": {}
     },
     {
-     "_id": "nbO865Y15Q0GDe26",
+     "_id": "dpuxmEQLaZNr2vW9",
      "name": "骑兵 Horseman 6",
-     "actorId": "m9YsCYtaKGAX6Nbu",
+     "actorId": "sMAiUNPacfgVOBNK",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/rider.webp"
@@ -7880,13 +7880,13 @@
    "sort": 0,
    "initial": null,
    "description": "",
-   "playlist": "AYLqxp8H2BhvrwUv",
-   "playlistSound": "pBgMMyDh4qZDgeYd"
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "S5cmyS0FAMp63COP"
   },
   {
-   "_id": "a3iEuhJIme2tLIXv",
+   "_id": "UNDtCrupcyKA0yaq",
    "name": "4 · 汉江夜渡 Night Crossing of the Han River",
-   "folder": "EWPrsmKpL63YwHIm",
+   "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/river.webp"
    },
@@ -7917,9 +7917,9 @@
    },
    "tokens": [
     {
-     "_id": "Vgx10vSk56N7MMAM",
+     "_id": "gUPV0b9soKuX35WD",
      "name": "HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)",
-     "actorId": "hsw1poAt9abXtrq1",
+     "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
@@ -7944,9 +7944,9 @@
      "flags": {}
     },
     {
-     "_id": "yy8n6QE6Hbq8xr2r",
+     "_id": "LH5hCmbrBMzKznp2",
      "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
-     "actorId": "94GkCpmO4AqF19jM",
+     "actorId": "oRmSv0KvVnzXP8kV",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
@@ -7971,9 +7971,9 @@
      "flags": {}
     },
     {
-     "_id": "HqvR2Sanpuyjq3Sa",
+     "_id": "vC8SUZ6BSOjb2vdi",
      "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
-     "actorId": "j5loFXPFARX6SYye",
+     "actorId": "VmvhocFAZXbtTNxc",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
@@ -7998,9 +7998,9 @@
      "flags": {}
     },
     {
-     "_id": "hmr6vhtisuTvzTik",
+     "_id": "C0WDe3xNVIIfFy6q",
      "name": "船夫王 Boatman Wang",
-     "actorId": "di0enMMUDVwmijCn",
+     "actorId": "L0rdXChlWKWBchIC",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/boatman.webp"
@@ -8025,9 +8025,9 @@
      "flags": {}
     },
     {
-     "_id": "4b8Qrd5Nhc6Pie5j",
+     "_id": "LbmoYXrDmSTVWVeq",
      "name": "格拉基脊刺 Gla'aki's spine",
-     "actorId": "7Rr15PV90qSnosZP",
+     "actorId": "GWjWiX7DTF0B365I",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/spine.webp"
@@ -8052,9 +8052,9 @@
      "flags": {}
     },
     {
-     "_id": "C89vt2mGcJDC9vPZ",
+     "_id": "parNQ2ype4NhXAJD",
      "name": "岸上弓手 Archer 1",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -8079,9 +8079,9 @@
      "flags": {}
     },
     {
-     "_id": "LPT6sMy2rwRas6Zz",
+     "_id": "6I6a8kSCaPSKhKjr",
      "name": "岸上弓手 Archer 2",
-     "actorId": "sN4KmXAJbsEJar74",
+     "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
@@ -8106,9 +8106,9 @@
      "flags": {}
     },
     {
-     "_id": "n5qc3LWdWcs42RNS",
+     "_id": "r9Ohqb1gR8iz4Pa9",
      "name": "姜楼 Tower Jiang",
-     "actorId": "b4Gx3yA5KnpxwyLc",
+     "actorId": "TXjrjBcnzeKJ1zb6",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/jiang_tower.webp"
@@ -8133,9 +8133,9 @@
      "flags": {}
     },
     {
-     "_id": "yWlqepZi6Qvp3Gyu",
+     "_id": "Ppov4jmx4CP4B7hH",
      "name": "姜阁 Loft Jiang",
-     "actorId": "WWxdn1yJozuo47KB",
+     "actorId": "KhKQL7eZEmUZbKGu",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/jiang_loft.webp"
@@ -8160,9 +8160,9 @@
      "flags": {}
     },
     {
-     "_id": "avRdFlzflkGSl73G",
+     "_id": "kxjv5xEDWAd5DFTR",
      "name": "曲流 Winding Stream",
-     "actorId": "ziGmCvym0ng3AAq6",
+     "actorId": "cz33T31uYlNeFKCN",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/qu.webp"
@@ -8199,13 +8199,13 @@
    "sort": 0,
    "initial": null,
    "description": "其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away.",
-   "playlist": "AYLqxp8H2BhvrwUv",
-   "playlistSound": "0AvfVBpLzF8xKpEm"
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "NQG5a1dDSNxz02ru"
   },
   {
-   "_id": "hMPjRoCwcAg5FyHL",
+   "_id": "84VdBZq8Qyha7Olg",
    "name": "5 · 曲流的棺材铺 The Coffin Shop",
-   "folder": "EWPrsmKpL63YwHIm",
+   "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/coffinshop.webp"
    },
@@ -8236,9 +8236,9 @@
    },
    "tokens": [
     {
-     "_id": "m6Rg8mnVryq9yY8X",
+     "_id": "Wq26YMCZxKDtRmTP",
      "name": "HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)",
-     "actorId": "hsw1poAt9abXtrq1",
+     "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
@@ -8263,9 +8263,9 @@
      "flags": {}
     },
     {
-     "_id": "qPxLOiT65c56Uz9O",
+     "_id": "fQ9ONwzad2tnEjba",
      "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
-     "actorId": "94GkCpmO4AqF19jM",
+     "actorId": "oRmSv0KvVnzXP8kV",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
@@ -8290,9 +8290,9 @@
      "flags": {}
     },
     {
-     "_id": "MqVDQ6Z7Uc7UKGZO",
+     "_id": "puDSyCMWJRb3JZ0A",
      "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
-     "actorId": "j5loFXPFARX6SYye",
+     "actorId": "VmvhocFAZXbtTNxc",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
@@ -8317,9 +8317,9 @@
      "flags": {}
     },
     {
-     "_id": "iC2naPomeT9nrD9u",
+     "_id": "gfSnevVVZ8OTddTn",
      "name": "曲流 Winding Stream",
-     "actorId": "ziGmCvym0ng3AAq6",
+     "actorId": "cz33T31uYlNeFKCN",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/qu.webp"
@@ -8344,9 +8344,9 @@
      "flags": {}
     },
     {
-     "_id": "DK62STIrTzYL3hZS",
+     "_id": "AjkksmJsQDMyJJGn",
      "name": "姜楼 Tower Jiang",
-     "actorId": "b4Gx3yA5KnpxwyLc",
+     "actorId": "TXjrjBcnzeKJ1zb6",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/jiang_tower.webp"
@@ -8371,9 +8371,9 @@
      "flags": {}
     },
     {
-     "_id": "WSdnlxK3mZTAdqpQ",
+     "_id": "D1ESeTPW7vkgQGL5",
      "name": "姜阁 Loft Jiang",
-     "actorId": "WWxdn1yJozuo47KB",
+     "actorId": "KhKQL7eZEmUZbKGu",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/jiang_loft.webp"
@@ -8410,13 +8410,13 @@
    "sort": 0,
    "initial": null,
    "description": "",
-   "playlist": "AYLqxp8H2BhvrwUv",
-   "playlistSound": "sHCD9MnhQcmn50Bq"
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "wc6cAN1YpEsMHa6h"
   }
  ],
  "folders": [
   {
-   "_id": "Vg0ITNctBFbL0vtb",
+   "_id": "rW50EKDLbyOkXqu6",
    "name": "调查员 Investigators",
    "type": "Actor",
    "folder": null,
@@ -8426,7 +8426,7 @@
    "flags": {}
   },
   {
-   "_id": "igNgbZM9UHPb6t0V",
+   "_id": "oE2Glm5x0CYp65sn",
    "name": "人物 NPCs",
    "type": "Actor",
    "folder": null,
@@ -8436,7 +8436,7 @@
    "flags": {}
   },
   {
-   "_id": "huA9zbWlpxVRG1XY",
+   "_id": "wwnongBdmB6yUFDD",
    "name": "怪物 Creatures",
    "type": "Actor",
    "folder": null,
@@ -8446,7 +8446,7 @@
    "flags": {}
   },
   {
-   "_id": "prUBKEwVp8vUXrU7",
+   "_id": "gqdSlVdJZa80vLwo",
    "name": "玩家手册 Player handouts",
    "type": "JournalEntry",
    "folder": null,
@@ -8456,7 +8456,7 @@
    "flags": {}
   },
   {
-   "_id": "tDtX5J5N22DiI8W4",
+   "_id": "rFfDIOSD8bXFxuNh",
    "name": "主持人 GM only",
    "type": "JournalEntry",
    "folder": null,
@@ -8466,7 +8466,7 @@
    "flags": {}
   },
   {
-   "_id": "EWPrsmKpL63YwHIm",
+   "_id": "A5vdDtxm7pu1YoMV",
    "name": "第零次聚会 Session 0",
    "type": "Scene",
    "folder": null,
@@ -8481,7 +8481,7 @@
  "macros": [],
  "playlists": [
   {
-   "_id": "AYLqxp8H2BhvrwUv",
+   "_id": "YpCxBKaF2V5yJedP",
    "name": "公若渡河 · Session 0 music",
    "description": "Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0",
    "mode": 0,
@@ -8494,7 +8494,7 @@
    "folder": null,
    "sounds": [
     {
-     "_id": "o6zlyqYGntzGeosb",
+     "_id": "Ihz231IHFbvmdfPQ",
      "name": "Eastern Thought — 庆功宴 Banquet",
      "path": "modules/gongruo-session0/assets/music/Eastern_Thought.ogg",
      "channel": "music",
@@ -8507,7 +8507,7 @@
      "description": "Eastern Thought Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "o2xXFXW5Y8upJlbL",
+     "_id": "lTFLfWMKVMabOfbk",
      "name": "Teller of the Tales — 北门 North Gate",
      "path": "modules/gongruo-session0/assets/music/Teller_of_the_Tales.ogg",
      "channel": "music",
@@ -8520,7 +8520,7 @@
      "description": "Teller of the Tales Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "pBgMMyDh4qZDgeYd",
+     "_id": "S5cmyS0FAMp63COP",
      "name": "Asian Drums — 衙署 Magistracy raid",
      "path": "modules/gongruo-session0/assets/music/Asian_Drums.ogg",
      "channel": "music",
@@ -8533,7 +8533,7 @@
      "description": "Asian Drums Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "0AvfVBpLzF8xKpEm",
+     "_id": "NQG5a1dDSNxz02ru",
      "name": "Temple of the Manes — 汉江夜渡 Night Crossing",
      "path": "modules/gongruo-session0/assets/music/Temple_of_the_Manes.ogg",
      "channel": "music",
@@ -8546,7 +8546,7 @@
      "description": "Temple of the Manes Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "sHCD9MnhQcmn50Bq",
+     "_id": "wc6cAN1YpEsMHa6h",
      "name": "Lotus — 棺材铺 Coffin Shop",
      "path": "modules/gongruo-session0/assets/music/Lotus.ogg",
      "channel": "music",
@@ -8559,7 +8559,7 @@
      "description": "Lotus Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "oQa6IWMdqaeZt21F",
+     "_id": "S1Bt8Gk3GiksGYAk",
      "name": "Lightless Dawn — 备用 · 格拉基 Alternate: Gla'aki dread",
      "path": "modules/gongruo-session0/assets/music/Lightless_Dawn.ogg",
      "channel": "music",
@@ -8578,5 +8578,5 @@
  "combats": [],
  "sort": 0,
  "flags": {},
- "_key": "!adventures!vHWCbaGMKkFhQ3jY"
+ "_key": "!adventures!j3PDAbZmhwquadWd"
 }

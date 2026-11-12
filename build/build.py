@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import json, os, glob, random, string, re, shutil, copy
+import json, os, glob, random, string, re, shutil, copy, hashlib
 from PIL import Image, ImageDraw, ImageFont
 import content as C
 random.seed(20260111)
@@ -9,7 +9,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'build', 'src', 'session0')
 shutil.rmtree(SRC, ignore_errors=True); os.makedirs(SRC)
 os.makedirs(f'{ROOT}/assets/tokens', exist_ok=True); os.makedirs(f'{ROOT}/styles', exist_ok=True)
-def rid(): return ''.join(random.choice(string.ascii_letters+string.digits) for _ in range(16))
+ALNUM = string.ascii_letters + string.digits
+def rid(key=None):
+    # Stable IDs: keyed IDs for top-level documents, seeded stream for embedded ones, so re-importing
+    # the adventure updates existing world documents instead of duplicating them.
+    if key is None: return ''.join(random.choice(ALNUM) for _ in range(16))
+    h = hashlib.sha256(key.encode('utf-8')).digest()
+    return ''.join(ALNUM[b % len(ALNUM)] for b in h[:16])
 SK = {}
 for f in glob.glob('/tmp/coc7/unpacked/en-skills/*.json'):
     j = json.load(open(f)); SK[j['flags']['CoC7']['cocidFlag']['id']] = j
@@ -54,7 +60,7 @@ def item(name, desc=''):
 def chars(**k): return {c: {'value': v} for c, v in k.items()}
 def hpcalc(ch): return (ch['con'] + ch['siz']) // 10
 def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', disposition=0, extra=None, link=True, san=None, luck=50, armor=None, sanloss=None, occupation='', age=''):
-    hp = hpcalc(ch); mp = ch['pow'] // 5
+    random.seed('actor:' + name); hp = hpcalc(ch); mp = ch['pow'] // 5
     sys = {'characteristics': chars(**ch), 'attribs': {'hp': {'value': hp, 'max': hp}, 'mp': {'value': mp, 'max': mp}, 'lck': {'value': luck}, 'san': {'value': san if san is not None else ch['pow'], 'max': 99, 'dailyLimit': 10}},
            'infos': {'occupation': occupation, 'age': age}, 'flags': {'locked': True}}
     if armor is not None: sys['attribs']['armor'] = {'value': armor}
@@ -66,7 +72,7 @@ def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', di
         if sanloss: sys['special'] = {'sanLoss': {'checkPassed': sanloss[0], 'checkFailled': sanloss[1]}, 'attacksPerRound': 1}
     if extra: sys.update(extra)
     its = skills + weapons + items
-    a = {'_id': rid(), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
+    a = {'_id': rid('actor:' + name), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
          'prototypeToken': {'name': name, 'actorLink': link, 'disposition': disposition, 'texture': {'src': tok}, 'width': 1, 'height': 1, 'sight': {'enabled': atype == 'character'}, 'displayName': 30, 'displayBars': 40 if atype != 'character' else 50, 'bar1': {'attribute': 'attribs.hp'}}}
     return a
 ACT = {}
@@ -150,9 +156,9 @@ npc('servant', '不死仆从 Undying Servant', dict(str=50, con=105, siz=65, dex
     '<p>格拉基之仆。人形时生命首次降至一半即显露不死形态（理智1/1D8；目睹分解1/1D10）。弱点：脊背注入点，点穴命中即死；强光使其绿腐。</p>', '<p>Gla\'aki\'s thrall. In human form until first dropped to half HP, then reveals the undying shape (SAN 1/1D8; watching it dissolve 1/1D10). Weak point: the injection scar on the spine; an Acupoint Strike hit kills it outright. Sunlight brings on the Green Decay. Not used in session 0; included for later.</p>', atype='creature', hp=17, sanloss=('1', '1D8'))
 # ---------------- journals ----------------
 def journal(name, pages, default_perm=0, folder=None):
-    return {'_id': rid(), 'name': name, 'folder': folder, 'ownership': {'default': default_perm},
-            'pages': [{'_id': rid(), 'name': pn, 'type': 'text', 'title': {'show': False, 'level': 1}, 'text': {'format': 1, 'content': html}, 'ownership': {'default': -1}, 'sort': i*100000} for i, (pn, html) in enumerate(pages)], 'flags': {}, 'sort': 0}
-FOLD = {k: {'_id': rid(), 'name': n, 'type': t, 'folder': None, 'sorting': 'a', 'sort': 0, 'color': c, 'flags': {}} for k, (n, t, c) in {
+    return {'_id': rid('journal:' + name), 'name': name, 'folder': folder, 'ownership': {'default': default_perm},
+            'pages': [{'_id': rid(f'journal:{name}:{pn}'), 'name': pn, 'type': 'text', 'title': {'show': False, 'level': 1}, 'text': {'format': 1, 'content': html}, 'ownership': {'default': -1}, 'sort': i*100000} for i, (pn, html) in enumerate(pages)], 'flags': {}, 'sort': 0}
+FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'sorting': 'a', 'sort': 0, 'color': c, 'flags': {}} for k, (n, t, c) in {
     'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'),
     'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
@@ -172,8 +178,8 @@ def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1):
     return {'_id': rid(), 'name': name or a['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
             'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'displayName': 30, 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
 def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048):
-    toks = [tok(*t[0], G, **t[1]) for t in tokens]
-    return {'_id': rid(), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
+    random.seed('scene:' + name); toks = [tok(*t[0], G, **t[1]) for t in tokens]
+    return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
             'tokenVision': False, 'fog': {'exploration': False}, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
             'tokens': toks, 'walls': [], 'lights': [], 'notes': [], 'drawings': [], 'sounds': [], 'templates': [], 'tiles': [], 'regions': [], 'flags': {}, 'sort': 0, 'initial': None, 'description': notes}
@@ -199,21 +205,21 @@ SC = [
 # ---------------- music (Kevin MacLeod, incompetech.com, CC BY 4.0) ----------------
 TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', '庆功宴 Banquet'), ('Teller of the Tales', 'Teller_of_the_Tales.ogg', '北门 North Gate'), ('Asian Drums', 'Asian_Drums.ogg', '衙署 Magistracy raid'),
           ('Temple of the Manes', 'Temple_of_the_Manes.ogg', '汉江夜渡 Night Crossing'), ('Lotus', 'Lotus.ogg', '棺材铺 Coffin Shop'), ('Lightless Dawn', 'Lightless_Dawn.ogg', '备用 · 格拉基 Alternate: Gla\'aki dread')]
-PL = {'_id': rid(), 'name': '公若渡河 · Session 0 music', 'description': 'Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0', 'mode': 0, 'playing': False, 'fade': 2000, 'channel': 'music', 'sort': 0, 'seed': 0, 'flags': {}, 'folder': None,
-      'sounds': [{'_id': rid(), 'name': f'{t} — {use}', 'path': f'modules/{MOD}/assets/music/{f}', 'channel': 'music', 'playing': False, 'repeat': True, 'volume': 0.5, 'fade': 2000, 'sort': i, 'flags': {}, 'description': f'{t} Kevin MacLeod (incompetech.com) CC BY 4.0'} for i, (t, f, use) in enumerate(TRACKS)]}
+PL = {'_id': rid('playlist:session0'), 'name': '公若渡河 · Session 0 music', 'description': 'Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0', 'mode': 0, 'playing': False, 'fade': 2000, 'channel': 'music', 'sort': 0, 'seed': 0, 'flags': {}, 'folder': None,
+      'sounds': [{'_id': rid('sound:' + f), 'name': f'{t} — {use}', 'path': f'modules/{MOD}/assets/music/{f}', 'channel': 'music', 'playing': False, 'repeat': True, 'volume': 0.5, 'fade': 2000, 'sort': i, 'flags': {}, 'description': f'{t} Kevin MacLeod (incompetech.com) CC BY 4.0'} for i, (t, f, use) in enumerate(TRACKS)]}
 for sc, snd in zip(SC, PL['sounds'][:5]):
     sc['playlist'] = PL['_id']; sc['playlistSound'] = snd['_id']
 # ---------------- adventure + module ----------------
-adv = {'_id': rid(), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/maps/river.webp',
+adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/maps/river.webp',
        'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
        'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': [], 'playlists': [PL], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
 adv['_key'] = f"!adventures!{adv['_id']}"
 json.dump(adv, open(f'{SRC}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.3.0', 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.3.0', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
-        'styles': ['styles/gongruo.css'], 'manifest': 'https://raw.githubusercontent.com/chunfortam/--foundary/main/module.json', 'download': 'https://github.com/chunfortam/--foundary/releases/latest/download/gongruo-session0.zip'}
+        'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
 open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:#4a4a55;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:#4a4a55}.journal-page-content table td{vertical-align:top;font-size:0.92em}\n')
 print('actors', len(ACT), 'journals', len(JR), 'scenes', len(SC), 'tokens', sum(len(s['tokens']) for s in SC))

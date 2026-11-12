@@ -6,20 +6,18 @@ Bilingual (中文 / English) Foundry VTT adventure module for the first session 
 - Foundry VTT v12–v14
 - Call of Cthulhu 7th edition system **CoC7** (8.x) installed
 
-## Install
+## Install 安装
+The repository is private, so install from git (Foundry's manifest-URL installer cannot reach it).
 
-**Option A (recommended): manifest URL.** Foundry launcher → Add-on Modules → Install Module → paste into "Manifest URL":
-`https://raw.githubusercontent.com/chunfortam/--foundary/main/module.json`
-
-**Option B: git.** `git clone https://github.com/chunfortam/--foundary.git <FoundryData>/Data/modules/gongruo-session0` and `git pull` to update.
-
-**Option C: zip.** Download the release zip and unzip so that `Data/modules/gongruo-session0/module.json` exists.
-
-### Original instructions 安装
-1. Copy the `gongruo-session0` folder into your Foundry user data folder: `Data/modules/gongruo-session0/` (the folder must contain `module.json`).
+1. Clone into your Foundry user data folder; the folder name **must** be `gongruo-session0` (Foundry matches it against the module id):
+   `git clone https://github.com/chunfortam/--foundary.git "<FoundryData>/Data/modules/gongruo-session0"`
+   (Windows default: `%LOCALAPPDATA%\FoundryVTT\Data\modules\gongruo-session0`)
 2. Restart Foundry, open your CoC7 world, enable **公若渡河 Session 0** in Manage Modules.
-3. Compendiums → **公若渡河 · Session 0** → open the adventure → **Import**.
+3. On the next load the module asks to import the adventure; click Yes. (Manual route: Compendiums → **公若渡河 · Session 0** → open the adventure → **Import**.)
 4. Give each player **Observer** permission on their own HO journal only (right-click the journal → Configure Ownership). The Player Primer is already visible to all players.
+
+## Update 更新
+`git pull` in the module folder, then reload Foundry (F5). When the module version has changed, a dialog offers to re-import; document IDs are stable, so existing actors, scenes, journals and the playlist are **updated in place** (your edits to those documents are overwritten; copies you made under other names are untouched). To re-import at any time, run `game.gongruo.reimport()` in a script macro.
 
 ## Contents 内容
 - Actors: 3 pre-built investigators (HO1 游侠 / HO2 商贾 / HO3 命官) with the scenario's mandatory bonuses and the custom skill 点穴 Acupoint Strike; NPCs for session 0 (Marshal Ashu, Duan Driftwood, Niu the Archer, Captain Liu, Doctor Yue, Mongol soldiers and horsemen, the Jiang twins, Winding Stream, the boatman); creatures (Gla'aki's spine, Undying Servant).
