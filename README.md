@@ -29,7 +29,7 @@ git checkout -- packs && git pull
 - Title-screen scene: the scenario's cover art (by the author, `assets/cover_zh.jpg`) re-lettered in English as "Crossing the Han" (`assets/cover.webp`), linked to the Banquet track.
 - Scenes (80 px grid = 1 inch on a 55" 4K table): the Victory Banquet, the North Gate, the Magistracy, Night Crossing of the Han River, the Coffin Shop.
 - Journals: Player Primer + Cheat Sheet + Glossary (players); HO1/HO2/HO3 handouts (private); GM Runbook with the three personal intros and the Night Crossing, NPC quick reference, timeline and truth.
-- Printable sheets: `print/character-sheets.pdf` (A4, bilingual): one page per pregen plus one secret handout page per player, generated from the same data.
+- Printables: `print/character-sheets.pdf` (one page per pregen + one secret handout per player) and `print/gm-pack.pdf` (GM checklist, agenda, scene beats with every roll, NPC card), both A4 and generated from the same data.
 
 ## Known gaps 已知缺口
 - The scenario's 点穴 rules attachment is not in the published PDF; the cheat sheet contains a house rule to use until you get the attachment from the author's QQ group (1095875707).
@@ -46,4 +46,4 @@ python3 build/build.py && rm -rf packs/session0 && fvtt package pack -n session0
 ```
 Requires Python 3 with Pillow and `npm i -g @foundryvtt/foundryvtt-cli`.
 
-Printable sheets: `python3 build/print_sheets.py` (needs Chrome/Chromium and the Noto CJK fonts) regenerates `print/character-sheets.pdf`.
+Printables: `python3 build/print_sheets.py` and `python3 build/print_gm.py` (need Chrome/Chromium and the Noto CJK fonts) regenerate `print/character-sheets.pdf` and `print/gm-pack.pdf`.
