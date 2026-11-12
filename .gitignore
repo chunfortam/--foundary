@@ -10,3 +10,4 @@ packs/session0/MANIFEST-000009
 # Foundry rewrites the LevelDB pack on every world launch; only the committed pack matters.
 packs/**/lost/
 packs/**/LOG.old
+packs/**/LOCK
