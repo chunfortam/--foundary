@@ -221,7 +221,7 @@ adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚�
 adv['_key'] = f"!adventures!{adv['_id']}"
 json.dump(adv, open(f'{SRC}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.4.0', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.4.1', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
         'styles': ['styles/gongruo.css']}
