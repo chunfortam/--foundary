@@ -200,7 +200,12 @@ def tok(a, gx, gy, G, tid, hidden=False, name=None, w=1, h=1, texture=None):
     return {'_id': tid, 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': texture or a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
             'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'level': LEVEL, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
 def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048, weather=''):
-    random.seed('scene:' + name); toks = [tok(*t[0], G, rid(), **t[1]) for t in tokens]
+    # Token IDs are keyed by scene + token name (+ ordinal for repeats), not by position in the list, so adding a token
+    # does not reassign the IDs of the others (saved combatants reference tokens by ID).
+    seen = {}; toks = []
+    for t in tokens:
+        tname = t[1].get('name') or t[0][0]['prototypeToken']['name']; n = seen[tname] = seen.get(tname, 0) + 1
+        toks.append(tok(*t[0], G, rid(f'token:{name}:{tname}#{n}'), **t[1]))
     return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'levels': [level(name, f'modules/{MOD}/assets/maps/{img}')], 'initialLevel': LEVEL, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
             'tokenVision': False, 'fog': {'exploration': False}, 'weather': weather, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
