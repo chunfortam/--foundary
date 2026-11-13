@@ -118,7 +118,7 @@ BODY = f'''
 </ul>
 </section>
 
-<section>
+<section class="beats">
 <h1>Scene beats 场景节拍 <small>every roll the book asks for, in order</small></h1>
 <div class="cols">
 <div>
@@ -224,6 +224,7 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 .agenda td:first-child { white-space: nowrap; width: 1%; font-weight: bold; }
 .npc { font-size: 8pt; } .npc td:first-child { width: 17%; } .npc td.c { text-align: center; white-space: nowrap; } .npc td.note { font-size: 7.5pt; color: #333; } .npc th { background: #eee; }
 small { font-size: 7.5pt; color: #444; }
+section.beats { font-size: 8.1pt; line-height: 1.27; } section.beats .quote { font-size: 8.1pt; margin: 3px 0; } section.beats h2 { margin: 6px 0 2px; }
 .opening p { font-size: 11pt; line-height: 1.5; margin: 8px 0; }
 .opening p.after { font-size: 9.5pt; color: #444; border-top: 1px solid #000; padding-top: 6px; margin-top: 16px; }
 '''
