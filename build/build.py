@@ -6,8 +6,6 @@ random.seed(20260111)
 MOD = C.MOD
 import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'build', 'src', 'session0')
-shutil.rmtree(SRC, ignore_errors=True); os.makedirs(SRC)
 os.makedirs(f'{ROOT}/assets/tokens', exist_ok=True); os.makedirs(f'{ROOT}/styles', exist_ok=True)
 ALNUM = string.ascii_letters + string.digits
 def rid(key=None):
