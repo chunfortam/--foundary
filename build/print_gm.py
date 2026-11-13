@@ -5,7 +5,7 @@ import json, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import OPENING
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ADV = json.load(open(os.path.join(ROOT, 'build/src/session0/adventure.json')))
+ADV = json.load(open(os.path.join(ROOT, 'adventure.json')))
 
 def sv(sk, ch):
     t = 0
@@ -43,7 +43,8 @@ def npc_rows():
         arm = (x['system']['attribs'].get('armor') or {}).get('value') or 0
         sks = ', '.join(f"{s['name'].replace('Fighting (', '').replace('Firearms (', '').replace(')', '')} {sv(s, ch)}" for s in x['items'] if s['type'] == 'skill')
         wps = '; '.join(f"{w['name']} {w['system']['range']['normal'].get('damage')}{' + DB' if w['system']['properties'].get('addb') else ''}" for w in x['items'] if w['type'] == 'weapon') or '—'
-        key = next(k for k in NOTES if k in x['name'])
+        key = next((k for k in NOTES if k in x['name']), None)
+        if key is None: continue  # scene props (boat, cart) have no stat-block entry
         dbv = '&mdash;' if ch['str'] + ch['siz'] > 300 else db(ch['str'] + ch['siz'])
         chs = ' '.join(f"{k.upper()} {v}" for k, v in ch.items() if k not in ('app', 'edu') and v)
         rows.append(f'<tr><td><b>{x["name"]}</b><br><small>{chs}</small></td><td class="c">{hp}</td><td class="c">{arm}</td><td class="c">{dbv}</td><td>{sks}</td><td>{wps}</td><td class="note">{NOTES[key]}</td></tr>')
@@ -135,7 +136,7 @@ BODY = f'''
 <p><b>Out:</b> HO1 slips away in the chaos ({R('Stealth')} or {R('Climb')} if they want a roll). Hiding since. The bridge is cut, the bank guarded; money finds a boatman. → the reeds at midnight.</p>
 
 <h2>2 · North Gate 北门 — HO2 alone <small>scene: Fencewall, the North Gate</small></h2>
-<p><b>Open:</b> end of Dec 1267, two weeks before the banquet. Fencewall is besieged but still Song (banners on the wall, gate under martial law). The medicine convoy, father in front, runs into the Mongol siege line outside the North Gate. Soldiers stop you: a Mongol who barely speaks Chinese (Toghan 脱欢) and a Chinese general (Duan 段游衍) who does the talking.</p>
+<p><b>Open:</b> end of Dec 1267, two weeks before the banquet. Fencewall is still Song (banners on the wall, gate under martial law) with the Mongol army in the country around it. On the road outside the North Gate the convoy, father in front, is stopped by a Mongol detachment under General Toghan 脱欢, who barely speaks Chinese; the Chinese general Duan 段游衍 does the talking.</p>
 {q('“这鞑子知道你们家有钱，不剥层皮不会放人。有什么值钱的，现在就献出来……”', '"This Tartar knows your house is rich. He won&#39;t let you go without skinning you. Whatever you have of value, offer it now, as a gift to the Khan and the Marshal..."')}
 <p>Whatever HO2 says, father goes forward alone and sends them to count stock. The clerks beg them to run. Then: <b>▶ play 斩 Slash</b> (Playlists → 音效 Sound effects) — a mist of blood, a head flung sideways. Carts roll over the stain until it is gone.</p>
 <p><b>Run for the gate:</b> {R('DEX')}; fail = 1D3, a wound that never fully heals, max HP −1.</p>

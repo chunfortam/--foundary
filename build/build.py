@@ -196,6 +196,8 @@ JR = [
 LEVEL = 'defaultLevel0000'  # Foundry 14 scene level; v12/13 strip the unknown fields and use `background` instead
 def level(name, img_src):
     return {'_id': LEVEL, 'name': name, 'background': {'src': img_src}, 'elevation': {'bottom': 0, 'top': None}, 'sort': 0, 'flags': {}}
+# gx, gy are canvas squares: Foundry pads the scene by `padding` (10%) rounded up to whole squares, so the map's top-left corner
+# is at ceil(0.1*w/G), ceil(0.1*h/G) = (3, 2) squares on the 3072x2048/128 maps and (4, 3) on the 2304x1536/64 river map.
 def tok(a, gx, gy, G, tid, hidden=False, name=None, w=1, h=1, texture=None):
     return {'_id': tid, 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': texture or a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
             'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'level': LEVEL, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
@@ -220,9 +222,9 @@ SC = [
        [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='陆青崖 Lu Bluecliff (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
  # The convoy is a token of the 'wagon' prop: the intact cart on the road, its wreck hidden on the same spot; swap them at the Slash cue.
  scene('2 · 樊城·北门 The North Gate (HO2)', 'gate.webp', 128,
-       [T(A['pc2'], 12.1, 8.5), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 14.9, 3.1),
-        T(A['wagon'], 11.0 - WAGON_W / 2, 7.3 - WAGON_H / 2, name='药车 The medicine cart', w=WAGON_W, h=WAGON_H),
-        T(A['wagon'], 11.0 - WAGON_WRECK_W / 2, 7.3 - WAGON_WRECK_H / 2, name='药车·残骸 The medicine cart, wrecked', hidden=True, w=WAGON_WRECK_W, h=WAGON_WRECK_H, texture=WAGON_WRECK)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0,
+       [T(A['pc2'], 15.9, 10.2), T(A['toghan'], 14.1, 6.9), T(A['duan'], 15.8, 7.3), T(A['niu'], 14.9, 3.1),
+        T(A['wagon'], 15.0 - WAGON_W / 2, 9.6 - WAGON_H / 2, name='药车 The medicine cart', w=WAGON_W, h=WAGON_H),
+        T(A['wagon'], 15.0 - WAGON_WRECK_W / 2, 9.6 - WAGON_WRECK_H / 2, name='药车·残骸 The medicine cart, wrecked', hidden=True, w=WAGON_WRECK_W, h=WAGON_WRECK_H, texture=WAGON_WRECK)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(12.5, 8.3), (16.9, 8.5), (13.1, 11.1), (16.5, 11.3), (15.1, 12.7)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0,
        '<p>标记操作：父亲被杀（播放“斩”音效）时显示“药车·残骸”、隐藏“药车”。右键标记→切换可见。</p><p>Token cue: when the father is killed (play the 斩 Slash sound), reveal "The medicine cart, wrecked" and hide "The medicine cart". Right-click a token → toggle visibility.</p>'),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
