@@ -123,7 +123,8 @@ BODY = f'''
 <div class="cols">
 <div>
 <h2>1 · Banquet 庆功宴 — HO1 alone <small>scene: The Victory Banquet</small></h2>
-<p><b>Open:</b> Fencewall fell in three days. The Hermit 山阳道人 gives you Stillwater 止水 at dawn.</p>
+<p><b>Open:</b> Fencewall fell in three days; the Hermit 山阳道人 did not sleep for three nights. On the fourth morning he lays a sword across the table: worn sheath, blade bright enough to show your face, a dark stain near the guard like water that never dried. "Her name is Stillwater 止水." Then his speech (plum wine, pig's head, Tomb-Sweeping Day), and the warning, said three times:</p>
+{q('“剑上这道黑，是雨师墨。刀饮即腐：伤口烂而不死，逢阴雨便发，一辈子好不了。不可轻率出剑；止水只为一个人出鞘。”', '"That black on the blade is Rainmaster’s Ink 雨师墨. What it cuts, rots: the wound will not kill and will not heal, and every rainy day it opens again for the rest of a man’s life. Do not draw her lightly. Stillwater leaves the sheath for one man only."')}
 {q('“你年轻，能从千军万马里取一颗头。不为那个糊涂皇帝，为汉水两岸的百姓！”', '"You are young; you can take a head out of the middle of an army. Not for that muddle-headed emperor: for the people on the banks of the Han." If you succeed, bring the head to my grave at Tomb-Sweeping with plum wine, loquat wine, beef, a pig&#39;s head, two chickens and three sesame cakes. If not, wander, and come home when the Central Plains are at peace.')}
 <p><b>Getting in:</b> {R('Disguise')} or {R('Luck')} at the gate; {R('Climb')}/{R('Jump')} over the wall. Patrols everywhere, no looting (Ashu's order).</p>
 <p><b>The hall:</b> roast meat, bowls the size of a palm, Song dancers. Ashu on the dais: huge, bearded, felt hat, soft armour, a sabre at hand. Duan 段游衍 one seat to his right. Magistrate Fan grovelling.</p>

@@ -327,8 +327,14 @@ def runbook_html():
     s += h("个人导入 HO1：庆功宴刺杀（场景：樊城衙署·庆功宴）", "Personal intro HO1: the banquet (scene: The Victory Banquet)")
     s += bi("咸淳三年末，樊城三日即降。山阳道人不眠不休三日，于清晨将成名剑“止水”赠予你，要你效仿荆轲、聂政刺杀兀良哈·阿术。",
             "Fencewall fell in three days. The Hermit did not sleep for three nights, then at dawn gave you Stillwater and told you to kill Marshal Ashu as the assassins of old killed tyrants.")
+    s += bi("<b>赠剑（读给玩家）：</b>第四天清晨，师父把一柄三尺长剑横放在你面前。剑鞘旧得发白，剑身却亮得照得见人，靠近剑锷处有一道墨痕，像一片没擦干的水迹。他说：这剑叫止水。",
+            "<b>The sword (read aloud):</b> On the fourth morning your master lays a sword across the table in front of you. The sheath is worn pale; the blade is bright enough to show your face, and near the guard there is a dark stain, like water that never dried. \"Her name is Stillwater,\" he says.")
     s += '<blockquote>' + bi("“你师父我老啦，怕是走不进那蒙古鞑子十步。你虽年纪轻轻，但足有乱军之中取敌方首级的本事。不为那大宋稀里糊涂的官家，为的是汉水边的百姓！若是能取兀良哈这厮项上人头，今年清明就把他的首级跟着一壶梅子酒一壶枇杷酒两斤牛肉一个猪头两只烧鸡三个烧饼一起供给我；若是不能，你便自在逍遥闯荡江湖去，去哪都成，等到这中原安定了再回来！”",
             "\"Your master is old. I could not get within ten paces of that Mongol. You are young, and you can take a head out of the middle of an army. Not for that muddle-headed emperor; for the people on the banks of the Han! If you take Ashu's head, lay it on my grave-table this Tomb-Sweeping Day with a jug of plum wine, a jug of loquat wine, two catties of beef, a pig's head, two roast chickens and three sesame cakes. If you cannot, go and wander the jianghu, anywhere you like, and come home when the Central Plains are at peace.\"") + '</blockquote>'
+    s += '<blockquote>' + bi("“剑上这道黑，是雨师墨。江湖上传是赤松子留下的仙术，其实是荆湖一带的毒。刀饮即腐：沾了它的伤口烂而不死，逢阴雨便发，一辈子好不了。所以不可轻率出剑；这东西沾了谁，谁便一辈子记得你。你自己的刀照旧用，止水只为一个人出鞘。”",
+            "\"That black on the blade is Rainmaster's Ink. In the jianghu they say it is Red Pine's immortal art; it is only a poison from these river marshes. What it cuts, rots: the wound will not kill, and it will not heal, and every rainy day it opens again for the rest of a man's life. So do not draw her lightly. Whoever she touches will remember you until they die. Keep using your own blade; Stillwater leaves the sheath for one man only.\"") + '</blockquote>'
+    s += bi("（师父把这话叮嘱了三遍。之后不必再解释；玩家自会在阿术伤口不愈时想起。）",
+            "(He says this three times. Don't explain further; the player will remember it when Ashu's wound refuses to heal.)")
     s += bi("（段游衍已写信向山阳道人保证会保护HO1；若HO1追问，师父只会含糊其辞。）",
             "(Duan Driftwood has written to the Hermit promising to protect HO1. If HO1 presses, the master is evasive.)")
     s += bi("进城：城门有兵检查，混入需乔装/幸运；翻墙需攀爬/跳跃。阿术不许士兵劫掠，城中除遍地巡逻兵外百姓照常生活。",
