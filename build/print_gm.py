@@ -142,7 +142,7 @@ BODY = f'''
 <p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes down from the wall:</p>
 {q('四十来岁，黝黑精瘦，旧铁甲，背上一把漆黑长弓，弓背缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后看你的脸。', 'Forties, dark, lean and hard as a drawn bowstring, old iron armour, a long black bow across his back, grip wrapped in leather worn pale. Eyes like torches: your hands first, then your carts, then your face.')}
 <p>Garrison commander under Commander Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Fan is hunting a thief in town, and promises help with anything.</p>
-<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Commander Fan 范天顺 hangs himself rather than yield; 4 Jan his nephew Magistrate Fan 范玉楼 opens the gates to spare the townsfolk. No looting, but patrols everywhere; Niu refuses to surrender → gaol, his promises gone with him. Father dead, the house in Lin'an 临安 leaderless; bridge cut, bank guarded, so you buy a boatman and come to the reeds after dark with all you own. → the reeds.</p>
+<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Commander Fan 范天顺 hangs himself; 4 Jan his nephew Magistrate Fan 范玉楼 opens the gates to spare the town. Patrols everywhere; Niu refuses to yield → gaol, his promises gone with him. The house in Lin'an 临安 is leaderless; bridge cut, bank guarded, so you buy a boatman. → the reeds after dark.</p>
 </div>
 <div>
 <h2>3 · Magistracy 衙署 — HO3 alone <small>scene: Fencewall Magistracy</small></h2>
@@ -227,7 +227,7 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 .agenda td:first-child { white-space: nowrap; width: 1%; font-weight: bold; }
 .npc { font-size: 8pt; } .npc td:first-child { width: 17%; } .npc td.c { text-align: center; white-space: nowrap; } .npc td.note { font-size: 7.5pt; color: #333; } .npc th { background: #eee; }
 small { font-size: 7.5pt; color: #444; }
-section.beats { font-size: 7.4pt; line-height: 1.2; } section.beats .quote { font-size: 8.1pt; margin: 3px 0; } section.beats h2 { margin: 6px 0 2px; }
+section.beats { font-size: 7.4pt; line-height: 1.2; } section.beats .quote { font-size: 7.5pt; line-height: 1.2; margin: 2px 0; padding: 1px 6px; } section.beats h2 { margin: 6px 0 2px; }
 .opening p { font-size: 11pt; line-height: 1.5; margin: 8px 0; }
 .opening p.after { font-size: 9.5pt; color: #444; border-top: 1px solid #000; padding-top: 6px; margin-top: 16px; }
 '''
