@@ -4,7 +4,7 @@ Reads build/src/session0/adventure.json (run build.py first). Renders HTML -> PD
 Usage: python3 build/print_sheets.py   -> print/character-sheets.pdf"""
 import json, os, re, subprocess, sys, html
 sys.path.insert(0, os.path.dirname(__file__))
-from content import HO
+from content import HO, PC_PUBLIC
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADV = json.load(open(os.path.join(ROOT, 'build/src/session0/adventure.json')))
@@ -48,8 +48,10 @@ def mov(ch):
 
 def actor_page(a):
     name = a['name']
-    m = re.match(r'(HO\d) (\S+) · (.+?) \((.+)\)', name)
-    ho, role_zh, role_en, pname = m.groups()
+    m = re.match(r'(.+?) \((HO\d) (.+)\)', name)
+    pname, ho, role_en = m.groups()
+    role_zh = a['system']['infos']['occupation'].split()[0]
+    pub = PC_PUBLIC[int(ho[2])]
     ch = {k: a['system']['characteristics'][k]['value'] for k, _ in CHAR}
     at = a['system']['attribs']
     db, build = db_build(ch['str'] + ch['siz'])
@@ -66,7 +68,7 @@ def actor_page(a):
   <div class="line"><span class="lbl">姓名 Name</span><span class="fill">{pname}</span></div>
   <div class="line"><span class="lbl">职业 Occupation</span><span class="fill">{a['system']['infos']['occupation']}</span>
    <span class="lbl">年龄 Age</span><span class="fill short">{a['system']['infos']['age']}</span></div>
-  <div class="line"><span class="lbl">外貌 Looks</span><span class="fill">&nbsp;</span></div>
+  <div class="line"><span class="lbl">外貌 Looks</span><span class="fill looks">{pub["looks_en"]}</span></div>
  </div>
  <div class="brand">公若渡河<br><small>Crossing the Han · CoC 7e</small></div>
 </header>
@@ -105,8 +107,8 @@ def actor_page(a):
     prompts = {'HO1': ['师门与剑法 — what style did the Hermit of Mount Crag 山阳道人 teach you?', '为何刺杀失败 — why did your strike at Marshal Ashu 阿术 fail? (fear, pity, bad luck…)'],
                'HO2': ['药行名号 — name of your pharmacy house:', '经营理念 — its ethos (medicine before money? officials in your pocket?):'],
                'HO3': ['未愈的伤 — what is your wound and how did you get it?', '出身 — which great family of the capital 临安 are you from?']}[ho]
-    H += f'<h3>背景 Background</h3><p class="desc">{bio.get("Personal", "")}<br><em>{bio.get("Background", "").split(". Rename")[0].split(". Name the")[0].split(". Bonuses")[0]}.</em></p>'
-    for p in prompts: H += f'<p class="prompt">{p}</p><div class="rule"></div><div class="rule"></div>'
+    H += f'<h3>背景 Background <small>— public; your secret is on the folded page</small></h3><p class="desc"><span class="zh">{pub["looks_zh"]}。</span><br>{pub["en"]}</p>'
+    for p in prompts: H += f'<p class="prompt">{p}</p><div class="rule"></div>'
     H += '''<footer>掷 d100 ≤ 技能值即成功；≤½ 困难；≤⅕ 极难；96–100 大失败（技能&lt;50时）。失败可「孤注一掷」推骰一次，再败有后果。
 <br><em>Roll d100 ≤ skill: success; ≤ half: Hard; ≤ fifth: Extreme; 96–100 fumble (if skill &lt; 50). A failed roll may be <b>pushed</b> once with a reason; a pushed failure has consequences.</em></footer>
 </section>'''
@@ -132,7 +134,7 @@ header img { width: 96px; height: 96px; object-fit: cover; border: 1px solid #44
 .line { display: flex; gap: 6px; align-items: baseline; margin-top: 3px; }
 .lbl { font-size: 8pt; color: #555; white-space: nowrap; }
 .fill { flex: 1; border-bottom: 1px solid #777; font-size: 11pt; padding: 0 4px; min-height: 14pt; }
-.fill.short { flex: 0 0 40px; }
+.fill.short { flex: 0 0 40px; } .fill.looks { font-size: 8.5pt; }
 .brand { text-align: right; font-size: 15pt; font-weight: bold; line-height: 1.1; }
 .brand small { font-size: 7.5pt; font-weight: normal; color: #555; }
 .row { display: flex; gap: 10px; margin-top: 6px; }

@@ -81,6 +81,23 @@ def glossary_html():
         s += f'<h2>{title}</h2>' + table(["中文", "English", "Note"], rows)
     return s
 
+
+# ---------------- PREGEN CHARACTERS: public description (no secrets; for picking a role and introducing yourself) ----------------
+PC_PUBLIC = {
+ 1: dict(name='陆青崖 Lu Bluecliff', looks_zh='二十四岁，衣着朴素，话少，背上裹着一柄从不示人的剑', looks_en='24; plainly dressed, says little; a wrapped sword on his back he never shows',
+   zh="陆青崖，二十四岁。岘山山阳道人门下的游侠：衣着朴素，腰间一柄佩刀，背上另裹着一柄更好的剑，从不在人前拔出。话少，眼睛不闲着。自幼习武，上墙如走平地，落地无声，出剑快得看不清；人情世故却不是他的本事。认准了的事就会去做——而且他心里压着一件不能对生人说的事。",
+   en="Lu Bluecliff 陆青崖 (\"blue cliff\", after the mountain he grew up on), 24. A wanderer of the jianghu 江湖: plainly dressed, a sabre at his hip and a second, finer sword wrapped on his back that he never draws in front of people. Says little, misses nothing. Trained since childhood by a famous hermit swordsman on Mount Crag 岘山, he can run up a wall, land without a sound and cut faster than you can see (Sword 75, Climb 60, Stealth 60, Dodge 60). What he cannot do is talk his way out of trouble (Credit Rating 20). Play him as a man who has decided what is right and will do it, and who is quietly carrying something he cannot tell strangers."),
+ 2: dict(name='沈怀珠 Shen Pearl', looks_zh='二十岁，外袍朴素、内里绫罗，手上没有茧，带着药箱', looks_en='20; plain travelling coat over silk, soft hands, a medicine chest',
+   zh="沈怀珠，二十岁。临安大药行的少东家：外袍朴素，内里是绫罗，手上没有茧，随身一只药箱和一方药行印信，天下任何一家分号的掌柜见了都要作揖。聪明，口舌利，习惯用钱解决事情；会看病抓药。家传一门点穴之术，指头按对地方能让人半边身子发麻。不是打手，爱走偏锋。她这辈子头一回体会到什么叫无能为力。",
+   en="Shen Pearl 沈怀珠 (\"holding a pearl\"), 20. Heir to one of the great pharmacy houses of the capital, Lin'an 临安: silk under a plain travelling coat, soft hands, a medicine chest, and a seal that any branch manager in the empire will bow to. Clever, quick-tongued and used to money solving things (Credit Rating 60, Medicine 65, Persuade / Fast Talk / Charm 50–55, Appraise, Accounting). The family also hands down a secret art, Acupoint Strike 点穴: a finger pressed to the right spot numbs an arm or drops a man (base 50). Not a fighter; thinks sideways. Play her as someone who, until this month, had never once been powerless."),
+ 3: dict(name='谢云骧 Xie Cloudmane', looks_zh='二十二岁，相貌出众，举止雍容，身上有一处未愈的伤', looks_en='22; handsome, graceful, carries an unhealed wound',
+   zh="谢云骧，二十二岁。临安高门子弟，朝廷亲封的宣抚使，印绶在身。相貌出众，学问极好，从小就是让人听话的那一个。自幼围猎，一手好弓，是三人里最会射箭的；剑也拿得起来，勉强。他是带着一支军队来的，如今身上一处伤口不肯收口，也不知道他的人去了哪里。头一回体会到：没人非得听你的时候，名头值几个钱。",
+   en="Xie Cloudmane 谢云骧 (\"a horse galloping through clouds\"), 22. Youngest son of one of the great families of the capital and now, with the seal to prove it, an imperial Commissioner sent to relieve the twin cities. Handsome, beautifully educated, raised to be obeyed (APP 75, EDU 80, Credit Rating 75, Persuade 65, Law, History). He has hunted since boyhood and is the best archer at the table (Bow 75); he can hold a sword, barely. He arrived with an army; he has a wound that will not close and no idea what happened to his men. Play him as someone finding out, for the first time, what his name is worth when nobody has to obey it."),
+}
+def pc_public_html(n):
+    d = PC_PUBLIC[n]
+    return bi(f"<b>{d['name']}</b>——{d['zh']}", d['en'])
+
 # ---------------- PRIMER (player-facing) ----------------
 def primer_html():
     s = h("玩家入门：一二六八年的汉江", "Player Primer: the Han River, 1268", 1)
@@ -96,11 +113,10 @@ def primer_html():
     s += bi("就在此时，汉江起了反常的浓雾。百姓说梦见了汉江神女；关于雨师赤松子的旧传说又流传开来。",
             "And now an unnatural fog has settled on the river. Townsfolk dream of the Lady of the Han; old tales of Red Pine the Rain Master are told again.")
     s += h("你们是谁", "Who you are")
-    s += ul([
-      ("<b>游侠</b>——岘山高士的弟子，身怀绝技。", "<b>The Wanderer</b>, a knight-errant trained by the Hermit of Mount Crag."),
-      ("<b>商贾</b>——临安名药行的少东家，家财万贯。", "<b>The Merchant Heir</b>, scion of a famous pharmacy house from the capital."),
-      ("<b>命官</b>——朝廷亲封的宣抚使，亲领印绶。", "<b>The Commissioner</b>, a young court official sent to relieve the siege."),
-    ])
+    s += bi("三个预设角色，三种过日子的法子。选一个；名字和细节都可以改。", "Three pre-built characters, three different ways of living. Pick one; names and details are yours to change.")
+    s += h("HO1 游侠", "HO1 The Wanderer", 3) + pc_public_html(1)
+    s += h("HO2 商贾", "HO2 The Merchant Heir", 3) + pc_public_html(2)
+    s += h("HO3 命官", "HO3 The Commissioner", 3) + pc_public_html(3)
     s += bi("三人各有不得不离开樊城的理由，也各有不能告人的秘密。你们必须在元军眼皮下渡过汉江。",
             "Each of you has a reason you must leave Fencewall, and a secret you keep from the others. You must cross the Han River under the Mongols' noses.")
     s += h("什么是江湖", "What the jianghu is")
