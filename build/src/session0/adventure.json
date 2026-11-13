@@ -6882,6 +6882,23 @@
    },
    "pages": [
     {
+     "_id": "kQpF876M4JVLkP2d",
+     "name": "开场 Opening",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h1>开场 · Opening narrative</h1><p class=\"en\"><em>主持人朗读。Read aloud by the GM, lights low, title screen on, before the three personal intros. Then each player gives a name and one visible detail.</em></p><p class=\"narr\">Listen.</p><p class=\"narr\">There is a river in the middle of China called the Han 汉江. In winter it runs grey and wide and slow, and for a thousand years it has been the line between north and south. On its two banks stand two walled cities, close enough that on a clear day a man on one wall can watch the sentries pace on the other: Fencewall 樊城 to the north, Southbright 襄阳 to the south. Between them, until last week, there was a bridge.</p><p class=\"narr\">The year is 1268. The empire of the Song 宋 is old and gold and soft, and it has forgotten how to fight. Out of the north have come the Mongols, who have never forgotten. They have broken kingdoms from the Yellow Sea to the gates of Europe, and now their horses stand on the north bank of the Han, and their marshal, a man called Ashu 阿术 of the Uriankhai, has taken Fencewall in three days. The commander of the garrison hanged himself. The magistrate opened the gates. The bridge is gone. Across the water Southbright still holds, its watch-fires small and stubborn in the dark, and everyone in Fencewall who has somewhere else to be is looking at those fires and wondering how to reach them.</p><p class=\"narr\">This is not a world of monsters. This is a world of people: of soldiers and merchants and officials, and of another kind of people who live in the cracks between them, in what is called the jianghu 江湖, the rivers and lakes. Wanderers. Swordsmen who owe nothing to the emperor and everything to their masters. People who can run up a wall and down the other side, who can put a finger on your neck and stop your arm, who carry old grudges and older swords. If you have seen a film where two fighters duel on the roof of a teahouse, you know them.</p><p class=\"narr\">Three of those people are in Fencewall tonight.</p><p class=\"narr\">One of you is a wanderer 游侠, young and fast and poor, with a sword that does not belong to you and a thing you did ten nights ago that the whole city is whispering about.</p><p class=\"narr\">One of you is the heir to a great house of medicine 商贾, from the capital far to the south, who came north with a convoy and a father and will go home with neither.</p><p class=\"narr\">One of you is a commissioner of the court 命官, born to one of the oldest families in the empire, sent here with five thousand men to save a city that has already fallen, and still carrying the wound that kept you from leaving with the rest.</p><p class=\"narr\">None of you has met the others. Each of you has a reason to cross the river. Each of you has a secret you would rather keep.</p><p class=\"narr\">It is the eleventh of January. There is no moon. The guards on the bank change at midnight, and for a few minutes nobody is watching the reeds east of the city, where a one-armed boatman has promised, for a price, to take passengers across.</p><p class=\"narr\">And it is foggy. In midwinter. Over a river that has never, in anyone's memory, made fog in January.</p><p class=\"narr\">Let's meet you.</p>"
+     },
+     "ownership": {
+      "default": -1
+     },
+     "sort": 0
+    },
+    {
      "_id": "iJN7GqxiKy8CsX2A",
      "name": "入门 Primer",
      "type": "text",
@@ -6896,7 +6913,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 0
+     "sort": 100000
     },
     {
      "_id": "bakzhAEhtPifgXBV",
@@ -6913,7 +6930,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 100000
+     "sort": 200000
     },
     {
      "_id": "5LB5eHRMXNmSV545",
@@ -6930,7 +6947,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 200000
+     "sort": 300000
     }
    ],
    "flags": {},
@@ -6954,7 +6971,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>HO1 游侠 · 弓背霞明剑，霜寒照吴钩<br><small>HO1 The Wanderer</small></h1><h2>公开信息 · Public</h2><p class=\"zh\">你是岘山高士的弟子，身怀绝技。推荐给敢爱敢恨、热爱传统武侠的玩家。任意一项战斗技能＋20。</p><p class=\"en\"><em>You are the disciple of the Hermit of Mount Crag, and you are very good at what you do. For players who love classic wuxia and act on their heart. Any one combat skill +20.</em></p><h2>你的秘密（仅本人阅读） · Your secret (for your eyes only)</h2><p class=\"zh\">你师承荆楚岘山的山阳道人，随他修习多年。山阳道人乃当世隐士，相传得神农时期雨师赤松子真传，能入火不焚，御风而行。虽说多为附会之辞，但你的确从他那里习得了一身游侠的本事。</p><p class=\"en\"><em>Your master is the Hermit of Mount Crag (his real name is Chen Yangshan). People say he inherited the arts of Red Pine the Rain Master and can walk through fire and ride the wind. Most of that is talk, but he did make you a true wanderer.</em></p><p class=\"zh\">你有一位名叫段游衍的昔日同窗，大理人氏，曾追随山阳道人求学一年后离开。师父称赞他思维敏捷、见识过人，但不建议你与他深交。</p><p class=\"en\"><em>You had a classmate, Duan Driftwood, from the Dali clan, who studied under your master for a year and left. Your master praised his quick mind and wide learning, but told you not to grow close to him.</em></p><p class=\"zh\">此番听闻樊城城破，师父赠你名剑【止水】，命你效仿聂政、荆轲，行刺元军统帅兀良哈·阿术。剑上淬有奇毒“雨师墨”，师父再三叮嘱不可轻率使用。</p><p class=\"en\"><em>When Fencewall fell, your master gave you his famous sword, Stillwater, and told you to do as the assassins of old did: kill the Mongol marshal, Ashu. The blade is coated with a rare poison, Rainmaster's Ink. He warned you three times not to use it lightly.</em></p><p class=\"zh\">一月十日，元军在樊城衙署大设庆功宴。你成功潜入准备刺杀阿术，奈何他武艺高强、戒备森严，刺杀未果，仅在其肩头留下一道伤口。席间你遇见了已降蒙古的段游衍，有他相助你才得以脱身，如今藏匿于樊城中。</p><p class=\"en\"><em>On 10 January the Mongols held a victory banquet at the Magistracy. You got in. But Ashu is a formidable fighter and well guarded; you only cut his shoulder. At the banquet you saw Duan Driftwood, now serving the Mongols. He covered your escape, and you have been hiding in Fencewall since.</em></p><p class=\"zh\">蒙古军队正在搜捕你。此地不宜久留，你须尽快离开樊城。</p><p class=\"en\"><em>The Mongols are hunting you. You must leave Fencewall, soon.</em></p><h2>车卡要求 · Character requirements</h2><ul><li>随身物品必须包括名剑【止水】。【止水】是山阳道人的武器，你自己的武器可以自行设定。<br><em>You carry the sword Stillwater. It is your master's weapon; your own weapon is up to you.</em></li><li>你自幼习武，体迅飞凫：敏捷＋10，力量＋10，任一战斗技能＋20，攀爬或跳跃＋15。<br><em>Trained since childhood: DEX +10, STR +10, one combat skill +20, Climb or Jump +15.</em></li><li>这些加值已在预设卡上计入。<br><em>These bonuses are already on your pre-built sheet.</em></li></ul>"
+      "content": "<h1>HO1 游侠 · 弓背霞明剑，霜寒照吴钩<br><small>HO1 The Wanderer</small></h1><h2>公开信息 · Public</h2><p class=\"zh\">你是岘山高士的弟子，身怀绝技。推荐给敢爱敢恨、热爱传统武侠的玩家。任意一项战斗技能＋20。</p><p class=\"en\"><em>You are the disciple of the Hermit of Mount Crag, and you are very good at what you do. For players who love classic wuxia and act on their heart. Any one combat skill +20.</em></p><h2>你的秘密（仅本人阅读） · Your secret (for your eyes only)</h2><p class=\"zh\">你师承荆楚岘山的山阳道人，随他修习多年。山阳道人乃当世隐士，相传得神农时期雨师赤松子真传，能入火不焚，御风而行。虽说多为附会之辞，但你的确从他那里习得了一身游侠的本事。</p><p class=\"en\"><em>Your master is the Hermit of Mount Crag (his real name is Chen Yangshan 陈阳山). People say he inherited the arts of Red Pine the Rain Master and can walk through fire and ride the wind. Most of that is talk, but he did make you a true wanderer.</em></p><p class=\"zh\">你有一位名叫段游衍的昔日同窗，大理人氏，曾追随山阳道人求学一年后离开。师父称赞他思维敏捷、见识过人，但不建议你与他深交。</p><p class=\"en\"><em>You had a classmate, Duan Driftwood, from the Dali clan, who studied under your master for a year and left. Your master praised his quick mind and wide learning, but told you not to grow close to him.</em></p><p class=\"zh\">此番听闻樊城城破，师父赠你名剑【止水】，命你效仿聂政、荆轲，行刺元军统帅兀良哈·阿术。剑上淬有奇毒“雨师墨”，师父再三叮嘱不可轻率使用。</p><p class=\"en\"><em>When Fencewall fell, your master gave you his famous sword, Stillwater, and told you to do as the assassins of old did: kill the Mongol marshal, Ashu. The blade is coated with a rare poison, Rainmaster's Ink. He warned you three times not to use it lightly.</em></p><p class=\"zh\">一月十日，元军在樊城衙署大设庆功宴。你成功潜入准备刺杀阿术，奈何他武艺高强、戒备森严，刺杀未果，仅在其肩头留下一道伤口。席间你遇见了已降蒙古的段游衍，有他相助你才得以脱身，如今藏匿于樊城中。</p><p class=\"en\"><em>On 10 January the Mongols held a victory banquet at the Magistracy. You got in. But Ashu is a formidable fighter and well guarded; you only cut his shoulder. At the banquet you saw Duan Driftwood, now serving the Mongols. He covered your escape, and you have been hiding in Fencewall since.</em></p><p class=\"zh\">蒙古军队正在搜捕你。此地不宜久留，你须尽快离开樊城。</p><p class=\"en\"><em>The Mongols are hunting you. You must leave Fencewall, soon.</em></p><h2>车卡要求 · Character requirements</h2><ul><li>随身物品必须包括名剑【止水】。【止水】是山阳道人的武器，你自己的武器可以自行设定。<br><em>You carry the sword Stillwater. It is your master's weapon; your own weapon is up to you.</em></li><li>你自幼习武，体迅飞凫：敏捷＋10，力量＋10，任一战斗技能＋20，攀爬或跳跃＋15。<br><em>Trained since childhood: DEX +10, STR +10, one combat skill +20, Climb or Jump +15.</em></li><li>这些加值已在预设卡上计入。<br><em>These bonuses are already on your pre-built sheet.</em></li></ul>"
      },
      "ownership": {
       "default": -1
@@ -6983,7 +7000,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>HO2 商贾 · 市井怀珠玉，往来人未逢<br><small>HO2 The Merchant Heir</small></h1><h2>公开信息 · Public</h2><p class=\"zh\">你是临安著名药行的少东家，家财万贯。推荐给思维活络、喜欢剑走偏锋的玩家。自定义技能：点穴，基础值50。</p><p class=\"en\"><em>You are the heir of a famous pharmacy house from the capital, and very rich. For players who think sideways. Custom skill: Acupoint Strike, base 50.</em></p><h2>你的秘密（仅本人阅读） · Your secret (for your eyes only)</h2><p class=\"zh\">你是临安府著名药行的少东家。家庭背景、药行的名字、经营理念和行事风格均自行拟定（官商勾结、为富不仁，或扶危济困……）。药行自庆历年间发家，分号遍布大江南北，地方分号难免有欺下瞒上、大肆敛财之事。</p><p class=\"en\"><em>Your family's pharmacy house in the capital is famous. You decide its name, its reputation and how it does business: in bed with officials, grasping and heartless, or charitable. It has branches across the empire since the 1040s, and some branch managers are crooks.</em></p><p class=\"zh\">你有一位名叫越南柯的师兄，是你父亲故旧的孩子，与你一同长大。几年前他不辞而别独自闯荡江湖，你们之间只剩书信往来。</p><p class=\"en\"><em>You have a foster brother, Yue Nanke, the son of your father's old friend, raised with you. A few years ago he vanished into the jianghu without a word; since then, only letters.</em></p><p class=\"zh\">一二六七年腊月末，你和父亲奉朝廷之命押送一批药材作为军资，不幸在樊城外遭蒙古军队截获。父亲被蒙古人杀害，你趁乱只身逃入樊城。</p><p class=\"en\"><em>In the last month of 1267 you and your father escorted a convoy of medicine for the army. Outside Fencewall the Mongols stopped you. Your father was killed in front of you; you fled alone into the city.</em></p><p class=\"zh\">父亲既已身故，药行群龙无首，你必须尽快离开樊城。</p><p class=\"en\"><em>With your father dead the house has no head. You must get home, which means leaving Fencewall.</em></p><h2>车卡要求 · Character requirements</h2><ul><li>商贾巨富：信誉＋10。请为药行命名并确定经营理念，这决定百姓对药行的风评。<br><em>Credit Rating +10. Name the pharmacy house and decide its ethos; it determines how townsfolk treat you.</em></li><li>通晓看病问诊：医学＋30。药行在樊城有分号，掌柜认得你。<br><em>Medicine +30. The Fencewall branch manager knows you.</em></li><li>家传点穴之术：自定义技能【点穴】基础值50。<br><em>Family art: custom skill Acupoint Strike, base 50.</em></li><li>这些加值已在预设卡上计入。<br><em>These bonuses are already on your pre-built sheet.</em></li></ul>"
+      "content": "<h1>HO2 商贾 · 市井怀珠玉，往来人未逢<br><small>HO2 The Merchant Heir</small></h1><h2>公开信息 · Public</h2><p class=\"zh\">你是临安著名药行的少东家，家财万贯。推荐给思维活络、喜欢剑走偏锋的玩家。自定义技能：点穴，基础值50。</p><p class=\"en\"><em>You are the heir of a famous pharmacy house from the capital, and very rich. For players who think sideways. Custom skill: Acupoint Strike, base 50.</em></p><h2>你的秘密（仅本人阅读） · Your secret (for your eyes only)</h2><p class=\"zh\">你是临安府著名药行的少东家。家庭背景、药行的名字、经营理念和行事风格均自行拟定（官商勾结、为富不仁，或扶危济困……）。药行自庆历年间发家，分号遍布大江南北，地方分号难免有欺下瞒上、大肆敛财之事。</p><p class=\"en\"><em>Your family's pharmacy house in the capital is famous. You decide its name, its reputation and how it does business: in bed with officials, grasping and heartless, or charitable. It has branches across the empire since the 1040s, and some branch managers are crooks.</em></p><p class=\"zh\">你有一位名叫越南柯的师兄，是你父亲故旧的孩子，与你一同长大。几年前他不辞而别独自闯荡江湖，你们之间只剩书信往来。</p><p class=\"en\"><em>You have a foster brother, Yue Nanke 越南柯, the son of your father's old friend, raised with you. A few years ago he vanished into the jianghu without a word; since then, only letters.</em></p><p class=\"zh\">一二六七年腊月末，你和父亲奉朝廷之命押送一批药材作为军资，不幸在樊城外遭蒙古军队截获。父亲被蒙古人杀害，你趁乱只身逃入樊城。</p><p class=\"en\"><em>In the last month of 1267 you and your father escorted a convoy of medicine for the army. Outside Fencewall the Mongols stopped you. Your father was killed in front of you; you fled alone into the city.</em></p><p class=\"zh\">父亲既已身故，药行群龙无首，你必须尽快离开樊城。</p><p class=\"en\"><em>With your father dead the house has no head. You must get home, which means leaving Fencewall.</em></p><h2>车卡要求 · Character requirements</h2><ul><li>商贾巨富：信誉＋10。请为药行命名并确定经营理念，这决定百姓对药行的风评。<br><em>Credit Rating +10. Name the pharmacy house and decide its ethos; it determines how townsfolk treat you.</em></li><li>通晓看病问诊：医学＋30。药行在樊城有分号，掌柜认得你。<br><em>Medicine +30. The Fencewall branch manager knows you.</em></li><li>家传点穴之术：自定义技能【点穴】基础值50。<br><em>Family art: custom skill Acupoint Strike, base 50.</em></li><li>这些加值已在预设卡上计入。<br><em>These bonuses are already on your pre-built sheet.</em></li></ul>"
      },
      "ownership": {
       "default": -1
@@ -7012,7 +7029,7 @@
      },
      "text": {
       "format": 1,
-      "content": "<h1>HO3 命官 · 翻弓骋猿臂，承箭惜貂裘<br><small>HO3 The Commissioner</small></h1><h2>公开信息 · Public</h2><p class=\"zh\">你是朝廷亲封的宣抚使，亲领印绶。推荐给喜欢交涉、了解人情世故的玩家。弓＋30。</p><p class=\"en\"><em>You are a Commissioner appointed by the court itself, seal and all. For players who like talking their way through. Bow +30.</em></p><h2>你的秘密（仅本人阅读） · Your secret (for your eyes only)</h2><p class=\"zh\">你出身临安高门大户，身份显赫，一路顺风顺水，在朝廷领着一份闲差。一二六七年，出于某种原因（自行拟定：遭权臣构陷，或主动请命），你临危受命督军援救襄樊。</p><p class=\"en\"><em>You come from one of the great families of the capital. Life has been easy; you hold a comfortable sinecure. In 1267, for reasons you decide (a rival's scheme, or your own idealism), you were made Commissioner and sent to relieve the siege of the twin cities.</em></p><p class=\"zh\">你有一位名叫刘卿堂的发小，急公好义，颇具江湖豪气。听闻你督军，他主动请缨同往，率五千兵马随你出发。</p><p class=\"en\"><em>Your childhood friend Liu Qingtang, hot-blooded and generous, volunteered to come with you and led your five thousand men.</em></p><p class=\"zh\">宋军疲软，蒙古兵精粮足。你们直至一二六七年末方奋力突围进入樊城，仅余八百人，损失惨重。次年一月元军大举攻城，范天顺要求你们先撤往襄阳暂避。但你突围时受伤未愈（伤势自行拟定），难耐奔波，只得暂缓。一月三日，刘卿堂先率八百余人渡江赴襄阳。次日，范玉楼主事，樊城开城投降。</p><p class=\"en\"><em>The Mongols cut you to pieces. By the end of 1267 you broke through into Fencewall with eight hundred men left. In January the assault began and Commander Fan ordered you across to Southbright. You were still carrying a wound from the breakout (you decide what) and could not travel. On 3 January Liu took the eight hundred across the river. The next day Magistrate Fan surrendered the city.</em></p><p class=\"zh\">汉江以北已尽入蒙古之手。你必须渡江南返，与同袍会合。</p><p class=\"en\"><em>Everything north of the river is Mongol now. You must cross to Southbright and rejoin your men.</em></p><h2>车卡要求 · Character requirements</h2><ul><li>高门贵胄，围猎常拔头筹：弓＋30。<br><em>A noble's upbringing and a hunter's eye: Bow +30.</em></li><li>气质雍容：外貌＋10；名师大儒教导：教育＋10，且不低于70。<br><em>APP +10; EDU +10 and never below 70.</em></li><li>朝廷文职，是否有行伍经历自行拟定。<br><em>A civil post; whether you have seen battle before is up to you.</em></li><li>这些加值已在预设卡上计入。<br><em>These bonuses are already on your pre-built sheet.</em></li></ul>"
+      "content": "<h1>HO3 命官 · 翻弓骋猿臂，承箭惜貂裘<br><small>HO3 The Commissioner</small></h1><h2>公开信息 · Public</h2><p class=\"zh\">你是朝廷亲封的宣抚使，亲领印绶。推荐给喜欢交涉、了解人情世故的玩家。弓＋30。</p><p class=\"en\"><em>You are a Commissioner appointed by the court itself, seal and all. For players who like talking their way through. Bow +30.</em></p><h2>你的秘密（仅本人阅读） · Your secret (for your eyes only)</h2><p class=\"zh\">你出身临安高门大户，身份显赫，一路顺风顺水，在朝廷领着一份闲差。一二六七年，出于某种原因（自行拟定：遭权臣构陷，或主动请命），你临危受命督军援救襄樊。</p><p class=\"en\"><em>You come from one of the great families of the capital. Life has been easy; you hold a comfortable sinecure. In 1267, for reasons you decide (a rival's scheme, or your own idealism), you were made Commissioner and sent to relieve the siege of the twin cities.</em></p><p class=\"zh\">你有一位名叫刘卿堂的发小，急公好义，颇具江湖豪气。听闻你督军，他主动请缨同往，率五千兵马随你出发。</p><p class=\"en\"><em>Your childhood friend Liu Qingtang 刘卿堂, hot-blooded and generous, volunteered to come with you and led your five thousand men.</em></p><p class=\"zh\">宋军疲软，蒙古兵精粮足。你们直至一二六七年末方奋力突围进入樊城，仅余八百人，损失惨重。次年一月元军大举攻城，范天顺要求你们先撤往襄阳暂避。但你突围时受伤未愈（伤势自行拟定），难耐奔波，只得暂缓。一月三日，刘卿堂先率八百余人渡江赴襄阳。次日，范玉楼主事，樊城开城投降。</p><p class=\"en\"><em>The Mongols cut you to pieces. By the end of 1267 you broke through into Fencewall with eight hundred men left. In January the assault began and Commander Fan ordered you across to Southbright. You were still carrying a wound from the breakout (you decide what) and could not travel. On 3 January Liu took the eight hundred across the river. The next day Magistrate Fan surrendered the city.</em></p><p class=\"zh\">汉江以北已尽入蒙古之手。你必须渡江南返，与同袍会合。</p><p class=\"en\"><em>Everything north of the river is Mongol now. You must cross to Southbright and rejoin your men.</em></p><h2>车卡要求 · Character requirements</h2><ul><li>高门贵胄，围猎常拔头筹：弓＋30。<br><em>A noble's upbringing and a hunter's eye: Bow +30.</em></li><li>气质雍容：外貌＋10；名师大儒教导：教育＋10，且不低于70。<br><em>APP +10; EDU +10 and never below 70.</em></li><li>朝廷文职，是否有行伍经历自行拟定。<br><em>A civil post; whether you have seen battle before is up to you.</em></li><li>这些加值已在预设卡上计入。<br><em>These bonuses are already on your pre-built sheet.</em></li></ul>"
      },
      "ownership": {
       "default": -1
@@ -7049,6 +7066,23 @@
      "sort": 0
     },
     {
+     "_id": "QVTz3fABVzG43kl8",
+     "name": "加时：第一日 Extended: Day One",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h1>加时：第一日（一月十二日） · Extended session 0: Day One (12 January)</h1><p class=\"zh\">若时间充裕，姜汁酥糖之后不要停，继续到十三日拂晓。约再加一到一个半小时。只用一张新地图（街口）；其余回到棺材铺与汉江岸。</p><p class=\"en\"><em>If you have time after the ginger candy, keep going to dawn on the 13th: about 60–90 more minutes, one new map (the Street Crossing), the rest back at the Coffin Shop and the riverbank.</em></p><h2>向玩家公布：行动轮 · Tell the players: action rounds 行动轮</h2><p class=\"zh\">从明天起，每天分早、午、晚三轮。去一个地点、做一件事，消耗一轮。吃饭、回棺材铺、去酒肆不消耗。今晚先睡。</p><p class=\"en\"><em>From tomorrow the day has three rounds: morning, noon, evening. Going to a place and doing one thing there costs a round. Eating, going home to the Coffin Shop and the Wineshop are free. Tonight you sleep.</em></p><p class=\"zh\">前街到处是元军巡逻和HO1的通缉令（段游衍画像时故意画得模糊，只说个轮廓）。HO1若乔装失败，以队伍中最低的幸运检定是否被认出；再失败则敏捷逃脱，且本轮去不了目的地。</p><p class=\"en\"><em>Front Street is full of patrols and wanted posters for HO1 (Duan 段游衍 drew the face deliberately vague: give a silhouette, no more). If HO1 fails Disguise, the lowest Luck in the party decides whether a soldier recognises him; fail that and it is a DEX roll to get away and the round is lost.</em></p><h2>十一日夜：第一次梦引（仅HO3） · Night of the 11th: the first Dream-Call 梦引 (HO3 only)</h2><p class=\"zh\">HO3梦中似有熟悉的声音呼唤其名，诱其赴约。检定意志；失败则听见波涛翻涌、船只折断、人们凄厉惨叫，理智损失1/1D3。</p><p class=\"en\"><em>As HO3 falls asleep a familiar voice calls their name, inviting them somewhere. Roll POW. On a failure they hear waves heaving, timbers snapping and people screaming: SAN 1/1D3. Do this quietly with the HO3 player; the others only see them wake badly.</em></p><h2>十二日早：棺材铺白天（场景：棺材铺） · Morning of the 12th: the Coffin Shop by day (scene: the Coffin Shop)</h2><p class=\"zh\">粟米粥、白面饼子、咸菜。铺面不大，殡葬用品堆得拥挤；几台完工的棺材掀着盖晾漆。侦查：棺材内壁有放置物品的暗格。</p><p class=\"en\"><em>Millet porridge, flatbread, pickles. The shopfront is small and crammed with funeral goods; a few finished coffins stand open to dry their lacquer. Spot Hidden: the inner walls have hidden compartments for grave goods.</em></p><ul><li>棺材：战时死人多，家家用得上。她手艺高，范天顺的棺材也是她做的。<br><em>Coffins: in wartime every family needs one. She is good; she made Commander Fan's 范天顺 coffin too.</em></li><li>暗格：有人把死者随身物放进暗格，防偷防腐；范玉楼也提过同样的要求。<br><em>Compartments: people put the dead's belongings inside against thieves and rot. Magistrate Fan 范玉楼 asked for one as well.</em></li></ul><p class=\"zh\">然后让他们商量今天去哪里：主持人只需简述四区——前街（商铺、药行分号、瓦子）、后街（会馆、寺庙）、衙署一带、江岸（码头、芦苇荡）。本加时只跑午时街口；其余留给第一次正式聚会。</p><p class=\"en\"><em>Then let them plan the day. You only need to name the four districts: Front Street (shops, HO2's pharmacy branch, the playhouse), Back Street (the Merchants' Hall where Duan lives, the temple), the Magistracy quarter, the riverbank (docks, reed marsh). This extension only plays the noon event at the Street Crossing; whatever else they choose, say \"you spend the morning on it; we pick it up next time\" and move to noon.</em></p><h2>十二日午：街口固定事件（场景：街口） · Noon of the 12th: the Street Crossing 街口 (scene: the Street Crossing)</h2><p class=\"zh\">前街后街的交汇口，必经之地。行脚店、茶摊；死刑犯在此弃市，午时三刻问斩，尸体挂到子时。</p><p class=\"en\"><em>The junction of Front and Back Street; everyone passes here. An inn, a tea stall; this is where the condemned are executed, at a quarter past noon, and left hanging until midnight.</em></p><p class=\"zh\">午时，街口人头攒动，气氛诡谲凝重。今日弃市的是个白发老叟，缺一条手臂，枪尖自喉咙穿过，挑起身体悬于半空。HO1认出是恩师山阳道人。他面容安详，似早料到有此劫。若师父对HO1重要：理智1/1D3。</p><p class=\"en\"><em>At noon the crossing is packed and the mood is strange and heavy. Today's dead man is a white-haired old man with one arm missing, a spear through his throat, hoisted so the body hangs in the air. HO1 recognises their master, the Hermit of Mount Crag 山阳道人. His face is calm, as if he had expected this. If the master mattered to HO1: SAN 1/1D3. Let the HO1 player react; do not rush it.</em></p><p class=\"zh\">路人：</p><p class=\"en\"><em>From the crowd:</em></p><ul><li>兀良哈为报徒弟一剑之仇，上岘首山抓走年逾七十的山阳道人，也还他一刀。止水不过三尺，阿术一把斩马刀却能将人拦腰砍断。<br><em>\"Ashu went up Mount Crag himself to pay the old man back for his pupil's cut. Seventy years old. That little sword of his, Stillwater, is three feet long; the Marshal's horse-cutter took a man in half at the waist.\"</em></li><li>阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富等人。幸亏小范大人投降得快，殃及不到咱们平头百姓。<br><em>\"The Marshal is going to execute every Song officer who won't surrender, Niu the Archer 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it'd be us.\"</em></li></ul><p class=\"zh\">主持人注意：牛富将在十五日午时在此处斩首，押送队伍可被劫（原书p29的规则）。这是第一次正式聚会的大场面；今天只埋下这句话。</p><p class=\"en\"><em>GM note: Niu is to be beheaded here at noon on the 15th and the convoy can be ambushed (rules on p29 of the original). That is the set-piece of the next session; today you only plant the line.</em></p><h2>十二日晚：越南柯来访（场景：棺材铺） · Evening of the 12th: Doctor Yue 越南柯 calls (scene: the Coffin Shop)</h2><p class=\"zh\">回到棺材铺，一位江湖郎中打扮的人正和曲流攀谈：HO2的师兄“空空郎中”越南柯。他关心众人、尤其HO2的身体。</p><p class=\"en\"><em>Back at the shop a man dressed as a wandering healer is chatting with Winding Stream: HO2's foster brother, Doctor Yue 越南柯, the Hollow Physician. He fusses over everyone's health, HO2's most. Play the reunion; HO2 has not seen him in years.</em></p><ul><li>船只：两封未寄出的信，都是荆湖通判许德显写的。一封给蒙古军营，表投诚之心，说家里还有三艘画舫、五艘小船愿双手奉上；一封给襄阳吕文焕，字字泣血表忠心。越南柯借看诊之名偷来，可用来胁迫许德显。<br><em>Boats: two unsent letters, both by Prefect Xu 许德显. One to the Mongol camp offering to surrender and hand over his three pleasure-barges and five small boats; one to Governor Lü 吕文焕 in Southbright, weeping loyalty to the Song. Yue stole them during a 'consultation'. Either letter would ruin Xu; together they are a lever to get his boats.</em></li><li>解毒：他懂得不多，但若是本地传说中的毒，地方图志上没准有记述。<br><em>The poison (Rainmaster's Ink 雨师墨, if HO1 asks): he knows little, but if it is a local legend the county gazetteer 地方志 may record it. (Library 官学&书阁, next session.)</em></li><li>疤脸女子：满脸疤痕，要么遭了不测，要么是该处死刑的囚犯。<br><em>The scar-faced woman the town gossips about: a face like that means either a disaster or a condemned criminal.</em></li><li>范天顺：高瞻远瞩，对百姓尽心尽力，连偷几两灯油的人都要处以极刑。<br><em>Commander Fan: far-sighted, devoted to the people; had a man executed for stealing a few ounces of lamp oil. (Said flat. Let them wonder.)</em></li></ul><h2>十二日夜：第二次梦引（场景：汉江夜渡，调暗） · Night of the 12th: the second Dream-Call (scene: Night Crossing, darkness up)</h2><p class=\"zh\">格拉基再次梦引HO3，驱其独自前往江岸，并以光亮幻象引诱。梦中：</p><p class=\"en\"><em>Gla'aki 格拉基 calls HO3 again, drawing them alone to the riverbank with a lure of light. The dream (read aloud to HO3, SAN 1/1D3):</em></p><p class=\"zh\">你站在船头，脚下的水面波涛不宁。雾气升腾遮天蔽日，连对岸的城市都没了踪影。水下黑色的团状物紧随而来，攀住船身，折断船舷和龙骨，击穿甲板。你在风雨中坠落，直到有什么东西自你脊椎后方穿胸而过。你低下头，伤口正滋滋往外冒着绿色的腐烂液体……</p><p class=\"en\"><em>\"You stand at the bow. The water under you heaves. Fog rises until it hides the sky and the city on the far bank. Something black and shapeless comes up under the boat, clings to it, snaps the gunwale and the keel, punches through the deck. You fall through wind and rain, until something comes through your spine from behind and out of your chest. You look down. The wound is hissing, and what runs out of it is green and rotten...\"</em></p><p class=\"zh\">再检定意志：成功，睁眼发现自己在江岸边；失败，已走进汉江，水没过腰。江面寂静，雾气混沌，前方似有发光物闪烁；跟着走几步，水到胸口。闪光物一晃钻入水底，从后方刺向脊背：闪避成功躲开，失败受1D3擦伤。</p><p class=\"en\"><em>POW again. Success: HO3 opens their eyes standing at the water's edge. Failure: they are already in the Han, waist deep. The river is silent, the fog thick, a glow flickers ahead; a few steps after it and the water is at their chest. The glow dips under and strikes from behind at the spine: Dodge, or 1D3 scratch.</em></p><p class=\"zh\">刺来的是一根漆黑脊刺，布满鳞甲倒刺，末端纤细尖锐，与昨夜所见相同。此时刘卿堂出现在岸边，扔给HO3一把锈剑，进入战斗轮。脊刺：HP 10，敏捷50，斗殴40，伤害2+1D5。击败即脱险。</p><p class=\"en\"><em>It is a black spine, scaled and barbed, thin and sharp at the tip, the same as last night. And on the bank stands Captain Liu 刘卿堂, who throws HO3 a rusty sword. Combat: the spine has HP 10, DEX 50, Fighting 40, damage 2+1D5, armour 4. Beat it (or drive it off) and the danger ends. If HO3 is alone and losing, Liu takes the hits; he does not die tonight.</em></p><p class=\"zh\">刘卿堂被渔民所救，对自己和军队的遭遇一无所知；夜里出来查线索正好遇见HO3。他很高兴HO3平安，随HO3回棺材铺，此后全程参与HO3的行动。</p><p class=\"en\"><em>Liu was pulled out by fishermen and knows nothing of what happened to him or his men; he came out tonight to look for clues and found HO3 instead. He is overjoyed, walks HO3 back to the Coffin Shop and from now on goes wherever HO3 goes. GM only: Liu survived a spine on the 3rd and has a red web-shaped mark on his back (p5). He does not know. Do not reveal it; if a player examines him, let them find it and say nothing more.</em></p><h2>停在这里 · Stop here</h2><p class=\"zh\">十三日拂晓，刘卿堂在棺材铺。切回开场画面。预告：三轮一天，十五日午时牛富问斩，许德显的船，官学的地方志。</p><p class=\"en\"><em>Dawn on the 13th, Liu at the Coffin Shop. Back to the title screen. Tease next time: three rounds a day; Niu's execution at noon on the 15th; Prefect Xu's boats; the gazetteer in the Library. Players now hold two leads (the letters, the compartments) and one ally.</em></p>"
+     },
+     "ownership": {
+      "default": -1
+     },
+     "sort": 100000
+    },
+    {
      "_id": "pv6XxbQGpaPZaqcb",
      "name": "人物速查 NPC reference",
      "type": "text",
@@ -7063,7 +7097,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 100000
+     "sort": 200000
     },
     {
      "_id": "YhVkuYygWPGFTkSd",
@@ -7080,7 +7114,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 200000
+     "sort": 300000
     }
    ],
    "flags": {},
@@ -8444,6 +8478,60 @@
      "rotation": 0,
      "alpha": 1,
      "flags": {}
+    },
+    {
+     "_id": "b4gOPW5zCUeKAuOv",
+     "name": "越南柯 Doctor Yue, the Hollow Physician",
+     "actorId": "2ScGZAIJUmuOMp3l",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/yue.webp"
+     },
+     "x": 870,
+     "y": 819,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": true,
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "3jX6IHnmcqw6ZtNF",
+     "name": "刘卿堂 Captain Liu",
+     "actorId": "eEm8g9KvTGvXOaTY",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/liu.webp"
+     },
+     "x": 2355,
+     "y": 665,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": true,
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
     }
    ],
    "walls": [],
@@ -8457,9 +8545,247 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": "",
+   "description": "<p>越南柯（十二日晚）与刘卿堂（十三日晨）为隐藏标记，加时用。Doctor Yue (evening of the 12th) and Captain Liu (dawn of the 13th) are hidden tokens for the extended Day One.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "wc6cAN1YpEsMHa6h"
+  },
+  {
+   "_id": "OoLHnajeVMjqArah",
+   "name": "6 · 街口 The Street Crossing (Day One, noon)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/street.webp"
+   },
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "environment": {
+    "darknessLevel": 0.1,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "rAqmTFvVCqKtc59F",
+     "name": "HO1 游侠 (disguised)",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 576,
+     "y": 800,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "2zW6AK4jqRXbiIpT",
+     "name": "HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 652,
+     "y": 800,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "YCD6Ds8XKcJAVqnN",
+     "name": "HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 729,
+     "y": 800,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "KqeJjqlbCAjFrrK9",
+     "name": "哨兵 Sentry 1",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 608,
+     "y": 403,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "mvpXaPyDO3UaEgft",
+     "name": "哨兵 Sentry 2",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 928,
+     "y": 403,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "ABoh8nnPpVOrVOnD",
+     "name": "哨兵 Sentry 3",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 768,
+     "y": 147,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "gOse2Dc04VaCHFb3",
+     "name": "哨兵 Sentry 4",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 1056,
+     "y": 736,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {},
+   "sort": 0,
+   "initial": null,
+   "description": "<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "lTFLfWMKVMabOfbk"
   }
  ],
  "folders": [

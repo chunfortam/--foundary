@@ -27,8 +27,9 @@ git checkout -- packs && git pull
 ## Contents 内容
 - Actors: 3 pre-built investigators (HO1 游侠 / HO2 商贾 / HO3 命官) with the scenario's mandatory bonuses and the custom skill 点穴 Acupoint Strike; NPCs for session 0 (Marshal Ashu, Duan Driftwood, Niu the Archer, Captain Liu, Doctor Yue, Mongol soldiers and horsemen, the Jiang twins, Winding Stream, the boatman); creatures (Gla'aki's spine, Undying Servant).
 - Title-screen scene: the scenario's cover art (by the author, `assets/cover_zh.jpg`) re-lettered in English as "Crossing the Han" (`assets/cover.webp`), linked to the Banquet track.
-- Scenes (80 px grid = 1 inch on a 55" 4K table): the Victory Banquet, the North Gate, the Magistracy, Night Crossing of the Han River, the Coffin Shop.
+- Scenes (80 px grid = 1 inch on a 55" 4K table): the Victory Banquet, the North Gate, the Magistracy, Night Crossing of the Han River, the Coffin Shop, and the Street Crossing for the optional Day One extension (GM Runbook → 加时 Extended: Day One).
 - Journals: Player Primer + Cheat Sheet + Glossary (players); HO1/HO2/HO3 handouts (private); GM Runbook with the three personal intros and the Night Crossing, NPC quick reference, timeline and truth.
+- Printables: `print/character-sheets.pdf` (one page per pregen + one secret handout per player) and `print/gm-pack.pdf` (GM checklist, agenda, scene beats with every roll, NPC card), both A4 and generated from the same data.
 
 ## Known gaps 已知缺口
 - The scenario's 点穴 rules attachment is not in the published PDF; the cheat sheet contains a house rule to use until you get the attachment from the author's QQ group (1095875707).
@@ -44,3 +45,5 @@ Edit `build/content.py` (text) or `build/build.py` (actors/scenes), then from th
 python3 build/build.py && rm -rf packs/session0 && fvtt package pack -n session0 --in build/src/session0 --out packs --type Module --id gongruo-session0
 ```
 Requires Python 3 with Pillow and `npm i -g @foundryvtt/foundryvtt-cli`.
+
+Printables: `python3 build/print_sheets.py` and `python3 build/print_gm.py` (need Chrome/Chromium and the Noto CJK fonts) regenerate `print/character-sheets.pdf` and `print/gm-pack.pdf`.
