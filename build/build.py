@@ -234,5 +234,5 @@ modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'descrip
         'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
-open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:#4a4a55;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:#4a4a55}.journal-page-content table td{vertical-align:top;font-size:0.92em}\n')
+open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:inherit;opacity:.85;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:inherit;opacity:.85}.journal-page-content table td{vertical-align:top;font-size:0.92em}\n')
 print('actors', len(ACT), 'journals', len(JR), 'scenes', len(SC), 'tokens', sum(len(s['tokens']) for s in SC))
