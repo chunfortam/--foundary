@@ -8006,7 +8006,7 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
      },
-     "x": 384,
+     "x": 256,
      "y": 793,
      "width": 1,
      "height": 1,
@@ -8033,8 +8033,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
      },
-     "x": 576,
-     "y": 793,
+     "x": 512,
+     "y": 844,
      "width": 1,
      "height": 1,
      "disposition": 1,
@@ -8087,8 +8087,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/boatman.webp"
      },
-     "x": 921,
-     "y": 819,
+     "x": 1024,
+     "y": 844,
      "width": 1,
      "height": 1,
      "disposition": 0,
@@ -8325,7 +8325,7 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
      },
-     "x": 1612,
+     "x": 1331,
      "y": 358,
      "width": 1,
      "height": 1,
@@ -8353,7 +8353,7 @@
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
      },
      "x": 1868,
-     "y": 358,
+     "y": 460,
      "width": 1,
      "height": 1,
      "disposition": 1,
@@ -8379,8 +8379,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
      },
-     "x": 2073,
-     "y": 563,
+     "x": 2406,
+     "y": 358,
      "width": 1,
      "height": 1,
      "disposition": 1,
@@ -8584,14 +8584,14 @@
    "tokens": [
     {
      "_id": "rAqmTFvVCqKtc59F",
-     "name": "陆青崖 Lu Bluecliff (disguised)",
+     "name": "陆青崖 Lu Bluecliff",
      "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
      },
-     "x": 576,
-     "y": 800,
+     "x": 409,
+     "y": 819,
      "width": 1,
      "height": 1,
      "disposition": 1,
@@ -8618,7 +8618,7 @@
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
      },
      "x": 652,
-     "y": 800,
+     "y": 793,
      "width": 1,
      "height": 1,
      "disposition": 1,
@@ -8644,8 +8644,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
      },
-     "x": 729,
-     "y": 800,
+     "x": 896,
+     "y": 819,
      "width": 1,
      "height": 1,
      "disposition": 1,

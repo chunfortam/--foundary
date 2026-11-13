@@ -195,13 +195,13 @@ SC = [
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
  scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 128,
-       [T(A['pc1'], 3, 6.2), T(A['pc2'], 4.5, 6.2), T(A['pc3'], 6, 6.2), T(A['boatman'], 7.2, 6.4), T(A['spine'], 17.5, 2, hidden=True, w=2, h=2),
+       [T(A['pc1'], 2, 6.2), T(A['pc2'], 4, 6.6), T(A['pc3'], 6, 6.2), T(A['boatman'], 8, 6.6), T(A['spine'], 17.5, 2, hidden=True, w=2, h=2),
         T(A['soldier'], 16, 12.5, name='岸上弓手 Archer 1'), T(A['soldier'], 21.5, 13.5, name='岸上弓手 Archer 2'),
         T(A['jiang_tower'], 2.2, 10.2, hidden=True), T(A['jiang_loft'], 3.3, 10.8, hidden=True), T(A['qu'], 4.4, 11.4, hidden=True)], 0.75,
        '其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away.'),
  # 12 x 8 squares: a small shop, bigger squares
  scene('5 · 曲流的棺材铺 The Coffin Shop', 'coffinshop.webp', 256,
-       [T(A['pc1'], 6.3, 1.4), T(A['pc2'], 7.3, 1.4), T(A['pc3'], 8.1, 2.2), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6), T(A['yue'], 3.4, 3.2, hidden=True), T(A['liu'], 9.2, 2.6, hidden=True)], 0.3,
+       [T(A['pc1'], 5.2, 1.4), T(A['pc2'], 7.3, 1.8), T(A['pc3'], 9.4, 1.4), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6), T(A['yue'], 3.4, 3.2, hidden=True), T(A['liu'], 9.2, 2.6, hidden=True)], 0.3,
        '<p>越南柯（十二日晚）与刘卿堂（十三日晨）为隐藏标记，加时用。Doctor Yue (evening of the 12th) and Captain Liu (dawn of the 13th) are hidden tokens for the extended Day One.</p>'),
 ]
 # ---------------- music (Kevin MacLeod, incompetech.com, CC BY 4.0) ----------------
@@ -213,7 +213,7 @@ for sc, snd in zip(SC, PL['sounds'][:5]):
     sc['playlist'] = PL['_id']; sc['playlistSound'] = snd['_id']
 # Extended session 0: the Street Crossing at noon on the 12th (1536x1024 map, 24x16 squares).
 STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp', 64,
-               [T(A['pc1'], 9, 12.5, name='陆青崖 Lu Bluecliff (disguised)'), T(A['pc2'], 10.2, 12.5), T(A['pc3'], 11.4, 12.5)] +
+               [T(A['pc1'], 6.4, 12.8), T(A['pc2'], 10.2, 12.4), T(A['pc3'], 14, 12.8)] +
                [T(A['soldier'], x, y, name=f'哨兵 Sentry {i+1}') for i, (x, y) in enumerate([(9.5, 6.3), (14.5, 6.3), (12, 2.3), (16.5, 11.5)])], 0.1,
                '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
 STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
