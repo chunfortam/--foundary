@@ -140,6 +140,64 @@ def opening_html():
     s += ''.join(f'<p class="narr">{p}</p>' for p in OPENING)
     return s
 
+# ---------------- EXTENDED SESSION 0: DAY ONE (p16 tail, p17, p23, p29, p46 of the original) ----------------
+def extended_html():
+    s = h("加时：第一日（一月十二日）", "Extended session 0: Day One (12 January)", 1)
+    s += bi("若时间充裕，姜汁酥糖之后不要停，继续到十三日拂晓。约再加一到一个半小时。只用一张新地图（街口）；其余回到棺材铺与汉江岸。",
+            "If you have time after the ginger candy, keep going to dawn on the 13th: about 60–90 more minutes, one new map (the Street Crossing), the rest back at the Coffin Shop and the riverbank.")
+    s += h("向玩家公布：行动轮", "Tell the players: action rounds 行动轮")
+    s += bi("从明天起，每天分早、午、晚三轮。去一个地点、做一件事，消耗一轮。吃饭、回棺材铺、去酒肆不消耗。今晚先睡。",
+            "From tomorrow the day has three rounds: morning, noon, evening. Going to a place and doing one thing there costs a round. Eating, going home to the Coffin Shop and the Wineshop are free. Tonight you sleep.")
+    s += bi("前街到处是元军巡逻和HO1的通缉令（段游衍画像时故意画得模糊，只说个轮廓）。HO1若乔装失败，以队伍中最低的幸运检定是否被认出；再失败则敏捷逃脱，且本轮去不了目的地。",
+            "Front Street is full of patrols and wanted posters for HO1 (Duan 段游衍 drew the face deliberately vague: give a silhouette, no more). If HO1 fails Disguise, the lowest Luck in the party decides whether a soldier recognises him; fail that and it is a DEX roll to get away and the round is lost.")
+    s += h("十一日夜：第一次梦引（仅HO3）", "Night of the 11th: the first Dream-Call 梦引 (HO3 only)")
+    s += bi("HO3梦中似有熟悉的声音呼唤其名，诱其赴约。检定意志；失败则听见波涛翻涌、船只折断、人们凄厉惨叫，理智损失1/1D3。",
+            "As HO3 falls asleep a familiar voice calls their name, inviting them somewhere. Roll POW. On a failure they hear waves heaving, timbers snapping and people screaming: SAN 1/1D3. Do this quietly with the HO3 player; the others only see them wake badly.")
+    s += h("十二日早：棺材铺白天（场景：棺材铺）", "Morning of the 12th: the Coffin Shop by day (scene: the Coffin Shop)")
+    s += bi("粟米粥、白面饼子、咸菜。铺面不大，殡葬用品堆得拥挤；几台完工的棺材掀着盖晾漆。侦查：棺材内壁有放置物品的暗格。",
+            "Millet porridge, flatbread, pickles. The shopfront is small and crammed with funeral goods; a few finished coffins stand open to dry their lacquer. Spot Hidden: the inner walls have hidden compartments for grave goods.")
+    s += ul([
+      ("棺材：战时死人多，家家用得上。她手艺高，范天顺的棺材也是她做的。", "Coffins: in wartime every family needs one. She is good; she made Commander Fan's 范天顺 coffin too."),
+      ("暗格：有人把死者随身物放进暗格，防偷防腐；范玉楼也提过同样的要求。", "Compartments: people put the dead's belongings inside against thieves and rot. Magistrate Fan 范玉楼 asked for one as well."),
+    ])
+    s += bi("然后让他们商量今天去哪里：主持人只需简述四区——前街（商铺、药行分号、瓦子）、后街（会馆、寺庙）、衙署一带、江岸（码头、芦苇荡）。本加时只跑午时街口；其余留给第一次正式聚会。",
+            "Then let them plan the day. You only need to name the four districts: Front Street (shops, HO2's pharmacy branch, the playhouse), Back Street (the Merchants' Hall where Duan lives, the temple), the Magistracy quarter, the riverbank (docks, reed marsh). This extension only plays the noon event at the Street Crossing; whatever else they choose, say \"you spend the morning on it; we pick it up next time\" and move to noon.")
+    s += h("十二日午：街口固定事件（场景：街口）", "Noon of the 12th: the Street Crossing 街口 (scene: the Street Crossing)")
+    s += bi("前街后街的交汇口，必经之地。行脚店、茶摊；死刑犯在此弃市，午时三刻问斩，尸体挂到子时。",
+            "The junction of Front and Back Street; everyone passes here. An inn, a tea stall; this is where the condemned are executed, at a quarter past noon, and left hanging until midnight.")
+    s += bi("午时，街口人头攒动，气氛诡谲凝重。今日弃市的是个白发老叟，缺一条手臂，枪尖自喉咙穿过，挑起身体悬于半空。HO1认出是恩师山阳道人。他面容安详，似早料到有此劫。若师父对HO1重要：理智1/1D3。",
+            "At noon the crossing is packed and the mood is strange and heavy. Today's dead man is a white-haired old man with one arm missing, a spear through his throat, hoisted so the body hangs in the air. HO1 recognises their master, the Hermit of Mount Crag 山阳道人. His face is calm, as if he had expected this. If the master mattered to HO1: SAN 1/1D3. Let the HO1 player react; do not rush it.")
+    s += bi("路人：", "From the crowd:")
+    s += ul([
+      ("兀良哈为报徒弟一剑之仇，上岘首山抓走年逾七十的山阳道人，也还他一刀。止水不过三尺，阿术一把斩马刀却能将人拦腰砍断。", "\"Ashu went up Mount Crag himself to pay the old man back for his pupil's cut. Seventy years old. That little sword of his, Stillwater, is three feet long; the Marshal's horse-cutter took a man in half at the waist.\""),
+      ("阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富等人。幸亏小范大人投降得快，殃及不到咱们平头百姓。", "\"The Marshal is going to execute every Song officer who won't surrender, Niu the Archer 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it'd be us.\""),
+    ])
+    s += bi("主持人注意：牛富将在十五日午时在此处斩首，押送队伍可被劫（原书p29的规则）。这是第一次正式聚会的大场面；今天只埋下这句话。",
+            "GM note: Niu is to be beheaded here at noon on the 15th and the convoy can be ambushed (rules on p29 of the original). That is the set-piece of the next session; today you only plant the line.")
+    s += h("十二日晚：越南柯来访（场景：棺材铺）", "Evening of the 12th: Doctor Yue 越南柯 calls (scene: the Coffin Shop)")
+    s += bi("回到棺材铺，一位江湖郎中打扮的人正和曲流攀谈：HO2的师兄“空空郎中”越南柯。他关心众人、尤其HO2的身体。",
+            "Back at the shop a man dressed as a wandering healer is chatting with Winding Stream: HO2's foster brother, Doctor Yue 越南柯, the Hollow Physician. He fusses over everyone's health, HO2's most. Play the reunion; HO2 has not seen him in years.")
+    s += ul([
+      ("船只：两封未寄出的信，都是荆湖通判许德显写的。一封给蒙古军营，表投诚之心，说家里还有三艘画舫、五艘小船愿双手奉上；一封给襄阳吕文焕，字字泣血表忠心。越南柯借看诊之名偷来，可用来胁迫许德显。", "Boats: two unsent letters, both by Prefect Xu 许德显. One to the Mongol camp offering to surrender and hand over his three pleasure-barges and five small boats; one to Governor Lü 吕文焕 in Southbright, weeping loyalty to the Song. Yue stole them during a 'consultation'. Either letter would ruin Xu; together they are a lever to get his boats."),
+      ("解毒：他懂得不多，但若是本地传说中的毒，地方图志上没准有记述。", "The poison (Rainmaster's Ink 雨师墨, if HO1 asks): he knows little, but if it is a local legend the county gazetteer 地方志 may record it. (Library 官学&书阁, next session.)"),
+      ("疤脸女子：满脸疤痕，要么遭了不测，要么是该处死刑的囚犯。", "The scar-faced woman the town gossips about: a face like that means either a disaster or a condemned criminal."),
+      ("范天顺：高瞻远瞩，对百姓尽心尽力，连偷几两灯油的人都要处以极刑。", "Commander Fan: far-sighted, devoted to the people; had a man executed for stealing a few ounces of lamp oil. (Said flat. Let them wonder.)"),
+    ])
+    s += h("十二日夜：第二次梦引（场景：汉江夜渡，调暗）", "Night of the 12th: the second Dream-Call (scene: Night Crossing, darkness up)")
+    s += bi("格拉基再次梦引HO3，驱其独自前往江岸，并以光亮幻象引诱。梦中：", "Gla'aki 格拉基 calls HO3 again, drawing them alone to the riverbank with a lure of light. The dream (read aloud to HO3, SAN 1/1D3):")
+    s += bi("你站在船头，脚下的水面波涛不宁。雾气升腾遮天蔽日，连对岸的城市都没了踪影。水下黑色的团状物紧随而来，攀住船身，折断船舷和龙骨，击穿甲板。你在风雨中坠落，直到有什么东西自你脊椎后方穿胸而过。你低下头，伤口正滋滋往外冒着绿色的腐烂液体……",
+            "\"You stand at the bow. The water under you heaves. Fog rises until it hides the sky and the city on the far bank. Something black and shapeless comes up under the boat, clings to it, snaps the gunwale and the keel, punches through the deck. You fall through wind and rain, until something comes through your spine from behind and out of your chest. You look down. The wound is hissing, and what runs out of it is green and rotten...\"")
+    s += bi("再检定意志：成功，睁眼发现自己在江岸边；失败，已走进汉江，水没过腰。江面寂静，雾气混沌，前方似有发光物闪烁；跟着走几步，水到胸口。闪光物一晃钻入水底，从后方刺向脊背：闪避成功躲开，失败受1D3擦伤。",
+            "POW again. Success: HO3 opens their eyes standing at the water's edge. Failure: they are already in the Han, waist deep. The river is silent, the fog thick, a glow flickers ahead; a few steps after it and the water is at their chest. The glow dips under and strikes from behind at the spine: Dodge, or 1D3 scratch.")
+    s += bi("刺来的是一根漆黑脊刺，布满鳞甲倒刺，末端纤细尖锐，与昨夜所见相同。此时刘卿堂出现在岸边，扔给HO3一把锈剑，进入战斗轮。脊刺：HP 10，敏捷50，斗殴40，伤害2+1D5。击败即脱险。",
+            "It is a black spine, scaled and barbed, thin and sharp at the tip, the same as last night. And on the bank stands Captain Liu 刘卿堂, who throws HO3 a rusty sword. Combat: the spine has HP 10, DEX 50, Fighting 40, damage 2+1D5, armour 4. Beat it (or drive it off) and the danger ends. If HO3 is alone and losing, Liu takes the hits; he does not die tonight.")
+    s += bi("刘卿堂被渔民所救，对自己和军队的遭遇一无所知；夜里出来查线索正好遇见HO3。他很高兴HO3平安，随HO3回棺材铺，此后全程参与HO3的行动。",
+            "Liu was pulled out by fishermen and knows nothing of what happened to him or his men; he came out tonight to look for clues and found HO3 instead. He is overjoyed, walks HO3 back to the Coffin Shop and from now on goes wherever HO3 goes. GM only: Liu survived a spine on the 3rd and has a red web-shaped mark on his back (p5). He does not know. Do not reveal it; if a player examines him, let them find it and say nothing more.")
+    s += h("停在这里", "Stop here")
+    s += bi("十三日拂晓，刘卿堂在棺材铺。切回开场画面。预告：三轮一天，十五日午时牛富问斩，许德显的船，官学的地方志。",
+            "Dawn on the 13th, Liu at the Coffin Shop. Back to the title screen. Tease next time: three rounds a day; Niu's execution at noon on the 15th; Prefect Xu's boats; the gazetteer in the Library. Players now hold two leads (the letters, the compartments) and one ally.")
+    return s
+
 # ---------------- HO handouts ----------------
 HO = {}
 HO[1] = dict(

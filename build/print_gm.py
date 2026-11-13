@@ -163,6 +163,45 @@ BODY = f'''
 </section>
 
 <section>
+<h1>Day One 加时：第一日 <small>optional extension, 60–90 min: 12 January, from the ginger candy to dawn on the 13th</small></h1>
+<div class="cols">
+<div>
+<h2>Tell the players: action rounds 行动轮</h2>
+<p>From tomorrow each day has three rounds: <b>morning, noon, evening</b>. Going to one place and doing one thing there costs a round. Eating, going home to the Coffin Shop and the Wineshop are free. Front Street is full of patrols and wanted posters for HO1 (face drawn vague by Duan 段游衍). HO1 fails {R('Disguise')} → lowest {R('Luck')} in the party decides if a soldier looks twice → {R('DEX')} to get away, round lost.</p>
+
+<h2>Night of the 11th — first Dream-Call 梦引 <small>HO3 only, quietly</small></h2>
+<p>A familiar voice calls HO3's name in sleep. {R('POW')}; fail = waves heaving, timbers snapping, people screaming. <b>{R('SAN 1/1D3')}</b>. The others only see them wake badly.</p>
+
+<h2>Morning of the 12th — Coffin Shop by day <small>scene: the Coffin Shop</small></h2>
+<p>Millet porridge, flatbread, pickles. Shopfront crammed with funeral goods; finished coffins stand open to dry their lacquer. {R('Spot Hidden')}: hidden compartments in the coffin walls.</p>
+<p><b>Winding Stream 曲流 tells:</b> wartime, everyone needs a coffin; she made Commander Fan's 范天顺. Compartments hold the dead's belongings against thieves and rot; Magistrate Fan 范玉楼 asked for one too.</p>
+<p><b>Planning:</b> name the four districts only: Front Street (shops, HO2's pharmacy branch, playhouse), Back Street (Merchants' Hall where Duan lives, temple), the Magistracy quarter, the riverbank (docks, reed marsh). Whatever they pick for the morning: "you spend it on that; we pick it up next time." → noon.</p>
+
+<h2>Noon of the 12th — the Street Crossing 街口 <small>scene: the Street Crossing</small></h2>
+<p>Junction of Front and Back Street; inn, tea stall; the execution ground. Packed crowd, a strange heavy mood. Today's dead man: white-haired, one arm missing, a spear through the throat hoisting the body into the air. <b>HO1 recognises the Hermit of Mount Crag 山阳道人.</b> His face is calm, as if he expected it. If the master mattered: <b>{R('SAN 1/1D3')}</b>. Let the player sit with it.</p>
+{q('“兀良哈为报徒弟一剑之仇，上岘首山抓走年逾七十的山阳道人，也还他一刀。止水不过三尺，阿术一把斩马刀却能将人拦腰砍断。”', '"Ashu went up Mount Crag himself to pay the old man back for his pupil’s cut. Seventy years old. That little sword Stillwater is three feet long; the Marshal’s horse-cutter took him in half at the waist."')}
+{q('“阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富。幸亏小范大人投降得快。”', '"The Marshal will execute every Song officer who won’t surrender, Niu the Archer 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it’d be us."')}
+<p><i>GM: Niu dies here at noon on the 15th unless rescued (p29). Next session's set-piece; today only plant the line.</i></p>
+</div>
+<div>
+<h2>Evening of the 12th — Doctor Yue 越南柯 calls <small>scene: the Coffin Shop</small></h2>
+<p>A wandering healer is chatting with Winding Stream: HO2's foster brother, the Hollow Physician. He fusses over everyone's health, HO2's most. Play the reunion. He gives:</p>
+<p><b>Boats:</b> two unsent letters by Prefect Xu 许德显: one to the Mongol camp offering surrender and his three pleasure-barges and five small boats; one to Governor Lü 吕文焕 in Southbright weeping loyalty. Stolen during a "consultation". Either ruins Xu; together, a lever for his boats.</p>
+<p><b>The poison</b> (Rainmaster's Ink 雨师墨): knows little; a local legend may be in the county gazetteer 地方志 (Library, next session). <b>Scar-faced woman:</b> a disaster, or a condemned criminal. <b>Commander Fan:</b> far-sighted, devoted to the people, executed a man for stealing lamp oil. (Said flat.)</p>
+
+<h2>Night of the 12th — second Dream-Call <small>scene: Night Crossing, darkness up; HO3 + Liu</small></h2>
+<p>Gla'aki 格拉基 calls HO3 to the bank alone, with a lure of light. Read, then <b>{R('SAN 1/1D3')}</b>:</p>
+{q('你站在船头，脚下的水面波涛不宁。雾气遮天蔽日。水下黑色的团状物攀住船身，折断船舷和龙骨，击穿甲板。有什么东西自你脊椎后方穿胸而过。你低下头，伤口正滋滋往外冒着绿色的腐烂液体……', '"You stand at the bow. The water heaves. Fog hides the sky and the far bank. Something black and shapeless comes up under the boat, snaps gunwale and keel, punches through the deck. Then something comes through your spine from behind and out of your chest. You look down. The wound hisses, and what runs out is green and rotten..."')}
+<p>{R('POW')}: success = awake at the water's edge; fail = already waist-deep in the Han. Silence, fog, a glow ahead; a few steps and the water is at the chest. The glow dips and strikes from behind: {R('Dodge')} or 1D3.</p>
+<p><b>The spine:</b> black, scaled, barbed, same as last night. <b>Captain Liu 刘卿堂</b> appears on the bank, throws HO3 a rusty sword. <b>Spine: HP 10, DEX 50, Fighting 40, dmg 2+1D5, armour 4.</b> Beat it or drive it off. If HO3 is losing, Liu takes the hits; he does not die tonight.</p>
+<p>Liu was pulled out by fishermen and knows nothing of what happened to his men; he came out looking for clues. Overjoyed; walks HO3 home; from now on goes wherever HO3 goes. <i>GM only: a red web-shaped mark on his back (he survived a spine on the 3rd). Never volunteer it.</i></p>
+
+<h2>Stop</h2>
+<p>Dawn on the 13th, Liu at the Coffin Shop. Title screen. Tease: three rounds a day; Niu at noon on the 15th; Xu's boats; the gazetteer. They hold two leads (letters, compartments) and one ally.</p>
+</div></div>
+</section>
+
+<section>
 <h1>NPC card 人物速查 <small>from the module sheets; Niu's numbers are an estimate</small></h1>
 <table class="npc"><tr><th>Who</th><th>HP</th><th>Arm</th><th>DB</th><th>Skills</th><th>Weapons</th><th>Notes</th></tr>{npc_rows()}</table>
 </section>

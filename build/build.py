@@ -170,7 +170,7 @@ JR = [
  journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.ho_html(1))], 0, FOLD['f_player']['_id']),
  journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.ho_html(2))], 0, FOLD['f_player']['_id']),
  journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.ho_html(3))], 0, FOLD['f_player']['_id']),
- journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('时间线与真相 Timeline & truth', C.timeline_html())], 0, FOLD['f_gm']['_id']),
+ journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('加时：第一日 Extended: Day One', C.extended_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('时间线与真相 Timeline & truth', C.timeline_html())], 0, FOLD['f_gm']['_id']),
 ]
 # ---------------- scenes ----------------
 # AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
@@ -200,7 +200,8 @@ SC = [
        '其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away.'),
  # 12 x 8 squares: a small shop, bigger squares
  scene('5 · 曲流的棺材铺 The Coffin Shop', 'coffinshop.webp', 256,
-       [T(A['pc1'], 6.3, 1.4), T(A['pc2'], 7.3, 1.4), T(A['pc3'], 8.1, 2.2), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6)], 0.3),
+       [T(A['pc1'], 6.3, 1.4), T(A['pc2'], 7.3, 1.4), T(A['pc3'], 8.1, 2.2), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6), T(A['yue'], 3.4, 3.2, hidden=True), T(A['liu'], 9.2, 2.6, hidden=True)], 0.3,
+       '<p>越南柯（十二日晚）与刘卿堂（十三日晨）为隐藏标记，加时用。Doctor Yue (evening of the 12th) and Captain Liu (dawn of the 13th) are hidden tokens for the extended Day One.</p>'),
 ]
 # ---------------- music (Kevin MacLeod, incompetech.com, CC BY 4.0) ----------------
 TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', '庆功宴 Banquet'), ('Teller of the Tales', 'Teller_of_the_Tales.ogg', '北门 North Gate'), ('Asian Drums', 'Asian_Drums.ogg', '衙署 Magistracy raid'),
@@ -209,6 +210,13 @@ PL = {'_id': rid('playlist:session0'), 'name': '公若渡河 · Session 0 music'
       'sounds': [{'_id': rid('sound:' + f), 'name': f'{t} — {use}', 'path': f'modules/{MOD}/assets/music/{f}', 'channel': 'music', 'playing': False, 'repeat': True, 'volume': 0.5, 'fade': 2000, 'sort': i, 'flags': {}, 'description': f'{t} Kevin MacLeod (incompetech.com) CC BY 4.0'} for i, (t, f, use) in enumerate(TRACKS)]}
 for sc, snd in zip(SC, PL['sounds'][:5]):
     sc['playlist'] = PL['_id']; sc['playlistSound'] = snd['_id']
+# Extended session 0: the Street Crossing at noon on the 12th (1536x1024 map, 24x16 squares).
+STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp', 64,
+               [T(A['pc1'], 9, 12.5, name='HO1 游侠 (disguised)'), T(A['pc2'], 10.2, 12.5), T(A['pc3'], 11.4, 12.5)] +
+               [T(A['soldier'], x, y, name=f'哨兵 Sentry {i+1}') for i, (x, y) in enumerate([(9.5, 6.3), (14.5, 6.3), (12, 2.3), (16.5, 11.5)])], 0.1,
+               '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
+STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
+SC.append(STREET)
 # Title screen for the table TV: the scenario's cover re-lettered in English, Banquet music.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
               notes='<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>')
