@@ -20,6 +20,7 @@ def db(s):
     return '-2' if s <= 64 else '-1' if s <= 84 else '0' if s <= 124 else '+1D4' if s <= 164 else '+1D6' if s <= 204 else '+2D6' if s <= 284 else f'+{(s-205)//80+2}D6'
 
 NOTES = {'Marshal Ashu': 'Wounded at the banquet: penalty die on every roll he makes from then on (Rainmaster&#39;s Ink 雨师墨). Not meant to die in session 0.',
+         'Toghan': "Ashu&#39;s deputy; bad Chinese, brutal. Beheaded HO2&#39;s father at the North Gate. Despises Duan.",
          'Duan Driftwood': 'Serves the Mongols, loyal to nobody, likes HO1. Talks his way out of everything.',
          'Niu the Archer': 'Stats are my estimate (none in the book). The God-Arm Bow 神臂弓 shoots 400 paces; it matters in the finale.',
          'Captain Liu': 'HO3&#39;s friend; offstage in session 0 (crossed with 800 men on 3 Jan).',
@@ -118,12 +119,13 @@ BODY = f'''
 </ul>
 </section>
 
-<section>
+<section class="beats">
 <h1>Scene beats 场景节拍 <small>every roll the book asks for, in order</small></h1>
 <div class="cols">
 <div>
 <h2>1 · Banquet 庆功宴 — HO1 alone <small>scene: The Victory Banquet</small></h2>
-<p><b>Open:</b> Fencewall fell in three days. The Hermit 山阳道人 gives you Stillwater 止水 at dawn.</p>
+<p><b>Open:</b> Fencewall fell in three days; the Hermit 山阳道人 did not sleep for three nights. On the fourth morning he lays a sword across the table: worn sheath, blade bright enough to show your face, a dark stain near the guard like water that never dried. "Her name is Stillwater 止水." Then his speech (plum wine, pig's head, Tomb-Sweeping Day), and the warning, said three times:</p>
+{q('“剑上这道黑，是雨师墨。刀饮即腐：伤口烂而不死，逢阴雨便发，一辈子好不了。不可轻率出剑；止水只为一个人出鞘。”', '"That black on the blade is Rainmaster’s Ink 雨师墨. What it cuts, rots: the wound will not kill and will not heal, and every rainy day it opens again for the rest of a man’s life. Do not draw her lightly. Stillwater leaves the sheath for one man only."')}
 {q('“你年轻，能从千军万马里取一颗头。不为那个糊涂皇帝，为汉水两岸的百姓！”', '"You are young; you can take a head out of the middle of an army. Not for that muddle-headed emperor: for the people on the banks of the Han." If you succeed, bring the head to my grave at Tomb-Sweeping with plum wine, loquat wine, beef, a pig&#39;s head, two chickens and three sesame cakes. If not, wander, and come home when the Central Plains are at peace.')}
 <p><b>Getting in:</b> {R('Disguise')} or {R('Luck')} at the gate; {R('Climb')}/{R('Jump')} over the wall. Patrols everywhere, no looting (Ashu's order).</p>
 <p><b>The hall:</b> roast meat, bowls the size of a palm, Song dancers. Ashu on the dais: huge, bearded, felt hat, soft armour, a sabre at hand. Duan 段游衍 one seat to his right. Magistrate Fan grovelling.</p>
@@ -133,16 +135,18 @@ BODY = f'''
 <p><b>Out:</b> HO1 slips away in the chaos ({R('Stealth')} or {R('Climb')} if they want a roll). Hiding since. The bridge is cut, the bank guarded; money finds a boatman. → the reeds at midnight.</p>
 
 <h2>2 · North Gate 北门 — HO2 alone <small>scene: Fencewall, the North Gate</small></h2>
-<p><b>Open:</b> late 1267, the medicine convoy, father in front. Soldiers stop you: a Mongol who barely speaks Chinese (Toghan) and a Chinese general (Duan 段游衍) who does the talking.</p>
+<p><b>Open:</b> end of Dec 1267, two weeks before the banquet. Fencewall is besieged but still Song (banners on the wall, gate under martial law). The medicine convoy, father in front, runs into the Mongol siege line outside the North Gate. Soldiers stop you: a Mongol who barely speaks Chinese (Toghan 脱欢) and a Chinese general (Duan 段游衍) who does the talking.</p>
 {q('“这鞑子知道你们家有钱，不剥层皮不会放人。有什么值钱的，现在就献出来……”', '"This Tartar knows your house is rich. He won&#39;t let you go without skinning you. Whatever you have of value, offer it now, as a gift to the Khan and the Marshal..."')}
-<p>Whatever HO2 says, father goes forward alone and sends them to count stock. The clerks beg them to run. Then: a mist of blood, a head flung sideways. Carts roll over the stain until it is gone.</p>
+<p>Whatever HO2 says, father goes forward alone and sends them to count stock. The clerks beg them to run. Then: <b>▶ play 斩 Slash</b> (Playlists → 音效 Sound effects) — a mist of blood, a head flung sideways. Carts roll over the stain until it is gone.</p>
 <p><b>Run for the gate:</b> {R('DEX')}; fail = 1D3, a wound that never fully heals, max HP −1.</p>
-<p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes over (dark, lean, black bow). He tells them Commander Fan is hunting a thief in town, and promises help with anything.</p>
-<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere; the assault, Commander Fan's suicide, surrender, Niu arrested. The house is leaderless. → the reeds.</p>
+<p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes down from the wall:</p>
+{q('四十来岁，黝黑精瘦，旧铁甲，背上一把漆黑长弓，弓背缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后看你的脸。', 'Forties, dark, lean and hard as a drawn bowstring, old iron armour, a long black bow across his back, grip wrapped in leather worn pale. Eyes like torches: your hands first, then your carts, then your face.')}
+<p>Garrison commander under Commander Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Fan is hunting a thief in town, and promises help with anything.</p>
+<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Commander Fan 范天顺 hangs himself; 4 Jan his nephew Magistrate Fan 范玉楼 opens the gates to spare the town. Patrols everywhere; Niu refuses to yield → gaol, his promises gone with him. The house in Lin'an 临安 is leaderless; bridge cut, bank guarded, so you buy a boatman. → the reeds after dark.</p>
 </div>
 <div>
 <h2>3 · Magistracy 衙署 — HO3 alone <small>scene: Fencewall Magistracy</small></h2>
-<p><b>Open:</b> named Commissioner, Captain Liu 刘卿堂 brings 5,000; ambushed, 800 break into Fencewall. Commander Fan's joyless dinner: Magistrate Fan, Lady Fan, Prefect Xu (fat, shiny), Niu (eyes like torches). Magistrate Fan walks you home, flattering, hinting: a warm winter, the river running strangely high.</p>
+<p><b>Open:</b> named Commissioner; Captain Liu 刘卿堂 (childhood friend) brings 5,000; ambushed, 800 break into Fencewall. Commander Fan's 范天顺 banquet in the hall, nobody has the heart for it: Magistrate Fan 范玉楼 all smiles, Lady Fan silent, Prefect Xu 许德显 soft and shining with sweat, eating for everyone; Niu 牛富 across from you, dark, lean, eyes like torches, touching nothing, watching the door. Toasts to the Emperor and to victory; no one believes the second. Magistrate Fan walks you home with a lantern, flattering, then, as if he wants you to notice: a warm winter, the Han strangely high for the season.</p>
 <p><b>Then:</b> the assault. Fan orders you and Liu to Southbright at noon; your wound keeps you in bed. Liu crosses with the 800. Next day: uproar, the clear sky goes black without rain, servants scatter, Mongol cavalry ride into the compound seizing people.</p>
 <p><b>Escape:</b> {R('Stealth')}, or {R('Luck (Hard)')} with a plausible plan; fail = soldiers who arrest anyone suspicious. Fighting out is allowed (Sword 45 / Bow 75 vs horsemen); a failed fight = another wound.</p>
 <p><b>Out:</b> hiding in town; everything north of the river is Mongol. → the reeds.</p>
@@ -223,6 +227,7 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 .agenda td:first-child { white-space: nowrap; width: 1%; font-weight: bold; }
 .npc { font-size: 8pt; } .npc td:first-child { width: 17%; } .npc td.c { text-align: center; white-space: nowrap; } .npc td.note { font-size: 7.5pt; color: #333; } .npc th { background: #eee; }
 small { font-size: 7.5pt; color: #444; }
+section.beats { font-size: 7.4pt; line-height: 1.2; } section.beats .quote { font-size: 7.5pt; line-height: 1.2; margin: 2px 0; padding: 1px 6px; } section.beats h2 { margin: 6px 0 2px; }
 .opening p { font-size: 11pt; line-height: 1.5; margin: 8px 0; }
 .opening p.after { font-size: 9.5pt; color: #444; border-top: 1px solid #000; padding-top: 6px; margin-top: 16px; }
 '''

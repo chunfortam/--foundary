@@ -81,6 +81,23 @@ def glossary_html():
         s += f'<h2>{title}</h2>' + table(["中文", "English", "Note"], rows)
     return s
 
+
+# ---------------- PREGEN CHARACTERS: public description (no secrets; for picking a role and introducing yourself) ----------------
+PC_PUBLIC = {
+ 1: dict(name='陆青崖 Lu Bluecliff', looks_zh='二十四岁，衣着朴素，话少，背上裹着一柄从不示人的剑', looks_en='24; plainly dressed, says little; a wrapped sword on his back he never shows',
+   zh="陆青崖，二十四岁。岘山山阳道人门下的游侠：衣着朴素，腰间一柄佩刀，背上另裹着一柄更好的剑，从不在人前拔出。话少，眼睛不闲着。自幼习武，上墙如走平地，落地无声，出剑快得看不清；人情世故却不是他的本事。认准了的事就会去做——而且他心里压着一件不能对生人说的事。",
+   en="Lu Bluecliff 陆青崖 (\"blue cliff\", after the mountain he grew up on), 24. A wanderer of the jianghu 江湖: plainly dressed, a sabre at his hip and a second, finer sword wrapped on his back that he never draws in front of people. Says little, misses nothing. Trained since childhood by a famous hermit swordsman on Mount Crag 岘山, he can run up a wall, land without a sound and cut faster than you can see (Sword 75, Climb 60, Stealth 60, Dodge 60). What he cannot do is talk his way out of trouble (Credit Rating 20). Play him as a man who has decided what is right and will do it, and who is quietly carrying something he cannot tell strangers."),
+ 2: dict(name='沈怀珠 Shen Pearl', looks_zh='二十岁，外袍朴素、内里绫罗，手上没有茧，带着药箱', looks_en='20; plain travelling coat over silk, soft hands, a medicine chest',
+   zh="沈怀珠，二十岁。临安大药行的少东家：外袍朴素，内里是绫罗，手上没有茧，随身一只药箱和一方药行印信，天下任何一家分号的掌柜见了都要作揖。聪明，口舌利，习惯用钱解决事情；会看病抓药。家传一门点穴之术，指头按对地方能让人半边身子发麻。不是打手，爱走偏锋。她这辈子头一回体会到什么叫无能为力。",
+   en="Shen Pearl 沈怀珠 (\"holding a pearl\"), 20. Heir to one of the great pharmacy houses of the capital, Lin'an 临安: silk under a plain travelling coat, soft hands, a medicine chest, and a seal that any branch manager in the empire will bow to. Clever, quick-tongued and used to money solving things (Credit Rating 60, Medicine 65, Persuade / Fast Talk / Charm 50–55, Appraise, Accounting). The family also hands down a secret art, Acupoint Strike 点穴: a finger pressed to the right spot numbs an arm or drops a man (base 50). Not a fighter; thinks sideways. Play her as someone who, until this month, had never once been powerless."),
+ 3: dict(name='谢云骧 Xie Cloudmane', looks_zh='二十二岁，相貌出众，举止雍容，身上有一处未愈的伤', looks_en='22; handsome, graceful, carries an unhealed wound',
+   zh="谢云骧，二十二岁。临安高门子弟，朝廷亲封的宣抚使，印绶在身。相貌出众，学问极好，从小就是让人听话的那一个。自幼围猎，一手好弓，是三人里最会射箭的；剑也拿得起来，勉强。他是带着一支军队来的：发小刘卿堂急公好义、一身江湖豪气，听说他督军，主动请缨，替他带着五千兵马一路同来。如今他身上一处伤口不肯收口，也不知道刘卿堂和他的人去了哪里。头一回体会到：没人非得听你的时候，名头值几个钱。",
+   en="Xie Cloudmane 谢云骧 (\"a horse galloping through clouds\"), 22. Youngest son of one of the great families of the capital and now, with the seal to prove it, an imperial Commissioner sent to relieve the twin cities. Handsome, beautifully educated, raised to be obeyed (APP 75, EDU 80, Credit Rating 75, Persuade 65, Law, History). He has hunted since boyhood and is the best archer at the table (Bow 75); he can hold a sword, barely. He arrived with an army, led for him by his childhood friend Captain Liu 刘卿堂, hot-blooded and generous, who volunteered the moment he heard Xie was going to war. Now he has a wound that will not close and no idea what has happened to Liu and his men. Play him as someone finding out, for the first time, what his name is worth when nobody has to obey it."),
+}
+def pc_public_html(n):
+    d = PC_PUBLIC[n]
+    return bi(f"<b>{d['name']}</b>——{d['zh']}", d['en'])
+
 # ---------------- PRIMER (player-facing) ----------------
 def primer_html():
     s = h("玩家入门：一二六八年的汉江", "Player Primer: the Han River, 1268", 1)
@@ -96,11 +113,10 @@ def primer_html():
     s += bi("就在此时，汉江起了反常的浓雾。百姓说梦见了汉江神女；关于雨师赤松子的旧传说又流传开来。",
             "And now an unnatural fog has settled on the river. Townsfolk dream of the Lady of the Han; old tales of Red Pine the Rain Master are told again.")
     s += h("你们是谁", "Who you are")
-    s += ul([
-      ("<b>游侠</b>——岘山高士的弟子，身怀绝技。", "<b>The Wanderer</b>, a knight-errant trained by the Hermit of Mount Crag."),
-      ("<b>商贾</b>——临安名药行的少东家，家财万贯。", "<b>The Merchant Heir</b>, scion of a famous pharmacy house from the capital."),
-      ("<b>命官</b>——朝廷亲封的宣抚使，亲领印绶。", "<b>The Commissioner</b>, a young court official sent to relieve the siege."),
-    ])
+    s += bi("三个预设角色，三种过日子的法子。选一个；名字和细节都可以改。", "Three pre-built characters, three different ways of living. Pick one; names and details are yours to change.")
+    s += h("HO1 游侠", "HO1 The Wanderer", 3) + pc_public_html(1)
+    s += h("HO2 商贾", "HO2 The Merchant Heir", 3) + pc_public_html(2)
+    s += h("HO3 命官", "HO3 The Commissioner", 3) + pc_public_html(3)
     s += bi("三人各有不得不离开樊城的理由，也各有不能告人的秘密。你们必须在元军眼皮下渡过汉江。",
             "Each of you has a reason you must leave Fencewall, and a secret you keep from the others. You must cross the Han River under the Mongols' noses.")
     s += h("什么是江湖", "What the jianghu is")
@@ -327,8 +343,14 @@ def runbook_html():
     s += h("个人导入 HO1：庆功宴刺杀（场景：樊城衙署·庆功宴）", "Personal intro HO1: the banquet (scene: The Victory Banquet)")
     s += bi("咸淳三年末，樊城三日即降。山阳道人不眠不休三日，于清晨将成名剑“止水”赠予你，要你效仿荆轲、聂政刺杀兀良哈·阿术。",
             "Fencewall fell in three days. The Hermit did not sleep for three nights, then at dawn gave you Stillwater and told you to kill Marshal Ashu as the assassins of old killed tyrants.")
+    s += bi("<b>赠剑（读给玩家）：</b>第四天清晨，师父把一柄三尺长剑横放在你面前。剑鞘旧得发白，剑身却亮得照得见人，靠近剑锷处有一道墨痕，像一片没擦干的水迹。他说：这剑叫止水。",
+            "<b>The sword (read aloud):</b> On the fourth morning your master lays a sword across the table in front of you. The sheath is worn pale; the blade is bright enough to show your face, and near the guard there is a dark stain, like water that never dried. \"Her name is Stillwater,\" he says.")
     s += '<blockquote>' + bi("“你师父我老啦，怕是走不进那蒙古鞑子十步。你虽年纪轻轻，但足有乱军之中取敌方首级的本事。不为那大宋稀里糊涂的官家，为的是汉水边的百姓！若是能取兀良哈这厮项上人头，今年清明就把他的首级跟着一壶梅子酒一壶枇杷酒两斤牛肉一个猪头两只烧鸡三个烧饼一起供给我；若是不能，你便自在逍遥闯荡江湖去，去哪都成，等到这中原安定了再回来！”",
             "\"Your master is old. I could not get within ten paces of that Mongol. You are young, and you can take a head out of the middle of an army. Not for that muddle-headed emperor; for the people on the banks of the Han! If you take Ashu's head, lay it on my grave-table this Tomb-Sweeping Day with a jug of plum wine, a jug of loquat wine, two catties of beef, a pig's head, two roast chickens and three sesame cakes. If you cannot, go and wander the jianghu, anywhere you like, and come home when the Central Plains are at peace.\"") + '</blockquote>'
+    s += '<blockquote>' + bi("“剑上这道黑，是雨师墨。江湖上传是赤松子留下的仙术，其实是荆湖一带的毒。刀饮即腐：沾了它的伤口烂而不死，逢阴雨便发，一辈子好不了。所以不可轻率出剑；这东西沾了谁，谁便一辈子记得你。你自己的刀照旧用，止水只为一个人出鞘。”",
+            "\"That black on the blade is Rainmaster's Ink. In the jianghu they say it is Red Pine's immortal art; it is only a poison from these river marshes. What it cuts, rots: the wound will not kill, and it will not heal, and every rainy day it opens again for the rest of a man's life. So do not draw her lightly. Whoever she touches will remember you until they die. Keep using your own blade; Stillwater leaves the sheath for one man only.\"") + '</blockquote>'
+    s += bi("（师父把这话叮嘱了三遍。之后不必再解释；玩家自会在阿术伤口不愈时想起。）",
+            "(He says this three times. Don't explain further; the player will remember it when Ashu's wound refuses to heal.)")
     s += bi("（段游衍已写信向山阳道人保证会保护HO1；若HO1追问，师父只会含糊其辞。）",
             "(Duan Driftwood has written to the Hermit promising to protect HO1. If HO1 presses, the master is evasive.)")
     s += bi("进城：城门有兵检查，混入需乔装/幸运；翻墙需攀爬/跳跃。阿术不许士兵劫掠，城中除遍地巡逻兵外百姓照常生活。",
@@ -349,28 +371,40 @@ def runbook_html():
             "Even when Ashu tells him to move he stays put. HO1 slips away and goes to ground. Afterwards: it is only a matter of time before they find you. The bridge is cut and the bank is guarded, but money finds a boatman. That night you bring everything you own to the reeds on the bank, where other would-be passengers are waiting. → Night Crossing.")
     # HO2 intro
     s += h("个人导入 HO2：截杀与入城（场景：樊城·北门）", "Personal intro HO2: the convoy and the gate (scene: Fencewall, the North Gate)")
-    s += bi("咸淳三年末，药行奉命押送药材往荆湖。父亲亲自随行。樊城附近军队拦下车队：为首的蒙古将军汉话不利索，身后的汉人将军只好交涉。那是段游衍与兀良哈·脱欢，两人不太对付。",
-            "Late 1267. Your father leads the medicine convoy himself. Near Fencewall soldiers stop you. The Mongol officer barely speaks Chinese; the Chinese general beside him does the talking. They are Duan Driftwood and Toghan, and they do not like each other.")
+    s += bi("<b>时间与形势：</b>咸淳三年腊月末（1267年12月），比庆功宴早两周。樊城尚未陷落：元军已在城外扎营围城，城头仍是宋军旗帜，北门戒严。药行奉朝廷调令押送一批药材作军资，父亲亲自随行；车队从南边官道而来，在樊城北门外撞上元军的围城线。为首的蒙古将军汉话不利索，身后的汉人将军只好交涉。那是兀良哈·脱欢与段游衍，两人不太对付。",
+            "<b>When and where:</b> the end of December 1267, two weeks before the banquet. Fencewall has not fallen yet: the Mongols are camped outside the walls laying siege, Song banners still fly on the battlements, and the North Gate is under martial law. The pharmacy is under court orders to deliver a convoy of medicine as army supplies; your father leads it himself. Coming up the road, the convoy runs straight into the Mongol siege line outside the North Gate. The Mongol officer barely speaks Chinese; the Chinese general beside him does the talking. They are Toghan and Duan Driftwood, and they do not like each other.")
     s += '<blockquote>' + bi("“他问你们，这批药材是送往何处？作何用途？你们是接了荆湖转运的调令吗？”汉人将军侧过头看了那蒙古将军一眼，压低声音：“这鞑子怕是知道你们是巨富，不让你们脱一层皮估计是讨不了好的。有什么值钱的玩意都先呈上来，向大汗和元帅表表心意……”",
             "\"He asks where this medicine is going and what for. Are you under orders from the Jinghu transport office?\" The Chinese general glances at the Mongol and lowers his voice. \"This Tartar knows your house is rich. He won't let you go without skinning you. Whatever you have of value, offer it up now, as a gift to the Khan and the Marshal...\"") + '</blockquote>'
-    s += bi("无论答应与否，父亲都独自上前交涉，让HO2去队尾与伙计清点。伙计劝HO2偷偷离开。队首传来嘈杂声：交涉失败，父亲身首分离。",
-            "Whatever you answer, your father goes forward alone and sends you to the rear to count stock with the clerks. The clerks beg you to slip away. Then noise from the front: the talk has failed, and your father is beheaded.")
+    s += bi("无论答应与否，父亲都独自上前交涉，让HO2去队尾与伙计清点。伙计劝HO2偷偷离开。队首传来嘈杂声：交涉失败，父亲身首分离。<b>▶ 此时播放音效「斩 Slash」</b>（播放列表 → 音效 Sound effects）。",
+            "Whatever you answer, your father goes forward alone and sends you to the rear to count stock with the clerks. The clerks beg you to slip away. Then noise from the front: the talk has failed, and your father is beheaded. <b>▶ Play the 斩 Slash sound effect here</b> (Playlists → 音效 Sound effects).")
     s += '<blockquote>' + bi("一蓬血雾扬起，紧接着是一颗随着刀刃的势头斜飞而出的头颅——你爹头一次飞这么高，掉落在地上又那般重。马蹄和车辙相继碾过去，这一滩血迹消失得无影无踪。",
             "A mist of blood, then a head flung sideways by the stroke of the blade. Your father never flew so high, and never fell so heavily. Hooves and cart-wheels roll over the spot until the stain is gone.") + '</blockquote>'
     s += bi("HO2只能逃入樊城：敏捷检定判断是否受伤，失败扣1D3且本模组内无法痊愈，生命值上限-1。",
             "You run for Fencewall. DEX roll: on a failure take 1D3, a wound that will not fully heal in this scenario, and max HP -1.")
-    s += bi("城门戒严。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
-            "The gate is under martial law. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, Niu the Archer, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
+    s += bi("城门戒严：守门的是宋兵，吊桥半起，城头弓弩对着城外。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
+            "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, Niu the Archer, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
+    s += '<blockquote>' + bi("<b>牛富（读给玩家）：</b>城头走下来一个人。四十来岁，黝黑精瘦，披一身旧铁甲，背上斜挂一把漆黑的长弓，比常人的弓长出一截，弓背上缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后才看你的脸。守门兵见了他都往后让半步。他只报了名号：牛富，樊城钤辖，范将军麾下掌兵。",
+            "<b>Niu the Archer (read aloud):</b> A man comes down from the wall. Forties, dark-skinned, lean and hard as a drawn bowstring, in old iron armour. Slung across his back is a long black bow, a hand longer than any you have seen, its grip wrapped in leather worn pale. Eyes like torches: he looks at your hands first, then at your carts, and only then at your face. The gate guards step back half a pace as he passes. He gives only his name and office: Niu, garrison commander of Fencewall, under Commander Fan.") + '</blockquote>'
+    s += bi("（牛富是樊城钤辖，范天顺之下掌兵马。两军对阵前他一箭射死了阿术的侄子，蒙古人记着这笔账。他对HO2直率、客气，说到做到——只要他还自由。）",
+            "(Niu is the garrison commander under Commander Fan. Before the armies met he shot Ashu's nephew dead with a single arrow; the Mongols have not forgotten. With HO2 he is blunt, courteous, and keeps his word, for as long as he is free.)")
     s += bi("（这副可射四百步的神臂弓，不久后牛富入狱时会交到打更少年方未名手里。）",
             "(That bow shoots four hundred paces. When Niu is thrown in the gaol it will pass to Nameless Fang, the watchman boy.)")
-    s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。未几樊城被围，范天顺自缢，范玉楼献城，牛富入狱，许诺再无消息。父亲身死，临安产业群龙无首，你必须走。→ 公共导入。",
-            "At an inn or a townsman's house you pick up gossip: a scarred woman outlaw (Autumn), a drunk monk at the temple, a night watchman who is everywhere. Days later the siege, the Commander's suicide, the surrender, Niu's arrest; his promises die with his freedom. Your house in the capital is leaderless. You must go. → Night Crossing.")
+    s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。",
+            "At an inn or a townsman's house you pick up gossip: a scarred woman outlaw (Autumn), a drunk monk at the temple, a night watchman who is everywhere.")
+    s += bi("<b>数日后（叙述）：</b>没安歇几天，元军总攻。一月三日，守将范天顺不肯降，在衙署自缢殉国；次日他的侄子范玉楼开城献降，以保全城中几万百姓。阿术下令不得劫掠，街上却到处是蒙古巡逻兵。牛富拒降，被下了大狱——他答应你的事，也就随他的自由一起没了。父亲身死的消息不知有没有传到江对岸，你家在临安府的偌大产业如今群龙无首：你必须回去。",
+            "<b>Days later (narrate):</b> You have barely rested when the assault comes. On 3 January Commander Fan 范天顺 refuses to surrender and hangs himself in the Magistracy; the next day his nephew, Magistrate Fan 范玉楼, opens the gates to spare the tens of thousands inside. Marshal Ashu forbids looting, but Mongol patrols now walk every street. Niu refused to surrender and is in the gaol; his promises to you died with his freedom. Nobody knows if word of your father's death has reached the far bank, and your family's great house in the capital, Lin'an 临安, is leaderless. You have to get home.")
+    s += bi("可汉江上连通襄樊的浮桥已被截断，江岸日夜有兵把守，城里的人很难和对岸通上消息。好在只要钱到位，总有人愿意铤而走险。你四处打听，入夜后带着全副身家，来到江岸边一处不引人注目的芦苇丛——别的想过河的人，也都聚在了那里。→ 公共导入。",
+            "But the floating bridge between the two cities has been cut, soldiers watch the bank day and night, and no one in town can get word across. Still, where there is money there is someone willing to risk it. You ask around, and after dark you come, with everything you own, to an unremarkable clump of reeds on the riverbank, where the other people who mean to cross tonight have gathered too. → Night Crossing.")
     # HO3 intro
     s += h("个人导入 HO3：衙署逃脱（场景：樊城衙署）", "Personal intro HO3: escape from the Magistracy (scene: Fencewall Magistracy)")
     s += bi("朝廷命你为宣抚使发兵救援襄樊。刘卿堂请缨，率五千人随行。蒙古人以樊城为饵伏击，你们几乎毫无还手之力，幸得刘卿堂指挥，余八百人突入樊城。",
             "The court names you Commissioner and sends you to relieve the twin cities. Captain Liu volunteers and brings five thousand men. The Mongols ambush you outside Fencewall; only Liu's handling saves eight hundred, who break into the city.")
-    s += bi("范天顺设宴接待：陪席的范玉楼、范天顺之女范玉莹、许德显、牛富皆无心享乐。牛富黝黑精瘦、孔武有力、目光如炬；许德显体态富贵、满面油光。宴后范玉楼领你去住所，一路寒暄夸捧，并暗示汉江异状：今冬暖和，水势很大。",
-            "Commander Fan gives a dinner nobody enjoys. Present: Magistrate Fan, Lady Fan, Prefect Xu and Niu the Archer. Niu is dark, lean, hard-muscled, with eyes like torches; Xu is fat and shiny. Afterwards Magistrate Fan walks you to your lodging, flattering you all the way and dropping hints: a warm winter, the river running strangely high.")
+    s += '<blockquote>' + bi("<b>衙署夜宴（读给玩家）：</b>范天顺在衙署大堂设宴接你——朝廷的宣抚使到了，不能不接；可满桌没有一个人有心思吃。蒙古人离城只有一天的路。陪坐的有他的侄子范玉楼，一脸笑；他的女儿范玉莹，一言不发；还有通判许德显，一个肥胖松软的人，满脸油光，替所有人吃喝。坐在你对面的是樊城钤辖牛富：黝黑精瘦，紧得像一张拉满的弓，目光如炬，酒菜不动，眼睛盯着门。举杯敬皇上，敬大捷；第二杯没人信。",
+            "<b>Dinner at the Magistracy (read aloud):</b> Commander Fan 范天顺 receives you with a banquet in the Magistracy hall, because that is what one does for an imperial Commissioner, and nobody at the table has the heart for it. The Mongols are a day's march away. At the Commander's side sit his nephew, Magistrate Fan 范玉楼, all smiles; his daughter, Lady Fan 范玉莹, who says nothing; and Prefect Xu 许德显, a soft, heavy man whose face shines with sweat and lamp oil and who eats and drinks for everyone. Across from you is the garrison commander, Niu 牛富: dark, lean, hard as a drawn bowstring, with eyes like torches; he touches neither wine nor food and watches the door. Toasts are drunk to the Emperor and to victory. No one believes the second.")
+    s += bi("宴罢，范玉楼亲自提灯送你去住所，一路夸赞：你的家世、你的学问、樊城何其有幸。夸赞之间，他像是故意要你留意似的，说起几句闲话：今年冬天真暖和；汉江的水，这个时节怎么这么大；怪事。",
+            "Afterwards Magistrate Fan himself walks you to your lodging, lantern in hand, flattering you all the way: your family, your learning, how lucky Fencewall is to have you. Between the compliments he drops odd remarks, as if he wanted you to notice them: how warm this winter has been; how high the Han is running for the season; how strange that is.") + '</blockquote>'
+    s += bi("（范玉楼的闲话是河神线的伏笔，不要解释。牛富、许德显的样子让玩家记住：牛富之后守北门、入狱；许德显的两封信是弄到船的筹码。）",
+            "(Magistrate Fan's remarks are the book's plant for the River God; don't explain them. The portraits of Niu and Xu are for later: Niu will hold the North Gate and end in the gaol; Xu's two letters are the lever for the boats.)")
     s += bi("未几蒙古全面攻城。范天顺请你与刘卿堂带余兵先往襄阳。出发定在中午；你因伤未愈留下休息。刚过午后，衙署外骚乱，晴天骤然阴沉如夜却无雨。仆役四散，蒙古骑兵闯入官邸抄家捉人。",
             "Then the full assault. Commander Fan orders you and Liu across to Southbright at noon; your wound keeps you in bed. Just past noon: uproar outside, the clear sky goes dark as night without a drop of rain, servants scatter, and Mongol cavalry ride into the compound seizing people.")
     s += bi("<b>检定：</b>用合理方式潜行/困难幸运离开衙署；失败则接受蒙古士兵不讲道理的盘问，任何可疑之处都会被抓。强行逃离也可以，失败可能添新伤。",
