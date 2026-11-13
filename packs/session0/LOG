@@ -1,5 +1,5 @@
-2026/11/13-06:23:12.637846 7c8664dfd640 Delete type=3 #1
-2026/11/13-06:23:12.650354 7c86337fe640 Level-0 table #5: started
-2026/11/13-06:23:12.655706 7c86337fe640 Level-0 table #5: 74571 bytes OK
-2026/11/13-06:23:12.658542 7c86337fe640 Delete type=0 #3
-2026/11/13-06:23:12.658692 7c86337fe640 Manual compaction at level-0 from '!adventures!j3PDAbZmhwquadWd' @ 72057594037927935 : 1 .. '!adventures!j3PDAbZmhwquadWd' @ 0 : 0; will stop at (end)
+2026/11/13-06:23:26.349233 7569067fc640 Delete type=3 #1
+2026/11/13-06:23:26.359546 756905ffb640 Level-0 table #5: started
+2026/11/13-06:23:26.361465 756905ffb640 Level-0 table #5: 74522 bytes OK
+2026/11/13-06:23:26.361900 756905ffb640 Delete type=0 #3
+2026/11/13-06:23:26.362032 756905ffb640 Manual compaction at level-0 from '!adventures!j3PDAbZmhwquadWd' @ 72057594037927935 : 1 .. '!adventures!j3PDAbZmhwquadWd' @ 0 : 0; will stop at (end)

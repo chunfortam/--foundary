@@ -176,7 +176,7 @@ JR = [
 # ---------------- scenes ----------------
 # AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
 def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1):
-    return {'_id': rid(), 'name': name or a['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
+    return {'_id': rid(), 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
             'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
 def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048):
     random.seed('scene:' + name); toks = [tok(*t[0], G, **t[1]) for t in tokens]
