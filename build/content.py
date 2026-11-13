@@ -355,18 +355,18 @@ def runbook_html():
             "Even when Ashu tells him to move he stays put. HO1 slips away and goes to ground. Afterwards: it is only a matter of time before they find you. The bridge is cut and the bank is guarded, but money finds a boatman. That night you bring everything you own to the reeds on the bank, where other would-be passengers are waiting. → Night Crossing.")
     # HO2 intro
     s += h("个人导入 HO2：截杀与入城（场景：樊城·北门）", "Personal intro HO2: the convoy and the gate (scene: Fencewall, the North Gate)")
-    s += bi("咸淳三年末，药行奉命押送药材往荆湖。父亲亲自随行。樊城附近军队拦下车队：为首的蒙古将军汉话不利索，身后的汉人将军只好交涉。那是段游衍与兀良哈·脱欢，两人不太对付。",
-            "Late 1267. Your father leads the medicine convoy himself. Near Fencewall soldiers stop you. The Mongol officer barely speaks Chinese; the Chinese general beside him does the talking. They are Duan Driftwood and Toghan, and they do not like each other.")
+    s += bi("<b>时间与形势：</b>咸淳三年腊月末（1267年12月），比庆功宴早两周。樊城尚未陷落：元军已在城外扎营围城，城头仍是宋军旗帜，北门戒严。药行奉朝廷调令押送一批药材作军资，父亲亲自随行；车队从南边官道而来，在樊城北门外撞上元军的围城线。为首的蒙古将军汉话不利索，身后的汉人将军只好交涉。那是兀良哈·脱欢与段游衍，两人不太对付。",
+            "<b>When and where:</b> the end of December 1267, two weeks before the banquet. Fencewall has not fallen yet: the Mongols are camped outside the walls laying siege, Song banners still fly on the battlements, and the North Gate is under martial law. The pharmacy is under court orders to deliver a convoy of medicine as army supplies; your father leads it himself. Coming up the road, the convoy runs straight into the Mongol siege line outside the North Gate. The Mongol officer barely speaks Chinese; the Chinese general beside him does the talking. They are Toghan and Duan Driftwood, and they do not like each other.")
     s += '<blockquote>' + bi("“他问你们，这批药材是送往何处？作何用途？你们是接了荆湖转运的调令吗？”汉人将军侧过头看了那蒙古将军一眼，压低声音：“这鞑子怕是知道你们是巨富，不让你们脱一层皮估计是讨不了好的。有什么值钱的玩意都先呈上来，向大汗和元帅表表心意……”",
             "\"He asks where this medicine is going and what for. Are you under orders from the Jinghu transport office?\" The Chinese general glances at the Mongol and lowers his voice. \"This Tartar knows your house is rich. He won't let you go without skinning you. Whatever you have of value, offer it up now, as a gift to the Khan and the Marshal...\"") + '</blockquote>'
-    s += bi("无论答应与否，父亲都独自上前交涉，让HO2去队尾与伙计清点。伙计劝HO2偷偷离开。队首传来嘈杂声：交涉失败，父亲身首分离。",
-            "Whatever you answer, your father goes forward alone and sends you to the rear to count stock with the clerks. The clerks beg you to slip away. Then noise from the front: the talk has failed, and your father is beheaded.")
+    s += bi("无论答应与否，父亲都独自上前交涉，让HO2去队尾与伙计清点。伙计劝HO2偷偷离开。队首传来嘈杂声：交涉失败，父亲身首分离。<b>▶ 此时播放音效「斩 Slash」</b>（播放列表 → 音效 Sound effects）。",
+            "Whatever you answer, your father goes forward alone and sends you to the rear to count stock with the clerks. The clerks beg you to slip away. Then noise from the front: the talk has failed, and your father is beheaded. <b>▶ Play the 斩 Slash sound effect here</b> (Playlists → 音效 Sound effects).")
     s += '<blockquote>' + bi("一蓬血雾扬起，紧接着是一颗随着刀刃的势头斜飞而出的头颅——你爹头一次飞这么高，掉落在地上又那般重。马蹄和车辙相继碾过去，这一滩血迹消失得无影无踪。",
             "A mist of blood, then a head flung sideways by the stroke of the blade. Your father never flew so high, and never fell so heavily. Hooves and cart-wheels roll over the spot until the stain is gone.") + '</blockquote>'
     s += bi("HO2只能逃入樊城：敏捷检定判断是否受伤，失败扣1D3且本模组内无法痊愈，生命值上限-1。",
             "You run for Fencewall. DEX roll: on a failure take 1D3, a wound that will not fully heal in this scenario, and max HP -1.")
-    s += bi("城门戒严。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
-            "The gate is under martial law. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, Niu the Archer, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
+    s += bi("城门戒严：守门的是宋兵，吊桥半起，城头弓弩对着城外。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
+            "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, Niu the Archer, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
     s += bi("（这副可射四百步的神臂弓，不久后牛富入狱时会交到打更少年方未名手里。）",
             "(That bow shoots four hundred paces. When Niu is thrown in the gaol it will pass to Nameless Fang, the watchman boy.)")
     s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。未几樊城被围，范天顺自缢，范玉楼献城，牛富入狱，许诺再无消息。父亲身死，临安产业群龙无首，你必须走。→ 公共导入。",

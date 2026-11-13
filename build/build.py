@@ -136,6 +136,10 @@ npc('liu', '刘卿堂 Captain Liu', dict(str=70, con=70, siz=70, dex=70, app=65,
     '<p>HO3的发小，将门之后。逃脱控制的不死者：无脉搏，毒病无效；不死仆从优先攻击他。</p>', '<p>HO3\'s childhood friend, a general\'s son. An undying man outside Gla\'aki\'s control: no pulse, immune to poison and disease; the Servants target him first. Does not remember the attack on his flotilla.</p>', disposition=1, link=True)
 npc('yue', '越南柯 Doctor Yue, the Hollow Physician', dict(str=50, con=55, siz=65, dex=50, app=75, int=75, pow=60, edu=60), [('i.skill.sleight-of-hand', 75), ('i.skill.fast-talk', 70), ('i.skill.spot-hidden', 70), ('i.skill.dodge', 40), ('i.skill.library-use', 50), ('i.skill.charm', 65)],
     [], '越', (160, 120, 50, 255), '<p>“空空郎中”。不会武、不懂医，擅造假药与偷盗，钱散穷人。HO2的师兄。1月3日误触仪式，心怀愧疚。</p>', '<p>The Hollow Physician. Can\'t fight, can\'t heal; sells fake elixirs to the rich, steals, gives to the poor. HO2\'s foster brother. Blundered into the rite on 3 January and is quietly guilty about it.</p>', disposition=1, link=True)
+npc('toghan', '兀良哈·脱欢 Toghan', dict(str=75, con=70, siz=80, dex=60, app=55, int=50, pow=50, edu=45), [('i.skill.fighting-brawl', 75), ('i.skill.fighting-sword', 75), ('i.skill.dodge', 70), ('i.skill.spot-hidden', 60), ('i.skill.ride', 70)],
+    [weapon('马刀 Sabre', '1D8+1', 'i.skill.fighting-sword', addb=True)], '脱', (90, 50, 40, 255),
+    '阿术的副将，同属兀良哈部。汉话很差，性格暴虐，喜怒无常；杀死HO2父亲的凶手，爱羞辱败将。看不起段游衍，认为他全凭花言巧语得宠。常带几名亲兵光顾城内王五分茶。',
+    "Ashu's deputy, of the same Uriankhai clan. Speaks bad Chinese, brutal and moody; he is the man who beheaded HO2's father, and he enjoys humiliating the beaten. Despises Duan, whom he thinks talked his way into the Marshal's favour. Often eats at Wang Five's tea-house in town with a few bodyguards.", armor=2, hp=15)
 npc('soldier', '蒙古士兵 Mongol soldier', dict(str=60, con=60, siz=70, dex=45, app=45, int=45, pow=50, edu=40), [('i.skill.fighting-brawl', 40), ('i.skill.fighting-sword', 40), ('i.skill.firearms-bow', 45), ('i.skill.dodge', 40), ('i.skill.spot-hidden', 40)],
     [weapon('弯刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True), weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=True), weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True)], '兵', (110, 70, 50, 255),
     '<p>步兵。身上有武器、身份令牌、钱、指令文书；妙手可窃。护甲2。</p>', '<p>Foot soldier. Carries weapons, an identity token, money and written orders; Sleight of Hand to steal them. Armour 2.</p>', armor=2, hp=12)
@@ -162,7 +166,7 @@ FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'so
     'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'),
     'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
-for k in ('pc1', 'pc2', 'pc3', 'ashu', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
+for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
 for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
@@ -191,7 +195,7 @@ SC = [
  scene('1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)', 'banquet.webp', 128,
        [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='陆青崖 Lu Bluecliff (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
  scene('2 · 樊城·北门 The North Gate (HO2)', 'gate.webp', 128,
-       [T(A['pc2'], 9.8, 2.2), T(A['niu'], 12.5, 11.3)] + [T(A['soldier'], x, y, name=f'守门兵 Gate guard {i+1}') for i, (x, y) in enumerate([(12.4, 1.6), (13.7, 2.4), (10.6, 9.8), (13.6, 9.8)])], 0.0),
+       [T(A['pc2'], 12, 8.4), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 11.9, 1.1)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(5.5, 1.5), (9.2, 1.5), (14.6, 1.5), (18.4, 1.5)])], 0.0),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
  scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 128,
@@ -223,14 +227,16 @@ TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.web
               notes='<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>')
 TITLE['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(0, TITLE)
+SFX = {'_id': rid('playlist:sfx'), 'name': '音效 Sound effects', 'description': 'RPG Sound Pack by artisticdude (opengameart.org), CC0', 'mode': -1, 'playing': False, 'fade': 0, 'channel': 'interface', 'sort': 1, 'seed': 0, 'flags': {}, 'folder': None,
+       'sounds': [{'_id': rid('sound:slash'), 'name': '斩 Slash — the father\'s head (HO2 intro)', 'path': f'modules/{MOD}/assets/sfx/slash.ogg', 'channel': 'interface', 'playing': False, 'repeat': False, 'volume': 1.0, 'fade': 0, 'sort': 0, 'flags': {}, 'description': 'RPG Sound Pack by artisticdude (opengameart.org), CC0'}]}
 # ---------------- adventure + module ----------------
 adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/cover.webp',
        'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
-       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': [], 'playlists': [PL], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
+       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': [], 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
 adv['_key'] = f"!adventures!{adv['_id']}"
 json.dump(adv, open(f'{SRC}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.1', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.2', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
         'styles': ['styles/gongruo.css']}
