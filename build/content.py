@@ -379,6 +379,8 @@ def runbook_html():
             "Whatever you answer, your father goes forward alone and sends you to the rear to count stock with the clerks. The clerks beg you to slip away. Then noise from the front: the talk has failed, and your father is beheaded. <b>▶ Play the 斩 Slash sound effect here</b> (Playlists → 音效 Sound effects).")
     s += '<blockquote>' + bi("一蓬血雾扬起，紧接着是一颗随着刀刃的势头斜飞而出的头颅——你爹头一次飞这么高，掉落在地上又那般重。马蹄和车辙相继碾过去，这一滩血迹消失得无影无踪。",
             "A mist of blood, then a head flung sideways by the stroke of the blade. Your father never flew so high, and never fell so heavily. Hooves and cart-wheels roll over the spot until the stain is gone.") + '</blockquote>'
+    s += bi("<b>主持人：</b>地图上的“药车”是标记。音效响起时右键“药车·残骸”→切换可见，再隐藏“药车”。",
+            "<b>GM:</b> the medicine cart on the map is a token: as the Slash plays, right-click \"The medicine cart, wrecked\" → toggle visibility, then hide \"The medicine cart\".")
     s += bi("HO2只能逃入樊城：敏捷检定判断是否受伤，失败扣1D3且本模组内无法痊愈，生命值上限-1。",
             "You run for Fencewall. DEX roll: on a failure take 1D3, a wound that will not fully heal in this scenario, and max HP -1.")
     s += bi("城门戒严：守门的是宋兵，吊桥半起，城头弓弩对着城外。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",

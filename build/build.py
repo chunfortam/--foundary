@@ -164,6 +164,14 @@ def prop(key, name, tok_file, notes_zh, notes_en):
 prop('boat', '渡船 River boat', 'boat', '<p>汉江上的小渔船/渡船，长约八米，可载二十石。场景道具：夜渡场景中有完好与残骸两种标记，攻击发生时切换可见性。</p>',
      '<p>A small Han River fishing boat / ferry, about 8 m, twenty bushels. Scene prop: the Night Crossing scene has an intact and a wrecked token for each boat; toggle visibility when the spine strikes and when the arrows sink the ferry.</p>')
 ACT['boat']['prototypeToken']['width'] = 5; ACT['boat']['prototypeToken']['height'] = 1.6
+prop('wagon', '药车 Medicine cart', 'wagon', '<p>沈家药行的牛车，载药材北上樊城。场景道具：北门场景中有完好与残骸两种标记，父亲被杀时切换可见性。</p>',
+     '<p>One of the Shen pharmacy\'s ox carts carrying medicine to Fencewall. Scene prop: the North Gate scene has an intact and a wrecked token; toggle visibility when the father is killed.</p>')
+def dims(tok_file, long_side):
+    # token footprint in grid squares from the image aspect, so props keep their proportions
+    im = Image.open(f'{ROOT}/assets/tokens/{tok_file}.webp'); r = im.width / im.height
+    return (long_side, round(long_side / r, 2)) if r >= 1 else (round(long_side * r, 2), long_side)
+WAGON_W, WAGON_H = dims('wagon', 3.2); WAGON_WRECK_W, WAGON_WRECK_H = dims('wagon_wreck', 3.6)
+ACT['wagon']['prototypeToken']['width'] = WAGON_W; ACT['wagon']['prototypeToken']['height'] = WAGON_H
 def journal(name, pages, default_perm=0, folder=None):
     return {'_id': rid('journal:' + name), 'name': name, 'folder': folder, 'ownership': {'default': default_perm},
             'pages': [{'_id': rid(f'journal:{name}:{pn}'), 'name': pn, 'type': 'text', 'title': {'show': False, 'level': 1}, 'text': {'format': 1, 'content': html}, 'ownership': {'default': -1}, 'sort': i*100000} for i, (pn, html) in enumerate(pages)], 'flags': {}, 'sort': 0}
@@ -173,7 +181,7 @@ FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'so
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
 for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
 for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
-ACT['boat']['folder'] = FOLD['f_prop']['_id']
+for k in ('boat', 'wagon'): ACT[k]['folder'] = FOLD['f_prop']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
 JR = [
@@ -188,24 +196,29 @@ JR = [
 LEVEL = 'defaultLevel0000'  # Foundry 14 scene level; v12/13 strip the unknown fields and use `background` instead
 def level(name, img_src):
     return {'_id': LEVEL, 'name': name, 'background': {'src': img_src}, 'elevation': {'bottom': 0, 'top': None}, 'sort': 0, 'flags': {}}
-def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1, texture=None):
-    return {'_id': rid(), 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': texture or a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
+def tok(a, gx, gy, G, tid, hidden=False, name=None, w=1, h=1, texture=None):
+    return {'_id': tid, 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': texture or a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
             'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'level': LEVEL, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
 def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048, weather=''):
-    random.seed('scene:' + name); toks = [tok(*t[0], G, **t[1]) for t in tokens]
+    random.seed('scene:' + name); toks = [tok(*t[0], G, rid(), **t[1]) for t in tokens]
     return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'levels': [level(name, f'modules/{MOD}/assets/maps/{img}')], 'initialLevel': LEVEL, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
             'tokenVision': False, 'fog': {'exploration': False}, 'weather': weather, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
             'tokens': toks, 'walls': [], 'lights': [], 'notes': [], 'drawings': [], 'sounds': [], 'templates': [], 'tiles': [], 'regions': [], 'flags': {}, 'sort': 0, 'initial': None, 'description': notes}
 A = ACT
 BOAT_WRECK = f'modules/{MOD}/assets/tokens/boat_wreck.webp'
+WAGON_WRECK = f'modules/{MOD}/assets/tokens/wagon_wreck.webp'
 T = lambda a, x, y, **k: ((a, x, y), k)
 SC = [
  # 24 x 16 squares
  scene('1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)', 'banquet.webp', 128,
        [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='陆青崖 Lu Bluecliff (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
+ # The convoy is a token of the 'wagon' prop: the intact cart on the road, its wreck hidden on the same spot; swap them at the Slash cue.
  scene('2 · 樊城·北门 The North Gate (HO2)', 'gate.webp', 128,
-       [T(A['pc2'], 12, 8.4), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 14.9, 3.1)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0),
+       [T(A['pc2'], 12.1, 8.5), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 14.9, 3.1),
+        T(A['wagon'], 11.0 - WAGON_W / 2, 7.3 - WAGON_H / 2, name='药车 The medicine cart', w=WAGON_W, h=WAGON_H),
+        T(A['wagon'], 11.0 - WAGON_WRECK_W / 2, 7.3 - WAGON_WRECK_H / 2, name='药车·残骸 The medicine cart, wrecked', hidden=True, w=WAGON_WRECK_W, h=WAGON_WRECK_H, texture=WAGON_WRECK)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0,
+       '<p>标记操作：父亲被杀（播放“斩”音效）时显示“药车·残骸”、隐藏“药车”。右键标记→切换可见。</p><p>Token cue: when the father is killed (play the 斩 Slash sound), reveal "The medicine cart, wrecked" and hide "The medicine cart". Right-click a token → toggle visibility.</p>'),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
  # 36 x 24 squares on a 2304x1536 map: open water above and to the right, the reed bank and jetty along the bottom. Foundry's fog weather drifts over it.
