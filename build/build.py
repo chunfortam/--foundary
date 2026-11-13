@@ -59,8 +59,8 @@ def item(name, desc=''):
     return {'_id': rid(), 'name': name, 'type': 'item', 'img': 'icons/svg/item-bag.svg', 'system': {'description': {'value': desc}}, 'flags': {}, 'effects': []}
 def chars(**k): return {c: {'value': v} for c, v in k.items()}
 def hpcalc(ch): return (ch['con'] + ch['siz']) // 10
-def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', disposition=0, extra=None, link=True, san=None, luck=50, armor=None, sanloss=None, occupation='', age=''):
-    random.seed('actor:' + name); hp = hpcalc(ch); mp = ch['pow'] // 5
+def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', disposition=0, extra=None, link=True, san=None, luck=50, armor=None, sanloss=None, occupation='', age='', idkey=None, tokname=None):
+    random.seed('actor:' + (idkey or name)); hp = hpcalc(ch); mp = ch['pow'] // 5
     sys = {'characteristics': chars(**ch), 'attribs': {'hp': {'value': hp, 'max': hp}, 'mp': {'value': mp, 'max': mp}, 'lck': {'value': luck}, 'san': {'value': san if san is not None else ch['pow'], 'max': 99, 'dailyLimit': 10}},
            'infos': {'occupation': occupation, 'age': age}, 'flags': {'locked': True}}
     if armor is not None: sys['attribs']['armor'] = {'value': armor}
@@ -72,8 +72,8 @@ def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', di
         if sanloss: sys['special'] = {'sanLoss': {'checkPassed': sanloss[0], 'checkFailled': sanloss[1]}, 'attacksPerRound': 1}
     if extra: sys.update(extra)
     its = skills + weapons + items
-    a = {'_id': rid('actor:' + name), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
-         'prototypeToken': {'name': name, 'actorLink': link, 'disposition': disposition, 'texture': {'src': tok}, 'width': 1, 'height': 1, 'sight': {'enabled': atype == 'character'}, 'displayName': 30, 'displayBars': 40 if atype != 'character' else 50, 'bar1': {'attribute': 'attribs.hp'}}}
+    a = {'_id': rid('actor:' + (idkey or name)), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
+         'prototypeToken': {'name': tokname or name, 'actorLink': link, 'disposition': disposition, 'texture': {'src': tok}, 'width': 1, 'height': 1, 'sight': {'enabled': atype == 'character'}, 'displayName': 30, 'displayBars': 40 if atype != 'character' else 50, 'bar1': {'attribute': 'attribs.hp'}}}
     return a
 ACT = {}
 # ---------------- pregens ----------------
@@ -88,7 +88,7 @@ w1 = [weapon('止水 Stillwater (poisoned sword)', '1D8', 'i.skill.fighting-swor
       weapon('佩刀 Own sabre', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/scimitar-worn-blue.webp'),
       weapon('飞刀 Throwing knives', '1D4', 'i.skill.throw', rngd=True, rng=10, ahdb=True, img='icons/weapons/thrown/dagger-ringed-steel.webp'),
       weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
-ACT['pc1'] = actor('HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)', 'character', ch1, sk1, w1, [item('止水 Stillwater', '师父的名剑，淬有雨师墨。The master\'s sword, coated with Rainmaster\'s Ink.'), item('行囊 Pack', '全副身家。Everything you own.')], t1,
+ACT['pc1'] = actor('陆青崖 Lu Bluecliff (HO1 The Wanderer)', 'character', ch1, sk1, w1, [item('止水 Stillwater', '师父的名剑，淬有雨师墨。The master\'s sword, coated with Rainmaster\'s Ink.'), item('行囊 Pack', '全副身家。Everything you own.')], t1,
     bio_zh='<p>二十余岁，衣着朴素，行动如飞凫。岘山山阳道人的弟子。</p>', bio_en='<p>Twenties, plainly dressed, moves like a water-bird taking flight. Disciple of the Hermit of Mount Crag. Rename and reshape freely; the bonuses (DEX+10, STR+10, Sword+20, Climb+15) are already included.</p>', disposition=1, luck=60, occupation='游侠 Wanderer', age='24')
 ch2 = dict(str=50, con=60, siz=55, dex=65, app=70, int=75, pow=70, edu=70)
 t2 = token_img('pc_merchant', '商', (150, 95, 60, 255))
@@ -99,8 +99,8 @@ sk2 = [dx, skill('i.skill.credit-rating', 60, ch2), skill('i.skill.medicine', 65
        skill('i.skill.swim', 35, ch2), skill('i.skill.natural-world', 40, ch2), skill('i.skill.climb', 25, ch2), skill('i.skill.jump', 25, ch2), skill('i.skill.stealth', 30, ch2)]
 w2 = [weapon('点穴 Acupoint Strike', '1D3', skill_id=dx['_id'], img='icons/skills/melee/unarmed-punch-fist.webp'),
       weapon('匕首 Dagger', '1D4+2', 'i.skill.fighting-brawl', addb=True, img='icons/weapons/daggers/dagger-straight-blue.webp'),
-      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
-ACT['pc2'] = actor('HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)', 'character', ch2, sk2, w2, [item('药箱 Medicine chest'), item('药行印信 Pharmacy seal', '樊城分号掌柜认得你。The Fencewall branch manager knows you.')], t2,
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg', idkey='HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)', tokname='陆青崖 Lu Bluecliff')]
+ACT['pc2'] = actor('沈怀珠 Shen Pearl (HO2 The Merchant Heir)', 'character', ch2, sk2, w2, [item('药箱 Medicine chest'), item('药行印信 Pharmacy seal', '樊城分号掌柜认得你。The Fencewall branch manager knows you.')], t2,
     bio_zh='<p>二十岁上下，衣料考究。临安名药行的少东家。药行名字与经营理念由你拟定。</p>', bio_en='<p>About twenty, expensively dressed. Heir of a famous pharmacy house in the capital. Name the house and decide its ethos. Bonuses (Credit+10, Medicine+30, Acupoint Strike 50 base) are included.</p>', disposition=1, luck=65, occupation='商贾 Merchant heir', age='20')
 ch3 = dict(str=55, con=55, siz=65, dex=60, app=75, int=70, pow=65, edu=80)
 t3 = token_img('pc_official', '官', (120, 60, 90, 255))
@@ -112,9 +112,9 @@ for s in sk3:
     if s['name'].startswith('Art/Craft'): s['name'] = 'Art/Craft (Calligraphy 书法)'; s['system']['skillName'] = 'Calligraphy 书法'
 w3 = [weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=True, img='icons/weapons/bows/shortbow-recurve.webp'),
       weapon('佩剑 Sword', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/sword-guard-steel.webp'),
-      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
-ACT['pc3'] = actor('HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)', 'character', ch3, sk3, w3, [item('宣抚使印绶 Commissioner\'s seal'), item('未愈的伤 An unhealed wound', '突围时所受，自行拟定。From the breakout; you decide what it is.')], t3,
-    bio_zh='<p>年轻的宣抚使，出身临安高门，气度雍容。</p>', bio_en='<p>A young Commissioner from one of the capital\'s great families; graceful, well-spoken. Bonuses (Bow+30, APP+10, EDU+10) are included.</p>', disposition=1, luck=55, occupation='宣抚使 Commissioner', age='22')
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg', idkey='HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)', tokname='沈怀珠 Shen Pearl')]
+ACT['pc3'] = actor('谢云骧 Xie Cloudmane (HO3 The Commissioner)', 'character', ch3, sk3, w3, [item('宣抚使印绶 Commissioner\'s seal'), item('未愈的伤 An unhealed wound', '突围时所受，自行拟定。From the breakout; you decide what it is.')], t3,
+    bio_zh='<p>年轻的宣抚使，出身临安高门，气度雍容。</p>', bio_en='<p>A young Commissioner from one of the capital\'s great families; graceful, well-spoken. Bonuses (Bow+30, APP+10, EDU+10) are included.</p>', disposition=1, luck=55, occupation='宣抚使 Commissioner', age='22', idkey='HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)', tokname='谢云骧 Xie Cloudmane')
 # ---------------- NPCs ----------------
 def npc(key, name, ch, sk, wp, ch_tok, color, notes_zh, notes_en, armor=None, disposition=-1, atype='npc', sanloss=None, link=False, hp=None):
     tok = token_img(key, ch_tok, color)
@@ -162,6 +162,7 @@ FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'so
     'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'),
     'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
+for k in ('pc1', 'pc2', 'pc3', 'ashu', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
 for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
@@ -176,7 +177,7 @@ JR = [
 # AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
 def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1):
     return {'_id': rid(), 'name': name or a['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
-            'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'displayName': 30, 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
+            'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
 def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048):
     random.seed('scene:' + name); toks = [tok(*t[0], G, **t[1]) for t in tokens]
     return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
@@ -188,7 +189,7 @@ T = lambda a, x, y, **k: ((a, x, y), k)
 SC = [
  # 24 x 16 squares
  scene('1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)', 'banquet.webp', 128,
-       [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='HO1 游侠 (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
+       [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='陆青崖 Lu Bluecliff (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
  scene('2 · 樊城·北门 The North Gate (HO2)', 'gate.webp', 128,
        [T(A['pc2'], 9.8, 2.2), T(A['niu'], 12.5, 11.3)] + [T(A['soldier'], x, y, name=f'守门兵 Gate guard {i+1}') for i, (x, y) in enumerate([(12.4, 1.6), (13.7, 2.4), (10.6, 9.8), (13.6, 9.8)])], 0.0),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
@@ -212,7 +213,7 @@ for sc, snd in zip(SC, PL['sounds'][:5]):
     sc['playlist'] = PL['_id']; sc['playlistSound'] = snd['_id']
 # Extended session 0: the Street Crossing at noon on the 12th (1536x1024 map, 24x16 squares).
 STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp', 64,
-               [T(A['pc1'], 9, 12.5, name='HO1 游侠 (disguised)'), T(A['pc2'], 10.2, 12.5), T(A['pc3'], 11.4, 12.5)] +
+               [T(A['pc1'], 9, 12.5, name='陆青崖 Lu Bluecliff (disguised)'), T(A['pc2'], 10.2, 12.5), T(A['pc3'], 11.4, 12.5)] +
                [T(A['soldier'], x, y, name=f'哨兵 Sentry {i+1}') for i, (x, y) in enumerate([(9.5, 6.3), (14.5, 6.3), (12, 2.3), (16.5, 11.5)])], 0.1,
                '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
 STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
@@ -229,7 +230,7 @@ adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚�
 adv['_key'] = f"!adventures!{adv['_id']}"
 json.dump(adv, open(f'{SRC}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.0', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.1', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
         'styles': ['styles/gongruo.css']}
