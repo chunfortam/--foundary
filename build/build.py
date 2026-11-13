@@ -195,7 +195,7 @@ SC = [
  scene('1 · 樊城衙署·庆功宴 The Victory Banquet (HO1)', 'banquet.webp', 128,
        [T(A['ashu'], 11, 2.3), T(A['duan'], 13, 2.3), T(A['pc1'], 10, 13.6, name='陆青崖 Lu Bluecliff (disguised)')] + [T(A['soldier'], x, y, name=f'卫兵 Guard {i+1}') for i, (x, y) in enumerate([(4.3, 4.5), (19.2, 4.5), (4.3, 9.5), (19.2, 9.5), (8.5, 13.3), (15.3, 13.3), (2.2, 6.5), (21.5, 12.2)])], 0.15),
  scene('2 · 樊城·北门 The North Gate (HO2)', 'gate.webp', 128,
-       [T(A['pc2'], 12, 8.4), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 11.9, 1.1)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(5.5, 1.5), (9.2, 1.5), (14.6, 1.5), (18.4, 1.5)])], 0.0),
+       [T(A['pc2'], 12, 8.4), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 14.9, 3.1)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
  scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 128,

@@ -7933,8 +7933,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/niu.webp"
      },
-     "x": 1523,
-     "y": 140,
+     "x": 1907,
+     "y": 396,
      "width": 1,
      "height": 1,
      "disposition": 1,
@@ -8095,8 +8095,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
      },
-     "x": 704,
-     "y": 192,
+     "x": 1088,
+     "y": 448,
      "width": 1,
      "height": 1,
      "disposition": -1,
@@ -8122,8 +8122,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
      },
-     "x": 1177,
-     "y": 192,
+     "x": 1561,
+     "y": 448,
      "width": 1,
      "height": 1,
      "disposition": -1,
@@ -8149,8 +8149,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
      },
-     "x": 1868,
-     "y": 192,
+     "x": 2252,
+     "y": 448,
      "width": 1,
      "height": 1,
      "disposition": -1,
@@ -8176,8 +8176,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
      },
-     "x": 2355,
-     "y": 192,
+     "x": 2739,
+     "y": 448,
      "width": 1,
      "height": 1,
      "disposition": -1,
