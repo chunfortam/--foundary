@@ -367,6 +367,10 @@ def runbook_html():
             "You run for Fencewall. DEX roll: on a failure take 1D3, a wound that will not fully heal in this scenario, and max HP -1.")
     s += bi("城门戒严：守门的是宋兵，吊桥半起，城头弓弩对着城外。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
             "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, Niu the Archer, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
+    s += '<blockquote>' + bi("<b>牛富（读给玩家）：</b>城头走下来一个人。四十来岁，黝黑精瘦，披一身旧铁甲，背上斜挂一把漆黑的长弓，比常人的弓长出一截，弓背上缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后才看你的脸。守门兵见了他都往后让半步。他只报了名号：牛富，樊城钤辖，范将军麾下掌兵。",
+            "<b>Niu the Archer (read aloud):</b> A man comes down from the wall. Forties, dark-skinned, lean and hard as a drawn bowstring, in old iron armour. Slung across his back is a long black bow, a hand longer than any you have seen, its grip wrapped in leather worn pale. Eyes like torches: he looks at your hands first, then at your carts, and only then at your face. The gate guards step back half a pace as he passes. He gives only his name and office: Niu, garrison commander of Fencewall, under Commander Fan.") + '</blockquote>'
+    s += bi("（牛富是樊城钤辖，范天顺之下掌兵马。两军对阵前他一箭射死了阿术的侄子，蒙古人记着这笔账。他对HO2直率、客气，说到做到——只要他还自由。）",
+            "(Niu is the garrison commander under Commander Fan. Before the armies met he shot Ashu's nephew dead with a single arrow; the Mongols have not forgotten. With HO2 he is blunt, courteous, and keeps his word, for as long as he is free.)")
     s += bi("（这副可射四百步的神臂弓，不久后牛富入狱时会交到打更少年方未名手里。）",
             "(That bow shoots four hundred paces. When Niu is thrown in the gaol it will pass to Nameless Fang, the watchman boy.)")
     s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。未几樊城被围，范天顺自缢，范玉楼献城，牛富入狱，许诺再无消息。父亲身死，临安产业群龙无首，你必须走。→ 公共导入。",

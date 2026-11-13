@@ -139,7 +139,9 @@ BODY = f'''
 {q('“这鞑子知道你们家有钱，不剥层皮不会放人。有什么值钱的，现在就献出来……”', '"This Tartar knows your house is rich. He won&#39;t let you go without skinning you. Whatever you have of value, offer it now, as a gift to the Khan and the Marshal..."')}
 <p>Whatever HO2 says, father goes forward alone and sends them to count stock. The clerks beg them to run. Then: <b>▶ play 斩 Slash</b> (Playlists → 音效 Sound effects) — a mist of blood, a head flung sideways. Carts roll over the stain until it is gone.</p>
 <p><b>Run for the gate:</b> {R('DEX')}; fail = 1D3, a wound that never fully heals, max HP −1.</p>
-<p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes over (dark, lean, black bow). He tells them Commander Fan is hunting a thief in town, and promises help with anything.</p>
+<p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes down from the wall:</p>
+{q('四十来岁，黝黑精瘦，旧铁甲，背上一把漆黑长弓，弓背缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后看你的脸。', 'Forties, dark, lean and hard as a drawn bowstring, old iron armour, a long black bow across his back, grip wrapped in leather worn pale. Eyes like torches: your hands first, then your carts, then your face.')}
+<p>Garrison commander under Commander Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Fan is hunting a thief in town, and promises help with anything.</p>
 <p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere; the assault, Commander Fan's suicide, surrender, Niu arrested. The house is leaderless. → the reeds.</p>
 </div>
 <div>
@@ -225,7 +227,7 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 .agenda td:first-child { white-space: nowrap; width: 1%; font-weight: bold; }
 .npc { font-size: 8pt; } .npc td:first-child { width: 17%; } .npc td.c { text-align: center; white-space: nowrap; } .npc td.note { font-size: 7.5pt; color: #333; } .npc th { background: #eee; }
 small { font-size: 7.5pt; color: #444; }
-section.beats { font-size: 7.8pt; line-height: 1.24; } section.beats .quote { font-size: 8.1pt; margin: 3px 0; } section.beats h2 { margin: 6px 0 2px; }
+section.beats { font-size: 7.4pt; line-height: 1.2; } section.beats .quote { font-size: 8.1pt; margin: 3px 0; } section.beats h2 { margin: 6px 0 2px; }
 .opening p { font-size: 11pt; line-height: 1.5; margin: 8px 0; }
 .opening p.after { font-size: 9.5pt; color: #444; border-top: 1px solid #000; padding-top: 6px; margin-top: 16px; }
 '''
