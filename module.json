@@ -27,19 +27,6 @@
       }
     ]
   },
-  "packs": [
-    {
-      "name": "session0",
-      "label": "公若渡河 · Session 0",
-      "path": "packs/session0",
-      "type": "Adventure",
-      "system": "CoC7",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      }
-    }
-  ],
   "styles": [
     "styles/gongruo.css"
   ]

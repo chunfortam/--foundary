@@ -179,12 +179,15 @@ JR = [
 ]
 # ---------------- scenes ----------------
 # AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
+LEVEL = 'defaultLevel0000'  # Foundry 14 scene level; v12/13 strip the unknown fields and use `background` instead
+def level(name, img_src):
+    return {'_id': LEVEL, 'name': name, 'background': {'src': img_src}, 'elevation': {'bottom': 0, 'top': None}, 'sort': 0, 'flags': {}}
 def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1):
     return {'_id': rid(), 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
-            'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
+            'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'level': LEVEL, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
 def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048):
     random.seed('scene:' + name); toks = [tok(*t[0], G, **t[1]) for t in tokens]
-    return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
+    return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'levels': [level(name, f'modules/{MOD}/assets/maps/{img}')], 'initialLevel': LEVEL, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
             'tokenVision': False, 'fog': {'exploration': False}, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
             'tokens': toks, 'walls': [], 'lights': [], 'notes': [], 'drawings': [], 'sounds': [], 'templates': [], 'tiles': [], 'regions': [], 'flags': {}, 'sort': 0, 'initial': None, 'description': notes}
@@ -225,7 +228,7 @@ SC.append(STREET)
 # Title screen for the table TV: the scenario's cover re-lettered in English, Banquet music.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
               notes='<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>')
-TITLE['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
+TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(0, TITLE)
 SFX = {'_id': rid('playlist:sfx'), 'name': '音效 Sound effects', 'description': 'RPG Sound Pack by artisticdude (opengameart.org), CC0', 'mode': -1, 'playing': False, 'fade': 0, 'channel': 'interface', 'sort': 1, 'seed': 0, 'flags': {}, 'folder': None,
        'sounds': [{'_id': rid('sound:slash'), 'name': '斩 Slash — the father\'s head (HO2 intro)', 'path': f'modules/{MOD}/assets/sfx/slash.ogg', 'channel': 'interface', 'playing': False, 'repeat': False, 'volume': 1.0, 'fade': 0, 'sort': 0, 'flags': {}, 'description': 'RPG Sound Pack by artisticdude (opengameart.org), CC0'}]}
@@ -235,10 +238,11 @@ adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚�
        'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': [], 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
 adv['_key'] = f"!adventures!{adv['_id']}"
 json.dump(adv, open(f'{SRC}/adventure.json', 'w'), ensure_ascii=False, indent=1)
+# Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
+json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
         'version': '0.5.3', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
-        'packs': [{'name': 'session0', 'label': '公若渡河 · Session 0', 'path': 'packs/session0', 'type': 'Adventure', 'system': 'CoC7', 'ownership': {'PLAYER': 'NONE', 'ASSISTANT': 'OWNER'}}],
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
 open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:inherit;opacity:.85;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:inherit;opacity:.85}.journal-page-content table td{vertical-align:top;font-size:0.92em}\n')

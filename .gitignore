@@ -2,12 +2,3 @@ __pycache__/
 *.pyc
 /ai/
 *.zip
-packs/session0/CURRENT
-packs/session0/LOG
-packs/session0/000010.log
-packs/session0/MANIFEST-000009
-
-# Foundry rewrites the LevelDB pack on every world launch; only the committed pack matters.
-packs/**/lost/
-packs/**/LOG.old
-packs/**/LOCK
