@@ -89,7 +89,7 @@ w1 = [weapon('止水 Stillwater (poisoned sword)', '1D8', 'i.skill.fighting-swor
       weapon('飞刀 Throwing knives', '1D4', 'i.skill.throw', rngd=True, rng=10, ahdb=True, img='icons/weapons/thrown/dagger-ringed-steel.webp'),
       weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
 ACT['pc1'] = actor('陆青崖 Lu Bluecliff (HO1 The Wanderer)', 'character', ch1, sk1, w1, [item('止水 Stillwater', '师父的名剑，淬有雨师墨。The master\'s sword, coated with Rainmaster\'s Ink.'), item('行囊 Pack', '全副身家。Everything you own.')], t1,
-    bio_zh='<p>二十余岁，衣着朴素，行动如飞凫。岘山山阳道人的弟子。</p>', bio_en='<p>Twenties, plainly dressed, moves like a water-bird taking flight. Disciple of the Hermit of Mount Crag. Rename and reshape freely; the bonuses (DEX+10, STR+10, Sword+20, Climb+15) are already included.</p>', disposition=1, luck=60, occupation='游侠 Wanderer', age='24')
+    bio_zh='<p>二十余岁，衣着朴素，行动如飞凫。岘山山阳道人的弟子。</p>', bio_en='<p>Twenties, plainly dressed, moves like a water-bird taking flight. Disciple of the Hermit of Mount Crag. Rename and reshape freely; the bonuses (DEX+10, STR+10, Sword+20, Climb+15) are already included.</p>', disposition=1, luck=60, occupation='游侠 Wanderer', age='24', idkey='HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)', tokname='陆青崖 Lu Bluecliff')
 ch2 = dict(str=50, con=60, siz=55, dex=65, app=70, int=75, pow=70, edu=70)
 t2 = token_img('pc_merchant', '商', (150, 95, 60, 255))
 dx = custom_skill('点穴', 'Acupoint Strike', 60)
@@ -99,9 +99,9 @@ sk2 = [dx, skill('i.skill.credit-rating', 60, ch2), skill('i.skill.medicine', 65
        skill('i.skill.swim', 35, ch2), skill('i.skill.natural-world', 40, ch2), skill('i.skill.climb', 25, ch2), skill('i.skill.jump', 25, ch2), skill('i.skill.stealth', 30, ch2)]
 w2 = [weapon('点穴 Acupoint Strike', '1D3', skill_id=dx['_id'], img='icons/skills/melee/unarmed-punch-fist.webp'),
       weapon('匕首 Dagger', '1D4+2', 'i.skill.fighting-brawl', addb=True, img='icons/weapons/daggers/dagger-straight-blue.webp'),
-      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg', idkey='HO1 游侠 · The Wanderer (陆青崖 Lu Bluecliff)', tokname='陆青崖 Lu Bluecliff')]
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
 ACT['pc2'] = actor('沈怀珠 Shen Pearl (HO2 The Merchant Heir)', 'character', ch2, sk2, w2, [item('药箱 Medicine chest'), item('药行印信 Pharmacy seal', '樊城分号掌柜认得你。The Fencewall branch manager knows you.')], t2,
-    bio_zh='<p>二十岁上下，衣料考究。临安名药行的少东家。药行名字与经营理念由你拟定。</p>', bio_en='<p>About twenty, expensively dressed. Heir of a famous pharmacy house in the capital. Name the house and decide its ethos. Bonuses (Credit+10, Medicine+30, Acupoint Strike 50 base) are included.</p>', disposition=1, luck=65, occupation='商贾 Merchant heir', age='20')
+    bio_zh='<p>二十岁上下，衣料考究。临安名药行的少东家。药行名字与经营理念由你拟定。</p>', bio_en='<p>About twenty, expensively dressed. Heir of a famous pharmacy house in the capital. Name the house and decide its ethos. Bonuses (Credit+10, Medicine+30, Acupoint Strike 50 base) are included.</p>', disposition=1, luck=65, occupation='商贾 Merchant heir', age='20', idkey='HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)', tokname='沈怀珠 Shen Pearl')
 ch3 = dict(str=55, con=55, siz=65, dex=60, app=75, int=70, pow=65, edu=80)
 t3 = token_img('pc_official', '官', (120, 60, 90, 255))
 sk3 = [skill('i.skill.firearms-bow', 75, ch3), skill('i.skill.credit-rating', 75, ch3), skill('i.skill.persuade', 65, ch3), skill('i.skill.charm', 55, ch3), skill('i.skill.intimidate', 50, ch3), skill('i.skill.history', 55, ch3),
@@ -112,7 +112,7 @@ for s in sk3:
     if s['name'].startswith('Art/Craft'): s['name'] = 'Art/Craft (Calligraphy 书法)'; s['system']['skillName'] = 'Calligraphy 书法'
 w3 = [weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=True, img='icons/weapons/bows/shortbow-recurve.webp'),
       weapon('佩剑 Sword', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/sword-guard-steel.webp'),
-      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg', idkey='HO2 商贾 · The Merchant Heir (沈怀珠 Shen Pearl)', tokname='沈怀珠 Shen Pearl')]
+      weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
 ACT['pc3'] = actor('谢云骧 Xie Cloudmane (HO3 The Commissioner)', 'character', ch3, sk3, w3, [item('宣抚使印绶 Commissioner\'s seal'), item('未愈的伤 An unhealed wound', '突围时所受，自行拟定。From the breakout; you decide what it is.')], t3,
     bio_zh='<p>年轻的宣抚使，出身临安高门，气度雍容。</p>', bio_en='<p>A young Commissioner from one of the capital\'s great families; graceful, well-spoken. Bonuses (Bow+30, APP+10, EDU+10) are included.</p>', disposition=1, luck=55, occupation='宣抚使 Commissioner', age='22', idkey='HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)', tokname='谢云骧 Xie Cloudmane')
 # ---------------- NPCs ----------------
