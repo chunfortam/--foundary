@@ -135,7 +135,7 @@ BODY = f'''
 <p><b>Out:</b> HO1 slips away in the chaos ({R('Stealth')} or {R('Climb')} if they want a roll). Hiding since. The bridge is cut, the bank guarded; money finds a boatman. → the reeds at midnight.</p>
 
 <h2>2 · North Gate 北门 — HO2 alone <small>scene: Fencewall, the North Gate</small></h2>
-<p><b>Open:</b> end of December 1267, two weeks before the banquet; Fencewall is besieged but still Song (banners on the wall, gate under martial law). The medicine convoy comes up the road from the south, father in front, and runs into the Mongol siege line outside the North Gate. Soldiers stop you: a Mongol who barely speaks Chinese (Toghan 脱欢) and a Chinese general (Duan 段游衍) who does the talking.</p>
+<p><b>Open:</b> end of Dec 1267, two weeks before the banquet. Fencewall is besieged but still Song (banners on the wall, gate under martial law). The medicine convoy, father in front, runs into the Mongol siege line outside the North Gate. Soldiers stop you: a Mongol who barely speaks Chinese (Toghan 脱欢) and a Chinese general (Duan 段游衍) who does the talking.</p>
 {q('“这鞑子知道你们家有钱，不剥层皮不会放人。有什么值钱的，现在就献出来……”', '"This Tartar knows your house is rich. He won&#39;t let you go without skinning you. Whatever you have of value, offer it now, as a gift to the Khan and the Marshal..."')}
 <p>Whatever HO2 says, father goes forward alone and sends them to count stock. The clerks beg them to run. Then: <b>▶ play 斩 Slash</b> (Playlists → 音效 Sound effects) — a mist of blood, a head flung sideways. Carts roll over the stain until it is gone.</p>
 <p><b>Run for the gate:</b> {R('DEX')}; fail = 1D3, a wound that never fully heals, max HP −1.</p>
@@ -225,7 +225,7 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 .agenda td:first-child { white-space: nowrap; width: 1%; font-weight: bold; }
 .npc { font-size: 8pt; } .npc td:first-child { width: 17%; } .npc td.c { text-align: center; white-space: nowrap; } .npc td.note { font-size: 7.5pt; color: #333; } .npc th { background: #eee; }
 small { font-size: 7.5pt; color: #444; }
-section.beats { font-size: 7.9pt; line-height: 1.25; } section.beats .quote { font-size: 8.1pt; margin: 3px 0; } section.beats h2 { margin: 6px 0 2px; }
+section.beats { font-size: 7.8pt; line-height: 1.24; } section.beats .quote { font-size: 8.1pt; margin: 3px 0; } section.beats h2 { margin: 6px 0 2px; }
 .opening p { font-size: 11pt; line-height: 1.5; margin: 8px 0; }
 .opening p.after { font-size: 9.5pt; color: #444; border-top: 1px solid #000; padding-top: 6px; margin-top: 16px; }
 '''
