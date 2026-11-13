@@ -6882,6 +6882,23 @@
    },
    "pages": [
     {
+     "_id": "kQpF876M4JVLkP2d",
+     "name": "开场 Opening",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h1>开场 · Opening narrative</h1><p class=\"en\"><em>主持人朗读。Read aloud by the GM, lights low, title screen on, before the three personal intros. Then each player gives a name and one visible detail.</em></p><p class=\"narr\">Listen.</p><p class=\"narr\">There is a river in the middle of China called the Han 汉江. In winter it runs grey and wide and slow, and for a thousand years it has been the line between north and south. On its two banks stand two walled cities, close enough that on a clear day a man on one wall can watch the sentries pace on the other: Fencewall 樊城 to the north, Southbright 襄阳 to the south. Between them, until last week, there was a bridge.</p><p class=\"narr\">The year is 1268. The empire of the Song 宋 is old and gold and soft, and it has forgotten how to fight. Out of the north have come the Mongols, who have never forgotten. They have broken kingdoms from the Yellow Sea to the gates of Europe, and now their horses stand on the north bank of the Han, and their marshal, a man called Ashu 阿术 of the Uriankhai, has taken Fencewall in three days. The commander of the garrison hanged himself. The magistrate opened the gates. The bridge is gone. Across the water Southbright still holds, its watch-fires small and stubborn in the dark, and everyone in Fencewall who has somewhere else to be is looking at those fires and wondering how to reach them.</p><p class=\"narr\">This is not a world of monsters. This is a world of people: of soldiers and merchants and officials, and of another kind of people who live in the cracks between them, in what is called the jianghu 江湖, the rivers and lakes. Wanderers. Swordsmen who owe nothing to the emperor and everything to their masters. People who can run up a wall and down the other side, who can put a finger on your neck and stop your arm, who carry old grudges and older swords. If you have seen a film where two fighters duel on the roof of a teahouse, you know them.</p><p class=\"narr\">Three of those people are in Fencewall tonight.</p><p class=\"narr\">One of you is a wanderer 游侠, young and fast and poor, with a sword that does not belong to you and a thing you did ten nights ago that the whole city is whispering about.</p><p class=\"narr\">One of you is the heir to a great house of medicine 商贾, from the capital far to the south, who came north with a convoy and a father and will go home with neither.</p><p class=\"narr\">One of you is a commissioner of the court 命官, born to one of the oldest families in the empire, sent here with five thousand men to save a city that has already fallen, and still carrying the wound that kept you from leaving with the rest.</p><p class=\"narr\">None of you has met the others. Each of you has a reason to cross the river. Each of you has a secret you would rather keep.</p><p class=\"narr\">It is the eleventh of January. There is no moon. The guards on the bank change at midnight, and for a few minutes nobody is watching the reeds east of the city, where a one-armed boatman has promised, for a price, to take passengers across.</p><p class=\"narr\">And it is foggy. In midwinter. Over a river that has never, in anyone's memory, made fog in January.</p><p class=\"narr\">Let's meet you.</p>"
+     },
+     "ownership": {
+      "default": -1
+     },
+     "sort": 0
+    },
+    {
      "_id": "iJN7GqxiKy8CsX2A",
      "name": "入门 Primer",
      "type": "text",
@@ -6896,7 +6913,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 0
+     "sort": 100000
     },
     {
      "_id": "bakzhAEhtPifgXBV",
@@ -6913,7 +6930,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 100000
+     "sort": 200000
     },
     {
      "_id": "5LB5eHRMXNmSV545",
@@ -6930,7 +6947,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 200000
+     "sort": 300000
     }
    ],
    "flags": {},

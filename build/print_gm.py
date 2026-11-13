@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """GM pack for session 0 (A4, English with Chinese inline): checklist, agenda, scene beats with every roll, NPC card.
 Usage: python3 build/print_gm.py -> print/gm-pack.pdf"""
-import json, os, re, subprocess
+import json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from content import OPENING
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADV = json.load(open(os.path.join(ROOT, 'build/src/session0/adventure.json')))
 
@@ -49,7 +51,14 @@ def npc_rows():
 def q(zh, en): return f'<div class="quote"><div class="zh">{zh}</div><div>{en}</div></div>'
 def R(x): return f'<span class="roll">{x}</span>'
 
+OPEN = ''.join(f'<p>{p}</p>' for p in OPENING)
 BODY = f'''
+<section class="opening">
+<h1>Opening narrative 开场 <small>read aloud, lights low, title screen on, before the personal intros</small></h1>
+{OPEN}
+<p class="after">Then round the table: each player gives their character's name and one visible detail. Then: "Ten nights earlier..." and the first intro.</p>
+</section>
+
 <section>
 <h1>公若渡河 · Session 0 GM Pack <small>Crossing the Han · Call of Cthulhu 7e · for the GM only</small></h1>
 <div class="cols">
@@ -175,6 +184,8 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 .agenda td:first-child { white-space: nowrap; width: 1%; font-weight: bold; }
 .npc { font-size: 8pt; } .npc td:first-child { width: 17%; } .npc td.c { text-align: center; white-space: nowrap; } .npc td.note { font-size: 7.5pt; color: #333; } .npc th { background: #eee; }
 small { font-size: 7.5pt; color: #444; }
+.opening p { font-size: 11pt; line-height: 1.5; margin: 8px 0; }
+.opening p.after { font-size: 9.5pt; color: #444; border-top: 1px solid #000; padding-top: 6px; margin-top: 16px; }
 '''
 doc = f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{BODY}</body></html>'
 out = os.path.join(ROOT, 'print'); os.makedirs(out, exist_ok=True)

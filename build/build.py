@@ -166,7 +166,7 @@ for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
 JR = [
- journal('玩家入门 · Player Primer', [('入门 Primer', C.primer_html()), ('规则速查 Cheat Sheet', C.cheat_html()), ('名词对照 Glossary', C.glossary_html())], 2, FOLD['f_player']['_id']),
+ journal('玩家入门 · Player Primer', [('开场 Opening', C.opening_html()), ('入门 Primer', C.primer_html()), ('规则速查 Cheat Sheet', C.cheat_html()), ('名词对照 Glossary', C.glossary_html())], 2, FOLD['f_player']['_id']),
  journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.ho_html(1))], 0, FOLD['f_player']['_id']),
  journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.ho_html(2))], 0, FOLD['f_player']['_id']),
  journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.ho_html(3))], 0, FOLD['f_player']['_id']),

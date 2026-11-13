@@ -119,6 +119,27 @@ def primer_html():
             "The scenario bends history (the real siege lasted until 1273). You can change what happens to people here; you cannot change how the war ends.")
     return s
 
+# ---------------- OPENING NARRATIVE (read aloud, English table) ----------------
+OPENING = [
+ "Listen.",
+ "There is a river in the middle of China called the Han 汉江. In winter it runs grey and wide and slow, and for a thousand years it has been the line between north and south. On its two banks stand two walled cities, close enough that on a clear day a man on one wall can watch the sentries pace on the other: Fencewall 樊城 to the north, Southbright 襄阳 to the south. Between them, until last week, there was a bridge.",
+ "The year is 1268. The empire of the Song 宋 is old and gold and soft, and it has forgotten how to fight. Out of the north have come the Mongols, who have never forgotten. They have broken kingdoms from the Yellow Sea to the gates of Europe, and now their horses stand on the north bank of the Han, and their marshal, a man called Ashu 阿术 of the Uriankhai, has taken Fencewall in three days. The commander of the garrison hanged himself. The magistrate opened the gates. The bridge is gone. Across the water Southbright still holds, its watch-fires small and stubborn in the dark, and everyone in Fencewall who has somewhere else to be is looking at those fires and wondering how to reach them.",
+ "This is not a world of monsters. This is a world of people: of soldiers and merchants and officials, and of another kind of people who live in the cracks between them, in what is called the jianghu 江湖, the rivers and lakes. Wanderers. Swordsmen who owe nothing to the emperor and everything to their masters. People who can run up a wall and down the other side, who can put a finger on your neck and stop your arm, who carry old grudges and older swords. If you have seen a film where two fighters duel on the roof of a teahouse, you know them.",
+ "Three of those people are in Fencewall tonight.",
+ "One of you is a wanderer 游侠, young and fast and poor, with a sword that does not belong to you and a thing you did ten nights ago that the whole city is whispering about.",
+ "One of you is the heir to a great house of medicine 商贾, from the capital far to the south, who came north with a convoy and a father and will go home with neither.",
+ "One of you is a commissioner of the court 命官, born to one of the oldest families in the empire, sent here with five thousand men to save a city that has already fallen, and still carrying the wound that kept you from leaving with the rest.",
+ "None of you has met the others. Each of you has a reason to cross the river. Each of you has a secret you would rather keep.",
+ "It is the eleventh of January. There is no moon. The guards on the bank change at midnight, and for a few minutes nobody is watching the reeds east of the city, where a one-armed boatman has promised, for a price, to take passengers across.",
+ "And it is foggy. In midwinter. Over a river that has never, in anyone's memory, made fog in January.",
+ "Let's meet you.",
+]
+def opening_html():
+    s = h("开场", "Opening narrative", 1)
+    s += '<p class="en"><em>主持人朗读。Read aloud by the GM, lights low, title screen on, before the three personal intros. Then each player gives a name and one visible detail.</em></p>'
+    s += ''.join(f'<p class="narr">{p}</p>' for p in OPENING)
+    return s
+
 # ---------------- HO handouts ----------------
 HO = {}
 HO[1] = dict(
