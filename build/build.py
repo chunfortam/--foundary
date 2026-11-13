@@ -208,21 +208,21 @@ SC = [
        [T(A['pc2'], 12, 8.4), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 14.9, 3.1)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
- # 24 x 16 squares on a 1536x1024 map: open water above, the reed bank and jetty along the bottom. Foundry's fog weather effect drifts over it.
+ # 36 x 24 squares on a 2304x1536 map: open water above and to the right, the reed bank and jetty along the bottom. Foundry's fog weather drifts over it.
  # The boats are tokens of the 'boat' prop so the GM can show before/after: reveal the wreck + spine and hide the intact fishing boat when it strikes;
  # reveal "Wang's ferry, sinking" and hide the ferry when the arrows come.
  scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 64,
-       [T(A['pc1'], 1.4, 12.3), T(A['pc2'], 3.6, 12.8), T(A['pc3'], 7.6, 12.3), T(A['boatman'], 6.2, 10.9),
-        T(A['boat'], 7.4, 10.3, name='船夫王的渡船 Wang\'s ferry', w=5, h=1.6),
-        T(A['boat'], 5.2, 6.4, name='渡船·沉没 Wang\'s ferry, sinking', hidden=True, w=5.5, h=2.6, texture=BOAT_WRECK),
-        T(A['boat'], 10.2, 4.1, name='前方渔船 The fishing boat ahead', w=5, h=1.6),
-        T(A['boat'], 9.9, 3.6, name='渔船残骸 The fishing boat, wrecked', hidden=True, w=5.5, h=2.6, texture=BOAT_WRECK),
-        T(A['spine'], 12.2, 2.4, hidden=True, w=2, h=2),
-        T(A['soldier'], 13.5, 13.6, name='岸上弓手 Archer 1'), T(A['soldier'], 19.6, 14, name='岸上弓手 Archer 2'),
-        T(A['jiang_tower'], 0.6, 14.3, hidden=True), T(A['jiang_loft'], 2.2, 14.7, hidden=True), T(A['qu'], 3.8, 14.3, hidden=True)], 0.4,
+       [T(A['pc1'], 1.4, 20.3), T(A['pc2'], 3.6, 20.8), T(A['pc3'], 7.6, 20.3), T(A['boatman'], 6.2, 18.9),
+        T(A['boat'], 7.4, 18.3, name='船夫王的渡船 Wang\'s ferry', w=5, h=1.6),
+        T(A['boat'], 11.5, 12.2, name='渡船·沉没 Wang\'s ferry, sinking', hidden=True, w=5.5, h=2.6, texture=BOAT_WRECK),
+        T(A['boat'], 17.2, 7.6, name='前方渔船 The fishing boat ahead', w=5, h=1.6),
+        T(A['boat'], 16.9, 7.1, name='渔船残骸 The fishing boat, wrecked', hidden=True, w=5.5, h=2.6, texture=BOAT_WRECK),
+        T(A['spine'], 19.4, 5.6, hidden=True, w=2, h=2),
+        T(A['soldier'], 15.5, 21.6, name='岸上弓手 Archer 1'), T(A['soldier'], 27, 22, name='岸上弓手 Archer 2'),
+        T(A['jiang_tower'], 0.6, 22.3, hidden=True), T(A['jiang_loft'], 2.2, 22.7, hidden=True), T(A['qu'], 3.8, 22.3, hidden=True)], 0.4,
        '<p>标记操作：划船时拖动“船夫王的渡船”；脊刺攻击时显示“渔船残骸”与脊刺、隐藏“前方渔船”；中箭沉船时显示“渡船·沉没”、隐藏渡船。右键标记→切换可见。</p>'
        '<p>Token cues: drag Wang\'s ferry out as they row. At the spine attack, reveal "The fishing boat, wrecked" and the spine and hide "The fishing boat ahead". When the arrows sink them, reveal "Wang\'s ferry, sinking" and hide the ferry. Right-click a token → toggle visibility (eye icon).</p>',
-       w=1536, h=1024, weather='fog'),
+       w=2304, h=1536, weather='fog'),
  # 12 x 8 squares: a small shop, bigger squares
  scene('5 · 曲流的棺材铺 The Coffin Shop', 'coffinshop.webp', 256,
        [T(A['pc1'], 5.2, 1.4), T(A['pc2'], 7.3, 1.8), T(A['pc3'], 9.4, 1.4), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6), T(A['yue'], 3.4, 3.2, hidden=True), T(A['liu'], 9.2, 2.6, hidden=True)], 0.3,
