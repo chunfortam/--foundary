@@ -373,8 +373,12 @@ def runbook_html():
             "(Niu is the garrison commander under Commander Fan. Before the armies met he shot Ashu's nephew dead with a single arrow; the Mongols have not forgotten. With HO2 he is blunt, courteous, and keeps his word, for as long as he is free.)")
     s += bi("（这副可射四百步的神臂弓，不久后牛富入狱时会交到打更少年方未名手里。）",
             "(That bow shoots four hundred paces. When Niu is thrown in the gaol it will pass to Nameless Fang, the watchman boy.)")
-    s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。未几樊城被围，范天顺自缢，范玉楼献城，牛富入狱，许诺再无消息。父亲身死，临安产业群龙无首，你必须走。→ 公共导入。",
-            "At an inn or a townsman's house you pick up gossip: a scarred woman outlaw (Autumn), a drunk monk at the temple, a night watchman who is everywhere. Days later the siege, the Commander's suicide, the surrender, Niu's arrest; his promises die with his freedom. Your house in the capital is leaderless. You must go. → Night Crossing.")
+    s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。",
+            "At an inn or a townsman's house you pick up gossip: a scarred woman outlaw (Autumn), a drunk monk at the temple, a night watchman who is everywhere.")
+    s += bi("<b>数日后（叙述）：</b>没安歇几天，元军总攻。一月三日，守将范天顺不肯降，在衙署自缢殉国；次日他的侄子范玉楼开城献降，以保全城中几万百姓。阿术下令不得劫掠，街上却到处是蒙古巡逻兵。牛富拒降，被下了大狱——他答应你的事，也就随他的自由一起没了。父亲身死的消息不知有没有传到江对岸，你家在临安府的偌大产业如今群龙无首：你必须回去。",
+            "<b>Days later (narrate):</b> You have barely rested when the assault comes. On 3 January Commander Fan 范天顺 refuses to surrender and hangs himself in the Magistracy; the next day his nephew, Magistrate Fan 范玉楼, opens the gates to spare the tens of thousands inside. Marshal Ashu forbids looting, but Mongol patrols now walk every street. Niu refused to surrender and is in the gaol; his promises to you died with his freedom. Nobody knows if word of your father's death has reached the far bank, and your family's great house in the capital, Lin'an 临安, is leaderless. You have to get home.")
+    s += bi("可汉江上连通襄樊的浮桥已被截断，江岸日夜有兵把守，城里的人很难和对岸通上消息。好在只要钱到位，总有人愿意铤而走险。你四处打听，入夜后带着全副身家，来到江岸边一处不引人注目的芦苇丛——别的想过河的人，也都聚在了那里。→ 公共导入。",
+            "But the floating bridge between the two cities has been cut, soldiers watch the bank day and night, and no one in town can get word across. Still, where there is money there is someone willing to risk it. You ask around, and after dark you come, with everything you own, to an unremarkable clump of reeds on the riverbank, where the other people who mean to cross tonight have gathered too. → Night Crossing.")
     # HO3 intro
     s += h("个人导入 HO3：衙署逃脱（场景：樊城衙署）", "Personal intro HO3: escape from the Magistracy (scene: Fencewall Magistracy)")
     s += bi("朝廷命你为宣抚使发兵救援襄樊。刘卿堂请缨，率五千人随行。蒙古人以樊城为饵伏击，你们几乎毫无还手之力，幸得刘卿堂指挥，余八百人突入樊城。",

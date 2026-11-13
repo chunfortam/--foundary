@@ -142,7 +142,7 @@ BODY = f'''
 <p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes down from the wall:</p>
 {q('四十来岁，黝黑精瘦，旧铁甲，背上一把漆黑长弓，弓背缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后看你的脸。', 'Forties, dark, lean and hard as a drawn bowstring, old iron armour, a long black bow across his back, grip wrapped in leather worn pale. Eyes like torches: your hands first, then your carts, then your face.')}
 <p>Garrison commander under Commander Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Fan is hunting a thief in town, and promises help with anything.</p>
-<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere; the assault, Commander Fan's suicide, surrender, Niu arrested. The house is leaderless. → the reeds.</p>
+<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Commander Fan 范天顺 hangs himself rather than yield; 4 Jan his nephew Magistrate Fan 范玉楼 opens the gates to spare the townsfolk. No looting, but patrols everywhere; Niu refuses to surrender → gaol, his promises gone with him. Father dead, the house in Lin'an 临安 leaderless; bridge cut, bank guarded, so you buy a boatman and come to the reeds after dark with all you own. → the reeds.</p>
 </div>
 <div>
 <h2>3 · Magistracy 衙署 — HO3 alone <small>scene: Fencewall Magistracy</small></h2>
