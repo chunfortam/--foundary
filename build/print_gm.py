@@ -146,7 +146,7 @@ BODY = f'''
 </div>
 <div>
 <h2>3 · Magistracy 衙署 — HO3 alone <small>scene: Fencewall Magistracy</small></h2>
-<p><b>Open:</b> named Commissioner, Captain Liu 刘卿堂 brings 5,000; ambushed, 800 break into Fencewall. Commander Fan's joyless dinner: Magistrate Fan, Lady Fan, Prefect Xu (fat, shiny), Niu (eyes like torches). Magistrate Fan walks you home, flattering, hinting: a warm winter, the river running strangely high.</p>
+<p><b>Open:</b> named Commissioner; Captain Liu 刘卿堂 (childhood friend) brings 5,000; ambushed, 800 break into Fencewall. Commander Fan's 范天顺 banquet in the hall, nobody has the heart for it: Magistrate Fan 范玉楼 all smiles, Lady Fan silent, Prefect Xu 许德显 soft and shining with sweat, eating for everyone; Niu 牛富 across from you, dark, lean, eyes like torches, touching nothing, watching the door. Toasts to the Emperor and to victory; no one believes the second. Magistrate Fan walks you home with a lantern, flattering, then, as if he wants you to notice: a warm winter, the Han strangely high for the season.</p>
 <p><b>Then:</b> the assault. Fan orders you and Liu to Southbright at noon; your wound keeps you in bed. Liu crosses with the 800. Next day: uproar, the clear sky goes black without rain, servants scatter, Mongol cavalry ride into the compound seizing people.</p>
 <p><b>Escape:</b> {R('Stealth')}, or {R('Luck (Hard)')} with a plausible plan; fail = soldiers who arrest anyone suspicious. Fighting out is allowed (Sword 45 / Bow 75 vs horsemen); a failed fight = another wound.</p>
 <p><b>Out:</b> hiding in town; everything north of the river is Mongol. → the reeds.</p>
