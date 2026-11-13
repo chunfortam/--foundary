@@ -2,7 +2,7 @@
   "id": "gongruo-session0",
   "title": "公若渡河 Session 0 (CoC7, bilingual)",
   "description": "Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "esmodules": [
     "scripts/update.mjs"
   ],

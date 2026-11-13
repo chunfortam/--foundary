@@ -427,6 +427,8 @@ def runbook_html():
       ("江上异象：汉水女神显灵，她温和自持，必会怜悯将士魂灵。", "The fog: the Lady of the Han, who is gentle and modest and surely pities the drowned soldiers."),
       ("刺杀阿术：他主动提起，游侠的美名传遍全城，只是生死不明。", "The assassination: he brings it up himself; the whole town praises the nameless wanderer, nobody knows if he lives."),
     ])
+    s += bi("<b>主持人：</b>场景上的船是标记。划船时拖动“船夫王的渡船”出芦苇；脊刺攻击时显示“渔船残骸”与脊刺、隐藏“前方渔船”；中箭沉船时显示“渡船·沉没”、隐藏渡船（右键标记→切换可见）。",
+            "<b>GM:</b> the boats on the map are tokens. Drag Wang's ferry out of the reeds as they row; at the spine attack reveal \"The fishing boat, wrecked\" and the spine and hide \"The fishing boat ahead\"; when the arrows sink them reveal \"Wang's ferry, sinking\" and hide the ferry (right-click a token → toggle visibility).")
     s += bi("轻舟一叶，飘若浮萍。不敢点灯，行得极慢。离岸几十米，前方十米内有另一艘小渔船轮廓若隐若现（夜色漆黑，侦查-20）。",
             "A single light boat, drifting like a leaf. No lamp, dead slow. A few dozen metres out, the shape of another fishing boat shows ten metres ahead (Spot Hidden at -20 in the dark).")
     s += ul([

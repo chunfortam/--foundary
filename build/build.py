@@ -157,15 +157,23 @@ npc('servant', '不死仆从 Undying Servant', dict(str=50, con=105, siz=65, dex
     [weapon('生前武器 Weapon from life', '1D6', 'i.skill.fighting-brawl', addb=True)], '仆', (70, 110, 60, 255),
     '<p>格拉基之仆。人形时生命首次降至一半即显露不死形态（理智1/1D8；目睹分解1/1D10）。弱点：脊背注入点，点穴命中即死；强光使其绿腐。</p>', '<p>Gla\'aki\'s thrall. In human form until first dropped to half HP, then reveals the undying shape (SAN 1/1D8; watching it dissolve 1/1D10). Weak point: the injection scar on the spine; an Acupoint Strike hit kills it outright. Sunlight brings on the Green Decay. Not used in session 0; included for later.</p>', atype='creature', hp=17, sanloss=('1', '1D8'))
 # ---------------- journals ----------------
+# Scene props as tokens (no sheet of interest, bars off) so the GM can show a before/after on the map.
+def prop(key, name, tok_file, notes_zh, notes_en):
+    a = actor(name, 'npc', dict(str=0, con=10, siz=10, dex=0, app=0, int=0, pow=0, edu=0), [], [], [], f'modules/{MOD}/assets/tokens/{tok_file}.webp', notes_zh, notes_en, disposition=0, link=False)
+    a['prototypeToken']['displayBars'] = 0; ACT[key] = a; return a
+prop('boat', '渡船 River boat', 'boat', '<p>汉江上的小渔船/渡船，长约八米，可载二十石。场景道具：夜渡场景中有完好与残骸两种标记，攻击发生时切换可见性。</p>',
+     '<p>A small Han River fishing boat / ferry, about 8 m, twenty bushels. Scene prop: the Night Crossing scene has an intact and a wrecked token for each boat; toggle visibility when the spine strikes and when the arrows sink the ferry.</p>')
+ACT['boat']['prototypeToken']['width'] = 5; ACT['boat']['prototypeToken']['height'] = 1.6
 def journal(name, pages, default_perm=0, folder=None):
     return {'_id': rid('journal:' + name), 'name': name, 'folder': folder, 'ownership': {'default': default_perm},
             'pages': [{'_id': rid(f'journal:{name}:{pn}'), 'name': pn, 'type': 'text', 'title': {'show': False, 'level': 1}, 'text': {'format': 1, 'content': html}, 'ownership': {'default': -1}, 'sort': i*100000} for i, (pn, html) in enumerate(pages)], 'flags': {}, 'sort': 0}
 FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'sorting': 'a', 'sort': 0, 'color': c, 'flags': {}} for k, (n, t, c) in {
-    'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'),
+    'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'), 'f_prop': ('道具 Props', 'Actor', '#5a5a3b'),
     'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
 for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
 for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
+ACT['boat']['folder'] = FOLD['f_prop']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
 JR = [
@@ -180,16 +188,17 @@ JR = [
 LEVEL = 'defaultLevel0000'  # Foundry 14 scene level; v12/13 strip the unknown fields and use `background` instead
 def level(name, img_src):
     return {'_id': LEVEL, 'name': name, 'background': {'src': img_src}, 'elevation': {'bottom': 0, 'top': None}, 'sort': 0, 'flags': {}}
-def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1):
-    return {'_id': rid(), 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
+def tok(a, gx, gy, G, hidden=False, name=None, w=1, h=1, texture=None):
+    return {'_id': rid(), 'name': name or a['prototypeToken']['name'], 'actorId': a['_id'], 'actorLink': a['prototypeToken']['actorLink'], 'texture': {'src': texture or a['prototypeToken']['texture']['src']}, 'x': int(gx*G), 'y': int(gy*G), 'width': w, 'height': h,
             'disposition': a['prototypeToken']['disposition'], 'hidden': hidden, 'level': LEVEL, 'displayName': a['prototypeToken']['displayName'], 'displayBars': a['prototypeToken']['displayBars'], 'bar1': {'attribute': 'attribs.hp'}, 'sight': {'enabled': a['type'] == 'character'}, 'elevation': 0, 'rotation': 0, 'alpha': 1, 'flags': {}}
-def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048):
+def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048, weather=''):
     random.seed('scene:' + name); toks = [tok(*t[0], G, **t[1]) for t in tokens]
     return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'levels': [level(name, f'modules/{MOD}/assets/maps/{img}')], 'initialLevel': LEVEL, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
-            'tokenVision': False, 'fog': {'exploration': False}, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
+            'tokenVision': False, 'fog': {'exploration': False}, 'weather': weather, 'environment': {'darknessLevel': darkness, 'globalLight': {'enabled': True}},
             'tokens': toks, 'walls': [], 'lights': [], 'notes': [], 'drawings': [], 'sounds': [], 'templates': [], 'tiles': [], 'regions': [], 'flags': {}, 'sort': 0, 'initial': None, 'description': notes}
 A = ACT
+BOAT_WRECK = f'modules/{MOD}/assets/tokens/boat_wreck.webp'
 T = lambda a, x, y, **k: ((a, x, y), k)
 SC = [
  # 24 x 16 squares
@@ -199,11 +208,21 @@ SC = [
        [T(A['pc2'], 12, 8.4), T(A['toghan'], 13.8, 6.2), T(A['duan'], 15.2, 6.8), T(A['niu'], 14.9, 3.1)] + [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(8.2, 7.4), (9.4, 11.2), (15.6, 10.4), (13.2, 12.6), (7, 9.8)])] + [T(A['soldier'], x, y, name=f'宋兵 Song guard {i+1}') for i, (x, y) in enumerate([(8.5, 3.5), (12.2, 3.5), (17.6, 3.5), (21.4, 3.5)])], 0.0),
  scene('3 · 樊城衙署 The Magistracy (HO3)', 'magistracy.webp', 128,
        [T(A['pc3'], 2.4, 6.4)] + [T(A['rider'], x, y, name=f'骑兵 Horseman {i+1}') for i, (x, y) in enumerate([(10.5, 13.4), (13.5, 13.4), (9, 9.5), (15, 9.5), (12, 6.5), (21, 10)])], 0.45),
- scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 128,
-       [T(A['pc1'], 2, 6.2), T(A['pc2'], 4, 6.6), T(A['pc3'], 6, 6.2), T(A['boatman'], 8, 6.6), T(A['spine'], 17.5, 2, hidden=True, w=2, h=2),
-        T(A['soldier'], 16, 12.5, name='岸上弓手 Archer 1'), T(A['soldier'], 21.5, 13.5, name='岸上弓手 Archer 2'),
-        T(A['jiang_tower'], 2.2, 10.2, hidden=True), T(A['jiang_loft'], 3.3, 10.8, hidden=True), T(A['qu'], 4.4, 11.4, hidden=True)], 0.75,
-       '其他渔船在右上方约10米处（约7格）被脊刺摧毁。The wrecked boat upper right is the one destroyed by the spine, about 10 m (7 squares) away.'),
+ # 24 x 16 squares on a 1536x1024 map: open water above, the reed bank and jetty along the bottom. Foundry's fog weather effect drifts over it.
+ # The boats are tokens of the 'boat' prop so the GM can show before/after: reveal the wreck + spine and hide the intact fishing boat when it strikes;
+ # reveal "Wang's ferry, sinking" and hide the ferry when the arrows come.
+ scene('4 · 汉江夜渡 Night Crossing of the Han River', 'river.webp', 64,
+       [T(A['pc1'], 1.4, 12.3), T(A['pc2'], 3.6, 12.8), T(A['pc3'], 7.6, 12.3), T(A['boatman'], 6.2, 10.9),
+        T(A['boat'], 7.4, 10.3, name='船夫王的渡船 Wang\'s ferry', w=5, h=1.6),
+        T(A['boat'], 5.2, 6.4, name='渡船·沉没 Wang\'s ferry, sinking', hidden=True, w=5.5, h=2.6, texture=BOAT_WRECK),
+        T(A['boat'], 10.2, 4.1, name='前方渔船 The fishing boat ahead', w=5, h=1.6),
+        T(A['boat'], 9.9, 3.6, name='渔船残骸 The fishing boat, wrecked', hidden=True, w=5.5, h=2.6, texture=BOAT_WRECK),
+        T(A['spine'], 12.2, 2.4, hidden=True, w=2, h=2),
+        T(A['soldier'], 13.5, 13.6, name='岸上弓手 Archer 1'), T(A['soldier'], 19.6, 14, name='岸上弓手 Archer 2'),
+        T(A['jiang_tower'], 0.6, 14.3, hidden=True), T(A['jiang_loft'], 2.2, 14.7, hidden=True), T(A['qu'], 3.8, 14.3, hidden=True)], 0.4,
+       '<p>标记操作：划船时拖动“船夫王的渡船”；脊刺攻击时显示“渔船残骸”与脊刺、隐藏“前方渔船”；中箭沉船时显示“渡船·沉没”、隐藏渡船。右键标记→切换可见。</p>'
+       '<p>Token cues: drag Wang\'s ferry out as they row. At the spine attack, reveal "The fishing boat, wrecked" and the spine and hide "The fishing boat ahead". When the arrows sink them, reveal "Wang\'s ferry, sinking" and hide the ferry. Right-click a token → toggle visibility (eye icon).</p>',
+       w=1536, h=1024, weather='fog'),
  # 12 x 8 squares: a small shop, bigger squares
  scene('5 · 曲流的棺材铺 The Coffin Shop', 'coffinshop.webp', 256,
        [T(A['pc1'], 5.2, 1.4), T(A['pc2'], 7.3, 1.8), T(A['pc3'], 9.4, 1.4), T(A['qu'], 2.6, 4.6), T(A['jiang_tower'], 4.6, 5.2), T(A['jiang_loft'], 7.2, 5.6), T(A['yue'], 3.4, 3.2, hidden=True), T(A['liu'], 9.2, 2.6, hidden=True)], 0.3,
@@ -238,7 +257,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.3', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.4', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
