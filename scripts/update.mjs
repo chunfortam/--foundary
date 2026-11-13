@@ -36,5 +36,5 @@ Hooks.once("ready", async () => {
      You can run it later with <code>game.gongruo.reimport()</code> in a script macro.</p>`
   );
   if (ok) await reimport();
-  else await game.settings.set(MOD, "importedVersion", current);
+  else if (ok === false) await game.settings.set(MOD, "importedVersion", current); // explicit "No" skips this version; closing the dialog asks again next launch
 });
