@@ -151,6 +151,47 @@ npc('qu', '曲流 Winding Stream', dict(str=70, con=65, siz=70, dex=65, app=55, 
     '<p>棺材铺老板，前镖师。身材健硕，性格温和，始终照顾调查员。十年前一刀结果了偷腥的丈夫。</p>', '<p>Coffin-maker, former caravan guard. Big and strong, gentle in manner; looks after the PCs throughout. Killed her cheating husband ten years ago.</p>', disposition=1, link=True)
 npc('boatman', '船夫王 Boatman Wang', dict(str=50, con=55, siz=60, dex=50, app=40, int=50, pow=45, edu=30), [('i.skill.swim', 60), ('i.skill.dodge', 30), ('i.skill.natural-world', 40), ('驾船|Boat handling', 60)], [], '船', (80, 80, 60, 255),
     '<p>独臂船夫，粗麻布衣，斗笠。痛骂蒙古与朝廷。沉船后独自逃走。</p>', '<p>One-armed boatman in hemp and a straw hat. Curses the Mongols and the court. Abandons the PCs when the boat sinks.</p>', disposition=0)
+# ---------------- Campaign NPCs (Days 1–6) ----------------
+SAB = lambda: weapon('刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True)
+FIST = lambda: weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True)
+npc('fan_yulou', '范玉楼 Magistrate Fan', dict(str=40, con=45, siz=60, dex=50, app=70, int=75, pow=60, edu=75), [('i.skill.dodge', 40), ('i.skill.listen', 50), ('i.skill.spot-hidden', 50), ('i.skill.library-use', 70), ('i.skill.persuade', 60)], [], '范', (60, 90, 70, 255),
+    '<p>范天顺之侄，献城后主事樊城。曾在临安见过HO3一面。会提出刺杀阿术的要求。</p>', '<p>Commander Fan\'s nephew; runs the town for the Mongols. Met HO3 once in the capital. Will ask the party to kill Ashu.</p>', disposition=0, link=True)
+npc('xu', '许德显 Prefect Xu', dict(str=40, con=45, siz=80, dex=35, app=45, int=60, pow=40, edu=65), [('i.skill.dodge', 25), ('i.skill.persuade', 50), ('i.skill.accounting', 70)], [], '许', (120, 70, 130, 255),
+    '<p>樊城通判，贪生怕死。有画舫三艘、小船五艘、火药，能带人进监牢。两封信可胁迫他。</p>', '<p>The prefect; corrupt and cowardly. Three painted barges, five skiffs, gunpowder, a way into the gaol. His two letters are the lever.</p>', disposition=0, link=True)
+npc('du', '杜观山 Du Guanshan', dict(str=55, con=55, siz=65, dex=60, app=40, int=55, pow=55, edu=55), [('i.skill.fighting-brawl', 65), ('i.skill.dodge', 60), ('i.skill.listen', 50), ('i.skill.spot-hidden', 50), ('i.skill.jump', 50)], [SAB(), FIST()], '杜', (140, 90, 40, 255),
+    '<p>酒肆老板，对樊城了如指掌，提出“江州劫法场”式的救援计划。</p>', '<p>Wineshop owner; knows the town; proposes the Jiangzhou-style rescue.</p>', disposition=1, link=True)
+npc('fang', '方未名 Nameless Fang', dict(str=70, con=55, siz=60, dex=70, app=55, int=50, pow=70, edu=40), [('i.skill.fighting-brawl', 75), ('i.skill.dodge', 70), ('i.skill.listen', 50), ('i.skill.spot-hidden', 60), ('i.skill.climb', 70)], [weapon('铜槌 Copper mallet', '1D8', 'i.skill.fighting-brawl', addb=True, img='icons/weapons/hammers/hammer-double-steel.webp'), FIST()], '方', (50, 80, 140, 255),
+    '<p>打更少年，力大如牛，心思纯善。背着布裹的神臂弓，不知其为何物。</p>', '<p>The night-watchman boy, strong as an ox, pure of heart. Carries the God-Arm Bow wrapped in cloth and does not know what it is.</p>', disposition=1, link=True)
+npc('ling_xuchun', '凌序春 Ling Xuchun', dict(str=65, con=60, siz=65, dex=70, app=65, int=60, pow=50, edu=45), [('i.skill.fighting-sword', 70), ('i.skill.dodge', 70), ('i.skill.spot-hidden', 65), ('i.skill.climb', 60), ('i.skill.swim', 60)], [weapon('双弯刀 Twin sabres', '1D8', 'i.skill.fighting-sword', addb=True, img='icons/weapons/swords/scimitar-worn-blue.webp'), FIST()], '凌', (170, 40, 40, 255),
+    '<p>直爽泼辣的少女，为兄长求药。兄长得救后称调查员为恩人。</p>', '<p>Hot-tempered young swordswoman begging medicine for her brother; calls the party "benefactors" once he is cured.</p>', disposition=1, link=True)
+npc('ling_daiqiu', '凌代秋 Ling Daiqiu', dict(str=60, con=65, siz=70, dex=60, app=50, int=55, pow=55, edu=45), [('i.skill.dodge', 50), ('i.skill.swim', 75), ('驾船|Boat handling', 70)], [FIST()], '秋', (70, 110, 90, 255),
+    '<p>渔民领袖，中了绿腐之术。秋筠死则痊愈，可召渔民参与沉舟绝渡。</p>', '<p>The fishermen\'s leader, under Green Rot; recovers when Autumn dies and can bring the fishermen into the raid.</p>', disposition=1, link=True)
+npc('wangwu', '王五条 Wang Wu', dict(str=50, con=60, siz=60, dex=60, app=45, int=65, pow=50, edu=50), [('i.skill.fighting-brawl', 65), ('i.skill.dodge', 55), ('i.skill.persuade', 55)], [weapon('棍 Staff', '1D8', 'i.skill.fighting-brawl', addb=True, img='icons/weapons/staves/staff-simple.webp')], '王', (40, 70, 120, 255),
+    '<p>分茶老板，范天顺故交，知其计划；收留陈寻忠。可提供运酒肉的车队。</p>', '<p>Restaurant owner, Fan\'s old friend; knows the plan; shelters Chen; lends the delivery carts for the raid.</p>', disposition=1, link=True)
+npc('song', '宋择一 Song Zeyi', dict(str=45, con=50, siz=60, dex=50, app=45, int=65, pow=60, edu=65), [('i.skill.throw', 70), ('i.skill.jump', 70), ('i.skill.dodge', 45), ('i.skill.psychology', 55)], [weapon('茶盏 Thrown tea bowl', '1D3', 'i.skill.throw', rngd=True, rng=10, img='icons/containers/kitchenware/bowl-clay-brown.webp')], '宋', (110, 110, 110, 255),
+    '<p>茶博士，曾助范天顺搜集祭品，隐瞒此事。给酒肆地址。</p>', '<p>Tea master; helped Fan collect the sacrifices and hides it; gives the Wineshop address.</p>', disposition=0, link=True)
+npc('autumn', '秋筠 Autumn', dict(str=60, con=65, siz=60, dex=70, app=70, int=65, pow=60, edu=45), [('i.skill.fighting-sword', 70), ('i.skill.dodge', 65), ('i.skill.jump', 65), ('i.skill.disguise', 70)], [SAB(), FIST()], '筠', (200, 200, 200, 255),
+    '<p>千面江洋大盗，被范天顺献祭，成为不死仆从。窃走凌家绣花针，给凌代秋施绿腐。</p>', '<p>The outlaw of a thousand faces, sacrificed by Fan and now Undying. Stole the Ling needles and cast Green Rot on Ling Daiqiu.</p>', disposition=0, link=True)
+npc('chen', '陈寻忠 Chen Xunzhong', dict(str=65, con=60, siz=70, dex=60, app=50, int=55, pow=50, edu=40), [('i.skill.fighting-brawl', 50), ('i.skill.dodge', 45), ('i.skill.fast-talk', 60)], [FIST()], '陈', (60, 100, 90, 255),
+    '<p>刘卿堂的执旗手，已成不死仆从，在分茶帮工。给刘卿堂下毒，诱他去寺庙。</p>', '<p>Liu\'s standard-bearer, now Undying, working at the restaurant. Poisons Liu\'s noodles and lures him to the Temple.</p>', disposition=-1, link=True)
+npc('monk', '怀德和尚 Huaide, the Pagoda Arhat', dict(str=80, con=80, siz=85, dex=50, app=40, int=50, pow=65, edu=50), [('i.skill.fighting-brawl', 70), ('i.skill.dodge', 50)], [FIST()], '僧', (160, 120, 40, 255),
+    '<p>金钟罩铁布衫，好酒。拼酒三胜得金袈裟（护甲2，免疫火焰）。</p>', '<p>Iron Shirt and Golden Bell; a drinker. Three CON wins in a row earn his golden kasaya (armour 2, fire-immune).</p>', armor=2, disposition=1, link=True)
+npc('yuying', '范玉莹 Fan Yuying', dict(str=40, con=50, siz=55, dex=55, app=75, int=65, pow=65, edu=60), [('i.skill.dodge', 40), ('i.skill.stealth', 50)], [], '莹', (150, 150, 170, 255),
+    '<p>范天顺之女，被阿术留在身边。替调查员挡一刀，暗中递给HO2匕首。</p>', '<p>Commander Fan\'s daughter, kept by Ashu. Takes one blow for the party and slips HO2 a dagger.</p>', disposition=1, link=True)
+npc('hermit', '山阳道人 The Hermit of Mount Crag', dict(str=50, con=55, siz=60, dex=65, app=45, int=75, pow=80, edu=70), [('i.skill.fighting-sword', 90), ('i.skill.dodge', 70)], [weapon('止水 Stillwater', '1D8', 'i.skill.fighting-sword', addb=True)], '陈', (90, 90, 120, 255),
+    '<p>本名陈阳山，HO1之师，独臂。一月十二日被阿术所杀，悬于街口。</p>', '<p>Chen Yangshan, HO1\'s master, one-armed. Killed by Ashu and hung at the Street Crossing on 12 January.</p>', disposition=1, link=True)
+npc('scholar', '儒生 Scholar (Zhou Wentong 周文通 and the others)', dict(str=45, con=50, siz=60, dex=50, app=55, int=70, pow=55, edu=75), [('i.skill.library-use', 70), ('i.skill.persuade', 50), ('i.skill.dodge', 30)], [FIST()], '儒', (80, 110, 160, 255),
+    '<p>学馆儒生，热血而无用，易被煽动。刺杀日在门外闹事，多有死伤。</p>', '<p>The school\'s scholars: hot-blooded, useless in a fight, easily roused; the diversion on the assassination day, at a cost.</p>', disposition=1)
+npc('bookseller', '王见川 Wang Jianchuan, the bookseller', dict(str=70, con=65, siz=75, dex=50, app=60, int=65, pow=55, edu=70), [('i.skill.library-use', 60), ('i.skill.persuade', 55)], [FIST()], '书', (130, 100, 60, 255),
+    '<p>旧书摊老板，声如洪钟。摊上有《遗佩情事》《雨师记》。</p>', '<p>The old-book seller with a voice like a bell. His stall has The Lost Pendant and The Rain Master.</p>', disposition=1)
+npc('mistress_wang', '王氏 Mistress Wang', dict(str=40, con=50, siz=55, dex=45, app=55, int=60, pow=55, edu=45), [('i.skill.persuade', 45)], [], '氏', (140, 60, 70, 255),
+    '<p>李家瓦子老板娘，与五岁女儿同住，收留了秋筠。愿借乌篷船。</p>', '<p>Owner of the Li Family Theatre; lives there with her five-year-old daughter and took Autumn in. Lends the boat.</p>', disposition=1)
+npc('physician', '宋人郎中 The Song physician', dict(str=40, con=50, siz=60, dex=50, app=45, int=70, pow=55, edu=70), [('i.skill.medicine', 70), ('i.skill.first-aid', 60), ('i.skill.spot-hidden', 60)], [], '医', (100, 80, 50, 255),
+    '<p>阿术的医者。能辨出动过手脚的药，但不揭穿。</p>', '<p>Ashu\'s physician. Can tell when medicine has been tampered with, and says nothing.</p>', disposition=0)
+npc('turncoat', '降卒 Song turncoat (ship guard)', dict(str=60, con=55, siz=65, dex=50, app=45, int=45, pow=45, edu=35), [('i.skill.fighting-brawl', 40), ('i.skill.fighting-sword', 40), ('i.skill.dodge', 35)], [SAB()], '卒', (80, 100, 60, 255),
+    '<p>随将军降蒙的宋兵，守战船。生命10，无护甲；生命低于一半即逃去报信。</p>', '<p>Song soldiers who followed their general over; guard the ships. HP 10, no armour; below half HP they run to raise the alarm.</p>', hp=10)
+npc('glaaki', '格拉基 Gla\'aki', dict(str=400, con=200, siz=600, dex=50, app=0, int=80, pow=300, edu=0), [('i.skill.fighting-brawl', 40)], [weapon('脊刺 Spine thrust', '2+1D5', 'i.skill.fighting-brawl', img='icons/creatures/tentacles/tentacle-thorned-green.webp')], '基', (40, 90, 80, 255),
+    '<p>江中之物。每根脊刺护甲4；砍断一根则本体−8。畏火与强光；火焰穿透护甲。直视：理智1D3/1D20。</p>', '<p>The thing in the river. Each spine has armour 4; sever one and the body loses 8. Fears fire and light; fire ignores its armour. Seeing it: SAN 1D3/1D20.</p>', atype='creature', sanloss='1D3/1D20', hp=50)
 npc('spine', '格拉基脊刺 Gla\'aki\'s spine', dict(str=200, con=100, siz=450, dex=50, app=0, int=50, pow=300, edu=0), [('i.skill.fighting-brawl', 40)],
     [weapon('脊刺 Spine thrust', '2+1D5', 'i.skill.fighting-brawl', img='icons/creatures/tentacles/tentacle-thorned-green.webp')], '刺', (40, 90, 80, 255),
     '<p>从雾中江面刺出的一根脊刺。护甲4、生命6（与本体共享：每根脊刺削减格拉基8点）。斩断后格拉基一轮内无法再刺。畏火与强光，火焰穿透护甲。直视格拉基本体：理智1D3/1D20。</p>', '<p>A single spine thrusting out of the fog. Armour 4, HP 6 (shared with the body: each severed spine costs Gla\'aki 8 HP). Once cut, no spine attack for a round. Fears fire and bright light; fire ignores its armour. Seeing the body itself: SAN 1D3/1D20. Tonight it only destroys the other boat; the PCs roll SAN 0/1.</p>', atype='creature', armor=4, hp=6, sanloss=('0', '1'))
@@ -180,8 +221,8 @@ FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'so
     'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'), 'f_prop': ('道具 Props', 'Actor', '#5a5a3b'),
     'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
-for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
-for k in ('spine', 'servant'): ACT[k]['folder'] = FOLD['f_mon']['_id']
+for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft', 'fan_yulou', 'xu', 'du', 'fang', 'ling_xuchun', 'ling_daiqiu', 'wangwu', 'song', 'autumn', 'chen', 'monk', 'yuying', 'hermit', 'bookseller', 'mistress_wang', 'glaaki'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
+for k in ('spine', 'servant', 'glaaki'): ACT[k]['folder'] = FOLD['f_mon']['_id']
 for k in ('boat', 'wagon'): ACT[k]['folder'] = FOLD['f_prop']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
@@ -272,10 +313,10 @@ TOWN['grid']['alpha'] = 0
 TEAHOUSE = scene('8 · 茶楼 The Teahouse', 'teahouse.webp', 64,
                  [T(A['pc1'], 10.2, 13.2), T(A['pc2'], 11.6, 13.2), T(A['pc3'], 13, 13.2)] +
                  [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(14.2, 7.6), (16.2, 7.0), (15.6, 8.9)])] +
-                 [T(A['duan'], 12, 15.2, hidden=True)], 0.05,
+                 [T(A['song'], 20.6, 8.6), T(A['scholar'], 12.4, 8.4, name='周文通 Zhou Wentong'), T(A['duan'], 12, 15.2, hidden=True)], 0.05,
                  '<p>说书台在上，茶博士宋择一在右侧屏风后。三名蒙古兵闹事；段游衍（隐藏）事后从门口经过。</p><p>Storyteller\'s dais at the top; tea master Song behind the screen on the right. Three Mongol soldiers make trouble; Duan (hidden) rides past the door afterwards.</p>', w=1536, h=1024)
 THEATRE = scene('9 · 李家瓦子 The Li Family Theatre', 'theatre.webp', 64,
-                [T(A['pc1'], 10.6, 14.4), T(A['pc2'], 12, 14.4), T(A['pc3'], 13.4, 14.4), T(A['servant'], 22.5, 3.5, name='秋筠·不死 Autumn, undying', hidden=True)], 0.1,
+                [T(A['pc1'], 10.6, 14.4), T(A['pc2'], 12, 14.4), T(A['pc3'], 13.4, 14.4), T(A['mistress_wang'], 14.6, 11.4), T(A['autumn'], 21.6, 12.6, hidden=True), T(A['servant'], 22.5, 3.5, name='秋筠·不死 Autumn, undying form', hidden=True)], 0.1,
                 '<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>', w=1536, h=1024)
 TEMPLE = scene('10 · 寺庙 The Temple (night)', 'temple.webp', 64,
                [T(A['pc3'], 11.2, 14.2), T(A['liu'], 12.6, 14.2), T(A['pc1'], 9.8, 15.2, hidden=True), T(A['pc2'], 14.2, 15.2, hidden=True)] +
@@ -287,21 +328,21 @@ HOUSE = scene('11 · 某处民宅 The Undying family\'s house (night)', 'house.w
               '<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>', w=1536, h=1024)
 for sc_ in (TOWN, TEAHOUSE, THEATRE, TEMPLE, HOUSE): SC.append(sc_)
 MOURNING = scene('12 · 范天顺灵堂 Commander Fan\'s mourning hall', 'mourning.webp', 64,
-                 [T(A['pc1'], 9.2, 14.6), T(A['pc2'], 10.6, 14.6), T(A['pc3'], 12, 14.6), T(A['liu'], 13.4, 14.6)] +
+                 [T(A['pc1'], 9.2, 14.6), T(A['pc2'], 10.6, 14.6), T(A['pc3'], 12, 14.6), T(A['liu'], 13.4, 14.6), T(A['fan_yulou'], 12.0, 12.6, hidden=True)] +
                  [T(A['soldier'], x, y, name=f'范家卫兵 Fan\'s guard {i+1}', hidden=True) for i, (x, y) in enumerate([(2.2, 9.2), (21.6, 9.2), (7.4, 15.4), (16.2, 15.4)])], 0.55,
                  '<p>棺材空的，内侧暗格藏残页。书房在左。发现秘密后范玉楼提灯出现，卫兵（隐藏）围住宅邸。</p><p>The coffin is empty; the torn pages are in the compartment inside. The study is on the left. When the secret is found Magistrate Fan appears with a lantern and his guards (hidden tokens) close the house.</p>', w=1536, h=1024)
 SICKROOM = scene('13 · 牛富宅邸·阿术病榻 Ashu\'s sickroom (the assassination)', 'sickroom.webp', 64,
-                 [T(A['ashu'], 3.2, 6.2, w=2, h=2), T(A['pc2'], 6.6, 7.4), T(A['pc1'], 8.4, 9.6, name='陆青崖 Lu Bluecliff (as assistant)'), T(A['pc3'], 10.2, 9.6, name='谢云骧 Xie Cloudmane (as assistant)'), T(A['yue'], 11.8, 11.2)] +
+                 [T(A['ashu'], 3.2, 6.2, w=2, h=2), T(A['pc2'], 6.6, 7.4), T(A['pc1'], 8.4, 9.6, name='陆青崖 Lu Bluecliff (as assistant)'), T(A['pc3'], 10.2, 9.6, name='谢云骧 Xie Cloudmane (as assistant)'), T(A['yue'], 11.8, 11.2), T(A['yuying'], 5.4, 8.0), T(A['physician'], 2.4, 9.4)] +
                  [T(A['soldier'], x, y, name=f'亲卫 Guard {i+1}') for i, (x, y) in enumerate([(13.6, 6.0), (18.4, 8.4), (8.6, 14.2), (15.0, 14.2)])], 0.05,
                  '<p>床边马刀在阿术左手；门边墙上蒙古弓与三支白羽箭。屋内两名亲卫、门外两名。五回合后副将到场。</p><p>The sabre lies by Ashu\'s left hand; the bow and three white arrows hang by the door. Two guards inside, two outside; after five rounds the deputy arrives.</p>', w=1536, h=1024)
 GAOL = scene('14 · 监牢 The Gaol', 'gaol.webp', 64,
              [T(A['pc1'], 2.6, 9.4), T(A['pc2'], 3.4, 10.6), T(A['pc3'], 2.6, 11.8), T(A['niu'], 20.8, 10.6, name='牛富（深牢）Niu, in the deep cells')] +
              [T(A['soldier'], x, y, name=f'狱卒 Gaoler {i+1}') for i, (x, y) in enumerate([(3.2, 7.4), (10.4, 8.0), (16.8, 7.6)])] +
-             [T(A['ashu'], 17.6, 9.6, hidden=True, w=2, h=2)], 0.5,
+             [T(A['ashu'], 17.6, 9.6, hidden=True, w=2, h=2), T(A['fan_yulou'], 16.2, 10.8, hidden=True), T(A['fang'], 1.6, 13.2, hidden=True)], 0.5,
              '<p>右侧铁门后是深牢（牛富）。离开时阿术（隐藏）与范玉楼从深处走出。</p><p>Beyond the iron door on the right are the deep cells (Niu). Ashu (hidden) and Magistrate Fan come out from the depths as the party leaves.</p>', w=1536, h=1024)
 DOCK = scene('15 · 东码头·蒙古战船 The East dock and the warships (the raid)', 'dock.webp', 64,
              [T(A['pc1'], 8.4, 12.0), T(A['pc2'], 9.6, 12.6), T(A['pc3'], 10.8, 12.0), T(A['liu'], 13.6, 11.8), T(A['jiang_tower'], 17.6, 9.0, hidden=True), T(A['jiang_loft'], 18.6, 9.6, hidden=True)] +
-             [T(A['soldier'], x, y, name=f'守船兵 Ship guard {i+1}') for i, (x, y) in enumerate([(7.0, 11.0), (9.4, 10.6), (11.6, 11.2), (6.6, 13.4), (12.8, 13.4), (4.8, 10.6), (15.4, 8.2), (6.4, 4.6)])], 0.7,
+             [T(A['turncoat'], x, y, name=f'守船兵 Ship guard {i+1}') for i, (x, y) in enumerate([(7.0, 11.0), (9.4, 10.6), (11.6, 11.2), (6.6, 13.4), (12.8, 13.4), (4.8, 10.6), (15.4, 8.2), (6.4, 4.6)])], 0.7,
              '<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen\'s huts on the right.</p>', w=1536, h=1024)
 for sc_ in (MOURNING, SICKROOM, GAOL, DOCK): SC.append(sc_)
 PAVILION = scene('16 · 解佩亭 The ruined Pavilion (west dock)', 'pavilion.webp', 64,
