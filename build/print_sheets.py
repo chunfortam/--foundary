@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from content import HO, PC_PUBLIC
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ADV = json.load(open(os.path.join(ROOT, 'build/src/session0/adventure.json')))
+ADV = json.load(open(os.path.join(ROOT, 'adventure.json')))
 PCS = [a for a in ADV['actors'] if a['type'] == 'character']
 
 CHAR = [('str', 'STR 力量'), ('con', 'CON 体质'), ('siz', 'SIZ 体型'), ('dex', 'DEX 敏捷'),

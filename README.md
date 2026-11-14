@@ -13,16 +13,13 @@ The repository is private, so install from git (Foundry's manifest-URL installer
    `git clone https://github.com/chunfortam/--foundary.git "<FoundryData>/Data/modules/gongruo-session0"`
    (Windows default: `%LOCALAPPDATA%\FoundryVTT\Data\modules\gongruo-session0`)
 2. Restart Foundry, open your CoC7 world, enable **公若渡河 Session 0** in Manage Modules.
-3. On the next load the module asks to import the adventure; click Yes. (Manual route: Compendiums → **公若渡河 · Session 0** → open the adventure → **Import**.)
+3. On the next load the module asks to import the adventure; click Yes. (Manual route: run `game.gongruo.reimport()` in a script macro or the F12 console.)
 4. Give each player **Observer** permission on their own HO journal only (right-click the journal → Configure Ownership). The Player Primer is already visible to all players.
 
 ## Update 更新
 `git pull` in the module folder, then reload Foundry (F5). When the module version has changed, a dialog offers to re-import; document IDs are stable, so existing actors, scenes, journals and the playlist are **updated in place** (your edits to those documents are overwritten; copies you made under other names are untouched). To re-import at any time, run `game.gongruo.reimport()` in a script macro.
 
-Foundry rewrites the pack database (`packs/session0/*.log`, `MANIFEST-*`, `CURRENT`, `LOG`) every time the world launches, so your clone will show them as modified. Never commit those; discard them before pulling, with the world closed (Return to Setup):
-```
-git checkout -- packs && git pull
-```
+The adventure ships as plain `adventure.json` (no compendium database), so a pull always delivers the new content and the module folder never shows local modifications.
 
 ## Contents 内容
 - Actors: 3 pre-built investigators (HO1 游侠 / HO2 商贾 / HO3 命官) with the scenario's mandatory bonuses and the custom skill 点穴 Acupoint Strike; NPCs for session 0 (Marshal Ashu, Duan Driftwood, Niu the Archer, Captain Liu, Doctor Yue, Mongol soldiers and horsemen, the Jiang twins, Winding Stream, the boatman); creatures (Gla'aki's spine, Undying Servant).
@@ -40,11 +37,11 @@ git checkout -- packs && git pull
 - Maps are AI-generated (OpenAI gpt-image) for this kit, 3072x2048, gridless art with the Foundry grid set per scene (128 px = 1.5 m; coffin shop 256 px). Nudge the grid in Scene Configuration if squares feel off.
 
 
-## Rebuilding the pack 重新打包
+## Rebuilding 重新生成
 Edit `build/content.py` (text) or `build/build.py` (actors/scenes), then from the repo root:
 ```
-python3 build/build.py && rm -rf packs/session0 && fvtt package pack -n session0 --in build/src/session0 --out packs --type Module --id gongruo-session0
+python3 build/build.py
 ```
-Requires Python 3 with Pillow and `npm i -g @foundryvtt/foundryvtt-cli`.
+Requires Python 3 with Pillow. This regenerates `adventure.json` and `module.json`.
 
 Printables: `python3 build/print_sheets.py` and `python3 build/print_gm.py` (need Chrome/Chromium and the Noto CJK fonts) regenerate `print/character-sheets.pdf` and `print/gm-pack.pdf`.

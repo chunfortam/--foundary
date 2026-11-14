@@ -1,13 +1,18 @@
 // After `git pull`, re-import the adventure when the module version changed.
-// Document IDs in the pack are stable, so the import updates existing world documents in place.
+// The adventure ships as plain JSON (adventure.json) rather than a LevelDB pack: Foundry rewrites pack
+// databases on every launch, which left pulled packs pointing at stale local files.
+// Document IDs are stable, so the import updates existing world documents in place.
 const MOD = "gongruo-session0";
-const PACK = `${MOD}.session0`;
 
 async function reimport() {
-  const pack = game.packs.get(PACK);
-  if (!pack) return ui.notifications.error(`${MOD}: compendium ${PACK} not found`);
-  const [adventure] = await pack.getDocuments();
-  await adventure.import({ dialog: false });
+  const res = await fetch(`modules/${MOD}/adventure.json?v=${game.modules.get(MOD).version}`, { cache: "no-store" });
+  if (!res.ok) return ui.notifications.error(`${MOD}: adventure.json not found (${res.status})`);
+  const Adventure = CONFIG.Adventure.documentClass;
+  const adventure = new Adventure(await res.json());
+  // Adventure#import also records compendium bookkeeping that needs a pack; this is the same workflow without it.
+  const importData = await adventure.prepareImport({ importFields: [] });
+  await adventure.importContent(importData);
+  await ui.sidebar.render();
   await game.settings.set(MOD, "importedVersion", game.modules.get(MOD).version);
   ui.notifications.info(`公若渡河: adventure re-imported (v${game.modules.get(MOD).version}).`);
 }
@@ -36,5 +41,5 @@ Hooks.once("ready", async () => {
      You can run it later with <code>game.gongruo.reimport()</code> in a script macro.</p>`
   );
   if (ok) await reimport();
-  else await game.settings.set(MOD, "importedVersion", current);
+  else if (ok === false) await game.settings.set(MOD, "importedVersion", current); // explicit "No" skips this version; closing the dialog asks again next launch
 });
