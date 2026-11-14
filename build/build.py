@@ -190,7 +190,7 @@ JR = [
  journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.player(C.ho_html(1)))], 0, FOLD['f_player']['_id']),
  journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.player(C.ho_html(2)))], 0, FOLD['f_player']['_id']),
  journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.player(C.ho_html(3)))], 0, FOLD['f_player']['_id']),
- journal('规则卡与文书 · Rules cards & handouts', [('规则卡 Set-piece rules', CP.rules_cards_html()), ('文书 Handouts', CP.handouts_html())], 0, FOLD['f_player']['_id']),
+ journal('规则卡与文书 · Rules cards & handouts', [('规则卡 Set-piece rules', CP.rules_cards_html())] + [(n, h) for n, h in CP.HANDOUTS], 0, FOLD['f_player']['_id']),
  journal('主持人 · GM: Campaign (Days 1–6)', [('沙盒 How the sandbox runs', CP.sandbox_html()), ('前街 Front Street', CP.front_html()), ('后街 Back Street', CP.back_html()), ('街口 Street Crossing', CP.crossing_html()), ('寺庙 Temple', CP.temple_html()), ('衙署 Magistracy quarter', CP.magistracy_html()), ('汉江沿岸 Riverbank', CP.riverbank_html()), ('塔楼 Finale: the Watchtower', CP.finale_html()), ('可选与个人 Optional & personal events', CP.optional_html()), ('结局 Endings', CP.endings_html()), ('人物 Campaign NPCs', CP.npcs_html())], 0, FOLD['f_gm']['_id']),
  journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('加时：第一日 Extended: Day One', C.extended_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('人物 Who\'s who (GM)', C.cast_html(True)), ('故事全貌 The whole story & timeline', C.timeline_html()), ('伤势与治疗 Wounds & Healing', C.healing_html())], 0, FOLD['f_gm']['_id']),
 ]
@@ -265,6 +265,45 @@ STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp',
                '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
 STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
 SC.append(STREET)
+# ---------------- Campaign scenes (Days 1–6): 1536x1024 maps, 24x16 squares ----------------
+TOWN = scene('7 · 樊城城图 Fencewall: the town (action rounds)', 'town.webp', 64, [T(A['pc1'], 20.2, 9.2), T(A['pc2'], 20.9, 9.2), T(A['pc3'], 21.6, 9.2)], 0.0,
+             '<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p>', w=1536, h=1024)
+TOWN['grid']['alpha'] = 0
+TEAHOUSE = scene('8 · 茶楼 The Teahouse', 'teahouse.webp', 64,
+                 [T(A['pc1'], 10.2, 13.2), T(A['pc2'], 11.6, 13.2), T(A['pc3'], 13, 13.2)] +
+                 [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(14.2, 7.6), (16.2, 7.0), (15.6, 8.9)])] +
+                 [T(A['duan'], 12, 15.2, hidden=True)], 0.05,
+                 '<p>说书台在上，茶博士宋择一在右侧屏风后。三名蒙古兵闹事；段游衍（隐藏）事后从门口经过。</p><p>Storyteller\'s dais at the top; tea master Song behind the screen on the right. Three Mongol soldiers make trouble; Duan (hidden) rides past the door afterwards.</p>', w=1536, h=1024)
+THEATRE = scene('9 · 李家瓦子 The Li Family Theatre', 'theatre.webp', 64,
+                [T(A['pc1'], 10.6, 14.4), T(A['pc2'], 12, 14.4), T(A['pc3'], 13.4, 14.4), T(A['servant'], 22.5, 3.5, name='秋筠·不死 Autumn, undying', hidden=True)], 0.1,
+                '<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>', w=1536, h=1024)
+TEMPLE = scene('10 · 寺庙 The Temple (night)', 'temple.webp', 64,
+               [T(A['pc3'], 11.2, 14.2), T(A['liu'], 12.6, 14.2), T(A['pc1'], 9.8, 15.2, hidden=True), T(A['pc2'], 14.2, 15.2, hidden=True)] +
+               [T(A['servant'], x, y, name=f'不死仆从 Undying {i+1}', hidden=True) for i, (x, y) in enumerate([(17.4, 5.6), (19.2, 5.2), (20.8, 6.4), (18.6, 7.4)])], 0.7,
+               '<p>偏殿在右，门从内锁；伏击的不死仆从（1D4+2）隐藏其中。黑暗中HO3与刘卿堂检定−20，直到后门打开。</p><p>Side hall on the right, locked from inside; the ambushers (1D4+2) are hidden tokens there. In the dark HO3 and Liu roll at −20 until the back door is opened.</p>', w=1536, h=1024)
+HOUSE = scene('11 · 某处民宅 The Undying family\'s house (night)', 'house.webp', 64,
+              [T(A['pc2'], 9.6, 10.6), T(A['liu'], 8.2, 4.2), T(A['pc1'], 11.4, 15.4, hidden=True), T(A['pc3'], 12.8, 15.4, hidden=True),
+               T(A['servant'], 10.6, 7.2, name='少女·不死 The girl, undying', hidden=True), T(A['servant'], 12.6, 7.0, name='死囚·不死 The brother, undying', hidden=True)], 0.7,
+              '<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>', w=1536, h=1024)
+for sc_ in (TOWN, TEAHOUSE, THEATRE, TEMPLE, HOUSE): SC.append(sc_)
+MOURNING = scene('12 · 范天顺灵堂 Commander Fan\'s mourning hall', 'mourning.webp', 64,
+                 [T(A['pc1'], 9.2, 14.6), T(A['pc2'], 10.6, 14.6), T(A['pc3'], 12, 14.6), T(A['liu'], 13.4, 14.6)] +
+                 [T(A['soldier'], x, y, name=f'范家卫兵 Fan\'s guard {i+1}', hidden=True) for i, (x, y) in enumerate([(2.2, 9.2), (21.6, 9.2), (7.4, 15.4), (16.2, 15.4)])], 0.55,
+                 '<p>棺材空的，内侧暗格藏残页。书房在左。发现秘密后范玉楼提灯出现，卫兵（隐藏）围住宅邸。</p><p>The coffin is empty; the torn pages are in the compartment inside. The study is on the left. When the secret is found Magistrate Fan appears with a lantern and his guards (hidden tokens) close the house.</p>', w=1536, h=1024)
+SICKROOM = scene('13 · 牛富宅邸·阿术病榻 Ashu\'s sickroom (the assassination)', 'sickroom.webp', 64,
+                 [T(A['ashu'], 3.2, 6.2, w=2, h=2), T(A['pc2'], 6.6, 7.4), T(A['pc1'], 8.4, 9.6, name='陆青崖 Lu Bluecliff (as assistant)'), T(A['pc3'], 10.2, 9.6, name='谢云骧 Xie Cloudmane (as assistant)'), T(A['yue'], 11.8, 11.2)] +
+                 [T(A['soldier'], x, y, name=f'亲卫 Guard {i+1}') for i, (x, y) in enumerate([(13.6, 6.0), (18.4, 8.4), (8.6, 14.2), (15.0, 14.2)])], 0.05,
+                 '<p>床边马刀在阿术左手；门边墙上蒙古弓与三支白羽箭。屋内两名亲卫、门外两名。五回合后副将到场。</p><p>The sabre lies by Ashu\'s left hand; the bow and three white arrows hang by the door. Two guards inside, two outside; after five rounds the deputy arrives.</p>', w=1536, h=1024)
+GAOL = scene('14 · 监牢 The Gaol', 'gaol.webp', 64,
+             [T(A['pc1'], 2.6, 9.4), T(A['pc2'], 3.4, 10.6), T(A['pc3'], 2.6, 11.8), T(A['niu'], 20.8, 10.6, name='牛富（深牢）Niu, in the deep cells')] +
+             [T(A['soldier'], x, y, name=f'狱卒 Gaoler {i+1}') for i, (x, y) in enumerate([(3.2, 7.4), (10.4, 8.0), (16.8, 7.6)])] +
+             [T(A['ashu'], 17.6, 9.6, hidden=True, w=2, h=2)], 0.5,
+             '<p>右侧铁门后是深牢（牛富）。离开时阿术（隐藏）与范玉楼从深处走出。</p><p>Beyond the iron door on the right are the deep cells (Niu). Ashu (hidden) and Magistrate Fan come out from the depths as the party leaves.</p>', w=1536, h=1024)
+DOCK = scene('15 · 东码头·蒙古战船 The East dock and the warships (the raid)', 'dock.webp', 64,
+             [T(A['pc1'], 8.4, 12.0), T(A['pc2'], 9.6, 12.6), T(A['pc3'], 10.8, 12.0), T(A['liu'], 13.6, 11.8), T(A['jiang_tower'], 17.6, 9.0, hidden=True), T(A['jiang_loft'], 18.6, 9.6, hidden=True)] +
+             [T(A['soldier'], x, y, name=f'守船兵 Ship guard {i+1}') for i, (x, y) in enumerate([(7.0, 11.0), (9.4, 10.6), (11.6, 11.2), (6.6, 13.4), (12.8, 13.4), (4.8, 10.6), (15.4, 8.2), (6.4, 4.6)])], 0.7,
+             '<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen\'s huts on the right.</p>', w=1536, h=1024)
+for sc_ in (MOURNING, SICKROOM, GAOL, DOCK): SC.append(sc_)
 # Title page for the table TV: the scenario's cover re-lettered in English, Banquet music.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
               notes='<p>开场画面 / Title page. Activate while players sit down; the Banquet track plays.</p>')
