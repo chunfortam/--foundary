@@ -262,16 +262,21 @@ STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp',
                '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
 STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
 SC.append(STREET)
-# Intro screen for the table TV: looping ink-wash pagoda video (assets/intro.webm, our own render), Banquet music.
+# Title page for the table TV: the scenario's cover re-lettered in English, Banquet music.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
-              notes='<p>开场画面 / Intro screen: looping video. Activate while players sit down; the Banquet track plays.</p>')
-TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
+              notes='<p>开场画面 / Title page. Activate while players sit down; the Banquet track plays.</p>')
+TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(0, TITLE)
+# Idle screen: looping ink-wash pagoda video (assets/intro.webm, our own render) for breaks and waiting, Banquet music.
+IDLE = scene('0a · 云中塔 Pagoda in the Clouds (idle screen)', '../cover.webp', 128, [], w=1536, h=1024,
+             notes='<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>')
+IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; IDLE['grid']['alpha'] = 0; IDLE['padding'] = 0; IDLE['playlist'] = PL['_id']; IDLE['playlistSound'] = PL['sounds'][0]['_id']
+SC.insert(1, IDLE)
 # Investigator-selection screen: the same pagoda loop with the three HO portraits, names and one-line blurbs (assets/intro_pick.webm).
 PICK = scene('0b · 选择调查员 Choose your investigator', '../cover.webp', 128, [], w=1536, h=1024,
              notes='<p>选角画面 / Investigator-selection screen: the three HO portraits with names and a one-line blurb each. Activate after the intro loop while players pick; the Banquet track keeps playing.</p>')
 PICK['background']['src'] = PICK['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro_pick.webm'; PICK['grid']['alpha'] = 0; PICK['padding'] = 0; PICK['playlist'] = PL['_id']; PICK['playlistSound'] = PL['sounds'][0]['_id']
-SC.insert(1, PICK)
+SC.insert(2, PICK)
 SFX_FILES = [('slash', '斩 Slash — the father\'s head (HO2 intro)', '54427377-sword-slash-476148.mp3', False),
              ('arrow', '箭 Arrows — the volley from the bank (Night Crossing)', 'dennish18-arrow-146420.mp3', False),
              ('battle', '战 Battle — sword on sword, loop (fights)', 'freesound_community-sword-against-sword-6341.mp3', True)]

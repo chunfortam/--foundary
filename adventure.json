@@ -7594,12 +7594,77 @@
    "name": "0 · 公若渡河 Crossing the Han (title screen)",
    "folder": "A5vdDtxm7pu1YoMV",
    "background": {
-    "src": "modules/gongruo-session0/assets/intro.webm"
+    "src": "modules/gongruo-session0/assets/cover.webp"
    },
    "levels": [
     {
      "_id": "defaultLevel0000",
      "name": "0 · 公若渡河 Crossing the Han (title screen)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/cover.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 128,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {},
+   "sort": 0,
+   "initial": null,
+   "description": "<p>开场画面 / Title page. Activate while players sit down; the Banquet track plays.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "Ihz231IHFbvmdfPQ"
+  },
+  {
+   "_id": "prL5UtKta9cXOJa2",
+   "name": "0a · 云中塔 Pagoda in the Clouds (idle screen)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/intro.webm"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "0a · 云中塔 Pagoda in the Clouds (idle screen)",
      "background": {
       "src": "modules/gongruo-session0/assets/intro.webm"
      },
@@ -7650,7 +7715,7 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": "<p>开场画面 / Intro screen: looping video. Activate while players sit down; the Banquet track plays.</p>",
+   "description": "<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Ihz231IHFbvmdfPQ"
   },
