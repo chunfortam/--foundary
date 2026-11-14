@@ -11188,8 +11188,8 @@
     },
     "special": {
      "sanLoss": {
-      "checkPassed": "1",
-      "checkFailled": "D"
+      "checkPassed": "1D3",
+      "checkFailled": "1D20"
      },
      "attacksPerRound": 1
     }
