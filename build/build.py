@@ -274,7 +274,10 @@ IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{
 SC.insert(1, IDLE)
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
 def portrait_macro(key, img, title):
-    cmd = (f'const ip = new foundry.applications.apps.ImagePopout({{src: "modules/{MOD}/assets/portraits/{img}", window: {{title: "{title}"}}, showTitle: true}});\n'
+    src = f'modules/{MOD}/assets/portraits/{img}'
+    cmd = (f'const src = "{src}", title = "{title}";\n'
+           'const IP = foundry.applications?.apps?.ImagePopout;\n'
+           'const ip = IP ? new IP({src, window: {title}, showTitle: true}) : new ImagePopout(src, {title, shareable: true});  // v13+ / v12\n'
            'ip.render(true); ip.shareImage();')
     return {'_id': rid('macro:' + key), 'name': title, 'type': 'script', 'author': None, 'img': f'modules/{MOD}/assets/tokens/{img}', 'scope': 'global', 'command': cmd, 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
 MACROS = [portrait_macro('pc1', 'pc_wanderer.webp', '肖像 陆青崖 Lu Bluecliff · HO1 The Wanderer'),

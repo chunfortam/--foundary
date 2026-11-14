@@ -9934,7 +9934,7 @@
    "author": null,
    "img": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp",
    "scope": "global",
-   "command": "const ip = new foundry.applications.apps.ImagePopout({src: \"modules/gongruo-session0/assets/portraits/pc_wanderer.webp\", window: {title: \"肖像 陆青崖 Lu Bluecliff · HO1 The Wanderer\"}, showTitle: true});\nip.render(true); ip.shareImage();",
+   "command": "const src = \"modules/gongruo-session0/assets/portraits/pc_wanderer.webp\", title = \"肖像 陆青崖 Lu Bluecliff · HO1 The Wanderer\";\nconst IP = foundry.applications?.apps?.ImagePopout;\nconst ip = IP ? new IP({src, window: {title}, showTitle: true}) : new ImagePopout(src, {title, shareable: true});  // v13+ / v12\nip.render(true); ip.shareImage();",
    "folder": null,
    "sort": 0,
    "ownership": {
@@ -9949,7 +9949,7 @@
    "author": null,
    "img": "modules/gongruo-session0/assets/tokens/pc_merchant.webp",
    "scope": "global",
-   "command": "const ip = new foundry.applications.apps.ImagePopout({src: \"modules/gongruo-session0/assets/portraits/pc_merchant.webp\", window: {title: \"肖像 沈怀珠 Shen Pearl · HO2 The Merchant Heir\"}, showTitle: true});\nip.render(true); ip.shareImage();",
+   "command": "const src = \"modules/gongruo-session0/assets/portraits/pc_merchant.webp\", title = \"肖像 沈怀珠 Shen Pearl · HO2 The Merchant Heir\";\nconst IP = foundry.applications?.apps?.ImagePopout;\nconst ip = IP ? new IP({src, window: {title}, showTitle: true}) : new ImagePopout(src, {title, shareable: true});  // v13+ / v12\nip.render(true); ip.shareImage();",
    "folder": null,
    "sort": 0,
    "ownership": {
@@ -9964,7 +9964,7 @@
    "author": null,
    "img": "modules/gongruo-session0/assets/tokens/pc_official.webp",
    "scope": "global",
-   "command": "const ip = new foundry.applications.apps.ImagePopout({src: \"modules/gongruo-session0/assets/portraits/pc_official.webp\", window: {title: \"肖像 谢云骧 Xie Cloudmane · HO3 The Commissioner\"}, showTitle: true});\nip.render(true); ip.shareImage();",
+   "command": "const src = \"modules/gongruo-session0/assets/portraits/pc_official.webp\", title = \"肖像 谢云骧 Xie Cloudmane · HO3 The Commissioner\";\nconst IP = foundry.applications?.apps?.ImagePopout;\nconst ip = IP ? new IP({src, window: {title}, showTitle: true}) : new ImagePopout(src, {title, shareable: true});  // v13+ / v12\nip.render(true); ip.shareImage();",
    "folder": null,
    "sort": 0,
    "ownership": {
