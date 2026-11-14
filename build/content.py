@@ -122,14 +122,6 @@ def primer_html():
     s += h("什么是江湖", "What the jianghu is")
     s += bi("江湖是官府管不到的世界：门派、游侠、镖师、盗匪、郎中、说书人。游侠讲“义”：路见不平，拔刀相助；恩要报，仇也要报。轻功让人翻墙上房；内功与点穴是传说中的高深武学。",
             "The jianghu is the world the government cannot reach: sects, wanderers, caravan guards, bandits, quack doctors, storytellers. A wanderer lives by yi, righteousness: help the wronged, repay kindness, repay insult. Lightness skill lets you leap walls; inner power and acupoint strikes are the stuff of legend. Think Crouching Tiger, Hidden Dragon; Hero; Kung Fu Hustle.")
-    s += h("公开人物", "Public figures")
-    s += ul([
-      ("<b>兀良哈·阿术</b>——征南都元帅，蒙古军总指挥。传说勇武过项王。", "<b>Marshal Ashu of the Uriankhai</b>, Mongol commander-in-chief, Kublai's right arm; a brilliant general and a terrifying fighter."),
-      ("<b>段游衍</b>——南宋降将，大理段氏，先降宋再降蒙，见风使舵的好手，儒生最爱骂的人。", "<b>Duan Driftwood</b>, a Song general who surrendered; from the Dali clan; changed sides twice and is the man every scholar loves to curse."),
-      ("<b>范天顺</b>——樊城都统制，勤政爱民，城破时自缢。", "<b>Commander Fan</b>, Fencewall's beloved commander, dead by his own hand."),
-      ("<b>牛富</b>——樊城钤辖，神射手，拒降被囚。", "<b>Niu the Archer</b>, the garrison's famous bowman, refused to surrender and is now in the gaol."),
-      ("<b>范玉楼</b>——范天顺之侄，献城后掌管樊城。", "<b>Magistrate Fan</b>, the nephew who surrendered the city and now runs it."),
-    ])
     s += h("历史提示", "A note on history")
     s += bi("模组改动了史实（真实的襄樊之战持续到一二七三年）。你们可以改变具体事件，但无法改变历史的结局。",
             "The scenario bends history (the real siege lasted until 1273). You can change what happens to people here; you cannot change how the war ends.")
@@ -152,7 +144,7 @@ OPENING = [
 ]
 def opening_html():
     s = h("开场", "Opening narrative", 1)
-    s += '<p class="en"><em>主持人朗读。Read aloud by the GM, lights low, title screen on, before the three personal intros. Then each player gives a name and one visible detail.</em></p>'
+    s += '<p class="en"><em>Read aloud by the GM, lights low, title screen on, before the three personal intros. Then each player gives a name and one visible detail.</em></p>'
     s += ''.join(f'<p class="narr">{p}</p>' for p in OPENING)
     return s
 
@@ -528,5 +520,147 @@ def npc_ref_html():
       ("曲流 Winding Stream", "STR70 CON65 SIZ70 DEX65 APP55 INT65 POW60 EDU65 · HP12 DB+1D4 · 斗殴(大刀) Brawl (big blade) 70, 闪避 65, 跳跃 Jump 60, 急救 First Aid 60", "前镖师，十年前一刀杀了偷腥的丈夫，独自经营棺材铺。性格温和，始终照顾调查员。Ex-caravan guard; killed her cheating husband ten years ago; runs the coffin shop alone. Gentle; looks after the PCs."),
       ("船夫王 Boatman Wang", "普通人 ordinary man; 驾船 Boat 60", "独臂，痛骂蒙古与朝廷；沉船后独自逃走。One-armed; curses Mongols and court; abandons you when the boat sinks."),
       ("格拉基脊刺 Gla'aki's spine", "每根脊刺护甲4、生命6（与本体共享）；斗殴40，伤害2+1D5，每轮一次。Each spine: armour 4, HP 6 (shared with the body); attack 40, 2+1D5, once a round.", "斩断一根后格拉基需休整一轮。畏火与强光；火焰穿透护甲。Cut one and it needs a round to grow another. Fears fire and light; fire ignores its armour."),
+    ])
+    return s
+
+
+# ---------------- PLAYER-FACING FORMAT: English first, Chinese only on names and terms ----------------
+import re as _re
+NAMES = [("Lu Bluecliff", "陆青崖"), ("Shen Pearl", "沈怀珠"), ("Xie Cloudmane", "谢云骧"),
+         ("Fencewall", "樊城"), ("Southbright", "襄阳"), ("Han River", "汉江"), ("the Han", "汉江"),
+         ("Marshal Ashu", "阿术"), ("Ashu", "阿术"), ("Duan Driftwood", "段游衍"), ("General Toghan", "脱欢"), ("Toghan", "脱欢"),
+         ("Commander Fan", "范天顺"), ("Magistrate Fan", "范玉楼"), ("Niu the Archer", "牛富"), ("Prefect Xu", "许德显"),
+         ("Captain Liu", "刘卿堂"), ("Liu Qingtang", "刘卿堂"), ("Doctor Yue", "越南柯"), ("Yue Nanke", "越南柯"), ("Winding Stream", "曲流"),
+         ("Boatman Wang", "船夫王"), ("the Jiang twins", "姜楼、姜阁"), ("Autumn", "秋筠"), ("Nameless Fang", "无名方"),
+         ("Hermit of Mount Crag", "山阳道人"), ("Mount Crag", "岘山"), ("Stillwater", "止水"), ("Rainmaster's Ink", "雨师墨"),
+         ("Red Pine the Rain Master", "雨师赤松子"), ("Red Pine", "赤松子"), ("Lady of the Han", "汉江神女"),
+         ("jianghu", "江湖"), ("Lightness", "轻功"), ("Acupoint Strike", "点穴"), ("God-Arm Bow", "神臂弓"), ("Dream-Call", "梦引"),
+         ("Lin'an", "临安"), ("the capital", "临安"), ("Dali", "大理"), ("Kublai Khan", "忽必烈"), ("Kublai", "忽必烈"), ("Chancellor Jia", "贾似道"),
+         ("Magistracy", "衙署"), ("North Gate", "北门"), ("Coffin Shop", "棺材铺"), ("coffin shop", "棺材铺"), ("Street Crossing", "街口"),
+         ("Watchtower", "塔楼"), ("Grand Lake Stone", "太湖石"), ("Undying Servants", "不死仆从"), ("Gla'aki", "格拉基"),
+         ("Song", "宋"), ("Mongols", "蒙古")]
+def annotate(html):
+    """Add the Chinese once, after the first English mention of each name/term (unless the Chinese already appears)."""
+    for en, zh in NAMES:
+        if zh in html: continue
+        pat = _re.compile(r'(?<![\w\u4e00-\u9fff])' + _re.escape(en) + r'(?!\w)(?![^<]*>)(?!\s*[\u4e00-\u9fff])')
+        html, n = pat.subn(lambda m: f'{m.group(0)} {zh}', html, count=1)
+    return html
+def player(html):
+    """Player-facing pages: drop the Chinese full text, keep English first, Chinese on names/terms only."""
+    html = _re.sub(r'<p class="zh">.*?</p>', '', html, flags=_re.S)
+    html = _re.sub(r'<p class="en"><em>(.*?)</em></p>', r'<p>\1</p>', html, flags=_re.S)
+    html = _re.sub(r'<li>(?:(?!</li>).)*?<br><em>(.*?)</em></li>', r'<li>\1</li>', html, flags=_re.S)
+    html = _re.sub(r'<(h\d)>([^<]*?) · ([^<]*?)</h\d>', lambda m: f'<{m.group(1)}>{m.group(3)} <span class="zh-tag">{m.group(2)}</span></{m.group(1)}>', html)
+    html = _re.sub(r'<span class="zh-tag">[^<]*</span>', lambda m: m.group(0) if _re.search(r'[\u4e00-\u9fff]', m.group(0)) else '', html)
+    return annotate(html)
+
+# ---------------- THE STORY SO FAR (player page) ----------------
+STORY = [
+ "The year is 1268. The Song 宋 empire is old and rich and dying, and the Mongols under Kublai Khan 忽必烈 have come south to finish it. In the middle of China two walled cities face each other across the Han River 汉江: <b>Fencewall 樊城</b> on the north bank and <b>Southbright 襄阳</b> on the south. Whoever holds them holds the road to the Yangtze and to the capital, Lin'an 临安. A floating bridge used to join them.",
+ "Two weeks ago, after a three-day assault, Fencewall fell. Its commander, <b>Commander Fan 范天顺</b>, hanged himself rather than surrender; his nephew, <b>Magistrate Fan 范玉楼</b>, opened the gates to spare the forty thousand people inside. The famous archer of the garrison, <b>Niu 牛富</b>, refused to surrender and sits in the gaol. The Mongol commander, <b>Marshal Ashu 阿术</b>, keeps his army on a tight leash: no looting, no burning. But patrols walk every street, the bridge has been cut, and soldiers watch the riverbank day and night. Across the water Southbright still holds. In a few days the Mongols mean to cross and take it.",
+ "Then a fog came down on the river. In January, when the Han never makes fog. Boats go out and do not come back. Townsfolk say they dream of the Lady of the Han 汉江神女 calling them to the water.",
+ "Everyone in this town who matters wants the same thing: to get across that river. You are three such people, strangers to one another, who will meet tonight in the reeds east of the city, where a one-armed boatman has promised, for a price, to row passengers over in the dark.",
+ "<b>A wandering swordsman 游侠</b> who walked into the marshal's victory feast ten nights ago, tried to kill him, cut only his shoulder, and is now the most hunted man in Fencewall.",
+ "<b>A merchant's heir 商贾</b> from the capital's great pharmacy house, who watched her father beheaded on the road outside the gate and must get home to a house with no head.",
+ "<b>A commissioner of the court 命官</b>, sent with an army to save these cities, whose last eight hundred men crossed the river without him and have not been heard from since.",
+ "This is a wuxia 武侠 story, not a horror story: it is about people, loyalty and debts, swords and the river. Think of the classic Jin Yong 金庸 novels, or films like <i>Crouching Tiger, Hidden Dragon</i>. But something is in the water tonight that is older than the war, and the fog is not weather.",
+]
+def story_html():
+    s = '<h1>The story so far <span class="zh-tag">故事</span></h1>'
+    s += ''.join(f'<p class="narr">{p}</p>' for p in STORY)
+    s += '<h2>Tonight (Session 0) <span class="zh-tag">今夜</span></h2>'
+    s += '<p>Each of you first plays a short scene of your own: how you came to be in Fencewall and why you must leave. Then the three of you meet at the riverbank for the night crossing. The session ends when you reach shelter on the north bank, in the coffin shop 棺材铺 of a woman called Winding Stream 曲流.</p>'
+    return s
+
+# ---------------- WHO'S WHO (player page; GM page adds the secret column) ----------------
+P = f'modules/{MOD}/assets/portraits/'
+def _img(f): return f'<img src="{P}{f}" width="72" height="72" class="cast-pic">' if f else ''
+CAST = [
+ ("The three of you · 你们", [
+   ('pc_wanderer.webp', 'Lu Bluecliff 陆青崖', 'HO1 The Wanderer 游侠', '24. A wandering swordsman from Mount Crag 岘山; plain clothes, a sabre at his hip and a wrapped sword on his back he never shows. Says little, misses nothing.',
+    'Tried to kill Ashu at the banquet with the poisoned sword Stillwater 止水; only cut his shoulder (Ashu now has a penalty die on everything). Duan Driftwood is his old classmate and covered his escape. His master wants Ashu\'s head.'),
+   ('pc_merchant.webp', 'Shen Pearl 沈怀珠', 'HO2 The Merchant Heir 商贾', '20. Heir to a great pharmacy house of the capital; silk under a plain coat, soft hands, a medicine chest. Clever, quick-tongued, used to money solving things.',
+    'Her father was beheaded by Toghan\'s detachment outside the North Gate. Her foster brother is Doctor Yue 越南柯 (fraud, thief, the man who wrecked Fan\'s rite). Family art: Acupoint Strike 点穴.'),
+   ('pc_official.webp', 'Xie Cloudmane 谢云骧', 'HO3 The Commissioner 命官', '22. Youngest son of a great family and the court\'s Commissioner, seal and all. Handsome, educated, raised to be obeyed; the best archer at the table; carries a wound that will not close.',
+    'His army was destroyed; his oldest friend Captain Liu 刘卿堂 led the last 800 across the river on 3 January and was caught in Fan\'s rite. Gla\'aki calls him in dreams (first Dream-Call on the night of the 11th).'),
+ ]),
+ ("The Mongols · 蒙古", [
+   ('ashu.webp', 'Marshal Ashu 阿术', 'Mongol commander-in-chief', 'Of the Uriankhai; Kublai\'s right arm. A brilliant general and a terrifying fighter: well over six feet, bearded, a huge sabre. Took Fencewall in three days; forbids looting. Wounded in the shoulder at his own victory feast.',
+    'Rainmaster\'s Ink: the wound never heals; every roll with a penalty die for the rest of the scenario. Will have Niu beheaded at the Street Crossing on the 15th. Killing him triggers the city lockdown in the finale.'),
+   ('duan.webp', 'Duan Driftwood 段游衍', 'Song general turned Mongol', 'From the Dali 大理 clan. Surrendered to the Song, then to the Mongols; sits one seat down from Ashu and does his talking in Chinese. Smooth, pleasant, and the man every scholar loves to curse.',
+    'Cowardly, loyal to no dynasty, but admires HO1 (studied a year under the same master) and has promised the Hermit to protect him. Made chaos at the banquet so HO1 could escape.'),
+   ('toghan.webp', 'General Toghan 脱欢', 'Mongol general', 'One of Ashu\'s generals. Barely speaks Chinese; hard and greedy. Commands the detachments on the roads around the city.',
+    'His detachment stopped the medicine convoy and beheaded HO2\'s father.'),
+   ('soldier.webp', 'Mongol soldiers 蒙古兵', 'Patrols and guards', 'Foot and horse. Everywhere in town after dark; they carry weapons, tokens, money and written orders.', 'Armour 2. Sleight of Hand to lift tokens or papers.'),
+ ]),
+ ("The Song · 宋", [
+   ('', 'Commander Fan 范天顺', 'Late commander of Fencewall', 'Beloved, hard-working, harsh with wrongdoers. Refused to surrender and hanged himself in the Magistracy on the night of 3 January.',
+    'Bought the Grand Lake Stone with Gla\'aki\'s shard in 1266; summoned the thing in the river with condemned prisoners as sacrifices to stop a Mongol crossing. It fired early and destroyed Liu\'s flotilla. Asked Winding Stream for a coffin with a hidden compartment.'),
+   ('', 'Magistrate Fan 范玉楼', 'Fan\'s nephew; runs the town for the Mongols', 'Opened the gates the morning after his uncle\'s death to spare the people. Now flatters Ashu at banquets. Embarrassing to watch; perhaps not a coward.',
+    'Knows more of his uncle\'s plan than he says. The Library holds the county gazetteer with the poison.'),
+   ('niu.webp', 'Niu the Archer 牛富', 'Garrison commander, in the gaol', 'Forties, dark, lean as a bowstring, eyes like torches. His God-Arm Bow 神臂弓 shoots four hundred paces; before the siege he shot Ashu\'s nephew dead. Refused to surrender; the Mongols cut his hand-tendons and locked him up.',
+    'To be beheaded at noon on the 15th. His bow passes to Nameless Fang, the watchman boy: a finale prerequisite.'),
+   ('', 'Prefect Xu 许德显', 'The region\'s prefect', 'A senior Song official who stayed on and now dines at Ashu\'s table. His family owns boats.',
+    'Two letters exist: one offering his boats to the Mongols, one swearing loyalty to the Song. Doctor Yue has stolen them: blackmail lever for the boats.'),
+   ('liu.webp', 'Captain Liu 刘卿堂', 'HO3\'s oldest friend', 'Hot-blooded, generous, a jianghu air about him. Led HO3\'s last eight hundred men across the river on 3 January. Not seen since.',
+    'The flotilla was destroyed by Gla\'aki. Liu came out of the water undying but with his own mind: no pulse, immune to poison and disease, a red web-mark on his back. The Servants attack him first. Joins the party on the night of the 12th.'),
+ ]),
+ ("People of Fencewall · 樊城人", [
+   ('qu.webp', 'Winding Stream 曲流', 'Owner of the coffin shop by the river', 'About fifty, tall and heavily built, an ex-caravan guard with a big blade on her back. Gentle with guests; makes the best coffins in town. Your shelter after the crossing.',
+    'Killed her cheating husband with one cut ten years ago. Built Commander Fan\'s coffin, with a hidden compartment: a planted clue.'),
+   ('boatman.webp', 'Boatman Wang 船夫王', 'The one-armed boatman', 'Curses the Mongols and the court in the same breath. For a price he will row you across tonight.', 'Abandons the passengers when the boat sinks.'),
+   ('jiang_tower.webp', 'The Jiang twins 姜楼、姜阁', 'Fishermen brothers', 'Strong swimmers who know every reed-bed. Jiang Tower is the steady elder, Jiang Loft the reckless younger.', 'They pull the investigators out of the river and lead them to Winding Stream.'),
+   ('yue.webp', 'Doctor Yue 越南柯', 'A wandering healer', 'Handsome, charming, hands like a conjurer\'s; turns up where he is least expected and gives money to the poor.', 'HO2\'s foster brother. Cannot fight and cannot heal: fakes medicine and steals. Blundered into Fan\'s rite; carries Prefect Xu\'s letters. Calls at the coffin shop on the evening of the 12th.'),
+   ('', 'Autumn 秋筠', 'A scar-faced woman outlaw', 'Town gossip: hides somewhere in the back streets, hunted by both sides.', 'Helps the investigators later in the sandbox; her help costs no action round.'),
+   ('servant.webp', 'The drowned 溺者', 'What the fog brings', 'Boats go out and do not come back. Some townsfolk are found at the bank at dawn, soaked, remembering nothing.', 'Undying Servants: Liu\'s drowned men, puppets of Gla\'aki, moving by night and luring people to the water. Hit on the injection scar on the spine kills outright.'),
+ ]),
+]
+def cast_html(gm=False):
+    s = f'<h1>Who\'s who <span class="zh-tag">人物</span></h1>'
+    s += '<p>' + ('Players\' lines in plain text; the GM-only truth in red.' if gm else 'What people in Fencewall would tell you about each other. Names are given English-first, with the Chinese after.') + '</p>'
+    for group, rows in CAST:
+        s += f'<h2>{group}</h2><table class="cast">'
+        for img, name, role, pub, secret in rows:
+            s += f'<tr><td class="cast-pic-cell">{_img(img)}</td><td><b>{name}</b><br><small>{role}</small><br>{pub}' + (f'<br><span class="gm-secret">GM: {secret}</span>' if gm else '') + '</td></tr>'
+        s += '</table>'
+    return s
+
+# ---------------- WHO YOU ARE (opens each HO handout) ----------------
+WHO = {
+ 1: "You are <b>Lu Bluecliff 陆青崖</b>, twenty-four, a wandering swordsman raised on Mount Crag 岘山 by the Hermit 山阳道人, the only father you have known. Ten nights ago, at the Mongols' victory feast in the Magistracy, you tried to kill Marshal Ashu 阿术 with your master's poisoned sword Stillwater 止水 and only cut his shoulder. An old classmate, Duan Driftwood 段游衍, now serving the Mongols, covered your escape. The whole city is hunting you. You need to be across the river tonight, and you still owe your master a head.",
+ 2: "You are <b>Shen Pearl 沈怀珠</b>, twenty, heir to a great pharmacy house in the capital, Lin'an 临安. Two weeks ago, on the road outside the North Gate, Mongol riders stopped your father's medicine convoy and beheaded him in front of you; you ran into the city alone. Then the city fell. Your foster brother Yue Nanke 越南柯 is somewhere out in the jianghu 江湖, and the house at home has no head. You need to get across the river and go home.",
+ 3: "You are <b>Xie Cloudmane 谢云骧</b>, twenty-two, youngest son of a great family of the capital and, seal and all, the court's Commissioner sent to save the twin cities. The Mongols destroyed your army on the road; you reached Fencewall with eight hundred men. On 3 January your oldest friend Captain Liu 刘卿堂 led them across the river to Southbright 襄阳 while you, wounded, stayed behind; the next morning the city surrendered. You have heard nothing from Liu since. You need to get across the river and find your men.",
+}
+def ho_html(n):
+    d = HO[n]
+    s = f'<h1>{d["title_en"]}<br><small>{d["title_zh"]}</small></h1>'
+    s += '<h2>Who you are <span class="zh-tag">你是谁</span></h2>' + f'<p class="narr">{WHO[n]}</p>'
+    s += h("公开信息", "Public") + d["public"]
+    s += h("你的秘密（仅本人阅读）", "Your secret (for your eyes only)") + d["secret"]
+    s += h("车卡要求", "Character requirements") + d["build"]
+    return s
+
+# ---------------- THE WHOLE STORY (GM one page) ----------------
+GM_STORY = [
+ "<b>What Commander Fan did.</b> In 1266 Commander Fan 范天顺 bought an ornamental Grand Lake Stone 太湖石 with eighty-one holes. The green jade set in hole 46 is a shard of Gla'aki 格拉基, the \"Many-Headed Fish\" of old travel books: a thing that calls people into water in their dreams and makes the drowned walk again. Fan, dutiful and clear-eyed, knew Fencewall could not hold, and kept the stone as a last weapon: wake the thing in the river and no army could cross.",
+ "<b>The night of 3 January.</b> As the Mongol assault began, Fan took condemned prisoners to the bank as sacrifices and began the rite. Doctor Yue 越南柯, hiding nearby, blundered into it, and it fired early: into the river just as Captain Liu 刘卿堂's flotilla, HO3's last eight hundred men ordered across to Southbright, was in midstream. The boats were smashed. The men drowned. Some climbed back out with a red web-mark on their backs and no pulse: Undying Servants 不死仆从, puppets of the thing in the river. Liu alone came out with his own mind. Fan, seeing what he had done, hanged himself that night; his nephew Magistrate Fan 范玉楼 opened the gates in the morning.",
+ "<b>Now.</b> The fog is Gla'aki's. The Mongols cannot cross (their assault on Southbright slips from the 9th to the 18th). The Servants move through the town by night and lure people to the bank; the thing calls in dreams, HO3 first (POW each night). Niu the Archer 牛富 waits in the gaol for his beheading at noon on the 15th. Prefect Xu 许德显 has boats and two incriminating letters. Ashu 阿术 nurses a shoulder wound from Stillwater 止水 that will never heal.",
+ "<b>Session 0</b> is the three personal intros and the Night Crossing: the boat is wrecked by a spine from the river, the Jiang twins pull the party out, and they wake in Winding Stream 曲流's coffin shop. <b>Day One</b> (12 Jan) adds the Street Crossing, Doctor Yue's visit with Xu's letters, and Liu joining the party. <b>The sandbox</b> (12–15 Jan, three action rounds a day) is about the gaol, Xu's boats, the gazetteer's poison and the Ling needles. <b>The finale</b> is at the Watchtower 塔楼: with Niu's God-Arm Bow 神臂弓, the needles and a fire signal the investigators can end what Fan started, and decide whether Ashu lives.",
+]
+def timeline_html():
+    s = h("主持人：故事全貌与时间线", "GM: The whole story, and the timeline", 1)
+    s += ''.join(f'<p class="narr">{p}</p>' for p in GM_STORY)
+    s += h("时间线", "Timeline")
+    s += table(["日期 Date", "事件", "Event"], [
+      ("1266", "范天顺购得太湖石，内嵌格拉基碎片，置于解佩亭。", "Commander Fan buys the Grand Lake Stone with Gla'aki's shard and sets it in the Pavilion of the Untied Pendant."),
+      ("1267 末 late", "蒙古进攻襄樊。HO2只身逃入樊城；HO3与刘卿堂退守樊城。", "The Mongols attack the twin cities. HO2 flees alone into Fencewall; HO3 and Captain Liu retreat into it."),
+      ("1268-01-03", "元军总攻；范天顺在汉江召唤格拉基；刘卿堂船队全军覆没。", "Full assault; Fan summons Gla'aki in the river; Liu's flotilla is wiped out."),
+      ("1268-01-04", "樊城投降。", "Fencewall surrenders."),
+      ("1268-01-10", "HO1刺杀阿术未果。", "HO1 fails to kill Ashu."),
+      ("1268-01-11", "公共导入：夜渡汉水失败。", "Shared intro: the night crossing fails."),
+      ("1268-01-12", "浓雾翻涌，元军渡江推迟到十八日。", "Fog boils up; the Mongol crossing is postponed to the 18th."),
+      ("1268-01-15 (预计 planned)", "牛富在街口问斩。", "Niu the Archer to be executed at the street corner."),
+      ("1268-01-18 (预计 planned)", "元军水路三面围攻襄阳。", "Mongol river assault on Southbright."),
     ])
     return s
