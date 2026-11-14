@@ -551,7 +551,11 @@ def player(html):
     html = _re.sub(r'<p class="zh">.*?</p>', '', html, flags=_re.S)
     html = _re.sub(r'<p class="en"><em>(.*?)</em></p>', r'<p>\1</p>', html, flags=_re.S)
     html = _re.sub(r'<li>(?:(?!</li>).)*?<br><em>(.*?)</em></li>', r'<li>\1</li>', html, flags=_re.S)
-    html = _re.sub(r'<(h\d)>([^<]*?) · ([^<]*?)</h\d>', lambda m: f'<{m.group(1)}>{m.group(3)} <span class="zh-tag">{m.group(2)}</span></{m.group(1)}>', html)
+    def _head(m):
+        a, b = m.group(2), m.group(3)
+        if not _re.search(r'[\u4e00-\u9fff]', a): a, b = b, a  # keep English first whichever side it was on
+        return f'<{m.group(1)}>{b} <span class="zh-tag">{a}</span></{m.group(1)}>'
+    html = _re.sub(r'<(h\d)>([^<]*?) · ([^<]*?)</h\d>', _head, html)
     html = _re.sub(r'<span class="zh-tag">[^<]*</span>', lambda m: m.group(0) if _re.search(r'[\u4e00-\u9fff]', m.group(0)) else '', html)
     return annotate(html)
 
