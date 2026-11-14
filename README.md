@@ -32,7 +32,7 @@ The adventure ships as plain `adventure.json` (no compendium database), so a pul
 - The scenario's 点穴 rules attachment is not in the published PDF; the cheat sheet contains a house rule to use until you get the attachment from the author's QQ group (1095875707).
 - Niu the Archer has no stats in the original; the sheet uses GM estimates.
 - Portraits and round tokens for all 16 actors are AI-generated (OpenAI gpt-image) in a Chinese ink-wash style.
-- Sound effects: playlist 音效 Sound effects (斩 Slash for the HO2 intro), built from the RPG Sound Pack by artisticdude (opengameart.org), CC0.
+- Sound effects: playlist 音效 Sound effects — 斩 Slash (HO2 intro), 箭 Arrows (Night Crossing volley), 战 Battle (sword-on-sword loop for fights); mp3s from pixabay.com under the Pixabay Content License.
 - Music: a playlist of six Kevin MacLeod tracks linked to the scenes (Eastern Thought, Teller of the Tales, Asian Drums, Temple of the Manes, Lotus, Lightless Dawn). Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
 - Maps are AI-generated (OpenAI gpt-image) for this kit, 3072x2048, gridless art with the Foundry grid set per scene (128 px = 1.5 m; coffin shop 256 px). Nudge the grid in Scene Configuration if squares feel off.
 
