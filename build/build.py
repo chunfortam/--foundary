@@ -267,6 +267,11 @@ TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.web
               notes='<p>开场画面 / Intro screen: looping video. Activate while players sit down; the Banquet track plays.</p>')
 TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(0, TITLE)
+# Investigator-selection screen: the same pagoda loop with the three HO portraits, names and one-line blurbs (assets/intro_pick.webm).
+PICK = scene('0b · 选择调查员 Choose your investigator', '../cover.webp', 128, [], w=1536, h=1024,
+             notes='<p>选角画面 / Investigator-selection screen: the three HO portraits with names and a one-line blurb each. Activate after the intro loop while players pick; the Banquet track keeps playing.</p>')
+PICK['background']['src'] = PICK['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro_pick.webm'; PICK['grid']['alpha'] = 0; PICK['padding'] = 0; PICK['playlist'] = PL['_id']; PICK['playlistSound'] = PL['sounds'][0]['_id']
+SC.insert(1, PICK)
 SFX_FILES = [('slash', '斩 Slash — the father\'s head (HO2 intro)', '54427377-sword-slash-476148.mp3', False),
              ('arrow', '箭 Arrows — the volley from the bank (Night Crossing)', 'dennish18-arrow-146420.mp3', False),
              ('battle', '战 Battle — sword on sword, loop (fights)', 'freesound_community-sword-against-sword-6341.mp3', True)]
@@ -280,7 +285,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.5', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.6', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
