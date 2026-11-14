@@ -262,10 +262,10 @@ STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp',
                '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
 STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
 SC.append(STREET)
-# Title screen for the table TV: the scenario's cover re-lettered in English, Banquet music.
+# Intro screen for the table TV: looping ink-wash pagoda video (assets/intro.webm, our own render), Banquet music.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
-              notes='<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>')
-TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
+              notes='<p>开场画面 / Intro screen: looping video. Activate while players sit down; the Banquet track plays.</p>')
+TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(0, TITLE)
 SFX_FILES = [('slash', '斩 Slash — the father\'s head (HO2 intro)', '54427377-sword-slash-476148.mp3', False),
              ('arrow', '箭 Arrows — the volley from the bank (Night Crossing)', 'dennish18-arrow-146420.mp3', False),

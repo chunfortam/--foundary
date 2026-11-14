@@ -7594,14 +7594,14 @@
    "name": "0 · 公若渡河 Crossing the Han (title screen)",
    "folder": "A5vdDtxm7pu1YoMV",
    "background": {
-    "src": "modules/gongruo-session0/assets/cover.webp"
+    "src": "modules/gongruo-session0/assets/intro.webm"
    },
    "levels": [
     {
      "_id": "defaultLevel0000",
      "name": "0 · 公若渡河 Crossing the Han (title screen)",
      "background": {
-      "src": "modules/gongruo-session0/assets/cover.webp"
+      "src": "modules/gongruo-session0/assets/intro.webm"
      },
      "elevation": {
       "bottom": 0,
@@ -7650,7 +7650,7 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": "<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>",
+   "description": "<p>开场画面 / Intro screen: looping video. Activate while players sit down; the Banquet track plays.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Ihz231IHFbvmdfPQ"
   },
