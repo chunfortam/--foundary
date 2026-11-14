@@ -304,6 +304,17 @@ DOCK = scene('15 · 东码头·蒙古战船 The East dock and the warships (the 
              [T(A['soldier'], x, y, name=f'守船兵 Ship guard {i+1}') for i, (x, y) in enumerate([(7.0, 11.0), (9.4, 10.6), (11.6, 11.2), (6.6, 13.4), (12.8, 13.4), (4.8, 10.6), (15.4, 8.2), (6.4, 4.6)])], 0.7,
              '<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen\'s huts on the right.</p>', w=1536, h=1024)
 for sc_ in (MOURNING, SICKROOM, GAOL, DOCK): SC.append(sc_)
+PAVILION = scene('16 · 解佩亭 The ruined Pavilion (west dock)', 'pavilion.webp', 64,
+                 [T(A['pc1'], 8.6, 14.4), T(A['pc2'], 10.0, 14.8), T(A['pc3'], 11.4, 14.4), T(A['liu'], 12.8, 14.8), T(A['spine'], 17.6, 7.0, hidden=True, w=2, h=2)], 0.75,
+                 '<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners\' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank "The goddess comes in dreams" can fire (the spine is a hidden token).</p>', w=1536, h=1024, weather='fog')
+TOWER = scene('17 · 塔楼 The Watchtower (the last night)', 'tower.webp', 64,
+              [T(A['pc3'], 11.6, 10.6, name='谢云骧 Xie Cloudmane (on the tower)'), T(A['liu'], 12.6, 10.6, name='刘卿堂 Captain Liu (on the tower)'),
+               T(A['pc2'], 11.8, 13.6, name='沈怀珠 Shen Pearl (at the foot)'), T(A['pc1'], 11.8, 6.6, name='陆青崖 Lu Bluecliff (in the boat)'), T(A['boatman'], 12.6, 6.8, name='船夫 The boatman'), T(A['duan'], 10.8, 7.0, hidden=True),
+               T(A['spine'], 5.4, 3.2, w=2, h=2), T(A['spine'], 19.4, 3.4, w=2, h=2, name='格拉基脊刺 Gla\'aki\'s spine 2', hidden=True)] +
+              [T(A['servant'], x, y, name=f'不死仆从 Undying {i+1}', hidden=True) for i, (x, y) in enumerate([(8.6, 14.8), (14.8, 15.0), (9.4, 12.2), (14.6, 12.0), (12.0, 15.8)])] +
+              [T(A['soldier'], x, y, name=f'塔楼守兵 Tower guard {i+1}') for i, (x, y) in enumerate([(10.4, 12.6), (13.4, 12.6)])], 0.8,
+              '<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla\'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla\'aki.</p>', w=1536, h=1024, weather='fog')
+for sc_ in (PAVILION, TOWER): SC.append(sc_)
 # Title page for the table TV: the scenario's cover re-lettered in English, Banquet music.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
               notes='<p>开场画面 / Title page. Activate while players sit down; the Banquet track plays.</p>')

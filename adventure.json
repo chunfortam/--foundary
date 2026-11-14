@@ -12867,6 +12867,694 @@
    "sort": 0,
    "initial": null,
    "description": "<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen's huts on the right.</p>"
+  },
+  {
+   "_id": "xdz729UwK8W7jxHn",
+   "name": "16 · 解佩亭 The ruined Pavilion (west dock)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/pavilion.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "16 · 解佩亭 The ruined Pavilion (west dock)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/pavilion.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "fog",
+   "environment": {
+    "darknessLevel": 0.75,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "u6kHqZylE6mncb7n",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 550,
+     "y": 921,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "VohTrjKqAjrNiGdd",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 640,
+     "y": 947,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0SiNrzwNC9g0zdTD",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 729,
+     "y": 921,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "3l7fVZPHlmZjhJkP",
+     "name": "刘卿堂 Captain Liu",
+     "actorId": "eEm8g9KvTGvXOaTY",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/liu.webp"
+     },
+     "x": 819,
+     "y": 947,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "wCSVSksjlPpdyr5y",
+     "name": "格拉基脊刺 Gla'aki's spine",
+     "actorId": "GWjWiX7DTF0B365I",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/spine.webp"
+     },
+     "x": 1126,
+     "y": 448,
+     "width": 2,
+     "height": 2,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {},
+   "sort": 0,
+   "initial": null,
+   "description": "<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank \"The goddess comes in dreams\" can fire (the spine is a hidden token).</p>"
+  },
+  {
+   "_id": "ye7iggxq3TeefXSP",
+   "name": "17 · 塔楼 The Watchtower (the last night)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/tower.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "17 · 塔楼 The Watchtower (the last night)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/tower.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "fog",
+   "environment": {
+    "darknessLevel": 0.8,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "D86k83BR7OefeKUq",
+     "name": "谢云骧 Xie Cloudmane (on the tower)",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 742,
+     "y": 678,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "qrdRhSyvCcmhAury",
+     "name": "刘卿堂 Captain Liu (on the tower)",
+     "actorId": "eEm8g9KvTGvXOaTY",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/liu.webp"
+     },
+     "x": 806,
+     "y": 678,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "13ABgfNgybJsFsh4",
+     "name": "沈怀珠 Shen Pearl (at the foot)",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 755,
+     "y": 870,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "1QtB0M22zqvb7Obi",
+     "name": "陆青崖 Lu Bluecliff (in the boat)",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 755,
+     "y": 422,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "C5Cw42mqUpHP6IPv",
+     "name": "船夫 The boatman",
+     "actorId": "L0rdXChlWKWBchIC",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/boatman.webp"
+     },
+     "x": 806,
+     "y": 435,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "uXh4l5sj8m9K6crN",
+     "name": "段游衍 Duan Driftwood",
+     "actorId": "E96GK825kFXk3LZk",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/duan.webp"
+     },
+     "x": 691,
+     "y": 448,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "OqvWy5YSf40sOeEN",
+     "name": "格拉基脊刺 Gla'aki's spine",
+     "actorId": "GWjWiX7DTF0B365I",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/spine.webp"
+     },
+     "x": 345,
+     "y": 204,
+     "width": 2,
+     "height": 2,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "IYbevOLnSVALQdSG",
+     "name": "格拉基脊刺 Gla'aki's spine 2",
+     "actorId": "GWjWiX7DTF0B365I",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/spine.webp"
+     },
+     "x": 1241,
+     "y": 217,
+     "width": 2,
+     "height": 2,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "ed2VPUggninMBkln",
+     "name": "不死仆从 Undying 1",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 550,
+     "y": 947,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "8Qp7MtijNtZIq3AK",
+     "name": "不死仆从 Undying 2",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 947,
+     "y": 960,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "6UAlUCoUqbxU4vm5",
+     "name": "不死仆从 Undying 3",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 601,
+     "y": 780,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "5luZcN17NCWgr0z1",
+     "name": "不死仆从 Undying 4",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 934,
+     "y": 768,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "xl9hPGf3d2WrBH8E",
+     "name": "不死仆从 Undying 5",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 768,
+     "y": 1011,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "7HzAROe0uFDGcyM1",
+     "name": "塔楼守兵 Tower guard 1",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 665,
+     "y": 806,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "Yq8hvFkgOyej7rKj",
+     "name": "塔楼守兵 Tower guard 2",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 857,
+     "y": 806,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {},
+   "sort": 0,
+   "initial": null,
+   "description": "<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla'aki.</p>"
   }
  ],
  "folders": [
