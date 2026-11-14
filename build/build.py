@@ -2,6 +2,7 @@
 import json, os, glob, random, string, re, shutil, copy, hashlib
 from PIL import Image, ImageDraw, ImageFont
 import content as C
+import campaign as CP
 random.seed(20260111)
 MOD = C.MOD
 import os
@@ -189,6 +190,8 @@ JR = [
  journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.player(C.ho_html(1)))], 0, FOLD['f_player']['_id']),
  journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.player(C.ho_html(2)))], 0, FOLD['f_player']['_id']),
  journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.player(C.ho_html(3)))], 0, FOLD['f_player']['_id']),
+ journal('规则卡与文书 · Rules cards & handouts', [('规则卡 Set-piece rules', CP.rules_cards_html()), ('文书 Handouts', CP.handouts_html())], 0, FOLD['f_player']['_id']),
+ journal('主持人 · GM: Campaign (Days 1–6)', [('沙盒 How the sandbox runs', CP.sandbox_html()), ('前街 Front Street', CP.front_html()), ('后街 Back Street', CP.back_html()), ('街口 Street Crossing', CP.crossing_html()), ('寺庙 Temple', CP.temple_html()), ('衙署 Magistracy quarter', CP.magistracy_html()), ('汉江沿岸 Riverbank', CP.riverbank_html()), ('塔楼 Finale: the Watchtower', CP.finale_html()), ('可选与个人 Optional & personal events', CP.optional_html()), ('结局 Endings', CP.endings_html()), ('人物 Campaign NPCs', CP.npcs_html())], 0, FOLD['f_gm']['_id']),
  journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('加时：第一日 Extended: Day One', C.extended_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('人物 Who\'s who (GM)', C.cast_html(True)), ('故事全貌 The whole story & timeline', C.timeline_html()), ('伤势与治疗 Wounds & Healing', C.healing_html())], 0, FOLD['f_gm']['_id']),
 ]
 # ---------------- scenes ----------------
@@ -301,7 +304,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.8', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.0', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
