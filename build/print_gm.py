@@ -109,6 +109,10 @@ BODY = f'''
 <table class="agenda"><tr><td>Sabre / sword</td><td>1D8 + DB</td><td>Bow</td><td>1D6 (+½DB), 30 m</td><td>Arrow in the fog</td><td>1D3</td></tr>
 <tr><td>Fists</td><td>1D3 + DB</td><td>Throwing knife</td><td>1D4 + ½DB</td><td>Cold water</td><td>1D3 (CON fail)</td></tr>
 <tr><td>Stillwater 止水</td><td>1D8 + DB, wound never heals</td><td>Acupoint Strike 点穴</td><td>1D3; opposed vs CON: stun 1D3 rounds or ignore armour</td><td>Major Wound</td><td>≥ half max HP in one hit: CON or fall</td></tr></table>
+<h2>Healing 治疗 <small>full page in the GM journal: 伤势与治疗 Wounds &amp; Healing</small></h2>
+<table class="agenda"><tr><td>First Aid 急救 (HO1 50, HO2 50)</td><td>once per injury, within ~1 h, 1 min: +1 HP; stabilises a dying character (no HP)</td><td>0 HP, no Major Wound</td><td>unconscious, wakes later</td></tr>
+<tr><td>Medicine 医学 (HO2 65 / 32 / 13)</td><td>once per injury, 1 h + kit: +1D3 HP; may follow First Aid on the same wound; also stops dying. Fumble: worse</td><td>0 HP + Major Wound</td><td>dying: dead end of next round unless First Aid; then CON each hour until Medicine</td></tr>
+<tr><td>Natural 自然恢复</td><td>no Major Wound +1 HP/day; Major Wound: weekly CON, success +1D3 (bonus die if Medicine succeeded that week); clears above half HP</td><td>Stillwater 止水 wounds</td><td>never heal</td></tr></table>
 <h2>If a player…</h2>
 <ul>
 <li><b>wants to fight the whole banquet:</b> let one round happen, then Duan's intervention; archers "would have" shot. HO1 escapes; Ashu lives. Say so plainly if needed: this is a prologue.</li>
