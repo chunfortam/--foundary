@@ -207,7 +207,7 @@ def extended_html():
             "POW again. Success: HO3 opens their eyes standing at the water's edge. Failure: they are already in the Han, waist deep. The river is silent, the fog thick, a glow flickers ahead; a few steps after it and the water is at their chest. The glow dips under and strikes from behind at the spine: Dodge, or 1D3 scratch.")
     s += bi("刺来的是一根漆黑脊刺，布满鳞甲倒刺，末端纤细尖锐，与昨夜所见相同。此时刘卿堂出现在岸边，扔给HO3一把锈剑，进入战斗轮<b>（▶ 播放音效「战 Battle」）</b>。脊刺：HP 10，敏捷50，斗殴40，伤害2+1D5。击败即脱险。",
             "It is a black spine, scaled and barbed, thin and sharp at the tip, the same as last night. And on the bank stands Captain Liu 刘卿堂, who throws HO3 a rusty sword. Combat <b>(▶ play the 战 Battle sound effect)</b>: the spine has HP 10, DEX 50, Fighting 40, damage 2+1D5, armour 4. Beat it (or drive it off) and the danger ends. If HO3 is alone and losing, Liu takes the hits; he does not die tonight.")
-    s += bi("刘卿堂被渔民所救，对自己和军队的遭遇一无所知；夜里出来查线索正好遇见HO3。他很高兴HO3平安，随HO3回棺材铺，此后全程参与HO3的行动。",
+    s += bi("<b>（▶ 停止「战 Battle」）</b>刘卿堂被渔民所救，对自己和军队的遭遇一无所知；夜里出来查线索正好遇见HO3。他很高兴HO3平安，随HO3回棺材铺，此后全程参与HO3的行动。",
             "<b>(▶ stop 战 Battle.)</b> Liu was pulled out by fishermen and knows nothing of what happened to him or his men; he came out tonight to look for clues and found HO3 instead. He is overjoyed, walks HO3 back to the Coffin Shop and from now on goes wherever HO3 goes. GM only: Liu survived a spine on the 3rd and has a red web-shaped mark on his back (p5). He does not know. Do not reveal it; if a player examines him, let them find it and say nothing more.")
     s += h("停在这里", "Stop here")
     s += bi("十三日拂晓，刘卿堂在棺材铺。切回开场画面。预告：三轮一天，十五日午时牛富问斩，许德显的船，官学的地方志。",
