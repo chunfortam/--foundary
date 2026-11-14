@@ -208,7 +208,7 @@ def extended_html():
     s += bi("刺来的是一根漆黑脊刺，布满鳞甲倒刺，末端纤细尖锐，与昨夜所见相同。此时刘卿堂出现在岸边，扔给HO3一把锈剑，进入战斗轮<b>（▶ 播放音效「战 Battle」）</b>。脊刺：HP 10，敏捷50，斗殴40，伤害2+1D5。击败即脱险。",
             "It is a black spine, scaled and barbed, thin and sharp at the tip, the same as last night. And on the bank stands Captain Liu 刘卿堂, who throws HO3 a rusty sword. Combat <b>(▶ play the 战 Battle sound effect)</b>: the spine has HP 10, DEX 50, Fighting 40, damage 2+1D5, armour 4. Beat it (or drive it off) and the danger ends. If HO3 is alone and losing, Liu takes the hits; he does not die tonight.")
     s += bi("刘卿堂被渔民所救，对自己和军队的遭遇一无所知；夜里出来查线索正好遇见HO3。他很高兴HO3平安，随HO3回棺材铺，此后全程参与HO3的行动。",
-            "Liu was pulled out by fishermen and knows nothing of what happened to him or his men; he came out tonight to look for clues and found HO3 instead. He is overjoyed, walks HO3 back to the Coffin Shop and from now on goes wherever HO3 goes. GM only: Liu survived a spine on the 3rd and has a red web-shaped mark on his back (p5). He does not know. Do not reveal it; if a player examines him, let them find it and say nothing more.")
+            "<b>(▶ stop 战 Battle.)</b> Liu was pulled out by fishermen and knows nothing of what happened to him or his men; he came out tonight to look for clues and found HO3 instead. He is overjoyed, walks HO3 back to the Coffin Shop and from now on goes wherever HO3 goes. GM only: Liu survived a spine on the 3rd and has a red web-shaped mark on his back (p5). He does not know. Do not reveal it; if a player examines him, let them find it and say nothing more.")
     s += h("停在这里", "Stop here")
     s += bi("十三日拂晓，刘卿堂在棺材铺。切回开场画面。预告：三轮一天，十五日午时牛富问斩，许德显的船，官学的地方志。",
             "Dawn on the 13th, Liu at the Coffin Shop. Back to the title screen. Tease next time: three rounds a day; Niu's execution at noon on the 15th; Prefect Xu's boats; the gazetteer in the Library. Players now hold two leads (the letters, the compartments) and one ally.")
@@ -367,8 +367,8 @@ def runbook_html():
             "Guards close in, bows drawn. HO1 may fight the soldiers or keep going for Ashu. After one round Duan steps between them, apparently to shield the marshal, actually to make chaos:")
     s += '<blockquote>' + bi("“谁敢放箭？！大帅还在这里呢！！大帅，您先走！！有末将在，这刺客定然没办法伤到您一根汗毛！！天啊，大帅竟然受伤了？！还不快护着大帅撤退！！你们还愣着干什么！！”",
             "\"Who dares shoot? The Marshal is right here! Marshal, go, go! While I stand here this assassin will not touch a hair of yours! Heaven, the Marshal is wounded! Get him out, get him out! What are you all standing there for?!\"") + '</blockquote>'
-    s += bi("阿术要他让开，他也生生挡着。HO1趁乱脱身，藏入樊城。之后：被抓只是时间问题，浮桥已断，江岸有兵；但只要钱到位，总有人铤而走险。晚间你带着全副身家来到江岸芦苇丛，其他想过河的人也在那里。→ 公共导入。",
-            "Even when Ashu tells him to move he stays put. HO1 slips away and goes to ground. Afterwards: it is only a matter of time before they find you. The bridge is cut and the bank is guarded, but money finds a boatman. That night you bring everything you own to the reeds on the bank, where other would-be passengers are waiting. → Night Crossing.")
+    s += bi("阿术要他让开，他也生生挡着。HO1趁乱脱身，藏入樊城<b>（▶ 停止「战 Battle」）</b>。之后：被抓只是时间问题，浮桥已断，江岸有兵；但只要钱到位，总有人铤而走险。晚间你带着全副身家来到江岸芦苇丛，其他想过河的人也在那里。→ 公共导入。",
+            "Even when Ashu tells him to move he stays put. HO1 slips away and goes to ground <b>(▶ stop 战 Battle)</b>. Afterwards: it is only a matter of time before they find you. The bridge is cut and the bank is guarded, but money finds a boatman. That night you bring everything you own to the reeds on the bank, where other would-be passengers are waiting. → Night Crossing.")
     # HO2 intro
     s += h("个人导入 HO2：截杀与入城（场景：樊城·北门）", "Personal intro HO2: the convoy and the gate (scene: Fencewall, the North Gate)")
     s += bi("<b>时间与形势：</b>咸淳三年腊月末（1267年12月），比庆功宴早两周。樊城尚未陷落：元军已占据城外四野，城头仍是宋军旗帜，北门戒严。药行奉朝廷调令押送一批药材作军资，父亲亲自随行；车队沿官道北上，在樊城北门外的大路上被一支蒙古军队拦下，为首的是将军兀良哈·脱欢，汉话不利索，身后的汉人将军段游衍只好交涉。两人不太对付。",
