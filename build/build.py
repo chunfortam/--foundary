@@ -272,6 +272,11 @@ IDLE = scene('0a · 云中塔 Pagoda in the Clouds (idle screen)', '../cover.web
              notes='<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>')
 IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; IDLE['grid']['alpha'] = 0; IDLE['padding'] = 0; IDLE['playlist'] = PL['_id']; IDLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(1, IDLE)
+# Regional map: the Han River with Fencewall (north bank, Mongol-held) and Southbright (south bank, Song), bilingual labels (assets/map_twin_cities.webp).
+TWIN = scene('0c · 汉江两岸 The Han and the twin cities (map)', '../cover.webp', 128, [], w=1536, h=1024,
+             notes='<p>地图 / Regional map: Fencewall 樊城 on the north bank, Southbright 襄阳 on the south, the cut pontoon bridge, Ashu\'s camps, the jetty. Show it while reading the Primer or whenever players ask where they are; the Banquet track plays.</p>')
+TWIN['background']['src'] = TWIN['levels'][0]['background']['src'] = f'modules/{MOD}/assets/map_twin_cities.webp'; TWIN['grid']['alpha'] = 0; TWIN['padding'] = 0; TWIN['playlist'] = PL['_id']; TWIN['playlistSound'] = PL['sounds'][0]['_id']
+SC.insert(2, TWIN)
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
 def portrait_macro(key, img, title):
     src = f'modules/{MOD}/assets/portraits/{img}'
@@ -296,7 +301,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.6', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.7', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
