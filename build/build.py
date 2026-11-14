@@ -267,8 +267,11 @@ TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.web
               notes='<p>开场画面 / Title screen. Activate while players sit down; the Banquet track plays.</p>')
 TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(0, TITLE)
-SFX = {'_id': rid('playlist:sfx'), 'name': '音效 Sound effects', 'description': 'RPG Sound Pack by artisticdude (opengameart.org), CC0', 'mode': -1, 'playing': False, 'fade': 0, 'channel': 'interface', 'sort': 1, 'seed': 0, 'flags': {}, 'folder': None,
-       'sounds': [{'_id': rid('sound:slash'), 'name': '斩 Slash — the father\'s head (HO2 intro)', 'path': f'modules/{MOD}/assets/sfx/slash.ogg', 'channel': 'interface', 'playing': False, 'repeat': False, 'volume': 1.0, 'fade': 0, 'sort': 0, 'flags': {}, 'description': 'RPG Sound Pack by artisticdude (opengameart.org), CC0'}]}
+SFX_FILES = [('slash', '斩 Slash — the father\'s head (HO2 intro)', '54427377-sword-slash-476148.mp3', False),
+             ('arrow', '箭 Arrows — the volley from the bank (Night Crossing)', 'dennish18-arrow-146420.mp3', False),
+             ('battle', '战 Battle — sword on sword, loop (fights)', 'freesound_community-sword-against-sword-6341.mp3', True)]
+SFX = {'_id': rid('playlist:sfx'), 'name': '音效 Sound effects', 'description': 'Sound effects from pixabay.com (Pixabay Content License)', 'mode': -1, 'playing': False, 'fade': 0, 'channel': 'interface', 'sort': 1, 'seed': 0, 'flags': {}, 'folder': None,
+       'sounds': [{'_id': rid('sound:' + k), 'name': n, 'path': f'modules/{MOD}/assets/sfx/{f}', 'channel': 'interface', 'playing': False, 'repeat': rep, 'volume': 1.0, 'fade': 0, 'sort': i, 'flags': {}, 'description': f'{f} — pixabay.com, Pixabay Content License'} for i, (k, n, f, rep) in enumerate(SFX_FILES)]}
 # ---------------- adventure + module ----------------
 adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/cover.webp',
        'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
@@ -277,7 +280,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.4', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.5', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
