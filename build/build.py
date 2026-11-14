@@ -272,6 +272,14 @@ IDLE = scene('0a · 云中塔 Pagoda in the Clouds (idle screen)', '../cover.web
              notes='<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>')
 IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; IDLE['grid']['alpha'] = 0; IDLE['padding'] = 0; IDLE['playlist'] = PL['_id']; IDLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(1, IDLE)
+# Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
+def portrait_macro(key, img, title):
+    cmd = (f'const ip = new foundry.applications.apps.ImagePopout({{src: "modules/{MOD}/assets/portraits/{img}", window: {{title: "{title}"}}, showTitle: true}});\n'
+           'ip.render(true); ip.shareImage();')
+    return {'_id': rid('macro:' + key), 'name': title, 'type': 'script', 'author': None, 'img': f'modules/{MOD}/assets/tokens/{img}', 'scope': 'global', 'command': cmd, 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
+MACROS = [portrait_macro('pc1', 'pc_wanderer.webp', '肖像 陆青崖 Lu Bluecliff · HO1 The Wanderer'),
+          portrait_macro('pc2', 'pc_merchant.webp', '肖像 沈怀珠 Shen Pearl · HO2 The Merchant Heir'),
+          portrait_macro('pc3', 'pc_official.webp', '肖像 谢云骧 Xie Cloudmane · HO3 The Commissioner')]
 SFX_FILES = [('slash', '斩 Slash — the father\'s head (HO2 intro)', '54427377-sword-slash-476148.mp3', False),
              ('arrow', '箭 Arrows — the volley from the bank (Night Crossing)', 'dennish18-arrow-146420.mp3', False),
              ('battle', '战 Battle — sword on sword, loop (fights)', 'freesound_community-sword-against-sword-6341.mp3', True)]
@@ -280,7 +288,7 @@ SFX = {'_id': rid('playlist:sfx'), 'name': '音效 Sound effects', 'description'
 # ---------------- adventure + module ----------------
 adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/cover.webp',
        'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
-       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': [], 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
+       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': MACROS, 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
 adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)

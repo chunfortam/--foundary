@@ -328,6 +328,7 @@ def runbook_html():
     s += h("流程", "Agenda")
     s += ul([
       ("15分钟：玩家入门（见《玩家入门》日志）。", "15 min: the Player Primer journal."),
+      ("5分钟：按快捷栏的三个「肖像」宏，把三张画像依次放到电视上，让玩家挑选。", "5 min: press the three 肖像 Portrait macros on the hotbar to put each portrait on the TV while players choose."),
       ("60分钟：发放各自的HO手册，调整预设卡（名字、药行、武器、伤口、背景）。", "60 min: hand out each HO journal privately; players personalise the pre-built sheets (name, pharmacy, weapon, wound, backstory)."),
       ("3×12分钟：个人导入，其他玩家暂时离席。", "3 × 12 min: personal intros, other players step out."),
       ("45分钟：公共导入“夜渡汉水”。", "45 min: the shared scene, Night Crossing."),
