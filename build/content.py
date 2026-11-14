@@ -321,6 +321,39 @@ def cheat_html():
     return s
 
 # ---------------- GM RUNBOOK (session 0) ----------------
+def healing_html():
+    s = h("伤势与治疗", "Wounds & Healing", 1)
+    s += bi("克苏鲁的呼唤第七版的受伤与恢复规则，供主持人查阅。沈怀珠的医学为65（困难32，极难13）。",
+            "Call of Cthulhu 7e damage and recovery rules for the Keeper's reference. Shen Pearl's Medicine is 65 (Hard 32, Extreme 13).")
+    s += h("受伤", "Taking damage")
+    s += ul([
+      ("普通伤害直接扣除生命值。", "Ordinary hits just subtract HP."),
+      ("<b>重伤</b>：单次伤害达到最大生命值的一半或以上（沈怀珠11点，故6点即算）→ 倒地，掷体质，失败则昏迷。", "<b>Major Wound</b>: one hit for half or more of max HP (Shen Pearl has 11, so 6+) → falls prone; CON roll or faints."),
+      ("生命值归零、<b>没有</b>重伤 → 昏迷，稍后自行醒来。", "0 HP <b>without</b> a Major Wound → unconscious, wakes later."),
+      ("生命值归零、<b>且有</b>重伤 → <b>濒死</b>：下一轮结束时死亡，除非有人急救成功；之后每小时掷体质直到医学成功为止。", "0 HP <b>with</b> a Major Wound → <b>dying</b>: dead at the end of the next round unless someone passes First Aid; then a CON roll every hour until Medicine succeeds."),
+    ])
+    s += h("急救 First Aid（陆青崖50，沈怀珠50）", "First Aid (Lu Bluecliff 50, Shen Pearl 50)")
+    s += ul([
+      ("每处伤只能试一次，须在受伤后约一小时内。约一分钟。", "One attempt per injury, within about an hour of it. Takes about a minute."),
+      ("成功 → 恢复1点生命值；对濒死者则是稳住伤势（不加生命值）。", "Success → +1 HP; on a dying character it stabilises them (no HP)."),
+    ])
+    s += h("医学 Medicine（沈怀珠65）", "Medicine (Shen Pearl 65)")
+    s += ul([
+      ("每处伤只能试一次，需要一小时和药具（她的药箱即可）。", "One attempt per injury; needs an hour of work and kit (her medicine chest counts)."),
+      ("成功 → 恢复<b>1D3</b>点生命值。可在急救之后对同一处伤再施医学，两者都算。", "Success → <b>+1D3</b> HP. May follow First Aid on the same wound; both apply."),
+      ("也可代替急救救治濒死者。", "Can also be used instead of First Aid to stop someone dying."),
+      ("大失败 → 伤势恶化（主持人裁定：失去急救的那1点、病人加重）。同一处伤不可重掷；幸运点照常可用。", "Fumble → things get worse (Keeper's call: lose the First Aid point, patient worsens). No retry on the same wound; Luck points may be spent as usual."),
+    ])
+    s += h("自然恢复", "Natural healing")
+    s += ul([
+      ("无重伤：每天恢复1点生命值。", "No Major Wound: +1 HP per day."),
+      ("有重伤：每周掷一次体质，成功恢复1D3（困难成功更多；该周有医学成功则加奖励骰）。生命值回到一半以上，重伤才算痊愈。", "Major Wound: a CON roll once a week; success +1D3 HP (more on a Hard success; a Medicine success that week gives a bonus die). The Major Wound clears only once HP is back above half max."),
+    ])
+    s += h("桌上流程", "At the table")
+    s += bi("沈怀珠说「我来治」→ 掷d100小于等于65 → 主持人掷1D3 → 加上去。擦伤一两天就好；重伤（例如牛富的箭）若无人医治，一周内都危险。",
+            "Shen Pearl says \"I treat him\" → roll d100 under 65 → Keeper rolls 1D3 → add it. A scrape heals in a day or two; a Major Wound (e.g. Niu's arrow) stays dangerous for a week unless she is there.")
+    return s
+
 def runbook_html():
     s = h("主持人：第零次聚会流程", "GM Runbook: Session 0", 1)
     s += bi("目标：介绍三位角色、跑完三段个人导入和公共导入“夜渡汉水”，在公布樊城地图前停下。约2.5–3小时。",

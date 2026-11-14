@@ -7582,6 +7582,23 @@
       "default": -1
      },
      "sort": 300000
+    },
+    {
+     "_id": "1e8JfJbm6OUvWO1e",
+     "name": "伤势与治疗 Wounds & Healing",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h1>伤势与治疗 · Wounds & Healing</h1><p class=\"zh\">克苏鲁的呼唤第七版的受伤与恢复规则，供主持人查阅。沈怀珠的医学为65（困难32，极难13）。</p><p class=\"en\"><em>Call of Cthulhu 7e damage and recovery rules for the Keeper's reference. Shen Pearl's Medicine is 65 (Hard 32, Extreme 13).</em></p><h2>受伤 · Taking damage</h2><ul><li>普通伤害直接扣除生命值。<br><em>Ordinary hits just subtract HP.</em></li><li><b>重伤</b>：单次伤害达到最大生命值的一半或以上（沈怀珠11点，故6点即算）→ 倒地，掷体质，失败则昏迷。<br><em><b>Major Wound</b>: one hit for half or more of max HP (Shen Pearl has 11, so 6+) → falls prone; CON roll or faints.</em></li><li>生命值归零、<b>没有</b>重伤 → 昏迷，稍后自行醒来。<br><em>0 HP <b>without</b> a Major Wound → unconscious, wakes later.</em></li><li>生命值归零、<b>且有</b>重伤 → <b>濒死</b>：下一轮结束时死亡，除非有人急救成功；之后每小时掷体质直到医学成功为止。<br><em>0 HP <b>with</b> a Major Wound → <b>dying</b>: dead at the end of the next round unless someone passes First Aid; then a CON roll every hour until Medicine succeeds.</em></li></ul><h2>急救 First Aid（陆青崖50，沈怀珠50） · First Aid (Lu Bluecliff 50, Shen Pearl 50)</h2><ul><li>每处伤只能试一次，须在受伤后约一小时内。约一分钟。<br><em>One attempt per injury, within about an hour of it. Takes about a minute.</em></li><li>成功 → 恢复1点生命值；对濒死者则是稳住伤势（不加生命值）。<br><em>Success → +1 HP; on a dying character it stabilises them (no HP).</em></li></ul><h2>医学 Medicine（沈怀珠65） · Medicine (Shen Pearl 65)</h2><ul><li>每处伤只能试一次，需要一小时和药具（她的药箱即可）。<br><em>One attempt per injury; needs an hour of work and kit (her medicine chest counts).</em></li><li>成功 → 恢复<b>1D3</b>点生命值。可在急救之后对同一处伤再施医学，两者都算。<br><em>Success → <b>+1D3</b> HP. May follow First Aid on the same wound; both apply.</em></li><li>也可代替急救救治濒死者。<br><em>Can also be used instead of First Aid to stop someone dying.</em></li><li>大失败 → 伤势恶化（主持人裁定：失去急救的那1点、病人加重）。同一处伤不可重掷；幸运点照常可用。<br><em>Fumble → things get worse (Keeper's call: lose the First Aid point, patient worsens). No retry on the same wound; Luck points may be spent as usual.</em></li></ul><h2>自然恢复 · Natural healing</h2><ul><li>无重伤：每天恢复1点生命值。<br><em>No Major Wound: +1 HP per day.</em></li><li>有重伤：每周掷一次体质，成功恢复1D3（困难成功更多；该周有医学成功则加奖励骰）。生命值回到一半以上，重伤才算痊愈。<br><em>Major Wound: a CON roll once a week; success +1D3 HP (more on a Hard success; a Medicine success that week gives a bonus die). The Major Wound clears only once HP is back above half max.</em></li></ul><h2>桌上流程 · At the table</h2><p class=\"zh\">沈怀珠说「我来治」→ 掷d100小于等于65 → 主持人掷1D3 → 加上去。擦伤一两天就好；重伤（例如牛富的箭）若无人医治，一周内都危险。</p><p class=\"en\"><em>Shen Pearl says \"I treat him\" → roll d100 under 65 → Keeper rolls 1D3 → add it. A scrape heals in a day or two; a Major Wound (e.g. Niu's arrow) stays dangerous for a week unless she is there.</em></p>"
+     },
+     "ownership": {
+      "default": -1
+     },
+     "sort": 400000
     }
    ],
    "flags": {},
