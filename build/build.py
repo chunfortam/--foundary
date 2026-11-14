@@ -272,11 +272,6 @@ IDLE = scene('0a · 云中塔 Pagoda in the Clouds (idle screen)', '../cover.web
              notes='<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>')
 IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; IDLE['grid']['alpha'] = 0; IDLE['padding'] = 0; IDLE['playlist'] = PL['_id']; IDLE['playlistSound'] = PL['sounds'][0]['_id']
 SC.insert(1, IDLE)
-# Investigator-selection screen: the cover's ink-wash plate with the three HO portraits (ink-washed edges) and names (assets/intro_pick.webp, still image).
-PICK = scene('0b · 选择调查员 Choose your investigator', '../cover.webp', 128, [], w=1536, h=1024,
-             notes='<p>选角画面 / Investigator-selection screen: the three HO portraits with names and titles over the cover art. Activate after the title page while players pick; the Banquet track keeps playing.</p>')
-PICK['background']['src'] = PICK['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro_pick.webp'; PICK['grid']['alpha'] = 0; PICK['padding'] = 0; PICK['playlist'] = PL['_id']; PICK['playlistSound'] = PL['sounds'][0]['_id']
-SC.insert(2, PICK)
 SFX_FILES = [('slash', '斩 Slash — the father\'s head (HO2 intro)', '54427377-sword-slash-476148.mp3', False),
              ('arrow', '箭 Arrows — the volley from the bank (Night Crossing)', 'dennish18-arrow-146420.mp3', False),
              ('battle', '战 Battle — sword on sword, loop (fights)', 'freesound_community-sword-against-sword-6341.mp3', True)]
