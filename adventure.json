@@ -7724,14 +7724,14 @@
    "name": "0b · 选择调查员 Choose your investigator",
    "folder": "A5vdDtxm7pu1YoMV",
    "background": {
-    "src": "modules/gongruo-session0/assets/intro_pick.webm"
+    "src": "modules/gongruo-session0/assets/intro_pick.webp"
    },
    "levels": [
     {
      "_id": "defaultLevel0000",
      "name": "0b · 选择调查员 Choose your investigator",
      "background": {
-      "src": "modules/gongruo-session0/assets/intro_pick.webm"
+      "src": "modules/gongruo-session0/assets/intro_pick.webp"
      },
      "elevation": {
       "bottom": 0,
@@ -7780,7 +7780,7 @@
    "flags": {},
    "sort": 0,
    "initial": null,
-   "description": "<p>选角画面 / Investigator-selection screen: the three HO portraits with names and a one-line blurb each. Activate after the intro loop while players pick; the Banquet track keeps playing.</p>",
+   "description": "<p>选角画面 / Investigator-selection screen: the three HO portraits with names and titles over the cover art. Activate after the title page while players pick; the Banquet track keeps playing.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Ihz231IHFbvmdfPQ"
   },
