@@ -16,7 +16,7 @@ def local(html):  # module asset paths -> small local thumbnails for Chrome (kee
         return f'src="file://{dst}"'
     return re.sub(r'src="' + re.escape(MOD_PREFIX) + r'([^"]+)"', sub, html)
 PAGES = [CP.prep_html(), CP.sandbox_html(), CP.front_html(), CP.back_html(), CP.crossing_html(), CP.temple_html(), CP.magistracy_html(), CP.riverbank_html(),
-         CP.finale_html(), CP.optional_html(), CP.endings_html(), CP.npcs_html(), CP.rules_cards_html()]
+         CP.finale_html(), CP.optional_html(), CP.endings_html(), CP.npcs_html(), local(CP.dossier_html()), CP.rules_cards_html()]
 BODY = ''.join(f'<section>{p}</section>' for p in PAGES)
 BODY += '<section>' + CP.H('Handouts', '文书与残页', 1) + '<p>Cut along the rules; hand over or read aloud as found.</p>' + ''.join(f'<div class="handout">{h}</div>' for _, h in CP.HANDOUTS) + '</section>'
 BODY += f'<section class="cast">{local(C.cast_html(True))}</section>'
@@ -37,6 +37,7 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 th { background: #eee; }
 table.cast td { border: none; border-bottom: 1px solid #bbb; padding: 4px; } td.cast-pic-cell { width: 60px; } img.cast-pic { width: 56px; height: 56px; border-radius: 50%; }
 .gm-secret { color: #a0322d; }
+.dossier { border-top: 2px solid #000; margin: 8px 0 4px; padding-top: 4px; page-break-inside: avoid; } .dossier table.cast { margin-bottom: 2px; } .dossier table.cast td { border: none; }
 '''
 doc = f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{BODY}</body></html>'
 out = os.path.join(ROOT, 'print'); os.makedirs(out, exist_ok=True)
