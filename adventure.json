@@ -12248,6 +12248,23 @@
    },
    "pages": [
     {
+     "_id": "vVv5QBic4jtjY8ph",
+     "name": "阅读顺序 Reading order & prep",
+     "type": "text",
+     "title": {
+      "show": false,
+      "level": 1
+     },
+     "text": {
+      "format": 1,
+      "content": "<h1>Reading order and prep <span class=\"zh-tag\">阅读顺序与准备</span></h1><p>Do not read it all. Prepare by session, and by <b>thread</b> (the gaol · the boats · the river) rather than by place. Everything not listed for the next evening is reference you look up at the table.</p><h2>Once, before anything (about 40 minutes) <span class=\"zh-tag\">只读一次</span></h2><ul><li>Player Primer → <b>The story so far</b>.</li><li>GM runbook → <b>The whole story & timeline</b>, and the GM <b>Who's who</b> (just the red lines).</li><li>Campaign → <b>How the sandbox runs</b>: the fixed-events table, <i>What the finale needs</i> and <i>The clue web</i> are the three things to hold in your head.</li></ul><h2>Before the first sandbox evening (Day One, 12 January) <span class=\"zh-tag\">第一个沙盒之夜前</span></h2><ul><li>Session 0 runbook → <b>Extended: Day One</b>.</li><li>Campaign → <b>Front Street</b> only (stalls, the pharmacy & Ling Xuchun, the Teahouse, the coffin shop by day, the Wineshop) and <b>Street Crossing: 12 January</b>.</li><li>Skim the Front Street people in Who's who: Du, Nameless Fang, the Lings, Wang Wu, Song, Autumn, Chen, the monk. Day one is spent on Front Street whatever they choose.</li></ul><h2>Before each later evening <span class=\"zh-tag\">之后每晚</span></h2><ul><li>At the end of a session ask the players where they mean to go tomorrow; read only those locations (Back Street, Magistracy quarter, Riverbank, Temple are ten minutes each).</li><li>Check <i>The clue web</i>: which thread are they on, and what is its next node? Read that.</li></ul><h2>Fixed points: read the night before <span class=\"zh-tag\">固定事件：前一晚读</span></h2><table><thead><tr><th>When</th><th>Read</th></tr></thead><tbody><tr><td>The 14th</td><td>Front Street → <i>The Wineshop</i> and <i>Planning the rescue</i>.</td></tr><tr><td>The 15th</td><td>Street Crossing → <i>15 January: the rescue of Niu</i>, and the rescue <b>rules card</b>.</td></tr><tr><td>The raid night (17th)</td><td>Riverbank → <i>The Mongol warships</i>; Back Street → <i>Duan's room</i> (Toghan's note) if they have not found it.</td></tr><tr><td>Once they open Fan's coffin</td><td>Magistracy quarter → <i>The assassination plan</i>, <i>Ashu's sickroom</i>, <i>The fight</i>, <i>Lockdown</i>.</td></tr><tr><td>The last night</td><td>Finale → <i>The Watchtower</i> and its <b>rules card</b>; then <i>Endings</i>.</td></tr></tbody></table><h2>Never pre-read <span class=\"zh-tag\">不必预读</span></h2><ul><li><b>Optional & personal events</b>: pull one when a scene stalls. Doctor Yue is your hint-giver; Duan your rescuer; an Undying ambush your clock.</li><li><b>Handouts</b>: open each when it is found and Show Players.</li></ul>"
+     },
+     "ownership": {
+      "default": -1
+     },
+     "sort": 0
+    },
+    {
      "_id": "6XwMVVqTHkfXzhq0",
      "name": "沙盒 How the sandbox runs",
      "type": "text",
@@ -12262,7 +12279,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 0
+     "sort": 100000
     },
     {
      "_id": "H9X8rF5SGazT0nIG",
@@ -12279,7 +12296,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 100000
+     "sort": 200000
     },
     {
      "_id": "FAf6fhtFrWbf6T0r",
@@ -12296,7 +12313,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 200000
+     "sort": 300000
     },
     {
      "_id": "9mGjf1a5yZ7MiAGL",
@@ -12313,7 +12330,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 300000
+     "sort": 400000
     },
     {
      "_id": "cdYjgimCWhJXo8Gv",
@@ -12330,7 +12347,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 400000
+     "sort": 500000
     },
     {
      "_id": "8WarQ7bvypQPVk2o",
@@ -12347,7 +12364,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 500000
+     "sort": 600000
     },
     {
      "_id": "KGxqIYPHIjpgy29s",
@@ -12364,7 +12381,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 600000
+     "sort": 700000
     },
     {
      "_id": "g3qrFK2KC9VmqE5X",
@@ -12381,7 +12398,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 700000
+     "sort": 800000
     },
     {
      "_id": "wsWmveZo2iX8Eb0N",
@@ -12398,7 +12415,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 800000
+     "sort": 900000
     },
     {
      "_id": "HVJ8JYhNIaKOz0US",
@@ -12415,7 +12432,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 900000
+     "sort": 1000000
     },
     {
      "_id": "r9kOyKYcS4wsHoLy",
@@ -12432,7 +12449,7 @@
      "ownership": {
       "default": -1
      },
-     "sort": 1000000
+     "sort": 1100000
     }
    ],
    "flags": {},

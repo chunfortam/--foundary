@@ -11,6 +11,32 @@ def UL(items): return '<ul>' + ''.join(f'<li>{i}</li>' for i in items) + '</ul>'
 def ROLL(x): return f'<b class="roll">{x}</b>'
 def CARD(t): return f'<div class="card">{t}</div>'
 
+# ---------------------------------------------------------------- 0. READING ORDER
+def prep_html():
+    s = H('Reading order and prep', '阅读顺序与准备', 1)
+    s += P('Do not read it all. Prepare by session, and by <b>thread</b> (the gaol · the boats · the river) rather than by place. Everything not listed for the next evening is reference you look up at the table.')
+    s += H('Once, before anything (about 40 minutes)', '只读一次')
+    s += UL(['Player Primer → <b>The story so far</b>.', 'GM runbook → <b>The whole story & timeline</b>, and the GM <b>Who\'s who</b> (just the red lines).',
+             'Campaign → <b>How the sandbox runs</b>: the fixed-events table, <i>What the finale needs</i> and <i>The clue web</i> are the three things to hold in your head.'])
+    s += H('Before the first sandbox evening (Day One, 12 January)', '第一个沙盒之夜前')
+    s += UL(['Session 0 runbook → <b>Extended: Day One</b>.', 'Campaign → <b>Front Street</b> only (stalls, the pharmacy & Ling Xuchun, the Teahouse, the coffin shop by day, the Wineshop) and <b>Street Crossing: 12 January</b>.',
+             'Skim the Front Street people in Who\'s who: Du, Nameless Fang, the Lings, Wang Wu, Song, Autumn, Chen, the monk. Day one is spent on Front Street whatever they choose.'])
+    s += H('Before each later evening', '之后每晚')
+    s += UL(['At the end of a session ask the players where they mean to go tomorrow; read only those locations (Back Street, Magistracy quarter, Riverbank, Temple are ten minutes each).',
+             'Check <i>The clue web</i>: which thread are they on, and what is its next node? Read that.'])
+    s += H('Fixed points: read the night before', '固定事件：前一晚读')
+    s += table(['When', 'Read'], [
+      ('The 14th', 'Front Street → <i>The Wineshop</i> and <i>Planning the rescue</i>.'),
+      ('The 15th', 'Street Crossing → <i>15 January: the rescue of Niu</i>, and the rescue <b>rules card</b>.'),
+      ('The raid night (17th)', 'Riverbank → <i>The Mongol warships</i>; Back Street → <i>Duan\'s room</i> (Toghan\'s note) if they have not found it.'),
+      ('Once they open Fan\'s coffin', 'Magistracy quarter → <i>The assassination plan</i>, <i>Ashu\'s sickroom</i>, <i>The fight</i>, <i>Lockdown</i>.'),
+      ('The last night', 'Finale → <i>The Watchtower</i> and its <b>rules card</b>; then <i>Endings</i>.'),
+    ])
+    s += H('Never pre-read', '不必预读')
+    s += UL(['<b>Optional & personal events</b>: pull one when a scene stalls. Doctor Yue is your hint-giver; Duan your rescuer; an Undying ambush your clock.',
+             '<b>Handouts</b>: open each when it is found and Show Players.'])
+    return s
+
 # ---------------------------------------------------------------- 1. HOW THE SANDBOX RUNS
 def sandbox_html():
     s = H('GM: how the sandbox runs', '主持人：自由调查轮', 1)

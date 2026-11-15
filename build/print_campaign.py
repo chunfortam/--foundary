@@ -15,7 +15,7 @@ def local(html):  # module asset paths -> small local thumbnails for Chrome (kee
         if os.path.exists(src) and not os.path.exists(dst): Image.open(src).convert('RGB').resize((112, 112)).save(dst, quality=80)
         return f'src="file://{dst}"'
     return re.sub(r'src="' + re.escape(MOD_PREFIX) + r'([^"]+)"', sub, html)
-PAGES = [CP.sandbox_html(), CP.front_html(), CP.back_html(), CP.crossing_html(), CP.temple_html(), CP.magistracy_html(), CP.riverbank_html(),
+PAGES = [CP.prep_html(), CP.sandbox_html(), CP.front_html(), CP.back_html(), CP.crossing_html(), CP.temple_html(), CP.magistracy_html(), CP.riverbank_html(),
          CP.finale_html(), CP.optional_html(), CP.endings_html(), CP.npcs_html(), CP.rules_cards_html()]
 BODY = ''.join(f'<section>{p}</section>' for p in PAGES)
 BODY += '<section>' + CP.H('Handouts', '文书与残页', 1) + '<p>Cut along the rules; hand over or read aloud as found.</p>' + ''.join(f'<div class="handout">{h}</div>' for _, h in CP.HANDOUTS) + '</section>'
