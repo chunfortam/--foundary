@@ -37,6 +37,8 @@ table { border-collapse: collapse; width: 100%; } td, th { border: 1px solid #99
 th { background: #eee; }
 table.cast td { border: none; border-bottom: 1px solid #bbb; padding: 4px; } td.cast-pic-cell { width: 60px; } img.cast-pic { width: 56px; height: 56px; border-radius: 50%; }
 .gm-secret { color: #a0322d; }
+.zh-orig { font-size: 8pt; color: #333; background: #f4f4f4; padding: 3px 6px; margin-top: 4px; }
+.dossier p { font-size: 9.5pt; line-height: 1.45; }
 .dossier { border-top: 2px solid #000; margin: 8px 0 4px; padding-top: 4px; page-break-inside: avoid; } .dossier table.cast { margin-bottom: 2px; } .dossier table.cast td { border: none; }
 '''
 doc = f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{BODY}</body></html>'

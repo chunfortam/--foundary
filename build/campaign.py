@@ -669,16 +669,105 @@ DOSSIER = [
    'The scenario\'s secret engine: it blocks the Mongols, and killing it frees the river for them — the dilemma every ending turns on.'),
  ]),
 ]
+# Plain-language summaries keyed by portrait file: (who they are, what they want, how to use them at the table).
+PLAIN = {
+ 'duan': ('A Chinese general who now serves the Mongols. He is HO1\'s old classmate: they had the same sword teacher for one year. He is polite, clever and afraid of dying.',
+          'To stay alive and keep his position. He also likes HO1 and secretly wishes he could live free like him.',
+          'He is on the players\' side without saying so. He stops Mongol soldiers from hurting them. His room has three useful papers (the teacher\'s letter, the feast note, the map). At the end he offers to go out on the river with HO1.'),
+ 'yue': ('HO2\'s foster brother. He pretends to be a doctor. He cannot heal and cannot fight. He sells fake medicine to rich people, steals from them, and gives the money to the poor.',
+         'To keep HO2 safe. He feels guilty: on 3 January he walked into Commander Fan\'s ritual by mistake, the ritual started too early, and Captain Liu\'s soldiers drowned. He has told nobody.',
+         'Use him to give hints when the players are stuck. He gives them Prefect Xu\'s two letters (to force Xu to lend boats). In the assassination he offers himself as Ashu\'s hostage. Before the last fight he tells HO2 the truth.'),
+ 'liu': ('HO3\'s best friend since childhood, and the officer who led HO3\'s soldiers. He drowned with them on 3 January and came back alive, but changed: no heartbeat, cannot be poisoned, a red web mark on his back. He does not understand what happened to him.',
+         'To find his soldiers and protect HO3.',
+         'From the night of 12 January he follows HO3 everywhere and fights well. The river monster wants him dead, so its servants attack him first (poisoned noodles, the temple trap, the family house). He is how the players learn what the monster does to people.'),
+ 'ashu': ('The Mongol commander. Very big, very strong, very smart. HO1 cut his shoulder with a poisoned sword, and the wound will never heal (every roll he makes has a penalty die).',
+          'A cure for the wound, and to cross the river and take Southbright on 18 January.',
+          'He is the main enemy and should feel impossible to beat in a fair fight. The players can kill him only in his sickroom, pretending to be doctors. When he dies the city is locked down and the last night begins.'),
+ 'toghan': ('Ashu\'s deputy. Cruel, bad-tempered, speaks little Chinese. He killed HO2\'s father.',
+            'To serve Ashu, bully the Chinese, and eat lunch at Wang Wu\'s restaurant every day.',
+            'He is HO2\'s chance for revenge: poison his lunch. Warning: if the players do this at the restaurant, the owner will be too scared to help with the warship raid later.'),
+ 'fan': ('The Chinese commander of Fencewall. He is dead: he hanged himself the night the city fell. People loved him.',
+         'He wanted to stop the Mongols at any price. He bought a strange stone with a piece of the river monster in it, killed prisoners as a sacrifice, and called the monster into the river.',
+         'He never appears. The players discover what he did from his study, his empty coffin (hidden pages inside), the ruined pavilion, and people who helped him. He is the reason for everything bad in the river.'),
+ 'fan_yulou': ('Commander Fan\'s nephew, about 28, a scholar. He opened the gates to the Mongols and now runs the town for them. He looks like a traitor.',
+               'He is not a traitor. He knows about the monster and is continuing his uncle\'s plan. He wants Ashu killed.',
+               'When the players open the coffin he catches them and asks them to kill Ashu. He gives gunpowder and arranges a riot as a distraction. After the killing the Mongols cut off his head.'),
+ 'xu': ('A fat, rich, cowardly official in charge of the town\'s money.',
+        'To be safe whoever wins. He wrote one letter offering his boats to the Mongols and another swearing loyalty to the Song. Doctor Yue stole both.',
+        'Threaten him with the letters (or bribe or frighten him) and he gives boats, gunpowder, and a way into the gaol.'),
+ 'niu': ('The garrison\'s second-in-command and a famous archer. He refused to surrender. The Mongols cut the tendons in his hands and put him in gaol.',
+         'To die with honour. He will be beheaded at noon on 15 January.',
+         'The players rescue him on the way to the execution. In thanks he gives them his special bow, the only bow that can shoot far enough to hit the monster from the shore.'),
+ 'yuying': ('Commander Fan\'s daughter, about 20. Ashu keeps her as a servant to shame her family.',
+            'Revenge, quietly.',
+            'In the sickroom fight she takes one sword blow for a player and secretly passes HO2 a dagger.'),
+ 'hermit': ('HO1\'s sword teacher, over 70, with one arm. A famous hermit.',
+            'He wanted HO1 to become famous by killing Ashu. He knew he would die for it and stayed home to wait.',
+            'On 12 January the players find his body displayed at the Street Crossing. Later Duan shows HO1 his grave and gives HO1 some old pages with a fire spell that helps in the last fight.'),
+ 'scholar': ('Young students from the town school. Brave talkers, no fighting skill.',
+             'To do something for their country.',
+             'The players meet them at the teahouse and library. On the day of the assassination they riot outside Ashu\'s house so the guards are busy. Many of them die.'),
+ 'qu': ('The coffin-maker, about 50, tall and strong. She shelters the players in her shop. Ten years ago she killed her cheating husband.',
+        'To help decent people.',
+        'Her shop is the players\' home. She tells them coffins can have a hidden box inside, and that she made Commander Fan\'s coffin. This points them to the secret pages.'),
+ 'jiang_tower': ('Twin brothers, fishermen, excellent swimmers. Tower is calm, Loft is reckless.',
+                 'To help their town.',
+                 'They pull the players out of the river on the first night. Later they can help rescue Niu and sink the Mongol ships.'),
+ 'boatman': ('A one-armed man who rows people across for money.', 'Money.', 'He rows the players out on the first night and swims away when the boat sinks. He is not seen again.'),
+ 'du': ('Owner of a small hidden wine shop where the town\'s fighters meet. Friendly, knows everyone.',
+        'To help Niu and hurt the Mongols.',
+        'He explains the plan to rescue Niu (ambush the prison carts in the street) and brings helpers.'),
+ 'fang': ('A 16-year-old night watchman. Very strong, honest, bad at talking. Niu looked after him.',
+          'To save Niu, and to give back the long wrapped thing Niu asked him to carry (it is the special bow).',
+          'He asks the players to rescue Niu. Only he knows Niu\'s face, so only he can tell which prison cart Niu is in. After the rescue he hands over the bow.'),
+ 'ling_xuchun': ('A 19-year-old swordswoman in red, quick to anger.',
+                 'Medicine for her dying brother, and revenge on the woman who stabbed him and stole the family\'s special needles.',
+                 'The players meet her arguing at HO2\'s pharmacy. She leads them to her brother and to the thief (Autumn). If they help, she fights for them and gives them the needles.'),
+ 'ling_daiqiu': ('Ling Xuchun\'s older brother, leader of the fishermen. He is dying: his wound is rotting and has green mould.',
+                 'To live.',
+                 'He gets well the moment Autumn is killed. Then he asks the fishermen to help the players sink the Mongol ships. Without him the fishermen say no.'),
+ 'wangwu': ('Owner of the big restaurant. Kind and generous. He was Commander Fan\'s friend and knew about the ritual.',
+            'To make up for what he helped do. He hates the Mongols.',
+            'If asked directly he tells the whole truth about the ritual. He lets the players dress as his delivery men to get near the Mongol ships on 17 January.'),
+ 'song': ('The tea master at the teahouse. Thin, smiling, very skilled. He also helped Commander Fan find prisoners for the ritual, and hides it.',
+          'A quiet life; he respects brave people.',
+          'When Mongol soldiers bully people in the teahouse and the players step in, he helps (thrown cups of tea give bonus dice) and tells them where the hidden wine shop is.'),
+ 'autumn': ('A young woman in a white veil living in the ruined theatre. She says she wants to cross the river to her husband. She is lying.',
+            'She is a famous thief. Commander Fan sacrificed her and she came back as one of the monster\'s servants. She stole the Ling family\'s needles and put a rotting curse on Ling Daiqiu.',
+            'She is helpful (free disguise help once a day) until the players accuse her. Then she fights. When she dies, Ling Daiqiu is cured and the players get the needles (+10% to HO2\'s Acupoint Strike).'),
+ 'chen': ('A waiter at Wang Wu\'s restaurant. He was Captain Liu\'s flag-bearer. He drowned and is now one of the monster\'s servants.',
+          'The monster has ordered him to kill Liu.',
+          'He poisons Liu\'s noodles (Liu survives), cries, and asks Liu and HO3 to meet him at night. He tells a half-true story and leads them into a dark temple hall full of other servants.'),
+ 'monk': ('A huge, cheerful monk who drinks all day at the wine shop. His body is as hard as iron.',
+          'Wine.',
+          'Beat him at a drinking game (three CON rolls in a row) to win his golden robe: armour 2 and fire cannot hurt the wearer. Tell him about the strange temple hall and he comes to help in that fight.'),
+ 'bookseller': ('A big man dressed as a scholar who sells old books on Front Street.', 'To sell books.', 'His stall has two old stories the players should hear: the river goddess, and Red Pine the Rain Master.'),
+ 'mistress_wang': ('The owner of the ruined theatre, about 50, with a small daughter.', 'To get by.', 'She lends the players a boat. She does not know her lodger (Autumn) is dangerous.'),
+ 'physician': ('Ashu\'s old Chinese doctor.', 'To survive.', 'He checks the players\' medicine. If it is fake or poisoned he notices and says nothing. He hides during the fight.'),
+ 'turncoat': ('Chinese soldiers whose general joined the Mongols, so they did too. They guard the warships. Ordinary homesick men.',
+              'To eat, drink and go home.',
+              'On 17 January the players eat with them while fishermen secretly sink the ships. If the soldiers notice, there is a fight. If even one runs away to warn the Mongols, Duan is executed and the fishermen die.'),
+ 'servant': ('People killed by the river monster and brought back. By day they look normal. At night they become monsters with spines.',
+             'They obey the monster: bring more people to the river, and kill Captain Liu.',
+             'They are afraid of fire and sunlight. Weak point: the scar on the backbone. A sharp point there kills at once (HO2\'s Acupoint Strike).'),
+ 'glaaki': ('The monster in the river: a giant slug with metal spines and three eyes on stalks. It makes the fog. In the Chinese books it is called the He Luo fish.',
+            'To make more servants. It calls sleeping people to the water and stabs them with a spine.',
+            'While it lives, nobody can cross, not even the Mongols. If the players kill it, the Mongols can cross too. That choice is the heart of the ending. It is killed on the last night: HO1 lights it up from a boat, HO3 shoots it from the tower, HO2 guards the tower.'),
+}
 def dossier_html():
+    from npc_zh import ZH
     s = H('NPC dossier', '人物档案', 1)
-    s += P('For each NPC: how they look, where they come from, every event they appear in (book page = the printed number on the scenario PDF; then the page of this module to open), and what they do for the story.')
+    s += P('One block per character, in plain words: who they are, what they want, how to use them. Then every scene they appear in (book page, and which page of this journal to open). The original Chinese from the scenario is quoted underneath.')
     for group, rows in DOSSIER:
         s += f'<h2>{group}</h2>'
         for img, name, role, look, back, events, contrib in rows:
+            key = img.replace('.webp', '') or 'fan'
+            who, wants, use = PLAIN[key]
             pic = f'<img src="{P_}{img}" width="64" height="64" class="cast-pic">' if img else ''
             s += f'<div class="dossier"><table class="cast"><tr><td class="cast-pic-cell">{pic}</td><td><b>{name}</b><br><small>{role}</small></td></tr></table>'
-            s += f'<p><b>Look.</b> {look}</p><p><b>Background.</b> {back}</p>'
-            s += '<table><tr><th>When</th><th>Event</th><th>Book · journal</th></tr>' + ''.join(f'<tr><td>{w}</td><td>{e}</td><td>{pg}</td></tr>' for w, e, pg in events) + '</table>'
-            s += f'<p><b>Role in the story.</b> {contrib}</p></div>'
+            s += f'<p><b>Who.</b> {who}</p><p><b>Wants.</b> {wants}</p><p><b>At the table.</b> {use}</p>'
+            s += '<table><tr><th>When</th><th>Scene</th><th>Book · journal</th></tr>' + ''.join(f'<tr><td>{w}</td><td>{e}</td><td>{pg}</td></tr>' for w, e, pg in events) + '</table>'
+            if ZH.get(key): s += f'<p class="zh-orig"><b>原文</b> {ZH[key]}</p>'
+            s += '</div>'
     return s
 P_ = f'modules/{__import__("content").MOD}/assets/portraits/'
