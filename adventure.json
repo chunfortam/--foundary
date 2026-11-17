@@ -12647,11 +12647,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 100000,
    "initial": null,
    "description": "<p>开场画面 / Title page. Activate while players sit down; the Banquet track plays.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "Ihz231IHFbvmdfPQ"
+   "playlistSound": "Ihz231IHFbvmdfPQ",
+   "navOrder": 100000
   },
   {
    "_id": "prL5UtKta9cXOJa2",
@@ -12712,11 +12713,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 200000,
    "initial": null,
    "description": "<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "Ihz231IHFbvmdfPQ"
+   "playlistSound": "Ihz231IHFbvmdfPQ",
+   "navOrder": 200000
   },
   {
    "_id": "qKFUWwxwyzrugncJ",
@@ -12777,11 +12779,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 300000,
    "initial": null,
    "description": "<p>地图 / Regional map: Fencewall 樊城 on the north bank, Southbright 襄阳 on the south, the cut pontoon bridge, Ashu's camps, the jetty. Show it while reading the Primer or whenever players ask where they are; the Banquet track plays.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "Ihz231IHFbvmdfPQ"
+   "playlistSound": "Ihz231IHFbvmdfPQ",
+   "navOrder": 300000
   },
   {
    "_id": "ZRjpg4xbna3cLcnN",
@@ -13151,11 +13154,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 400000,
    "initial": null,
    "description": "",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "Ihz231IHFbvmdfPQ"
+   "playlistSound": "Ihz231IHFbvmdfPQ",
+   "navOrder": 400000
   },
   {
    "_id": "dhEN6XyCdeZih8kp",
@@ -13637,11 +13641,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 500000,
    "initial": null,
    "description": "<p>标记操作：父亲被杀（播放“斩”音效）时显示“药车·残骸”、隐藏“药车”。右键标记→切换可见。</p><p>Token cue: when the father is killed (play the 斩 Slash sound), reveal \"The medicine cart, wrecked\" and hide \"The medicine cart\". Right-click a token → toggle visibility.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "lTFLfWMKVMabOfbk"
+   "playlistSound": "lTFLfWMKVMabOfbk",
+   "navOrder": 500000
   },
   {
    "_id": "hQYhhQytNrF9CYjp",
@@ -13899,11 +13904,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 600000,
    "initial": null,
    "description": "",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "S5cmyS0FAMp63COP"
+   "playlistSound": "S5cmyS0FAMp63COP",
+   "navOrder": 600000
   },
   {
    "_id": "UNDtCrupcyKA0yaq",
@@ -14357,11 +14363,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 700000,
    "initial": null,
    "description": "<p>标记操作：划船时拖动“船夫王的渡船”；脊刺攻击时显示“渔船残骸”与脊刺、隐藏“前方渔船”；中箭沉船时显示“渡船·沉没”、隐藏渡船。右键标记→切换可见。</p><p>Token cues: drag Wang's ferry out as they row. At the spine attack, reveal \"The fishing boat, wrecked\" and the spine and hide \"The fishing boat ahead\". When the arrows sink them, reveal \"Wang's ferry, sinking\" and hide the ferry. Right-click a token → toggle visibility (eye icon).</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "NQG5a1dDSNxz02ru"
+   "playlistSound": "NQG5a1dDSNxz02ru",
+   "navOrder": 700000
   },
   {
    "_id": "84VdBZq8Qyha7Olg",
@@ -14647,11 +14654,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 800000,
    "initial": null,
    "description": "<p>越南柯（十二日晚）与刘卿堂（十三日晨）为隐藏标记，加时用。Doctor Yue (evening of the 12th) and Captain Liu (dawn of the 13th) are hidden tokens for the extended Day One.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "wc6cAN1YpEsMHa6h"
+   "playlistSound": "wc6cAN1YpEsMHa6h",
+   "navOrder": 800000
   },
   {
    "_id": "OoLHnajeVMjqArah",
@@ -14909,11 +14917,12 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 900000,
    "initial": null,
    "description": "<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "lTFLfWMKVMabOfbk"
+   "playlistSound": "lTFLfWMKVMabOfbk",
+   "navOrder": 900000
   },
   {
    "_id": "43x3N3MiZgj1bOdq",
@@ -15059,9 +15068,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1000000,
    "initial": null,
-   "description": "<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p>"
+   "description": "<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p>",
+   "navOrder": 1000000
   },
   {
    "_id": "vjeNc4tI45M1TD53",
@@ -15375,9 +15385,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1100000,
    "initial": null,
-   "description": "<p>说书台在上，茶博士宋择一在右侧屏风后。三名蒙古兵闹事；段游衍（隐藏）事后从门口经过。</p><p>Storyteller's dais at the top; tea master Song behind the screen on the right. Three Mongol soldiers make trouble; Duan (hidden) rides past the door afterwards.</p>"
+   "description": "<p>说书台在上，茶博士宋择一在右侧屏风后。三名蒙古兵闹事；段游衍（隐藏）事后从门口经过。</p><p>Storyteller's dais at the top; tea master Song behind the screen on the right. Three Mongol soldiers make trouble; Duan (hidden) rides past the door afterwards.</p>",
+   "navOrder": 1100000
   },
   {
    "_id": "L2kH9prksDxcJeVS",
@@ -15607,9 +15618,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1200000,
    "initial": null,
-   "description": "<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>"
+   "description": "<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>",
+   "navOrder": 1200000
   },
   {
    "_id": "DTZqtwTQ7pzBk69h",
@@ -15895,9 +15907,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1300000,
    "initial": null,
-   "description": "<p>偏殿在右，门从内锁；伏击的不死仆从（1D4+2）隐藏其中。黑暗中HO3与刘卿堂检定−20，直到后门打开。</p><p>Side hall on the right, locked from inside; the ambushers (1D4+2) are hidden tokens there. In the dark HO3 and Liu roll at −20 until the back door is opened.</p>"
+   "description": "<p>偏殿在右，门从内锁；伏击的不死仆从（1D4+2）隐藏其中。黑暗中HO3与刘卿堂检定−20，直到后门打开。</p><p>Side hall on the right, locked from inside; the ambushers (1D4+2) are hidden tokens there. In the dark HO3 and Liu roll at −20 until the back door is opened.</p>",
+   "navOrder": 1300000
   },
   {
    "_id": "XmLTAUhnix3lUXEa",
@@ -16127,9 +16140,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1400000,
    "initial": null,
-   "description": "<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>"
+   "description": "<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>",
+   "navOrder": 1400000
   },
   {
    "_id": "wkpaChaejjJaZTNR",
@@ -16443,9 +16457,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1500000,
    "initial": null,
-   "description": "<p>棺材空的，内侧暗格藏残页。书房在左。发现秘密后范玉楼提灯出现，卫兵（隐藏）围住宅邸。</p><p>The coffin is empty; the torn pages are in the compartment inside. The study is on the left. When the secret is found Magistrate Fan appears with a lantern and his guards (hidden tokens) close the house.</p>"
+   "description": "<p>棺材空的，内侧暗格藏残页。书房在左。发现秘密后范玉楼提灯出现，卫兵（隐藏）围住宅邸。</p><p>The coffin is empty; the torn pages are in the compartment inside. The study is on the left. When the secret is found Magistrate Fan appears with a lantern and his guards (hidden tokens) close the house.</p>",
+   "navOrder": 1500000
   },
   {
    "_id": "W5yoGmhzgJ1eiYPt",
@@ -16815,9 +16830,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1600000,
    "initial": null,
-   "description": "<p>床边马刀在阿术左手；门边墙上蒙古弓与三支白羽箭。屋内两名亲卫、门外两名。五回合后副将到场。</p><p>The sabre lies by Ashu's left hand; the bow and three white arrows hang by the door. Two guards inside, two outside; after five rounds the deputy arrives.</p>"
+   "description": "<p>床边马刀在阿术左手；门边墙上蒙古弓与三支白羽箭。屋内两名亲卫、门外两名。五回合后副将到场。</p><p>The sabre lies by Ashu's left hand; the bow and three white arrows hang by the door. Two guards inside, two outside; after five rounds the deputy arrives.</p>",
+   "navOrder": 1600000
   },
   {
    "_id": "rQY9OwgfZgJodFzn",
@@ -17159,9 +17175,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1700000,
    "initial": null,
-   "description": "<p>右侧铁门后是深牢（牛富）。离开时阿术（隐藏）与范玉楼从深处走出。</p><p>Beyond the iron door on the right are the deep cells (Niu). Ashu (hidden) and Magistrate Fan come out from the depths as the party leaves.</p>"
+   "description": "<p>右侧铁门后是深牢（牛富）。离开时阿术（隐藏）与范玉楼从深处走出。</p><p>Beyond the iron door on the right are the deep cells (Niu). Ashu (hidden) and Magistrate Fan come out from the depths as the party leaves.</p>",
+   "navOrder": 1700000
   },
   {
    "_id": "NWzNett6nQGIEsvr",
@@ -17615,9 +17632,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1800000,
    "initial": null,
-   "description": "<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen's huts on the right.</p>"
+   "description": "<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen's huts on the right.</p>",
+   "navOrder": 1800000
   },
   {
    "_id": "xdz729UwK8W7jxHn",
@@ -17819,9 +17837,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 1900000,
    "initial": null,
-   "description": "<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank \"The goddess comes in dreams\" can fire (the spine is a hidden token).</p>"
+   "description": "<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank \"The goddess comes in dreams\" can fire (the spine is a hidden token).</p>",
+   "navOrder": 1900000
   },
   {
    "_id": "ye7iggxq3TeefXSP",
@@ -18303,9 +18322,10 @@
    "tiles": [],
    "regions": [],
    "flags": {},
-   "sort": 0,
+   "sort": 2000000,
    "initial": null,
-   "description": "<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla'aki.</p>"
+   "description": "<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla'aki.</p>",
+   "navOrder": 2000000
   }
  ],
  "folders": [
@@ -18374,7 +18394,7 @@
    "name": "第零次聚会 Session 0",
    "type": "Scene",
    "folder": null,
-   "sorting": "a",
+   "sorting": "m",
    "sort": 0,
    "color": "#5a5a3b",
    "flags": {}
