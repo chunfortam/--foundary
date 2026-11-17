@@ -185,11 +185,11 @@ for k in ('boat', 'wagon'): ACT[k]['folder'] = FOLD['f_prop']['_id']
 for k in ACT:
     if ACT[k]['folder'] is None: ACT[k]['folder'] = FOLD['f_npc']['_id']
 JR = [
- journal('玩家入门 · Player Primer', [('开场 Opening', C.opening_html()), ('入门 Primer', C.primer_html()), ('规则速查 Cheat Sheet', C.cheat_html()), ('名词对照 Glossary', C.glossary_html())], 2, FOLD['f_player']['_id']),
- journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.ho_html(1))], 0, FOLD['f_player']['_id']),
- journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.ho_html(2))], 0, FOLD['f_player']['_id']),
- journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.ho_html(3))], 0, FOLD['f_player']['_id']),
- journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('加时：第一日 Extended: Day One', C.extended_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('时间线与真相 Timeline & truth', C.timeline_html()), ('伤势与治疗 Wounds & Healing', C.healing_html())], 0, FOLD['f_gm']['_id']),
+ journal('玩家入门 · Player Primer', [('故事 The story so far', C.player(C.story_html())), ('人物 Who\'s who', C.player(C.cast_html(False))), ('开场 Opening', C.player(C.opening_html())), ('入门 Primer', C.player(C.primer_html())), ('规则速查 Cheat Sheet', C.player(C.cheat_html())), ('名词对照 Glossary', C.glossary_html())], 2, FOLD['f_player']['_id']),
+ journal('HO1 游侠 · The Wanderer（仅HO1玩家）', [('HO1', C.player(C.ho_html(1)))], 0, FOLD['f_player']['_id']),
+ journal('HO2 商贾 · The Merchant Heir（仅HO2玩家）', [('HO2', C.player(C.ho_html(2)))], 0, FOLD['f_player']['_id']),
+ journal('HO3 命官 · The Commissioner（仅HO3玩家）', [('HO3', C.player(C.ho_html(3)))], 0, FOLD['f_player']['_id']),
+ journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('加时：第一日 Extended: Day One', C.extended_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('人物 Who\'s who (GM)', C.cast_html(True)), ('故事全貌 The whole story & timeline', C.timeline_html()), ('伤势与治疗 Wounds & Healing', C.healing_html())], 0, FOLD['f_gm']['_id']),
 ]
 # ---------------- scenes ----------------
 # AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
@@ -301,7 +301,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.5.7', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.5.8', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
