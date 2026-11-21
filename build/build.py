@@ -58,8 +58,11 @@ def item(name, desc=''):
     return {'_id': rid(), 'name': name, 'type': 'item', 'img': 'icons/svg/item-bag.svg', 'system': {'description': {'value': desc}}, 'flags': {}, 'effects': []}
 def chars(**k): return {c: {'value': v} for c, v in k.items()}
 def hpcalc(ch): return (ch['con'] + ch['siz']) // 10
+# Renamed documents keep the name their IDs were first derived from, so a rename updates the world documents in place
+# (actor, its embedded items, and its scene tokens) instead of orphaning saved references.
+IDNAME = {'牛富 General Niu': '牛富 Niu the Archer'}
 def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', disposition=0, extra=None, link=True, san=None, luck=50, armor=None, sanloss=None, occupation='', age='', idkey=None, tokname=None):
-    random.seed('actor:' + (idkey or name)); hp = hpcalc(ch); mp = ch['pow'] // 5
+    idkey = idkey or IDNAME.get(name, name); random.seed('actor:' + idkey); hp = hpcalc(ch); mp = ch['pow'] // 5
     sys = {'characteristics': chars(**ch), 'attribs': {'hp': {'value': hp, 'max': hp}, 'mp': {'value': mp, 'max': mp}, 'lck': {'value': luck}, 'san': {'value': san if san is not None else ch['pow'], 'max': 99, 'dailyLimit': 10}},
            'infos': {'occupation': occupation, 'age': age}, 'flags': {'locked': True}}
     if armor is not None: sys['attribs']['armor'] = {'value': armor}
@@ -71,7 +74,7 @@ def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', di
         if sanloss: sys['special'] = {'sanLoss': {'checkPassed': sanloss[0], 'checkFailled': sanloss[1]}, 'attacksPerRound': 1}
     if extra: sys.update(extra)
     its = skills + weapons + items
-    a = {'_id': rid('actor:' + (idkey or name)), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
+    a = {'_id': rid('actor:' + idkey), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
          'prototypeToken': {'name': tokname or name, 'actorLink': link, 'disposition': disposition, 'texture': {'src': tok}, 'width': 1, 'height': 1, 'sight': {'enabled': atype == 'character'}, 'displayName': 30, 'displayBars': 40 if atype != 'character' else 50, 'bar1': {'attribute': 'attribs.hp'}}}
     return a
 ACT = {}
@@ -127,7 +130,7 @@ npc('ashu', '兀良哈·阿术 Marshal Ashu', dict(str=80, con=80, siz=85, dex=7
 npc('duan', '段游衍 Duan Driftwood', dict(str=65, con=65, siz=70, dex=60, app=70, int=70, pow=50, edu=65), [('i.skill.fighting-sword', 70), ('i.skill.dodge', 60), ('i.skill.spot-hidden', 60), ('i.skill.fast-talk', 60), ('i.skill.persuade', 70), ('i.skill.library-use', 50)],
     [weapon('剑 Sword', '1D8', 'i.skill.fighting-sword', addb=True)], '段', (90, 110, 70, 255),
     '<p>南宋降将，大理段氏，HO1的旧同窗。贪生怕死、圆滑，对两朝皆无忠诚，却向往江湖、钦慕HO1。宴会上会挡在阿术与HO1之间搅乱场面。</p>', '<p>Song turncoat general, HO1\'s old classmate. Cowardly and smooth, loyal to neither dynasty, secretly longs for the jianghu and admires HO1. At the banquet he blocks Ashu and makes chaos so HO1 can escape. Appointed to lead the river assault; will look for a way to disperse Gla\'aki.</p>', disposition=0, link=True)
-npc('niu', '牛富 Niu the Archer', dict(str=70, con=70, siz=65, dex=75, app=50, int=60, pow=65, edu=50), [('i.skill.firearms-bow', 85), ('i.skill.fighting-sword', 65), ('i.skill.dodge', 55), ('i.skill.spot-hidden', 60), ('i.skill.intimidate', 60)],
+npc('niu', '牛富 General Niu', dict(str=70, con=70, siz=65, dex=75, app=50, int=60, pow=65, edu=50), [('i.skill.firearms-bow', 85), ('i.skill.fighting-sword', 65), ('i.skill.dodge', 55), ('i.skill.spot-hidden', 60), ('i.skill.intimidate', 60)],
     [weapon('神臂弓 God-Arm Bow', '1D8+2', 'i.skill.firearms-bow', rngd=True, rng=300, ahdb=True, img='icons/weapons/bows/longbow-recurve-leather-brown.webp'), weapon('刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True)], '牛', (60, 60, 60, 255),
     '<p>樊城钤辖，神射手。黝黑精瘦，目光如炬。原文未给数值，此处为主持人估值。城破后拒降，被挑断手筋，囚于监牢。</p>', '<p>Garrison officer and famous bowman. Dark, lean, eyes like torches. The original gives no stats; these are GM estimates. Refused to surrender; tendons cut; in the gaol. His God-Arm Bow (400 paces) is the only bow that reaches mid-river.</p>', disposition=1, link=True)
 npc('liu', '刘卿堂 Captain Liu', dict(str=70, con=70, siz=70, dex=70, app=65, int=60, pow=60, edu=70), [('i.skill.fighting-brawl', 75), ('i.skill.fighting-axe', 75), ('i.skill.dodge', 60), ('i.skill.spot-hidden', 55), ('i.skill.library-use', 50)],
@@ -250,7 +253,7 @@ def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048, weather=
     # does not reassign the IDs of the others (saved combatants reference tokens by ID).
     seen = {}; toks = []
     for t in tokens:
-        tname = t[1].get('name') or t[0][0]['prototypeToken']['name']; n = seen[tname] = seen.get(tname, 0) + 1
+        tname = t[1].get('name') or t[0][0]['prototypeToken']['name']; tname = IDNAME.get(tname, tname); n = seen[tname] = seen.get(tname, 0) + 1
         toks.append(tok(*t[0], G, rid(f'token:{name}:{tname}#{n}'), **t[1]))
     return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'levels': [level(name, f'modules/{MOD}/assets/maps/{img}')], 'initialLevel': LEVEL, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
@@ -399,7 +402,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.2', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.3', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)

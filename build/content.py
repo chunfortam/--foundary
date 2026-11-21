@@ -38,7 +38,7 @@ GLOSSARY = [
   ("范天顺", "Commander Fan", "Fencewall's late commander, hanged himself"),
   ("范玉楼", "Magistrate Fan", "his nephew, now runs the city"),
   ("范玉莹", "Lady Fan", "the commander's daughter"),
-  ("牛富", "Niu the Archer", "the famous bowman, now in the gaol"),
+  ("牛富", "General Niu", "the famous bowman, now in the gaol"),
   ("刘卿堂", "Captain Liu", "HO3's childhood friend"),
   ("越南柯", "Doctor Yue, the Hollow Physician", "空空郎中; HO2's foster brother, con-man thief"),
   ("山阳道人 (陈阳山)", "the Hermit of Mount Crag", "HO1's master"),
@@ -178,7 +178,7 @@ def extended_html():
     s += bi("路人：", "From the crowd:")
     s += ul([
       ("兀良哈为报徒弟一剑之仇，上岘首山抓走年逾七十的山阳道人，也还他一刀。止水不过三尺，阿术一把斩马刀却能将人拦腰砍断。", "\"Ashu went up Mount Crag himself to pay the old man back for his pupil's cut. Seventy years old. That little sword of his, Stillwater, is three feet long; the Marshal's horse-cutter took a man in half at the waist.\""),
-      ("阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富等人。幸亏小范大人投降得快，殃及不到咱们平头百姓。", "\"The Marshal is going to execute every Song officer who won't surrender, Niu the Archer 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it'd be us.\""),
+      ("阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富等人。幸亏小范大人投降得快，殃及不到咱们平头百姓。", "\"The Marshal is going to execute every Song officer who won't surrender, General Niu 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it'd be us.\""),
     ])
     s += bi("主持人注意：牛富将在十五日午时在此处斩首，押送队伍可被劫（原书p29的规则）。这是第一次正式聚会的大场面；今天只埋下这句话。",
             "GM note: Niu is to be beheaded here at noon on the 15th and the convoy can be ambushed (rules on p29 of the original). That is the set-piece of the next session; today you only plant the line.")
@@ -410,9 +410,9 @@ def runbook_html():
     s += bi("HO2只能逃入樊城：敏捷检定判断是否受伤，失败扣1D3且本模组内无法痊愈，生命值上限-1。",
             "You run for Fencewall. DEX roll: on a failure take 1D3, a wound that will not fully heal in this scenario, and max HP -1.")
     s += bi("城门戒严：守门的是宋兵，吊桥半起，城头弓弩对着城外。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
-            "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, Niu the Archer, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
+            "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, General Niu, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
     s += '<blockquote>' + bi("<b>牛富（读给玩家）：</b>城头走下来一个人。四十来岁，黝黑精瘦，披一身旧铁甲，背上斜挂一把漆黑的长弓，比常人的弓长出一截，弓背上缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后才看你的脸。守门兵见了他都往后让半步。他只报了名号：牛富，樊城钤辖，范将军麾下掌兵。",
-            "<b>Niu the Archer (read aloud):</b> A man comes down from the wall. Forties, dark-skinned, lean and hard as a drawn bowstring, in old iron armour. Slung across his back is a long black bow, a hand longer than any you have seen, its grip wrapped in leather worn pale. Eyes like torches: he looks at your hands first, then at your carts, and only then at your face. The gate guards step back half a pace as he passes. He gives only his name and office: Niu, garrison commander of Fencewall, under Commander Fan.") + '</blockquote>'
+            "<b>General Niu (read aloud):</b> A man comes down from the wall. Forties, dark-skinned, lean and hard as a drawn bowstring, in old iron armour. Slung across his back is a long black bow, a hand longer than any you have seen, its grip wrapped in leather worn pale. Eyes like torches: he looks at your hands first, then at your carts, and only then at your face. The gate guards step back half a pace as he passes. He gives only his name and office: Niu, garrison commander of Fencewall, under Commander Fan.") + '</blockquote>'
     s += bi("（牛富是樊城钤辖，范天顺之下掌兵马。两军对阵前他一箭射死了阿术的侄子，蒙古人记着这笔账。他对HO2直率、客气，说到做到——只要他还自由。）",
             "(Niu is the garrison commander under Commander Fan. Before the armies met he shot Ashu's nephew dead with a single arrow; the Mongols have not forgotten. With HO2 he is blunt, courteous, and keeps his word, for as long as he is free.)")
     s += bi("（这副可射四百步的神臂弓，不久后牛富入狱时会交到打更少年方未名手里。）",
@@ -499,7 +499,7 @@ def timeline_html():
       ("1268-01-10", "HO1刺杀阿术未果。", "HO1 fails to kill Ashu."),
       ("1268-01-11", "公共导入：夜渡汉水失败。", "Shared intro: the night crossing fails."),
       ("1268-01-12", "浓雾翻涌，元军渡江推迟到十八日。", "Fog boils up; the Mongol crossing is postponed to the 18th."),
-      ("1268-01-15 (预计 planned)", "牛富在街口问斩。", "Niu the Archer to be executed at the street corner."),
+      ("1268-01-15 (预计 planned)", "牛富在街口问斩。", "General Niu to be executed at the street corner."),
       ("1268-01-18 (预计 planned)", "元军水路三面围攻襄阳。", "Mongol river assault on Southbright."),
     ])
     s += h("真相速览（仅主持人）", "The truth in brief (GM only)")
@@ -512,7 +512,7 @@ def npc_ref_html():
     s += table(["NPC", "数值 Stats", "要点 Notes"], [
       ("兀良哈·阿术 Marshal Ashu", "STR80 CON80 SIZ85 DEX70 APP50 INT75 POW60 EDU60 · HP16 DB+1D6 · 斗殴/马刀 Brawl/Sabre 75, 闪避 Dodge 70, 侦查 Spot 60", "被止水所伤后所有检定带惩罚骰。极具压迫感、几乎不可战胜。Every roll with a penalty die after Stillwater; an oppressive, near-unbeatable presence."),
       ("段游衍 Duan Driftwood", "STR65 CON65 SIZ70 DEX60 APP70 INT70 POW50 EDU65 · HP13 DB+1D4 · 剑 Sword 70, 说服 Persuade 70, 话术 Fast Talk 60, 闪避 Dodge 60, 侦查 Spot 60, 图书馆 Library 50", "贪生怕死、圆滑，对两朝皆无忠诚，却钦慕HO1的豪侠气。Cowardly and smooth, loyal to no dynasty, secretly admires HO1."),
-      ("牛富 Niu the Archer", "未给数值 no stats given；按需用 use 刘卿堂 template", "黝黑精瘦，目光如炬。神臂弓射四百步。城破后被挑断手筋，囚于监牢。Lean, dark, eyes like torches. The God-Arm Bow shoots 400 paces. Tendons cut after the fall; in the gaol."),
+      ("牛富 General Niu", "未给数值 no stats given；按需用 use 刘卿堂 template", "黝黑精瘦，目光如炬。神臂弓射四百步。城破后被挑断手筋，囚于监牢。Lean, dark, eyes like torches. The God-Arm Bow shoots 400 paces. Tendons cut after the fall; in the gaol."),
       ("刘卿堂 Captain Liu", "STR70 CON70 SIZ70 DEX70 APP65 INT60 POW60 EDU70 · HP14 DB+1D4 · 斗殴 Brawl 75, 斧 Axe 75, 闪避 Dodge 60, 侦查 Spot 55", "逃脱控制的不死者：无脉搏，毒病无效，不死仆从优先攻击他。An undying man outside Gla'aki's control: no pulse, immune to poison and disease; the Servants target him first."),
       ("越南柯 Doctor Yue", "STR50 CON55 SIZ65 DEX50 APP75 INT75 POW60 EDU60 · HP12 DB0 · 妙手 Sleight of Hand 75, 话术 Fast Talk 70, 侦查 Spot 70, 闪避 Dodge 40", "不会武、不懂医，擅造假药与偷盗，钱散穷人。Can't fight, can't heal; fakes medicine, steals, gives to the poor."),
       ("蒙古士兵 Mongol soldier", "STR60 CON60 SIZ70 DEX45 APP45 INT45 POW50 EDU40 · HP12 DB+1D4 · 闪避 Dodge 40 · 步兵 foot: 斗殴 Brawl 40, 弓 Bow 45 · 骑兵 horse: 斗殴 45, 弓 45 · 护甲 Armour 2", "身上有武器、令牌、钱、文书，妙手可窃。Carry weapons, tokens, money, orders; Sleight of Hand to steal."),
@@ -529,7 +529,7 @@ import re as _re
 NAMES = [("Lu Bluecliff", "陆青崖"), ("Shen Pearl", "沈怀珠"), ("Xie Cloudmane", "谢云骧"),
          ("Fencewall", "樊城"), ("Southbright", "襄阳"), ("Han River", "汉江"), ("the Han", "汉江"),
          ("Marshal Ashu", "阿术"), ("Ashu", "阿术"), ("Duan Driftwood", "段游衍"), ("General Toghan", "脱欢"), ("Toghan", "脱欢"),
-         ("Commander Fan", "范天顺"), ("Magistrate Fan", "范玉楼"), ("Niu the Archer", "牛富"), ("Prefect Xu", "许德显"),
+         ("Commander Fan", "范天顺"), ("Magistrate Fan", "范玉楼"), ("General Niu", "牛富"), ("Prefect Xu", "许德显"),
          ("Captain Liu", "刘卿堂"), ("Liu Qingtang", "刘卿堂"), ("Doctor Yue", "越南柯"), ("Yue Nanke", "越南柯"), ("Winding Stream", "曲流"),
          ("Boatman Wang", "船夫王"), ("the Jiang twins", "姜楼、姜阁"), ("Autumn", "秋筠"), ("Nameless Fang", "无名方"),
          ("Hermit of Mount Crag", "山阳道人"), ("Mount Crag", "岘山"), ("Stillwater", "止水"), ("Rainmaster's Ink", "雨师墨"),
@@ -603,7 +603,7 @@ CAST = [
     'Bought the Grand Lake Stone with Gla\'aki\'s shard in 1266; summoned the thing in the river with condemned prisoners as sacrifices to stop a Mongol crossing. It fired early and destroyed Liu\'s flotilla. Asked Winding Stream for a coffin with a hidden compartment.'),
    ('', 'Magistrate Fan 范玉楼', 'Fan\'s nephew; runs the town for the Mongols', 'Opened the gates the morning after his uncle\'s death to spare the people. Now flatters Ashu at banquets. Embarrassing to watch; perhaps not a coward.',
     'Knows more of his uncle\'s plan than he says. The Library holds the county gazetteer with the poison.'),
-   ('niu.webp', 'Niu the Archer 牛富', 'Garrison commander, in the gaol', 'Forties, dark, lean as a bowstring, eyes like torches. His God-Arm Bow 神臂弓 shoots four hundred paces; before the siege he shot Ashu\'s nephew dead. Refused to surrender; the Mongols cut his hand-tendons and locked him up.',
+   ('niu.webp', 'General Niu 牛富', 'Garrison commander, in the gaol', 'Forties, dark, lean as a bowstring, eyes like torches. His God-Arm Bow 神臂弓 shoots four hundred paces; before the siege he shot Ashu\'s nephew dead. Refused to surrender; the Mongols cut his hand-tendons and locked him up.',
     'To be beheaded at noon on the 15th. His bow passes to Nameless Fang, the watchman boy: a finale prerequisite.'),
    ('', 'Prefect Xu 许德显', 'The region\'s prefect', 'A senior Song official who stayed on and now dines at Ashu\'s table. His family owns boats.',
     'Two letters exist: one offering his boats to the Mongols, one swearing loyalty to the Song. Doctor Yue has stolen them: blackmail lever for the boats.'),
@@ -670,7 +670,7 @@ def ho_html(n):
 GM_STORY = [
  "<b>What Commander Fan did.</b> In 1266 Commander Fan 范天顺 bought an ornamental Grand Lake Stone 太湖石 with eighty-one holes. The green jade set in hole 46 is a shard of Gla'aki 格拉基, the \"Many-Headed Fish\" of old travel books: a thing that calls people into water in their dreams and makes the drowned walk again. Fan, dutiful and clear-eyed, knew Fencewall could not hold, and kept the stone as a last weapon: wake the thing in the river and no army could cross.",
  "<b>The night of 3 January.</b> As the Mongol assault began, Fan took condemned prisoners to the bank as sacrifices and began the rite. Doctor Yue 越南柯, hiding nearby, blundered into it, and it fired early: into the river just as Captain Liu 刘卿堂's flotilla, HO3's last eight hundred men ordered across to Southbright, was in midstream. The boats were smashed. The men drowned. Some climbed back out with a red web-mark on their backs and no pulse: Undying Servants 不死仆从, puppets of the thing in the river. Liu alone came out with his own mind. Fan, seeing what he had done, hanged himself that night; his nephew Magistrate Fan 范玉楼 opened the gates in the morning.",
- "<b>Now.</b> The fog is Gla'aki's. The Mongols cannot cross (their assault on Southbright slips from the 9th to the 18th). The Servants move through the town by night and lure people to the bank; the thing calls in dreams, HO3 first (POW each night). Niu the Archer 牛富 waits in the gaol for his beheading at noon on the 15th. Prefect Xu 许德显 has boats and two incriminating letters. Ashu 阿术 nurses a shoulder wound from Stillwater 止水 that will never heal.",
+ "<b>Now.</b> The fog is Gla'aki's. The Mongols cannot cross (their assault on Southbright slips from the 9th to the 18th). The Servants move through the town by night and lure people to the bank; the thing calls in dreams, HO3 first (POW each night). General Niu 牛富 waits in the gaol for his beheading at noon on the 15th. Prefect Xu 许德显 has boats and two incriminating letters. Ashu 阿术 nurses a shoulder wound from Stillwater 止水 that will never heal.",
  "<b>Session 0</b> is the three personal intros and the Night Crossing: the boat is wrecked by a spine from the river, the Jiang twins pull the party out, and they wake in Winding Stream 曲流's coffin shop. <b>Day One</b> (12 Jan) adds the Street Crossing, Doctor Yue's visit with Xu's letters, and Liu joining the party. <b>The sandbox</b> (12–15 Jan, three action rounds a day) is about the gaol, Xu's boats, the gazetteer's poison and the Ling needles. <b>The finale</b> is at the Watchtower 塔楼: with Niu's God-Arm Bow 神臂弓, the needles and a fire signal the investigators can end what Fan started, and decide whether Ashu lives.",
 ]
 def timeline_html():
@@ -685,7 +685,7 @@ def timeline_html():
       ("1268-01-10", "HO1刺杀阿术未果。", "HO1 fails to kill Ashu."),
       ("1268-01-11", "公共导入：夜渡汉水失败。", "Shared intro: the night crossing fails."),
       ("1268-01-12", "浓雾翻涌，元军渡江推迟到十八日。", "Fog boils up; the Mongol crossing is postponed to the 18th."),
-      ("1268-01-15 (预计 planned)", "牛富在街口问斩。", "Niu the Archer to be executed at the street corner."),
+      ("1268-01-15 (预计 planned)", "牛富在街口问斩。", "General Niu to be executed at the street corner."),
       ("1268-01-18 (预计 planned)", "元军水路三面围攻襄阳。", "Mongol river assault on Southbright."),
     ])
     return s

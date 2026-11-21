@@ -22,7 +22,7 @@ def db(s):
 NOTES = {'Marshal Ashu': 'Wounded at the banquet: penalty die on every roll he makes from then on (Rainmaster&#39;s Ink 雨师墨). Not meant to die in session 0.',
          'Toghan': "Ashu&#39;s deputy; bad Chinese, brutal. Beheaded HO2&#39;s father at the North Gate. Despises Duan.",
          'Duan Driftwood': 'Serves the Mongols, loyal to nobody, likes HO1. Talks his way out of everything.',
-         'Niu the Archer': 'Stats are my estimate (none in the book). The God-Arm Bow 神臂弓 shoots 400 paces; it matters in the finale.',
+         'General Niu': 'Stats are my estimate (none in the book). The God-Arm Bow 神臂弓 shoots 400 paces; it matters in the finale.',
          'Captain Liu': 'HO3&#39;s friend; offstage in session 0 (crossed with 800 men on 3 Jan).',
          'Doctor Yue': 'HO2&#39;s foster brother 越南柯; offstage in session 0, he sent the rescuers and the ginger.',
          'Mongol soldier': 'Leather + felt, armour 2. Patrols of 4–6. Not clever; they shout for help.',
@@ -101,7 +101,7 @@ BODY = f'''
 <li><b>Scenes & music</b> auto-switch when you activate a scene (Scenes tab → right-click → Activate). Move tokens by dragging; players may touch the TV.</li>
 </ul>
 <h2>Wording 用词</h2>
-<p>Southbright 襄阳 · Fencewall 樊城 · the Han River 汉江 · Marshal Ashu 阿术 · Duan Driftwood 段游衍 · Commander Fan 范天顺 (the general, hanged himself) · Magistrate Fan 范玉楼 (surrendered) · Niu the Archer 牛富 · Captain Liu 刘卿堂 · Doctor Yue 越南柯 · the Hermit of Mount Crag 山阳道人 · Stillwater 止水 · Rainmaster's Ink 雨师墨 · Lightness 轻功 (= Climb/Jump) · Acupoint Strike 点穴.</p>
+<p>Southbright 襄阳 · Fencewall 樊城 · the Han River 汉江 · Marshal Ashu 阿术 · Duan Driftwood 段游衍 · Commander Fan 范天顺 (the general, hanged himself) · Magistrate Fan 范玉楼 (surrendered) · General Niu 牛富 · Captain Liu 刘卿堂 · Doctor Yue 越南柯 · the Hermit of Mount Crag 山阳道人 · Stillwater 止水 · Rainmaster's Ink 雨师墨 · Lightness 轻功 (= Climb/Jump) · Acupoint Strike 点穴.</p>
 <h2>Dates 日期</h2>
 <p>Late 1267: HO2's convoy, HO3's breakout. 3 Jan 1268: Liu crosses with 800. 4 Jan: Fencewall surrenders. 10 Jan: victory banquet, HO1's strike. <b>11 Jan, midnight: Night Crossing.</b> 12–18 Jan: session 1.</p>
 </div></div>
@@ -144,7 +144,7 @@ BODY = f'''
 {q('“这鞑子知道你们家有钱，不剥层皮不会放人。有什么值钱的，现在就献出来……”', '"This Tartar knows your house is rich. He won&#39;t let you go without skinning you. Whatever you have of value, offer it now, as a gift to the Khan and the Marshal..."')}
 <p>Whatever HO2 says, father goes forward alone and sends them to count stock. The clerks beg them to run. Then: <b>▶ play 斩 Slash</b> (Playlists → 音效 Sound effects) — a mist of blood, a head flung sideways. Carts roll over the stain until it is gone.</p>
 <p><b>Run for the gate:</b> {R('DEX')}; fail = 1D3, a wound that never fully heals, max HP −1.</p>
-<p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → Niu the Archer 牛富 comes down from the wall:</p>
+<p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → General Niu 牛富 comes down from the wall:</p>
 {q('四十来岁，黝黑精瘦，旧铁甲，背上一把漆黑长弓，弓背缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后看你的脸。', 'Forties, dark, lean and hard as a drawn bowstring, old iron armour, a long black bow across his back, grip wrapped in leather worn pale. Eyes like torches: your hands first, then your carts, then your face.')}
 <p>Garrison commander under Commander Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Fan is hunting a thief in town, and promises help with anything.</p>
 <p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Commander Fan 范天顺 hangs himself; 4 Jan his nephew Magistrate Fan 范玉楼 opens the gates to spare the town. Patrols everywhere; Niu refuses to yield → gaol, his promises gone with him. The house in Lin'an 临安 is leaderless; bridge cut, bank guarded, so you buy a boatman. → the reeds after dark.</p>
@@ -189,7 +189,7 @@ BODY = f'''
 <h2>Noon of the 12th — the Street Crossing 街口 <small>scene: the Street Crossing</small></h2>
 <p>Junction of Front and Back Street; inn, tea stall; the execution ground. Packed crowd, a strange heavy mood. Today's dead man: white-haired, one arm missing, a spear through the throat hoisting the body into the air. <b>HO1 recognises the Hermit of Mount Crag 山阳道人.</b> His face is calm, as if he expected it. If the master mattered: <b>{R('SAN 1/1D3')}</b>. Let the player sit with it.</p>
 {q('“兀良哈为报徒弟一剑之仇，上岘首山抓走年逾七十的山阳道人，也还他一刀。止水不过三尺，阿术一把斩马刀却能将人拦腰砍断。”', '"Ashu went up Mount Crag himself to pay the old man back for his pupil’s cut. Seventy years old. That little sword Stillwater is three feet long; the Marshal’s horse-cutter took him in half at the waist."')}
-{q('“阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富。幸亏小范大人投降得快。”', '"The Marshal will execute every Song officer who won’t surrender, Niu the Archer 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it’d be us."')}
+{q('“阿术要斩不肯投降的宋臣，包括还关在监牢里的牛富。幸亏小范大人投降得快。”', '"The Marshal will execute every Song officer who won’t surrender, General Niu 牛富 in the gaol among them. Thank heaven the young Magistrate gave in fast, or it’d be us."')}
 <p><i>GM: Niu dies here at noon on the 15th unless rescued (p29). Next session's set-piece; today only plant the line.</i></p>
 </div>
 <div>

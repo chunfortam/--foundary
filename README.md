@@ -22,7 +22,7 @@ The repository is private, so install from git (Foundry's manifest-URL installer
 The adventure ships as plain `adventure.json` (no compendium database), so a pull always delivers the new content and the module folder never shows local modifications.
 
 ## Contents 内容
-- Actors: 3 pre-built investigators (HO1 游侠 / HO2 商贾 / HO3 命官) with the scenario's mandatory bonuses and the custom skill 点穴 Acupoint Strike; NPCs for session 0 (Marshal Ashu, Duan Driftwood, Niu the Archer, Captain Liu, Doctor Yue, Mongol soldiers and horsemen, the Jiang twins, Winding Stream, the boatman); creatures (Gla'aki's spine, Undying Servant).
+- Actors: 3 pre-built investigators (HO1 游侠 / HO2 商贾 / HO3 命官) with the scenario's mandatory bonuses and the custom skill 点穴 Acupoint Strike; NPCs for session 0 (Marshal Ashu, Duan Driftwood, General Niu, Captain Liu, Doctor Yue, Mongol soldiers and horsemen, the Jiang twins, Winding Stream, the boatman); creatures (Gla'aki's spine, Undying Servant).
 - Title and idle scenes: scene 0 is the title page — the scenario's cover art (by the author, `assets/cover_zh.jpg`) re-lettered in English as "Crossing the Han" (`assets/cover.webp`); scene 0a is a looping ink-wash pagoda video (`assets/intro.webm`, our own render) for breaks. Both play the Banquet track. Scene 0c is a bilingual ink-wash regional map of the Han River with Fencewall 樊城 (north bank) and Southbright 襄阳 (south bank) (`assets/map_twin_cities.webp`), for the Primer and "where are we" questions.
 - Portrait macros: three macros "肖像 …" (Macro Directory, the folder icon left of the hotbar). Drag them onto hotbar slots; one click opens the HO portrait full-screen for the GM and pushes it to every player (`ImagePopout.shareImage`). Players close it with the X.
 - Journals: player pages are English-first with Chinese only on names/terms (`content.player()` strips the Chinese paragraphs and annotates the first mention of each name from `content.NAMES`). The Player Primer opens with "故事 The story so far" and "人物 Who's who" (portraits from `assets/portraits`); each HO handout opens with "Who you are"; the GM runbook has a GM "Who's who" (secrets in red) and "The whole story & timeline".
@@ -35,7 +35,7 @@ The adventure ships as plain `adventure.json` (no compendium database), so a pul
 
 ## Known gaps 已知缺口
 - The scenario's 点穴 rules attachment is not in the published PDF; the cheat sheet contains a house rule to use until you get the attachment from the author's QQ group (1095875707).
-- Niu the Archer has no stats in the original; the sheet uses GM estimates.
+- General Niu has no stats in the original; the sheet uses GM estimates.
 - Portraits and round tokens for all 16 actors are AI-generated (OpenAI gpt-image) in a Chinese ink-wash style.
 - Sound effects: playlist 音效 Sound effects — 斩 Slash (HO2 intro), 箭 Arrows (Night Crossing volley), 战 Battle (sword-on-sword loop for fights); mp3s from pixabay.com under the Pixabay Content License.
 - Music: a playlist of six Kevin MacLeod tracks linked to the scenes (Eastern Thought, Teller of the Tales, Asian Drums, Temple of the Manes, Lotus, Lightless Dawn). Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
