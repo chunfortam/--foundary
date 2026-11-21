@@ -60,9 +60,6 @@ if __name__ == '__main__':
         im = label(zh, en, size, red); base.alpha_composite(im, (int(cx - im.width / 2), int(cy - im.height / 2)))
     base.convert('RGB').save(f'{ROOT}/assets/maps/town.webp', quality=88)
     os.makedirs(f'{ROOT}/assets/maps/town_labels', exist_ok=True)
-    prev = base.copy()
     for key, zh, en, cx, cy, red, shown, group, when in PLACES:
         im = label(zh, en, 24 if key == 'crossing' else 20, red); im.save(f'{ROOT}/assets/maps/town_labels/{key}.webp', lossless=True)
-        prev.alpha_composite(im, (int(cx - im.width / 2), int(cy - im.height / 2)))
-    prev.convert('RGB').save('/home/ubuntu/shots/town_preview.png')
     print('wrote town.webp and', len(PLACES), 'labels')
