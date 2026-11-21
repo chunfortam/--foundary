@@ -16745,12 +16745,637 @@
    "drawings": [],
    "sounds": [],
    "templates": [],
-   "tiles": [],
+   "tiles": [
+    {
+     "_id": "0u9QRquO8NUGDiDY",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/stalls.webp"
+     },
+     "x": 614,
+     "y": 779,
+     "width": 96,
+     "height": 49,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "stalls",
+       "name": "Street stalls 沿街浮屋",
+       "group": "Front Street 前街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "Yfri4jx7PDvBvUD2",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/theatre.webp"
+     },
+     "x": 1280,
+     "y": 559,
+     "width": 114,
+     "height": 53,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "theatre",
+       "name": "Li Family Theatre 李家瓦子",
+       "group": "Front Street 前街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "ZCARYbJjcczZP3ab",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/wangwu.webp"
+     },
+     "x": 1001,
+     "y": 629,
+     "width": 141,
+     "height": 53,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "wangwu",
+       "name": "Wang Wu's Restaurant 王五分茶",
+       "group": "Front Street 前街",
+       "when": "Closed on the 12th; opens on the 13th",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "z2JYkVYXDdw8IAot",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/pharmacy.webp"
+     },
+     "x": 777,
+     "y": 685,
+     "width": 109,
+     "height": 53,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "pharmacy",
+       "name": "Pharmacy (HO2) 药铺",
+       "group": "Front Street 前街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "a6MoRh91F2b4a7yV",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/lings.webp"
+     },
+     "x": 1166,
+     "y": 737,
+     "width": 68,
+     "height": 53,
+     "hidden": true,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "lings",
+       "name": "the Lings 凌家",
+       "group": "Front Street 前街",
+       "when": "After the pharmacy event (Ling Xuchun 凌序春)",
+       "start": false
+      }
+     }
+    },
+    {
+     "_id": "sKcaMdNt9STLlHg0",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/teahouse.webp"
+     },
+     "x": 572,
+     "y": 580,
+     "width": 69,
+     "height": 51,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "teahouse",
+       "name": "Teahouse 茶楼",
+       "group": "Front Street 前街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "eDZZWoLn3ux3TCkO",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/coffin.webp"
+     },
+     "x": 1481,
+     "y": 669,
+     "width": 81,
+     "height": 53,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "coffin",
+       "name": "Coffin Shop 棺材铺",
+       "group": "Front Street 前街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "82FsoQcYddkol2dt",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/house.webp"
+     },
+     "x": 243,
+     "y": 685,
+     "width": 118,
+     "height": 50,
+     "hidden": true,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "house",
+       "name": "the widow's house 某处民宅",
+       "group": "Front Street 前街",
+       "when": "Address learned at the Gaol or the burning house",
+       "start": false
+      }
+     }
+    },
+    {
+     "_id": "pdDxWpQDpOKV5vAG",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/wineshop.webp"
+     },
+     "x": 336,
+     "y": 580,
+     "width": 72,
+     "height": 52,
+     "hidden": true,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "wineshop",
+       "name": "Wineshop 酒肆",
+       "group": "Front Street 前街",
+       "when": "Address from tea master Song 宋择一 or Ling Xuchun 凌序春",
+       "start": false
+      }
+     }
+    },
+    {
+     "_id": "8qqIx5KvgBgLX585",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/guildhall.webp"
+     },
+     "x": 1177,
+     "y": 394,
+     "width": 69,
+     "height": 52,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "guildhall",
+       "name": "Guildhall 会馆",
+       "group": "Back Street 后街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "H7enJTjwl0fAaO0l",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/burning.webp"
+     },
+     "x": 1292,
+     "y": 408,
+     "width": 119,
+     "height": 53,
+     "hidden": true,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "burning",
+       "name": "the burning house 失火民宅",
+       "group": "Back Street 后街",
+       "when": "Catches fire when the party passes the Guildhall",
+       "start": false
+      }
+     }
+    },
+    {
+     "_id": "epiixiVf0KIQoYwG",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/treasures.webp"
+     },
+     "x": 1488,
+     "y": 325,
+     "width": 107,
+     "height": 49,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "treasures",
+       "name": "Seven Treasures 七宝行",
+       "group": "Back Street 后街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "4gZaCmQwhIE5t8RM",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/crossing.webp"
+     },
+     "x": 902,
+     "y": 444,
+     "width": 116,
+     "height": 58,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "crossing",
+       "name": "Street Crossing 街口",
+       "group": "Back Street 后街",
+       "when": "Fixed events at noon on the 12th and the 15th",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "hL1Z1TGYkGN34iru",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/temple.webp"
+     },
+     "x": 1573,
+     "y": 420,
+     "width": 58,
+     "height": 52,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "temple",
+       "name": "Temple 寺庙",
+       "group": "Back Street 后街",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "lcVkMHmFgy0hgRFk",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/fan.webp"
+     },
+     "x": 300,
+     "y": 335,
+     "width": 103,
+     "height": 50,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "fan",
+       "name": "Fan's residence 范宅·灵堂",
+       "group": "Magistracy 衙署",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "eeTSudJ8wbfh8iFq",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/xu.webp"
+     },
+     "x": 625,
+     "y": 247,
+     "width": 74,
+     "height": 50,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "xu",
+       "name": "Prefect Xu 许宅",
+       "group": "Magistracy 衙署",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "v5fEwEkdG1DEwXsX",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/niu.webp"
+     },
+     "x": 572,
+     "y": 394,
+     "width": 119,
+     "height": 52,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "niu",
+       "name": "Niu's house (Ashu) 牛宅",
+       "group": "Magistracy 衙署",
+       "when": "Entered only for the assassination",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "LA9qtGgn5JkRpxO5",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/school.webp"
+     },
+     "x": 782,
+     "y": 245,
+     "width": 123,
+     "height": 53,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "school",
+       "name": "School & Library 官学·藏书阁",
+       "group": "Magistracy 衙署",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "qIdUXTicXpRZ3jlw",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/gaol.webp"
+     },
+     "x": 1034,
+     "y": 257,
+     "width": 56,
+     "height": 49,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "gaol",
+       "name": "Gaol 监牢",
+       "group": "Magistracy 衙署",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "w0ZjUPHMhv164I1a",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/huts.webp"
+     },
+     "x": 1333,
+     "y": 840,
+     "width": 108,
+     "height": 50,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "huts",
+       "name": "fishermen's huts 渔民棚屋",
+       "group": "Riverbank 汉江沿岸",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "1z1sEJZ4ybAmik5B",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/warships.webp"
+     },
+     "x": 271,
+     "y": 850,
+     "width": 112,
+     "height": 53,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "warships",
+       "name": "Mongol warships 蒙古战船",
+       "group": "Riverbank 汉江沿岸",
+       "when": "Guarded; reachable only during the feast, evening of the 17th",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "MGNp8k69f46zJtBv",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/pavilion.webp"
+     },
+     "x": 652,
+     "y": 869,
+     "width": 76,
+     "height": 51,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "pavilion",
+       "name": "Pavilion 解佩亭",
+       "group": "Riverbank 汉江沿岸",
+       "when": "",
+       "start": true
+      }
+     }
+    },
+    {
+     "_id": "NIJk63Ovmy1P2wNm",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/reeds.webp"
+     },
+     "x": 452,
+     "y": 1009,
+     "width": 76,
+     "height": 51,
+     "hidden": true,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "reeds",
+       "name": "the reeds 芦苇荡",
+       "group": "Riverbank 汉江沿岸",
+       "when": "When they learn they can cross without killing the monster",
+       "start": false
+      }
+     }
+    },
+    {
+     "_id": "l2C9lJJZW0587dXx",
+     "texture": {
+      "src": "modules/gongruo-session0/assets/maps/town_labels/tower.webp"
+     },
+     "x": 527,
+     "y": 845,
+     "width": 84,
+     "height": 50,
+     "hidden": false,
+     "locked": true,
+     "level": "defaultLevel0000",
+     "elevation": 0,
+     "sort": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {
+      "gongruo-session0": {
+       "place": "tower",
+       "name": "Watchtower 塔楼",
+       "group": "Riverbank 汉江沿岸",
+       "when": "",
+       "start": true
+      }
+     }
+    }
+   ],
    "regions": [],
    "flags": {},
    "sort": 1000000,
    "initial": null,
-   "description": "<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p>",
+   "description": "<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p><p><b>GM:</b> each place label can be shown or hidden. Run the macro “城图 Town map: places” (Macro Directory; drag it to your hotbar) and tick the places the players know. Five start hidden: the Wineshop, the Lings, the burning house, the widow’s house, the reeds.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "88seI1QzXOxah0Vc",
    "navOrder": 1000000
@@ -20143,6 +20768,21 @@
    "img": "modules/gongruo-session0/assets/tokens/pc_official.webp",
    "scope": "global",
    "command": "const src = \"modules/gongruo-session0/assets/portraits/pc_official.webp\", title = \"肖像 谢云骧 Xie Cloudmane · HO3 The Commissioner\";\nconst IP = foundry.applications?.apps?.ImagePopout;\nconst ip = IP ? new IP({src, window: {title}, showTitle: true}) : new ImagePopout(src, {title, shareable: true});  // v13+ / v12\nip.render(true); ip.shareImage();",
+   "folder": null,
+   "sort": 0,
+   "ownership": {
+    "default": 0
+   },
+   "flags": {}
+  },
+  {
+   "_id": "PaCinCFagY11dWHJ",
+   "name": "城图 Town map: places",
+   "type": "script",
+   "author": null,
+   "img": "icons/svg/village.svg",
+   "scope": "global",
+   "command": "game.gongruo.places();",
    "folder": null,
    "sort": 0,
    "ownership": {
