@@ -66,7 +66,7 @@ def sandbox_html():
       ('12 Jan evening', 'Doctor Yue 越南柯 at the coffin shop with Xu\'s letters.', 'Front Street'),
       ('12 Jan night', 'HO3\'s second Dream-Call: the riverbank, the spine, Captain Liu 刘卿堂 joins.', 'Optional & personal'),
       ('From 13 Jan', 'Liu travels with HO3. The night events can fire: the Temple ambush (after Chen\'s invitation), the Undying house raid, the Rashomon alley meeting.', 'Temple / Front Street / Optional'),
-      ('15 Jan noon', 'Niu the Archer is brought to the Street Crossing to be beheaded: the rescue.', 'Street Crossing'),
+      ('15 Jan noon', 'General Niu is brought to the Street Crossing to be beheaded: the rescue.', 'Street Crossing'),
       ('16 Jan', 'If Niu was rescued: he hands over the God-Arm Bow 神臂弓 through Nameless Fang 方未名.', 'Street Crossing'),
       ('17 Jan evening', 'Ashu\'s banquet for the army before the crossing; the warships are lightly held: the raid "沉舟绝渡".', 'Riverbank'),
       ('Any day after the plan', 'The assassination at Ashu\'s sickroom → the city locks down → the Watchtower finale that night.', 'Magistracy quarter / Finale'),
@@ -388,7 +388,7 @@ def npcs_html():
 def rules_cards_html():
     s = H('Set-piece rules', '规则卡', 1)
     s += P('The book shows these two cards to the players before the scene.')
-    s += H('The rescue of Niu the Archer (15 January, noon)', '劫法场')
+    s += H('The rescue of General Niu (15 January, noon)', '劫法场')
     s += CARD(UL([
       'You command every friendly wanderer except Nameless Fang; the GM rolls for them.',
       'Your side acts, then the soldiers. No DEX order. Soldiers go for whoever is nearest the carts.',
@@ -511,7 +511,7 @@ DOSSIER = [
     ('Magistracy', 'His mansion: bribe, blackmail or frighten him for boats, gunpowder, gaol access', 'p.31–32 · Magistracy quarter'),
     ('Gaol', 'His word gets the party in', 'p.35 · Magistracy quarter')],
    'The boats thread\'s easy answer and the scenario\'s portrait of the turncoat official: a boat for the finale without fighting for it.'),
-  ('niu.webp', 'Niu the Archer 牛富', 'Garrison commander, in the gaol',
+  ('niu.webp', 'General Niu 牛富', 'Garrison commander, in the gaol',
    'Forties, dark, lean as a bowstring, eyes like torches; now wasted, hand-tendons cut.',
    'Fan\'s military deputy; shot Ashu\'s nephew dead before the siege. Knew Fan meant to "invite a god" but not what; refused to surrender; gaoled, to be beheaded at noon on the 15th. Gave the God-Arm Bow (400 paces, the only bow that reaches mid-river) to the watchman boy.',
    [('Session 0', 'Meets HO2 at the North Gate; promises help', 'p.12–13 · Session 0 runbook'),
