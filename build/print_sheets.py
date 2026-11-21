@@ -13,12 +13,12 @@ PCS = [a for a in ADV['actors'] if a['type'] == 'character']
 CHAR = [('str', 'STR 力量'), ('con', 'CON 体质'), ('siz', 'SIZ 体型'), ('dex', 'DEX 敏捷'),
         ('app', 'APP 外貌'), ('int', 'INT 智力'), ('pow', 'POW 意志'), ('edu', 'EDU 教育')]
 ZH = {'Accounting': '会计', 'Acupoint Strike 点穴': '', 'Appraise': '估价', 'Charm': '魅惑', 'Climb': '攀爬（轻功）',
-      'Credit Rating': '信誉', 'Disguise': '乔装', 'Dodge': '闪避', 'Fast Talk': '话术', 'Fighting (Brawl)': '格斗（拳脚）',
+      'Credit Rating': '信誉', 'Disguise': '乔装', 'Dodge': '闪避', 'Fast Talk': '话术', 'Fighting (Brawl)': '斗殴',
       'Fighting (Sword)': '剑术', 'Firearms (Bow)': '弓', 'First Aid': '急救', 'History': '历史', 'Intimidate': '恐吓',
       'Jump': '跳跃（轻功）', 'Language (Own)': '母语', 'Law': '法律', 'Library Use': '图书馆使用', 'Listen': '聆听',
       'Medicine': '医学', 'Natural World': '博物', 'Navigate': '导航', 'Persuade': '说服', 'Psychology': '心理学',
       'Ride': '骑术', 'Science (Pharmacy)': '药学', 'Spot Hidden': '侦查', 'Stealth': '潜行', 'Swim': '游泳',
-      'Throw': '投掷', 'Track': '追踪', 'Art/Craft (Calligraphy)': '书法'}
+      'Throw': '投掷', 'Track': '追踪', 'Art/Craft (Calligraphy)': '书法', 'Art/Craft (Acting)': '表演', 'Locksmith': '锁匠', 'Sleight of Hand': '妙手'}
 SKILLKEY = {'i.skill.fighting-sword': 'Fighting (Sword)', 'i.skill.fighting-brawl': 'Fighting (Brawl)',
             'i.skill.throw': 'Throw', 'i.skill.firearms-bow': 'Firearms (Bow)'}
 
@@ -101,9 +101,9 @@ def actor_page(a):
         dmg = rn['damage'] + (' + DB' if w['system']['properties'].get('addb') else (' + ½DB' if w['system']['properties'].get('ahdb') else ''))
         rng = f"{rn.get('value')} m" if rn.get('value') else '—'
         H += f'<tr><td>{w["name"]}</td><td>{sk} {skv}</td><td>{dmg}</td><td>{rng}</td></tr>'
-    H += '</table></div><div><h3>随身 Gear</h3><ul class="gear">'
-    for g in gear: H += f'<li><b>{g["name"]}</b> {strip(g["system"].get("description", {}).get("value"))}</li>'
-    H += '<li>&nbsp;</li><li>&nbsp;</li></ul></div></div>'
+    H += '</table><p class="money"><b>钱 Money:</b> no coins. Small things: ' + ('you simply pay.' if ho != 'HO1' else 'roll Credit Rating 信誉.') + ' Big things: roll Credit Rating 信誉' + (', or draw on your Pharmacy 药铺.' if ho == 'HO2' else '.') + '</p></div><div><h3>随身 Gear <small>— fail Swim in the river: keep 3, weapons count</small></h3><ul class="gear">'
+    for g in gear: H += f'<li><b>{g["name"]}</b> {strip(g["system"].get("description", {}).get("value")).split("。")[-1].strip()}</li>'
+    H += '</ul></div></div>'
     prompts = {'HO1': ['师门与剑法 — what style did the Hermit of Mount Crag 山阳道人 teach you?', '为何刺杀失败 — why did your strike at Marshal Ashu 阿术 fail? (fear, pity, bad luck…)'],
                'HO2': ['药行名号 — name of your pharmacy house:', '经营理念 — its ethos (medicine before money? officials in your pocket?):'],
                'HO3': ['未愈的伤 — what is your wound and how did you get it?', '出身 — which great family of the capital 临安 are you from?']}[ho]
@@ -139,23 +139,23 @@ header img { width: 96px; height: 96px; object-fit: cover; border: 1px solid #44
 .brand small { font-size: 7.5pt; font-weight: normal; color: #555; }
 .row { display: flex; gap: 10px; margin-top: 6px; }
 table { border-collapse: collapse; }
-.chars { flex: 0 0 48%; } .chars th, .chars td { border: 1px solid #888; padding: 2px 5px; text-align: center; }
+.chars { flex: 0 0 48%; } .chars th, .chars td { border: 1px solid #888; padding: 0 5px; text-align: center; line-height: 1.25; }
 .chars td:first-child, .chars th:first-child { text-align: left; }
-.chars td.v { font-weight: bold; font-size: 11pt; }
+.chars td.v { font-weight: bold; font-size: 10pt; }
 .derived { flex: 1; } .derived th { text-align: left; padding: 1px 6px 1px 0; white-space: nowrap; vertical-align: top; font-size: 8.5pt; }
 .derived td { padding: 1px 0; vertical-align: top; }
 .big { font-size: 13pt; font-weight: bold; } .track { letter-spacing: 1px; font-size: 10pt; line-height: 1; } small { color: #555; font-size: 7.5pt; }
-h3 { margin: 7px 0 3px; font-size: 10pt; border-bottom: 1px solid #000; } h3 small { font-weight: normal; }
+h3 { margin: 5px 0 2px; font-size: 10pt; border-bottom: 1px solid #000; } h3 small { font-weight: normal; }
 .skills { column-count: 3; column-gap: 12px; }
-.sk { display: flex; gap: 4px; break-inside: avoid; border-bottom: 1px dotted #bbb; padding: 1px 0; align-items: baseline; }
-.sk .nm { flex: 1; font-size: 8.5pt; } .sk .zh { color: #555; font-size: 7.5pt; } .sk .val { font-weight: bold; width: 22px; text-align: right; }
+.sk { display: flex; gap: 4px; break-inside: avoid; border-bottom: 1px dotted #bbb; padding: 0; align-items: baseline; line-height: 1.3; }
+.sk .nm { flex: 1; font-size: 8.5pt; white-space: nowrap; overflow: hidden; } .sk .zh { color: #555; font-size: 7.5pt; } .sk .val { font-weight: bold; width: 22px; text-align: right; }
 .sk .hf { width: 18px; text-align: right; color: #666; font-size: 8pt; }
 .row2 { display: flex; gap: 12px; } .row2 > div { flex: 1; }
-.weap { width: 100%; } .weap th, .weap td { border: 1px solid #888; padding: 2px 4px; text-align: left; font-size: 8.5pt; }
-.gear { margin: 0; padding-left: 16px; } .gear li { border-bottom: 1px dotted #bbb; padding: 2px 0; }
+.weap { width: 100%; } .weap th, .weap td { border: 1px solid #888; padding: 1px 4px; text-align: left; font-size: 8.5pt; }
+.money { margin: 3px 0 0; font-size: 8pt; } .gear { margin: 0; padding-left: 16px; } .gear li { border-bottom: 1px dotted #bbb; padding: 1px 0; font-size: 8pt; }
 .desc { margin: 2px 0 4px; } .prompt { margin: 5px 0 0; font-size: 8.5pt; color: #333; }
-.rule { border-bottom: 1px solid #999; height: 14pt; }
-footer { margin-top: 8px; border-top: 1px solid #000; padding-top: 4px; font-size: 8pt; color: #333; }
+.rule { border-bottom: 1px solid #999; height: 11pt; }
+footer { margin-top: 5px; border-top: 1px solid #000; padding-top: 2px; font-size: 7.5pt; color: #333; }
 .secret { font-size: 10.5pt; line-height: 1.45; }
 .secret .warn { border: 2px dashed #000; padding: 6px; text-align: center; font-weight: bold; margin-bottom: 10px; }
 .secret h1 { font-size: 16pt; margin: 0 0 6px; } .secret h1 small { font-size: 11pt; color: #444; }

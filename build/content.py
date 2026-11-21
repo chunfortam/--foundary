@@ -304,6 +304,13 @@ def cheat_html():
       ("<b>行动轮</b>：正式开始后每天早、中、晚各一轮自由行动；吃饭、去酒肆、找秋筠帮忙不消耗行动轮。", "<b>Action rounds</b>: once the sandbox starts, three free-action rounds a day (morning, noon, evening). Meals, the Wineshop and Autumn's help do not cost a round."),
       ("<b>理智</b>：目睹怪异时掷理智；格式“0/1”表示通过失0、失败失1。", "<b>Sanity</b>: roll SAN when you see something wrong; \"0/1\" means lose 0 on a pass, 1 on a fail."),
     ])
+    s += h("钱与随身物品（本团房规）", "Money and belongings (house rule)")
+    s += ul([
+      ("<b>不记铜钱，用信誉。</b>原模组没有货币与物价。", "<b>We don't count coins; we use Credit Rating 信誉.</b> The scenario has no prices or currency."),
+      ("<b>小东西</b>（一顿饭、一把锈剑、打点小吏）：HO2、HO3直接买得起；HO1掷信誉。", "<b>Small things</b> (a meal, a rusty sword, a small bribe): HO2 and HO3 simply pay. HO1 rolls Credit Rating."),
+      ("<b>大东西</b>（买通大户人家、雇人）：掷信誉，或由HO2去药铺取钱。", "<b>Big things</b> (bribing a great household, hiring help): a Credit Rating roll, or HO2 fetches money from the Pharmacy 药铺."),
+      ("<b>随身物品</b>：角色卡“随身”一栏与武器就是你的全部家当。若在江上落水且游泳失败，你只能留下自己指定的<b>三件</b>；钱袋不在其中就沉入江底。", "<b>Belongings</b>: the Gear list and the weapons on your sheet are everything you own. If you go into the river and fail the Swim roll, you keep only the <b>three</b> you name. A purse that is not one of them is at the bottom of the river."),
+    ])
     s += h("时间与距离", "Time and distance")
     s += ul([
       ("一个时辰 = 两小时。子时 = 深夜十一点至一点。", "One shichen = two hours. The Hour of the Rat = 11 pm to 1 am."),
@@ -468,7 +475,7 @@ def runbook_html():
     s += '<blockquote>' + bi("那艘渔船力胜不过二十石，被那样一条巨大触足横穿而过，几乎生生折断。触足末端卷曲，肥大柔软，表皮却极其坚硬，倒刺遍布，反射着凛凛寒光。浓雾中灯火照得人影绰绰，有人拿出武器，有人落水。那条触足只是沉默地将船舱挤压成碎片，船上的人没来得及求救就彻底没了声。",
             "A boat that could carry twenty bushels, run clean through and nearly snapped by a tentacle-like spine. Its tip curls, fat and soft, but the hide is hard as iron and bristling with barbs that catch the light. In the lamp-glow figures lurch, some drawing weapons, some going into the water. The spine simply, silently crushes the hull to splinters. Nobody has time to call for help before the sound stops.") + '</blockquote>'
     s += bi("岸上蒙古士兵发现动静，弓箭手射来，小船终将中箭沉没。<b>▶ 播放音效「箭 Arrows」</b>。<b>闪避</b>决定是否中箭（1D3）；<b>游泳</b>决定沉船后剩下多少随身物品（失败只剩调查员指定的三件）；<b>体质</b>决定是否被冰冷江水伤害（失败扣1D3）。",
-            "The watch on the bank hears. Archers shoot; your boat will sink. <b>▶ Play the 箭 Arrows sound effect.</b> <b>Dodge</b> or take an arrow (1D3). <b>Swim</b>: on a failure you keep only three named possessions. <b>CON</b>: on a failure the freezing water costs 1D3 HP.")
+            "The watch on the bank hears. Archers shoot; your boat will sink. <b>▶ Play the 箭 Arrows sound effect.</b> <b>Dodge</b> or take an arrow (1D3). <b>Swim</b>: on a failure you keep only three named possessions (weapons and everything under Gear on the sheet count; a purse that is not named is lost, see Money in the sandbox page). <b>CON</b>: on a failure the freezing water costs 1D3 HP.")
     s += bi("船夫丢下你们独自逃走。岸边两男一女游来救人。时间紧迫，他们暂不报名号，只说是城中游侠义勇，受越南柯越大夫所托守在岸边相助。随后沿小路带你们到前街一处小宅院：前半是店铺，已打烊。",
             "The boatman abandons you. From the bank two men and a woman swim out and drag you ashore. No time for names: they are townsmen, knights-errant, sent by Doctor Yue to wait for you. They lead you by back lanes to a small house on Front Street, shop in front, closed for the night.")
     s += bi("长相相似的两名男子是同卵兄弟姜楼与姜阁；高大健硕的女子曲流是店主。姜楼跳脱，姜阁沉稳，曲流严肃而细致体贴。炉火生起后才是聊天的时候：",
