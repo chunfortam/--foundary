@@ -38,7 +38,7 @@ The adventure ships as plain `adventure.json` (no compendium database), so a pul
 - General Niu has no stats in the original; the sheet uses GM estimates.
 - Portraits and round tokens for all 16 actors are AI-generated (OpenAI gpt-image) in a Chinese ink-wash style.
 - Sound effects: playlist 音效 Sound effects — 斩 Slash (HO2 intro), 箭 Arrows (Night Crossing volley), 战 Battle (sword-on-sword loop for fights); mp3s from pixabay.com under the Pixabay Content License.
-- Music: a playlist of six Kevin MacLeod tracks linked to the scenes (Eastern Thought, Teller of the Tales, Asian Drums, Temple of the Manes, Lotus, Lightless Dawn). Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
+- Music: one Kevin MacLeod track per scene, 19 in the playlist (18 linked to the 20 scenes, plus Lightless Dawn as a spare for Gla'aki). Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/
 - Maps are AI-generated (OpenAI gpt-image) for this kit, 3072x2048, gridless art with the Foundry grid set per scene (128 px = 1.5 m; coffin shop 256 px). Nudge the grid in Scene Configuration if squares feel off.
 
 
