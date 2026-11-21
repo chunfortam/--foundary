@@ -296,18 +296,33 @@ SC = [
        '<p>越南柯（十二日晚）与刘卿堂（十三日晨）为隐藏标记，加时用。Doctor Yue (evening of the 12th) and Captain Liu (dawn of the 13th) are hidden tokens for the extended Day One.</p>'),
 ]
 # ---------------- music (Kevin MacLeod, incompetech.com, CC BY 4.0) ----------------
-TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', '庆功宴 Banquet'), ('Teller of the Tales', 'Teller_of_the_Tales.ogg', '北门 North Gate'), ('Asian Drums', 'Asian_Drums.ogg', '衙署 Magistracy raid'),
-          ('Temple of the Manes', 'Temple_of_the_Manes.ogg', '汉江夜渡 Night Crossing'), ('Lotus', 'Lotus.ogg', '棺材铺 Coffin Shop'), ('Lightless Dawn', 'Lightless_Dawn.ogg', '备用 · 格拉基 Alternate: Gla\'aki dread')]
-PL = {'_id': rid('playlist:session0'), 'name': '公若渡河 · Session 0 music', 'description': 'Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0', 'mode': 0, 'playing': False, 'fade': 2000, 'channel': 'music', 'sort': 0, 'seed': 0, 'flags': {}, 'folder': None,
-      'sounds': [{'_id': rid('sound:' + f), 'name': f'{t} — {use}', 'path': f'modules/{MOD}/assets/music/{f}', 'channel': 'music', 'playing': False, 'repeat': True, 'volume': 0.5, 'fade': 2000, 'sort': i, 'flags': {}, 'description': f'{t} Kevin MacLeod (incompetech.com) CC BY 4.0'} for i, (t, f, use) in enumerate(TRACKS)]}
-for sc, snd in zip(SC, PL['sounds'][:5]):
-    sc['playlist'] = PL['_id']; sc['playlistSound'] = snd['_id']
+# One track per scene: (title, file, scene number, what it is for). Lightless Dawn is a spare for any Gla'aki moment.
+TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·庆功宴 Title, idle screen, Banquet'),
+          ('Ishikari Lore', 'Ishikari_Lore.ogg', ('0c',), '汉江两岸 Regional map'),
+          ('Teller of the Tales', 'Teller_of_the_Tales.ogg', ('2',), '北门 North Gate'),
+          ('Asian Drums', 'Asian_Drums.ogg', ('3',), '衙署 Magistracy raid'),
+          ('Temple of the Manes', 'Temple_of_the_Manes.ogg', ('4',), '汉江夜渡 Night Crossing'),
+          ('Decline', 'Decline.ogg', ('5',), '棺材铺 Coffin Shop'),
+          ('Dark Times', 'Dark_Times.ogg', ('6',), '街口 Street Crossing, the Hermit\'s body'),
+          ('Finding Movement', 'Finding_Movement.ogg', ('7',), '樊城城图 Town map, action rounds'),
+          ('Guzheng City', 'Guzheng_City.ogg', ('8',), '茶楼 Teahouse'),
+          ('Shenyang', 'Shenyang.ogg', ('9',), '李家瓦子 Li Family Theatre'),
+          ('Unseen Horrors', 'Unseen_Horrors.ogg', ('10',), '寺庙 Temple at night'),
+          ('Ghost Story', 'Ghost_Story.ogg', ('11',), '某处民宅 The Undying family\'s house'),
+          ('Night Vigil', 'Night_Vigil.ogg', ('12',), '灵堂 Fan\'s mourning hall'),
+          ('Drums of the Deep', 'Drums_of_the_Deep.ogg', ('13',), '阿术病榻 Ashu\'s sickroom'),
+          ('Land of Phantoms', 'Land_of_Phantoms.ogg', ('14',), '监牢 Gaol'),
+          ('Mountain Emperor', 'Mountain_Emperor.ogg', ('15',), '东码头 Warship raid'),
+          ('Ripples', 'Ripples.ogg', ('16',), '解佩亭 Ruined Pavilion'),
+          ('Clash Defiant', 'Clash_Defiant.ogg', ('17',), '塔楼 Watchtower, the last night'),
+          ('Lightless Dawn', 'Lightless_Dawn.ogg', (), '备用 · 格拉基 Spare: Gla\'aki dread')]
+PL = {'_id': rid('playlist:session0'), 'name': '公若渡河 · Music', 'description': 'Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0', 'mode': 0, 'playing': False, 'fade': 2000, 'channel': 'music', 'sort': 0, 'seed': 0, 'flags': {}, 'folder': None,
+      'sounds': [{'_id': rid('sound:' + f), 'name': f'{t} — {use}', 'path': f'modules/{MOD}/assets/music/{f}', 'channel': 'music', 'playing': False, 'repeat': True, 'volume': 0.5, 'fade': 2000, 'sort': i, 'flags': {}, 'description': f'{t} Kevin MacLeod (incompetech.com) CC BY 4.0'} for i, (t, f, nums, use) in enumerate(TRACKS)]}
 # Extended session 0: the Street Crossing at noon on the 12th (1536x1024 map, 24x16 squares).
 STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp', 64,
                [T(A['pc1'], 6.4, 12.8), T(A['pc2'], 10.2, 12.4), T(A['pc3'], 14, 12.8)] +
                [T(A['soldier'], x, y, name=f'哨兵 Sentry {i+1}') for i, (x, y) in enumerate([(9.5, 6.3), (14.5, 6.3), (12, 2.3), (16.5, 11.5)])], 0.1,
                '<p>中央长枪上挑着山阳道人的遗体。The body on the spear in the centre is the Hermit of Mount Crag; crowd fills the square at noon.</p>', w=1536, h=1024)
-STREET['playlist'] = PL['_id']; STREET['playlistSound'] = PL['sounds'][1]['_id']
 SC.append(STREET)
 # ---------------- Campaign scenes (Days 1–6): 1536x1024 maps, 24x16 squares ----------------
 TOWN = scene('7 · 樊城城图 Fencewall: the town (action rounds)', 'town.webp', 64, [T(A['pc1'], 20.2, 9.2), T(A['pc2'], 20.9, 9.2), T(A['pc3'], 21.6, 9.2)], 0.0,
@@ -359,21 +374,25 @@ TOWER = scene('17 · 塔楼 The Watchtower (the last night)', 'tower.webp', 64,
               [T(A['soldier'], x, y, name=f'塔楼守兵 Tower guard {i+1}') for i, (x, y) in enumerate([(10.4, 12.6), (13.4, 12.6)])], 0.8,
               '<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla\'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla\'aki.</p>', w=1536, h=1024, weather='fog')
 for sc_ in (PAVILION, TOWER): SC.append(sc_)
-# Title page for the table TV: the scenario's cover re-lettered in English, Banquet music.
+# Title page for the table TV: the scenario's cover re-lettered in English.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
-              notes='<p>开场画面 / Title page. Activate while players sit down; the Banquet track plays.</p>')
-TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0; TITLE['playlist'] = PL['_id']; TITLE['playlistSound'] = PL['sounds'][0]['_id']
+              notes='<p>开场画面 / Title page. Activate while players sit down; the title track (Eastern Thought) plays.</p>')
+TITLE['background']['src'] = TITLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/cover.webp'; TITLE['grid']['alpha'] = 0; TITLE['padding'] = 0
 SC.insert(0, TITLE)
-# Idle screen: looping ink-wash pagoda video (assets/intro.webm, our own render) for breaks and waiting, Banquet music.
+# Idle screen: looping ink-wash pagoda video (assets/intro.webm, our own render) for breaks and waiting.
 IDLE = scene('0a · 云中塔 Pagoda in the Clouds (idle screen)', '../cover.webp', 128, [], w=1536, h=1024,
-             notes='<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the Banquet track plays.</p>')
-IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; IDLE['grid']['alpha'] = 0; IDLE['padding'] = 0; IDLE['playlist'] = PL['_id']; IDLE['playlistSound'] = PL['sounds'][0]['_id']
+             notes='<p>待机画面 / Idle screen: looping video, no text. Use for breaks or while waiting; the title track (Eastern Thought) plays.</p>')
+IDLE['background']['src'] = IDLE['levels'][0]['background']['src'] = f'modules/{MOD}/assets/intro.webm'; IDLE['grid']['alpha'] = 0; IDLE['padding'] = 0
 SC.insert(1, IDLE)
 # Regional map: the Han River with Fencewall (north bank, Mongol-held) and Southbright (south bank, Song), bilingual labels (assets/map_twin_cities.webp).
 TWIN = scene('0c · 汉江两岸 The Han and the twin cities (map)', '../cover.webp', 128, [], w=1536, h=1024,
-             notes='<p>地图 / Regional map: Fencewall 樊城 on the north bank, Southbright 襄阳 on the south, the cut pontoon bridge, Ashu\'s camps, the jetty. Show it while reading the Primer or whenever players ask where they are; the Banquet track plays.</p>')
-TWIN['background']['src'] = TWIN['levels'][0]['background']['src'] = f'modules/{MOD}/assets/map_twin_cities.webp'; TWIN['grid']['alpha'] = 0; TWIN['padding'] = 0; TWIN['playlist'] = PL['_id']; TWIN['playlistSound'] = PL['sounds'][0]['_id']
+             notes='<p>地图 / Regional map: Fencewall 樊城 on the north bank, Southbright 襄阳 on the south, the cut pontoon bridge, Ashu\'s camps, the jetty. Show it while reading the Primer or whenever players ask where they are; the title track (Eastern Thought) plays.</p>')
+TWIN['background']['src'] = TWIN['levels'][0]['background']['src'] = f'modules/{MOD}/assets/map_twin_cities.webp'; TWIN['grid']['alpha'] = 0; TWIN['padding'] = 0
 SC.insert(2, TWIN)
+# Music: every scene plays its own track when activated (scene number -> track, from TRACKS).
+SOUND = {n: PL['sounds'][i]['_id'] for i, (t, f, nums, use) in enumerate(TRACKS) for n in nums}
+for sc_ in SC:
+    sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[sc_['name'].split(' · ')[0]]
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
 def portrait_macro(key, img, title):
     src = f'modules/{MOD}/assets/portraits/{img}'
@@ -402,7 +421,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.3', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.4', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
