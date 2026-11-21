@@ -4253,7 +4253,7 @@
    },
    "items": [
     {
-     "_id": "9Txpd3e66wjPrhst",
+     "_id": "9cmC11xMFY5BsiVf",
      "name": "Fighting (Brawl)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
@@ -4285,7 +4285,7 @@
      "effects": []
     },
     {
-     "_id": "l5H9VbcuE2TMZCBw",
+     "_id": "Y2a1tzOrQailWyQ4",
      "name": "Fighting (Axe)",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/fighting_axe.svg",
@@ -4317,7 +4317,7 @@
      "effects": []
     },
     {
-     "_id": "LLx6WRDBUH8W5dPT",
+     "_id": "ZNpNBYDDFJKvVufM",
      "name": "Dodge",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/dodge.svg",
@@ -4359,7 +4359,7 @@
      "effects": []
     },
     {
-     "_id": "NAk7ZpdPRFNHgAKz",
+     "_id": "BXvvUm5Z2OvQqUaM",
      "name": "Spot Hidden",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/spot_hidden.svg",
@@ -4390,7 +4390,7 @@
      "effects": []
     },
     {
-     "_id": "VMueZd8t5krAXrPP",
+     "_id": "o0DF6aaru16ZshGO",
      "name": "Library Use",
      "type": "skill",
      "img": "systems/CoC7/assets/icons/skills/library_use.svg",
@@ -4433,7 +4433,7 @@
      "effects": []
     },
     {
-     "_id": "SmLZ5s2RGnAsQ6Fx",
+     "_id": "qLhkFEh9iGCGxkSp",
      "name": "斧 Axe",
      "type": "weapon",
      "img": "icons/weapons/axes/axe-battle-black.webp",
@@ -13296,7 +13296,7 @@
      "flags": {}
     },
     {
-     "_id": "PHtxzOnILG5ui3x4",
+     "_id": "lD1v3Qh2qHWCcn3A",
      "name": "牛富 General Niu",
      "actorId": "3IbyPoTCGAi5gArl",
      "actorLink": true,

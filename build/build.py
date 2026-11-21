@@ -58,8 +58,11 @@ def item(name, desc=''):
     return {'_id': rid(), 'name': name, 'type': 'item', 'img': 'icons/svg/item-bag.svg', 'system': {'description': {'value': desc}}, 'flags': {}, 'effects': []}
 def chars(**k): return {c: {'value': v} for c, v in k.items()}
 def hpcalc(ch): return (ch['con'] + ch['siz']) // 10
+# Renamed documents keep the name their IDs were first derived from, so a rename updates the world documents in place
+# (actor, its embedded items, and its scene tokens) instead of orphaning saved references.
+IDNAME = {'牛富 General Niu': '牛富 Niu the Archer'}
 def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', disposition=0, extra=None, link=True, san=None, luck=50, armor=None, sanloss=None, occupation='', age='', idkey=None, tokname=None):
-    random.seed('actor:' + (idkey or name)); hp = hpcalc(ch); mp = ch['pow'] // 5
+    idkey = idkey or IDNAME.get(name, name); random.seed('actor:' + idkey); hp = hpcalc(ch); mp = ch['pow'] // 5
     sys = {'characteristics': chars(**ch), 'attribs': {'hp': {'value': hp, 'max': hp}, 'mp': {'value': mp, 'max': mp}, 'lck': {'value': luck}, 'san': {'value': san if san is not None else ch['pow'], 'max': 99, 'dailyLimit': 10}},
            'infos': {'occupation': occupation, 'age': age}, 'flags': {'locked': True}}
     if armor is not None: sys['attribs']['armor'] = {'value': armor}
@@ -71,7 +74,7 @@ def actor(name, atype, ch, skills, weapons, items, tok, bio_zh='', bio_en='', di
         if sanloss: sys['special'] = {'sanLoss': {'checkPassed': sanloss[0], 'checkFailled': sanloss[1]}, 'attacksPerRound': 1}
     if extra: sys.update(extra)
     its = skills + weapons + items
-    a = {'_id': rid('actor:' + (idkey or name)), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
+    a = {'_id': rid('actor:' + idkey), 'name': name, 'type': atype, 'img': portrait(tok), 'system': sys, 'items': its, 'effects': [], 'flags': {}, 'folder': None,
          'prototypeToken': {'name': tokname or name, 'actorLink': link, 'disposition': disposition, 'texture': {'src': tok}, 'width': 1, 'height': 1, 'sight': {'enabled': atype == 'character'}, 'displayName': 30, 'displayBars': 40 if atype != 'character' else 50, 'bar1': {'attribute': 'attribs.hp'}}}
     return a
 ACT = {}
@@ -130,7 +133,6 @@ npc('duan', '段游衍 Duan Driftwood', dict(str=65, con=65, siz=70, dex=60, app
 npc('niu', '牛富 General Niu', dict(str=70, con=70, siz=65, dex=75, app=50, int=60, pow=65, edu=50), [('i.skill.firearms-bow', 85), ('i.skill.fighting-sword', 65), ('i.skill.dodge', 55), ('i.skill.spot-hidden', 60), ('i.skill.intimidate', 60)],
     [weapon('神臂弓 God-Arm Bow', '1D8+2', 'i.skill.firearms-bow', rngd=True, rng=300, ahdb=True, img='icons/weapons/bows/longbow-recurve-leather-brown.webp'), weapon('刀 Sabre', '1D8', 'i.skill.fighting-sword', addb=True)], '牛', (60, 60, 60, 255),
     '<p>樊城钤辖，神射手。黝黑精瘦，目光如炬。原文未给数值，此处为主持人估值。城破后拒降，被挑断手筋，囚于监牢。</p>', '<p>Garrison officer and famous bowman. Dark, lean, eyes like torches. The original gives no stats; these are GM estimates. Refused to surrender; tendons cut; in the gaol. His God-Arm Bow (400 paces) is the only bow that reaches mid-river.</p>', disposition=1, link=True)
-ACT['niu']['_id'] = rid('actor:牛富 Niu the Archer')  # keep the actor ID from before the rename so re-import updates it in place
 npc('liu', '刘卿堂 Captain Liu', dict(str=70, con=70, siz=70, dex=70, app=65, int=60, pow=60, edu=70), [('i.skill.fighting-brawl', 75), ('i.skill.fighting-axe', 75), ('i.skill.dodge', 60), ('i.skill.spot-hidden', 55), ('i.skill.library-use', 50)],
     [weapon('斧 Axe', '1D8+2', 'i.skill.fighting-axe', addb=True, img='icons/weapons/axes/axe-battle-black.webp')], '刘', (70, 100, 120, 255),
     '<p>HO3的发小，将门之后。逃脱控制的不死者：无脉搏，毒病无效；不死仆从优先攻击他。</p>', '<p>HO3\'s childhood friend, a general\'s son. An undying man outside Gla\'aki\'s control: no pulse, immune to poison and disease; the Servants target him first. Does not remember the attack on his flotilla.</p>', disposition=1, link=True)
@@ -251,7 +253,7 @@ def scene(name, img, G, tokens, darkness=0.0, notes='', w=3072, h=2048, weather=
     # does not reassign the IDs of the others (saved combatants reference tokens by ID).
     seen = {}; toks = []
     for t in tokens:
-        tname = t[1].get('name') or t[0][0]['prototypeToken']['name']; n = seen[tname] = seen.get(tname, 0) + 1
+        tname = t[1].get('name') or t[0][0]['prototypeToken']['name']; tname = IDNAME.get(tname, tname); n = seen[tname] = seen.get(tname, 0) + 1
         toks.append(tok(*t[0], G, rid(f'token:{name}:{tname}#{n}'), **t[1]))
     return {'_id': rid('scene:' + name), 'name': name, 'folder': FOLD['f_scene']['_id'], 'background': {'src': f'modules/{MOD}/assets/maps/{img}'}, 'levels': [level(name, f'modules/{MOD}/assets/maps/{img}')], 'initialLevel': LEVEL, 'width': w, 'height': h, 'padding': 0.1, 'navigation': True, 'active': False,
             'grid': {'type': 1, 'size': G, 'style': 'solidLines', 'thickness': 1, 'color': '#000000', 'alpha': 0.08, 'distance': 1.5, 'units': 'm'},
