@@ -271,6 +271,14 @@ JR = [
  journal('主持人 · GM: Campaign (Days 1–6)', [('阅读顺序 Reading order & prep', CP.prep_html()), ('沙盒 How the sandbox runs', CP.sandbox_html()), ('前街 Front Street', CP.front_html()), ('后街 Back Street', CP.back_html()), ('街口 Street Crossing', CP.crossing_html()), ('寺庙 Temple', CP.temple_html()), ('衙署 Magistracy quarter', CP.magistracy_html()), ('汉江沿岸 Riverbank', CP.riverbank_html()), ('塔楼 Finale: the Watchtower', CP.finale_html()), ('可选与个人 Optional & personal events', CP.optional_html()), ('结局 Endings', CP.endings_html()), ('人物 Campaign NPCs', CP.npcs_html()), ('人物档案 NPC dossier', CP.dossier_html())], 0, FOLD['f_gm']['_id']),
  journal('主持人 · GM: Session 0 Runbook', [('流程 Runbook', C.runbook_html()), ('加时：第一日 Extended: Day One', C.extended_html()), ('人物速查 NPC reference', C.npc_ref_html()), ('人物 Who\'s who (GM)', C.cast_html(True)), ('故事全貌 The whole story & timeline', C.timeline_html()), ('伤势与治疗 Wounds & Healing', C.healing_html())], 0, FOLD['f_gm']['_id']),
 ]
+# One page per person, so a name anywhere in the GM journals can link straight to who they are.
+PEOPLE = journal('主持人 · GM: People 人物卡', [(row[1], CP.dossier_block(row)) for _, rows in CP.DOSSIER for row in rows], 0, FOLD['f_gm']['_id'])
+PEOPLE_KEY = {pg['_id']: CP.dossier_key(row[0]) for pg, row in zip(PEOPLE['pages'], [row for _, rows in CP.DOSSIER for row in rows])}
+PEOPLE_UUID = {k: f"JournalEntry.{PEOPLE['_id']}.JournalEntryPage.{pid}" for pid, k in PEOPLE_KEY.items()}
+JR.append(PEOPLE)
+for j_ in JR:
+    if j_['folder'] != FOLD['f_gm']['_id']: continue   # players cannot open the GM's People journal
+    for pg_ in j_['pages']: pg_['text']['content'] = CP.link_people(pg_['text']['content'], PEOPLE_UUID, skip=PEOPLE_KEY.get(pg_['_id']))
 # ---------------- scenes ----------------
 # AI-generated maps, 3072x2048. Grid size per scene so that one square ~ 1.5 m on that map.
 LEVEL = 'defaultLevel0000'  # Foundry 14 scene level; v12/13 strip the unknown fields and use `background` instead
@@ -465,9 +473,9 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.6', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.7', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
-open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:inherit;opacity:.85;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:inherit;opacity:.85}.journal-page-content table td{vertical-align:top;font-size:0.92em}\n')
+open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:inherit;opacity:.85;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:inherit;opacity:.85}.journal-page-content table td{vertical-align:top;font-size:0.92em}a.content-link.npc-link{background:none;border:none;border-bottom:1px dotted currentColor;border-radius:0;padding:0;color:inherit;white-space:normal}a.content-link.npc-link:hover{text-shadow:none;border-bottom-style:solid}\n')
 print('actors', len(ACT), 'journals', len(JR), 'scenes', len(SC), 'tokens', sum(len(s['tokens']) for s in SC))
