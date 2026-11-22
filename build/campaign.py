@@ -72,6 +72,16 @@ def sandbox_html():
       ('Any day after the plan', 'The assassination at Ashu\'s sickroom → the city locks down → the Watchtower finale that night.', 'Magistracy quarter / Finale'),
       ('18 Jan', 'Planned Mongol river assault on Southbright (never happens if Gla\'aki is still in the river).', '—'),
     ])
+    s += H('Money and belongings (house rule)', '钱与随身物品')
+    s += P('The book has no currency, prices or equipment lists; its only wealth number is <b>Credit Rating 信誉</b> (HO1 20, HO2 60, HO3 75). This is a house rule, not the book.')
+    s += UL([
+      '<b>Don\'t track coins.</b> Use Credit Rating.',
+      '<b>Small things</b> (food, a rusty sword from the weapons stall, a small bribe such as Prefect Xu\'s servant): free for HO2 and HO3; a Credit Rating roll for HO1.',
+      '<b>Big things</b> (buying Xu\'s household, calming the Mongol soldiers at the Teahouse with cash, hiring help): a Credit Rating roll, or send HO2 to the <b>Pharmacy 药铺</b>, where she may use the staff, the herbs and the money freely.',
+      '<b>After the boat sinks:</b> on a failed Swim roll a player keeps three named things. Weapons count, and so does everything under Gear on the sheet. A purse that was not named is in the river, and that investigator cannot pay for anything until the Pharmacy gives them money. That makes the Pharmacy worth a visit on the 12th.',
+      '<b>Money alone does not hire a boatman.</b> The book says so: "gold and goods may not move people now." Do not allow a Credit Rating roll for it.',
+      '<b>Seven Treasures 七宝行</b> sells information for a stone-gambling Luck roll, as in the book; no stake is needed.',
+    ])
     s += H('What the finale needs', '决战前置')
     s += UL([
       '<b>A boat and a boatman</b> who will row into the fog: Wang Wu\'s or the theatre\'s 乌篷船 boat; the fishermen (only if Ling Daiqiu 凌代秋 is cured) or the Jiang twins; or Prefect Xu\'s painted barges.',

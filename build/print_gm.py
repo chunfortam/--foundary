@@ -109,6 +109,8 @@ BODY = f'''
 <table class="agenda"><tr><td>Sabre / sword</td><td>1D8 + DB</td><td>Bow</td><td>1D6 (+½DB), 30 m</td><td>Arrow in the fog</td><td>1D3</td></tr>
 <tr><td>Fists</td><td>1D3 + DB</td><td>Throwing knife</td><td>1D4 + ½DB</td><td>Cold water</td><td>1D3 (CON fail)</td></tr>
 <tr><td>Stillwater 止水</td><td>1D8 + DB, wound never heals</td><td>Acupoint Strike 点穴</td><td>1D3; opposed vs CON: stun 1D3 rounds or ignore armour</td><td>Major Wound</td><td>≥ half max HP in one hit: CON or fall</td></tr></table>
+<h2>Money 钱 <small>house rule; the book has no currency or prices</small></h2>
+<table class="agenda"><tr><td>No coins: Credit Rating 信誉 (HO1 20, HO2 60, HO3 75)</td><td>Small things (a meal, a rusty sword, a small bribe): free for HO2 and HO3, HO1 rolls</td><td>Big things (a great household, hired help): Credit Rating roll, or HO2 draws on the Pharmacy 药铺</td><td>Purse lost in the river: no money until the Pharmacy</td></tr></table>
 <h2>Healing 治疗 <small>full page in the GM journal: 伤势与治疗 Wounds &amp; Healing</small></h2>
 <table class="agenda"><tr><td>First Aid 急救 (HO1 50, HO2 50)</td><td>once per injury, within ~1 h, 1 min: +1 HP; stabilises a dying character (no HP)</td><td>0 HP, no Major Wound</td><td>unconscious, wakes later</td></tr>
 <tr><td>Medicine 医学 (HO2 65 / 32 / 13)</td><td>once per injury, 1 h + kit: +1D3 HP; may follow First Aid on the same wound; also stops dying. Fumble: worse</td><td>0 HP + Major Wound</td><td>dying: dead end of next round unless First Aid; then CON each hour until Medicine</td></tr>
@@ -162,7 +164,7 @@ BODY = f'''
 <p><b>Boatman Wang 船夫王:</b> hemp, straw hat, one arm, filthy towel. Hates Mongols and court alike. Volunteers: his arm (army cart); Commander Fan ("would suck the pus from a soldier's wound; the court sent him children; he hanged himself"); the fog (the Lady of the Han pities the drowned); the assassin (the whole town praises the nameless wanderer — watch HO1's face).</p>
 <p><b>On the water:</b> dead slow, no lamp. A shape ten metres ahead: {R('Spot Hidden, penalty die')}. {R('Listen')}: splitting planks, screams. {R('Spot')}: the boat rocks, armed figures.</p>
 <p><b>The spine:</b> they light a lamp. A twenty-bushel boat run through by a tentacle-like spine, tip soft and curling, hide like iron, barbed; it crushes the hull to splinters in silence. <b>{R('SAN 0/1')}</b>.</p>
-<p><b>The bank hears.</b> Archers: {R('Dodge')} or an arrow 1D3. The boat sinks: {R('Swim')}, fail = keep only three named possessions. {R('CON')}, fail = 1D3 from the cold. Wang abandons them.</p>
+<p><b>The bank hears.</b> Archers: {R('Dodge')} or an arrow 1D3. The boat sinks: {R('Swim')}, fail = keep only three named possessions (weapons and Gear both count; an unnamed purse is lost). {R('CON')}, fail = 1D3 from the cold. Wang abandons them.</p>
 <p><b>Rescue:</b> two men and a woman swim out and drag them ashore; back lanes to a shop on Front Street. → Coffin Shop.</p>
 
 <h2>5 · Coffin Shop 棺材铺 — all <small>scene: Winding Stream's Coffin Shop</small></h2>

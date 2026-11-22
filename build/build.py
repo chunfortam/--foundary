@@ -117,6 +117,39 @@ w3 = [weapon('弓 Bow', '1D6', 'i.skill.firearms-bow', rngd=True, rng=30, ahdb=T
       weapon('拳脚 Fists', '1D3', 'i.skill.fighting-brawl', addb=True, img='systems/CoC7/assets/icons/skills/fighting_brawl.svg')]
 ACT['pc3'] = actor('谢云骧 Xie Cloudmane (HO3 The Commissioner)', 'character', ch3, sk3, w3, [item('宣抚使印绶 Commissioner\'s seal'), item('未愈的伤 An unhealed wound', '突围时所受，自行拟定。From the breakout; you decide what it is.')], t3,
     bio_zh='<p>'+C.PC_PUBLIC[3]['zh']+'</p>', bio_en='<p>'+C.PC_PUBLIC[3]['en']+'</p>', disposition=1, luck=55, occupation='宣抚使 Commissioner', age='22', idkey='HO3 命官 · The Commissioner (谢云骧 Xie Cloudmane)', tokname='谢云骧 Xie Cloudmane')
+# Every investigator's sheet lists the same skills: whatever one of them has, plus the ones the book rolls that none of them
+# trained (Sleight of Hand, Locksmith, Acting), at the starting value. Art/Craft (Calligraphy) stays HO3's own specialism.
+# Period belongings give the "keep three named possessions" choice on the night crossing something to bite on.
+# Both are added from their own seeded stream, with the main stream restored afterwards, so no existing ID changes.
+GEAR = {'pc1': [('钱袋 Purse', '一串铜钱，几块碎银。A string of copper cash and a few bits of broken silver.'),
+                ('火折子 Fire-striker', '火镰、火石、火绒。Flint, steel and tinder in an oiled pouch.'),
+                ('绳钩 Rope and grapple', '三丈长，翻墙上房用。Ten metres of rope with an iron hook, for walls and roofs.'),
+                ('夜行衣 Night clothes', '一身黑衣，蒙面巾。Dark clothes and a face-cloth.'),
+                ('师父的酒葫芦 The master\'s wine gourd', '下山时师父塞给你的。He pushed it into your hands when you left the mountain.')],
+        'pc2': [('钱袋 Purse of silver', '银锭、碎银，还有一叠会子。Silver ingots, loose silver and a fold of paper notes 会子.'),
+                ('路引 Travel pass', '临安府签发，写明药行少东家北上办货。Issued in Lin\'an 临安: the pharmacy heir, travelling north to buy stock.'),
+                ('火折子 Fire-striker', '火镰、火石、火绒。Flint, steel and tinder in an oiled pouch.'),
+                ('账簿 Account book', '樊城分号的往来账。The Fencewall branch\'s accounts, in your father\'s hand.'),
+                ('父亲的玉扳指 Father\'s jade thumb ring', '从他手上取下的。You took it from his hand.')],
+        'pc3': [('钱袋 Purse of silver', '银锭与碎银。Silver ingots and loose silver.'),
+                ('告身 Letter of appointment', '朝廷任命你为宣抚使的文书。The court\'s commission naming you Commissioner.'),
+                ('火折子 Fire-striker', '火镰、火石、火绒。Flint, steel and tinder in an oiled pouch.'),
+                ('箭囊 Quiver', '十二支箭。Twelve arrows.'),
+                ('母亲的平安符 Mother\'s charm', '离家时母亲缝在你衣襟里的。She sewed it into your coat the day you left.')]}
+PACK = '干粮、水囊、铺盖、磨刀石。Dry rations, a water skin, a bedroll and a whetstone.'
+_cid = lambda it: it.get('flags', {}).get('CoC7', {}).get('cocidFlag', {}).get('id')
+ROWS = sorted({_cid(it) for k in ('pc1', 'pc2', 'pc3') for it in ACT[k]['items'] if it['type'] == 'skill' and _cid(it)} - {'i.skill.art-craft-any'}
+              | {'i.skill.sleight-of-hand', 'i.skill.locksmith', 'i.skill.art-craft-acting'})
+_state = random.getstate()
+for k, ch_ in (('pc1', ch1), ('pc2', ch2), ('pc3', ch3)):
+    random.seed('sheet-rows:' + k)
+    have = {_cid(it) for it in ACT[k]['items']}
+    ACT[k]['items'] += [skill(c, 0, ch_) for c in ROWS if c not in have] + [item(n, d) for n, d in GEAR[k]]
+    for it in ACT[k]['items']:
+        if it['name'] == '行囊 Pack': it['system']['description']['value'] = PACK
+        if it['name'] == '药箱 Medicine chest': it['system']['description']['value'] = '药材、膏药、绷带、银针。Herbs, plasters, bandages and silver needles.'
+        if it['name'] == '宣抚使印绶 Commissioner\'s seal': it['system']['description']['value'] = '朝廷亲授。宋人见印如见官。The court\'s own seal: to any Song subject it is your rank.'
+random.setstate(_state)
 # ---------------- NPCs ----------------
 def npc(key, name, ch, sk, wp, ch_tok, color, notes_zh, notes_en, armor=None, disposition=-1, atype='npc', sanloss=None, link=False, hp=None):
     tok = token_img(key, ch_tok, color)
@@ -421,7 +454,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.4', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.5', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)

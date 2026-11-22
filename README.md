@@ -34,6 +34,7 @@ The adventure ships as plain `adventure.json` (no compendium database), so a pul
 - Printables: `print/character-sheets.pdf` (one page per pregen + one secret handout per player) and `print/gm-pack.pdf` (GM checklist, agenda, scene beats with every roll, NPC card), both A4 and generated from the same data.
 
 ## Known gaps 已知缺口
+- Money and gear (house rule; the book has no currency, prices or equipment lists): Credit Rating instead of coins, and period belongings on each pregen so the "keep three named possessions" choice on a failed Swim roll matters. The rule is in the player Rules Cheat Sheet, the GM sandbox page and the GM pack. All three sheets list the same skills, untrained ones at their starting value.
 - The scenario's 点穴 rules attachment is not in the published PDF; the cheat sheet contains a house rule to use until you get the attachment from the author's QQ group (1095875707).
 - General Niu has no stats in the original; the sheet uses GM estimates.
 - Portraits and round tokens for all 16 actors are AI-generated (OpenAI gpt-image) in a Chinese ink-wash style.
