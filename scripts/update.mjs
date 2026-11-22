@@ -24,11 +24,13 @@ async function reimport() {
 // Open the GM journal page that runs the scene on screen, scrolled to its heading.
 async function sceneJournal(scene = canvas.scene) {
   const f = scene?.flags?.[MOD];
-  const entry = game.journal.get(f?.journal ?? scene?.journal?.id ?? scene?.journal);
+  // The scene's own journal link (Scene config → Journal Notes) decides the page, so a link the GM changed is honoured;
+  // the module flag only adds the heading, and only while the link still points at the page the heading is on.
+  const entry = scene?.journal ?? game.journal.get(f?.journal);
   if (!entry) return ui.notifications.warn("公若渡河: this scene has no journal page linked.");
   if (!entry.testUserPermission(game.user, "OBSERVER")) return;
-  const page = entry.pages.get(f?.page);
-  const anchor = f?.heading ? Object.values(page?.toc ?? {}).find(h => h.text.includes(f.heading))?.slug : undefined;
+  const page = entry.pages.get(scene.journal ? scene.journalEntryPage : f?.page);
+  const anchor = f?.heading && page?.id === f.page ? Object.values(page.toc ?? {}).find(h => h.text.includes(f.heading))?.slug : undefined;
   return entry.sheet.render(true, { pageId: page?.id, anchor });
 }
 
