@@ -764,20 +764,67 @@ PLAIN = {
             'To make more servants. It calls sleeping people to the water and stabs them with a spine.',
             'While it lives, nobody can cross, not even the Mongols. If the players kill it, the Mongols can cross too. That choice is the heart of the ending. It is killed on the last night: HO1 lights it up from a boat, HO3 shoots it from the tower, HO2 guards the tower.'),
 }
-def dossier_html():
+def dossier_key(img): return img.replace('.webp', '') or 'fan'
+def dossier_block(row):
     from npc_zh import ZH
+    img, name, role, look, back, events, contrib = row
+    key = dossier_key(img)
+    who, wants, use = PLAIN[key]
+    pic = f'<img src="{P_}{img}" width="64" height="64" class="cast-pic">' if img else ''
+    s = f'<div class="dossier"><table class="cast"><tr><td class="cast-pic-cell">{pic}</td><td><b>{name}</b><br><small>{role}</small></td></tr></table>'
+    s += f'<p><b>Who.</b> {who}</p><p><b>Wants.</b> {wants}</p><p><b>At the table.</b> {use}</p>'
+    s += '<table><tr><th>When</th><th>Scene</th><th>Book · journal</th></tr>' + ''.join(f'<tr><td>{w}</td><td>{e}</td><td>{pg}</td></tr>' for w, e, pg in events) + '</table>'
+    if ZH.get(key): s += f'<p class="zh-orig"><b>原文</b> {ZH[key]}</p>'
+    return s + '</div>'
+def dossier_html():
     s = H('NPC dossier', '人物档案', 1)
     s += P('One block per character, in plain words: who they are, what they want, how to use them. Then every scene they appear in (book page, and which page of this journal to open). The original Chinese from the scenario is quoted underneath.')
     for group, rows in DOSSIER:
-        s += f'<h2>{group}</h2>'
-        for img, name, role, look, back, events, contrib in rows:
-            key = img.replace('.webp', '') or 'fan'
-            who, wants, use = PLAIN[key]
-            pic = f'<img src="{P_}{img}" width="64" height="64" class="cast-pic">' if img else ''
-            s += f'<div class="dossier"><table class="cast"><tr><td class="cast-pic-cell">{pic}</td><td><b>{name}</b><br><small>{role}</small></td></tr></table>'
-            s += f'<p><b>Who.</b> {who}</p><p><b>Wants.</b> {wants}</p><p><b>At the table.</b> {use}</p>'
-            s += '<table><tr><th>When</th><th>Scene</th><th>Book · journal</th></tr>' + ''.join(f'<tr><td>{w}</td><td>{e}</td><td>{pg}</td></tr>' for w, e, pg in events) + '</table>'
-            if ZH.get(key): s += f'<p class="zh-orig"><b>原文</b> {ZH[key]}</p>'
-            s += '</div>'
+        s += f'<h2>{group}</h2>' + ''.join(dossier_block(r) for r in rows)
     return s
+# Names that turn into a link to that person's page in the "People" journal. Only unambiguous forms: a bare "Fan", "Wang",
+# "Ling" or "Song" is left alone because it could be two people (or the dynasty).
+ALIASES = {
+ 'duan': ['Duan Driftwood', '段游衍', 'Duan'], 'yue': ['Doctor Yue', 'Yue Nanke', '越南柯', 'Hollow Physician', 'Yue'], 'liu': ['Captain Liu', 'Liu Qingtang', '刘卿堂', 'Liu'],
+ 'ashu': ['Marshal Ashu', '兀良哈·阿术', '阿术', 'Ashu'], 'toghan': ['General Toghan', '兀良哈·脱欢', '脱欢', 'Toghan'], 'fan': ['Commander Fan', '范天顺'],
+ 'fan_yulou': ['Magistrate Fan', '范玉楼', 'Fan Yulou'], 'xu': ['Prefect Xu', '许德显', 'Xu'], 'niu': ['General Niu', '牛富', 'Niu'], 'yuying': ['Fan Yuying', '范玉莹', 'Yuying'],
+ 'hermit': ['The Hermit of Mount Crag', 'the Hermit of Mount Crag', 'Hermit of Mount Crag', '山阳道人', 'Chen Yangshan', '陈阳山', 'the Hermit', 'The Hermit'],
+ 'scholar': ['Zhou Wentong', '周文通', 'Kong Liyue', '孔礼岳', '儒生'], 'qu': ['Winding Stream', '曲流'], 'jiang_tower': ['the Jiang twins', 'The Jiang twins', 'Jiang twins', '姜楼', '姜阁'],
+ 'boatman': ['Boatman Wang', '船夫王'], 'du': ['Du Guanshan', '杜观山'], 'fang': ['Nameless Fang', '方未名', 'Fang'], 'ling_xuchun': ['Ling Xuchun', '凌序春', 'Xuchun'],
+ 'ling_daiqiu': ['Ling Daiqiu', '凌代秋', 'Daiqiu'], 'wangwu': ['Wang Wu', '王五条'], 'song': ['Song Zeyi', '宋择一', 'tea master Song', 'Tea master Song'], 'autumn': ['Autumn', '秋筠'],
+ 'chen': ['Chen Xunzhong', '陈寻忠'], 'monk': ['Huaide', '怀德'], 'bookseller': ['Wang Jianchuan', '王见川'], 'mistress_wang': ['Mistress Wang', '王氏'],
+ 'physician': ['Song physician', '宋人郎中'], 'turncoat': ['Song turncoats', '降卒'], 'servant': ['Undying Servants', 'the Undying', 'The Undying', '不死仆从'],
+ 'glaaki': ["Gla'aki", '格拉基', '何罗鱼', 'Many-Headed Fish'],
+}
+import re as _re, html as _html
+def _alias_re(names):
+    return '(?:' + '|'.join((r'(?<![A-Za-z])' + _re.escape(n) + r'(?![A-Za-z])') if n[0].isascii() else _re.escape(n) for n in sorted(names, key=len, reverse=True)) + ')'
+_ANY = _re.compile('|'.join(f'(?P<{k}>{_alias_re(v)})' for k, v in sorted(ALIASES.items(), key=lambda kv: -max(map(len, kv[1])))))
+_SAME = {k: _re.compile(r'[\s,，(（]{0,2}' + _alias_re(v) + r'[)）]?') for k, v in ALIASES.items()}
+def link_people(html, uuid, skip=None):
+    """Wrap every NPC name in running text in a link to that person's page. `uuid` maps dossier key -> page UUID.
+    Headings, existing links and the person's own page (`skip`) are left alone. "Wang Jianchuan 王见川" becomes one link."""
+    out, depth = [], 0
+    for part in _re.split(r'(<[^>]+>)', html):
+        if part.startswith('<'):
+            m = _re.match(r'<(/?)(h[1-6]|a|th)\b', part)
+            if m: depth += -1 if m.group(1) else 1
+            out.append(part); continue
+        if depth: out.append(part); continue
+        res, pos = [], 0
+        while True:
+            m = _ANY.search(part, pos)
+            if not m: break
+            key, end = m.lastgroup, m.end()
+            if key != 'wangwu' or not part.startswith(' Jianchuan', end):
+                m2 = _SAME[key].match(part, end)
+                if m2: end = m2.end()
+            if key == skip: res.append(part[pos:end])
+            else:
+                tip = _html.escape(_re.sub(r'<[^>]+>', '', PLAIN[key][0]), quote=True)
+                pid = uuid[key].split('.')[-1]
+                res.append(part[pos:m.start()] + f'<a class="content-link npc-link" draggable="true" data-link data-uuid="{uuid[key]}" data-id="{pid}" data-type="JournalEntryPage" data-tooltip="{tip}">{part[m.start():end]}</a>')
+            pos = end
+        res.append(part[pos:]); out.append(''.join(res))
+    return ''.join(out)
 P_ = f'modules/{__import__("content").MOD}/assets/portraits/'
