@@ -453,6 +453,8 @@ def portrait_macro(key, img, title):
     return {'_id': rid('macro:' + key), 'name': title, 'type': 'script', 'author': None, 'img': f'modules/{MOD}/assets/tokens/{img}', 'scope': 'global', 'command': cmd, 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
 PLACES_MACRO = {'_id': rid('macro:town-places'), 'name': '城图 Town map: places', 'type': 'script', 'author': None, 'img': 'icons/svg/village.svg', 'scope': 'global',
                 'command': 'game.gongruo.places();', 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
+NOTES_MACRO = {'_id': rid('macro:scene-journal'), 'name': "本场景笔记 Open this scene's journal", 'type': 'script', 'author': None, 'img': 'icons/svg/book.svg', 'scope': 'global',
+               'command': 'game.gongruo.sceneJournal();', 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
 MACROS = [portrait_macro('pc1', 'pc_wanderer.webp', '肖像 陆青崖 Lu Bluecliff · HO1 The Wanderer'),
           portrait_macro('pc2', 'pc_merchant.webp', '肖像 沈怀珠 Shen Pearl · HO2 The Merchant Heir'),
           portrait_macro('pc3', 'pc_official.webp', '肖像 谢云骧 Xie Cloudmane · HO3 The Commissioner')]
@@ -466,16 +468,36 @@ SFX = {'_id': rid('playlist:sfx'), 'name': '音效 Sound effects', 'description'
 # and give the navigation bar the same order.
 FOLD['f_scene']['sorting'] = 'm'
 for i_, sc_ in enumerate(SC): sc_['sort'] = sc_['navOrder'] = (i_ + 1) * 100000
+# Each scene points at the GM journal page (and heading) that runs it: scene number -> (journal, page, heading text).
+# `journal`/`journalEntryPage` feed Foundry's own "Scene Notes" entry in the scene's right-click menu; the flag adds the heading
+# for the "Open this scene's journal" macro (scripts/update.mjs).
+RUN_, CAMP_ = '主持人 · GM: Session 0 Runbook', '主持人 · GM: Campaign (Days 1–6)'
+SCENE_PAGE = {
+    '0': (RUN_, '流程 Runbook', 'Agenda'), '0a': (RUN_, '流程 Runbook', 'Agenda'), '0c': (RUN_, '故事全貌 The whole story & timeline', ''),
+    '1': (RUN_, '流程 Runbook', 'Personal intro HO1'), '2': (RUN_, '流程 Runbook', 'Personal intro HO2'), '3': (RUN_, '流程 Runbook', 'Personal intro HO3'),
+    '4': (RUN_, '流程 Runbook', 'Shared intro: Night Crossing'), '5': (CAMP_, '前街 Front Street', 'The Coffin Shop by day'),
+    '6': (CAMP_, '街口 Street Crossing', '12 January, noon'), '7': (CAMP_, '沙盒 How the sandbox runs', 'Action rounds'),
+    '8': (CAMP_, '前街 Front Street', 'The Teahouse'), '9': (CAMP_, '前街 Front Street', 'The Li Family Theatre'), '10': (CAMP_, '寺庙 Temple', 'Night at the temple'),
+    '11': (CAMP_, '前街 Front Street', "The Undying family's house"), '12': (CAMP_, '衙署 Magistracy quarter', "Commander Fan's residence"),
+    '13': (CAMP_, '衙署 Magistracy quarter', "Niu's house"), '14': (CAMP_, '衙署 Magistracy quarter', 'The Gaol'),
+    '15': (CAMP_, '汉江沿岸 Riverbank', 'The Mongol warships'), '16': (CAMP_, '汉江沿岸 Riverbank', 'West dock'), '17': (CAMP_, '塔楼 Finale: the Watchtower', 'Preparation'),
+}
+for sc_ in SC:
+    jn_, pn_, hd_ = SCENE_PAGE[sc_['name'].split(' · ')[0]]
+    j_ = next(j for j in JR if j['name'] == jn_); pg_ = next(p for p in j_['pages'] if p['name'] == pn_)
+    assert not hd_ or re.search(r'<h[1-3][^>]*>[^<]*' + re.escape(hd_), pg_['text']['content']), (sc_['name'], hd_)
+    sc_['journal'], sc_['journalEntryPage'] = j_['_id'], pg_['_id']
+    sc_['flags'][MOD] = {'journal': j_['_id'], 'page': pg_['_id'], 'heading': hd_}
 adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/cover.webp',
        'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
-       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': MACROS + [PLACES_MACRO], 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
+       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': MACROS + [PLACES_MACRO, NOTES_MACRO], 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
 adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.7', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.8', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
-open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:inherit;opacity:.85;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:inherit;opacity:.85}.journal-page-content table td{vertical-align:top;font-size:0.92em}a.content-link.npc-link{background:none;border:none;border-bottom:1px dotted currentColor;border-radius:0;padding:0;color:inherit;white-space:normal}a.content-link.npc-link:hover{text-shadow:none;border-bottom-style:solid}\n')
+open(f'{ROOT}/styles/gongruo.css', 'w').write('.journal-page-content p.en{color:inherit;opacity:.85;margin-top:-0.4em;margin-bottom:0.9em}.journal-page-content p.zh{margin-bottom:0.15em}.journal-page-content li em{color:inherit;opacity:.85}.journal-page-content table td{vertical-align:top;font-size:0.92em}a.content-link.npc-link{background:none;border:none;border-bottom:1px dotted currentColor;border-radius:0;padding:0;color:inherit;white-space:normal;word-break:normal}a.content-link.npc-link:hover{text-shadow:none;border-bottom-style:solid}\n')
 print('actors', len(ACT), 'journals', len(JR), 'scenes', len(SC), 'tokens', sum(len(s['tokens']) for s in SC))
