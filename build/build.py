@@ -359,8 +359,17 @@ STREET = scene('6 · 街口 The Street Crossing (Day One, noon)', 'street.webp',
 SC.append(STREET)
 # ---------------- Campaign scenes (Days 1–6): 1536x1024 maps, 24x16 squares ----------------
 TOWN = scene('7 · 樊城城图 Fencewall: the town (action rounds)', 'town.webp', 64, [T(A['pc1'], 20.2, 9.2), T(A['pc2'], 20.9, 9.2), T(A['pc3'], 21.6, 9.2)], 0.0,
-             '<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p>', w=1536, h=1024)
+             '<p>行动轮用的城图：每天早/中/晚各一轮，把三枚调查员标记拖到要去的地方。前街在下、后街在上、街口居中、衙署一带在左上、汉江沿岸在城外。</p><p>The town map for the action rounds: drag the three investigator tokens to where they go each round. Front Street below, Back Street above, the Street Crossing between, the Magistracy quarter top-left, the riverbank outside the wall.</p><p><b>GM:</b> each place label can be shown or hidden. Run the macro “城图 Town map: places” (Macro Directory; drag it to your hotbar) and tick the places the players know. Five start hidden: the Wineshop, the Lings, the burning house, the widow’s house, the reeds.</p>', w=1536, h=1024)
 TOWN['grid']['alpha'] = 0
+# Place labels are tiles, not paint: the GM shows or hides each one from the "Town map: places" macro (scripts/update.mjs).
+# The map sits 3 squares right and 2 down inside the padded canvas (10% padding rounded up to whole 64 px squares).
+import town_labels as TL
+from PIL import Image as _Im
+for key_, zh_, en_, cx_, cy_, red_, shown_, group_, when_ in TL.PLACES:
+    tw_, th_ = _Im.open(f'{ROOT}/assets/maps/town_labels/{key_}.webp').size
+    TOWN['tiles'].append({'_id': rid('tile:town:' + key_), 'texture': {'src': f'modules/{MOD}/assets/maps/town_labels/{key_}.webp'}, 'x': 192 + int(cx_ - tw_ / 2), 'y': 128 + int(cy_ - th_ / 2),
+                          'width': tw_, 'height': th_, 'hidden': not shown_, 'locked': True, 'level': LEVEL, 'elevation': 0, 'sort': 0, 'rotation': 0, 'alpha': 1,
+                          'flags': {MOD: {'place': key_, 'name': f'{en_} {zh_}', 'group': group_, 'when': when_, 'start': bool(shown_)}}})
 TEAHOUSE = scene('8 · 茶楼 The Teahouse', 'teahouse.webp', 64,
                  [T(A['pc1'], 10.2, 13.2), T(A['pc2'], 11.6, 13.2), T(A['pc3'], 13, 13.2)] +
                  [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(14.2, 7.6), (16.2, 7.0), (15.6, 8.9)])] +
@@ -434,6 +443,8 @@ def portrait_macro(key, img, title):
            'const ip = IP ? new IP({src, window: {title}, showTitle: true}) : new ImagePopout(src, {title, shareable: true});  // v13+ / v12\n'
            'ip.render(true); ip.shareImage();')
     return {'_id': rid('macro:' + key), 'name': title, 'type': 'script', 'author': None, 'img': f'modules/{MOD}/assets/tokens/{img}', 'scope': 'global', 'command': cmd, 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
+PLACES_MACRO = {'_id': rid('macro:town-places'), 'name': '城图 Town map: places', 'type': 'script', 'author': None, 'img': 'icons/svg/village.svg', 'scope': 'global',
+                'command': 'game.gongruo.places();', 'folder': None, 'sort': 0, 'ownership': {'default': 0}, 'flags': {}}
 MACROS = [portrait_macro('pc1', 'pc_wanderer.webp', '肖像 陆青崖 Lu Bluecliff · HO1 The Wanderer'),
           portrait_macro('pc2', 'pc_merchant.webp', '肖像 沈怀珠 Shen Pearl · HO2 The Merchant Heir'),
           portrait_macro('pc3', 'pc_official.webp', '肖像 谢云骧 Xie Cloudmane · HO3 The Commissioner')]
@@ -449,12 +460,12 @@ FOLD['f_scene']['sorting'] = 'm'
 for i_, sc_ in enumerate(SC): sc_['sort'] = sc_['navOrder'] = (i_ + 1) * 100000
 adv = {'_id': rid('adventure:session0'), 'name': '公若渡河 · 第零次聚会 / Session 0: Crossing the Han', 'img': f'modules/{MOD}/assets/cover.webp',
        'caption': '南宋末年武侠 CoC7 · bilingual session-0 kit', 'description': '<p>三位预设调查员、三段个人导入与“夜渡汉水”的场景、主持人流程、双语手册与规则速查。导入后请为每位玩家单独设置对应HO日志的权限。</p><p>Three pre-built investigators, the five session-0 scenes, a GM runbook, bilingual handouts and a cheat sheet. After importing, give each player Observer permission on their own HO journal only.</p><p>Scenario by 江涔 (Dicecho / 魔都). Conversion for private table use only.</p>',
-       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': MACROS, 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
+       'actors': list(ACT.values()), 'journal': JR, 'scenes': SC, 'folders': list(FOLD.values()), 'items': [], 'tables': [], 'macros': MACROS + [PLACES_MACRO], 'playlists': [PL, SFX], 'cards': [], 'combats': [], 'sort': 0, 'flags': {}}
 adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.5', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.6', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
