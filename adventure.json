@@ -15007,7 +15007,7 @@
    "initial": null,
    "description": "<p>地图 / Regional map: Fencewall 樊城 on the north bank, Southbright 襄阳 on the south, the cut pontoon bridge, Ashu's camps, the jetty. Show it while reading the Primer or whenever players ask where they are; the title track (Eastern Thought) plays.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "o8gtsTbDNfLmus0l",
+   "playlistSound": "Vd2wAPVTStkSCOFW",
    "navOrder": 300000,
    "journal": "R0gcfJmQE5qSrxk4",
    "journalEntryPage": "mxGrflolnfSfQhmj"
@@ -18547,7 +18547,7 @@
    "initial": null,
    "description": "<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "qgexcgfsRCZS8GsJ",
+   "playlistSound": "Q01dDxhtHG43Q4DT",
    "navOrder": 1200000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
@@ -18846,7 +18846,7 @@
    "initial": null,
    "description": "<p>偏殿在右，门从内锁；伏击的不死仆从（1D4+2）隐藏其中。黑暗中HO3与刘卿堂检定−20，直到后门打开。</p><p>Side hall on the right, locked from inside; the ambushers (1D4+2) are hidden tokens there. In the dark HO3 and Liu roll at −20 until the back door is opened.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "WBLMrcjHupYOgPmt",
+   "playlistSound": "fQYQPIwr3veAVZEc",
    "navOrder": 1300000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "cdYjgimCWhJXo8Gv"
@@ -21516,9 +21516,9 @@
      "description": "Eastern Thought Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "o8gtsTbDNfLmus0l",
-     "name": "Ishikari Lore — 汉江两岸 Regional map",
-     "path": "modules/gongruo-session0/assets/music/Ishikari_Lore.ogg",
+     "_id": "Vd2wAPVTStkSCOFW",
+     "name": "River Flute — 汉江两岸 Regional map",
+     "path": "modules/gongruo-session0/assets/music/River_Flute.ogg",
      "channel": "music",
      "playing": false,
      "repeat": true,
@@ -21526,7 +21526,7 @@
      "fade": 2000,
      "sort": 1,
      "flags": {},
-     "description": "Ishikari Lore Kevin MacLeod (incompetech.com) CC BY 4.0"
+     "description": "River Flute Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
      "_id": "lTFLfWMKVMabOfbk",
@@ -21620,9 +21620,9 @@
      "description": "Guzheng City Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "qgexcgfsRCZS8GsJ",
-     "name": "Shenyang — 李家瓦子 Li Family Theatre",
-     "path": "modules/gongruo-session0/assets/music/Shenyang.ogg",
+     "_id": "Q01dDxhtHG43Q4DT",
+     "name": "Nu Flute — 李家瓦子 Li Family Theatre",
+     "path": "modules/gongruo-session0/assets/music/Nu_Flute.ogg",
      "channel": "music",
      "playing": false,
      "repeat": true,
@@ -21630,12 +21630,12 @@
      "fade": 2000,
      "sort": 9,
      "flags": {},
-     "description": "Shenyang Kevin MacLeod (incompetech.com) CC BY 4.0"
+     "description": "Nu Flute Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "WBLMrcjHupYOgPmt",
-     "name": "Unseen Horrors — 寺庙 Temple at night",
-     "path": "modules/gongruo-session0/assets/music/Unseen_Horrors.ogg",
+     "_id": "fQYQPIwr3veAVZEc",
+     "name": "Himalayan Atmosphere — 寺庙 Temple at night",
+     "path": "modules/gongruo-session0/assets/music/Himalayan_Atmosphere.ogg",
      "channel": "music",
      "playing": false,
      "repeat": true,
@@ -21643,7 +21643,7 @@
      "fade": 2000,
      "sort": 10,
      "flags": {},
-     "description": "Unseen Horrors Kevin MacLeod (incompetech.com) CC BY 4.0"
+     "description": "Himalayan Atmosphere Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
      "_id": "ZnpX1D8TizZVFvK8",
