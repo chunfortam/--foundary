@@ -580,7 +580,7 @@ SC.insert(2, TWIN)
 # Music: every scene plays its own track when activated (scene number -> track, from TRACKS).
 SOUND = {n: PL['sounds'][i]['_id'] for i, (t, f, nums, use) in enumerate(TRACKS) for n in nums}
 SOUND.update({n: next(s['_id'] for s in PL['sounds'] if s['name'].startswith(track + ' — ')) for n, track in
-              [('F1', 'Guzheng City'), ('F2', 'Guzheng City'), ('F3', 'Decline'), ('F4', 'Nu Flute')]})
+              [('F1', 'Guzheng City'), ('F2', 'Guzheng City'), ('F3', 'Decline'), ('F4', 'Eastminster')]})
 for sc_ in SC:
     sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[sc_['name'].split(' · ')[0]]
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
@@ -644,7 +644,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.17', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.18', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
