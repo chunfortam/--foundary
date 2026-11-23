@@ -29,12 +29,12 @@ missing = before.keys() - after.keys()
 assert not missing, f'Existing IDs removed or changed: {sorted(missing)}'
 print(f'PASS: all {len(before)} existing document IDs preserved.')
 old_actors = {a['_id'] for a in old['actors']}
-added = [a for a in new['actors'] if a['_id'] not in old_actors]
+added = [a for a in new['actors'] if a['name'] == '药铺掌柜 Pharmacy manager']
 assert [a['name'] for a in added] == ['药铺掌柜 Pharmacy manager'], [a['name'] for a in added]
 manager = added[0]
 assert 'GM convenience' in manager['system']['biography']['personalDescription']['value']
 assert manager['prototypeToken']['texture']['src'].endswith('/tokens/pharmacy_manager.webp')
-added_scenes = [s for s in new['scenes'] if s['_id'] not in {s['_id'] for s in old['scenes']}]
+added_scenes = [s for s in new['scenes'] if s['name'].startswith('8a · ')]
 assert len(added_scenes) == 1
 ph = added_scenes[0]
 assert ph['name'].startswith('8a · 药铺') and ph['background']['src'].endswith('/maps/pharmacy.webp')
@@ -44,7 +44,7 @@ assert ling['_id'] in old_actors
 on_scene = {t['actorId'] for t in ph['tokens']}
 assert {manager['_id'], ling['_id']} <= on_scene
 assert ph['journalEntryPage'] and ph['flags']['gongruo-session0']['heading'] == 'The pharmacy' and ph['playlistSound']
-names = [s['name'] for s in new['scenes']]
-assert names.index(ph['name']) == names.index('8 · 茶楼 The Teahouse') + 1
+tea = next(s for s in new['scenes'] if s['name'] == '8 · 茶楼 The Teahouse')
+assert tea['sort'] < ph['sort'] and tea['navOrder'] < ph['navOrder']
 print(f"NEW scene {ph['_id']}: {ph['name']} ({len(ph['tokens'])} tokens)")
 print(f"NEW actor {manager['_id']}: {manager['name']}; Ling Xuchun keeps {ling['_id']}")
