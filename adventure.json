@@ -13312,6 +13312,842 @@
    }
   },
   {
+   "_id": "m9wU0RpTDBjn1VbT",
+   "name": "茶楼说书人 Teahouse storyteller",
+   "type": "npc",
+   "img": "icons/svg/book.svg",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 45
+     },
+     "app": {
+      "value": 55
+     },
+     "int": {
+      "value": 65
+     },
+     "pow": {
+      "value": 50
+     },
+     "edu": {
+      "value": 65
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 10,
+      "max": 10
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 50,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>Book: Front Street, The Teahouse (p.20–21). The unnamed storyteller is on the dais, telling how the Liangshan outlaws rescued Song Jiang from the execution ground at Jiangzhou (江州劫法场). Let the tale plant the seed of General Niu's rescue; do not give away the coming scene.</p><p>GM convenience: civilian statistics. No personal name or secret allegiance is supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "aERXg5M7C4vK3Oxu",
+     "name": "Persuade",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/persuade.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 10,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Persuade",
+      "specialization": "",
+      "adjustments": {
+       "base": 10,
+       "personal": 45
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.persuade",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "ExVHZMG1NBwnfWd9",
+     "name": "Listen",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/listen.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 20,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Listen",
+      "specialization": "",
+      "adjustments": {
+       "base": 20,
+       "personal": 30
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.listen",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "ZTCoqQjHoO9CvVWF",
+     "name": "History",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/history.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "History",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 35
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.history",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "茶楼说书人 Teahouse storyteller",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "icons/svg/book.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "Pq5DAbYFX52N7dwa",
+   "name": "茶楼跑堂 Teahouse waiter",
+   "type": "npc",
+   "img": "icons/svg/tankard.svg",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 40
+     },
+     "con": {
+      "value": 50
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 60
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 40
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 10,
+      "max": 10
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>Book: Front Street, The Teahouse (p.20–21). The waiter recommends tea master Song 宋择一, whose pictures in tea foam won imperial praise and Magistrate Fan's admiration. Customers and the waiter can pass on the rumour of Niu's God-Arm Bow. The soldiers kick the waiter down over weak tea.</p><p>GM convenience: civilian statistics; keep this unnamed server out of the fighting once helped to safety.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "TtpPWIvvGv2h2Mtx",
+     "name": "Listen",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/listen.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 20,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Listen",
+      "specialization": "",
+      "adjustments": {
+       "base": 20,
+       "personal": 30
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.listen",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "s4XzUy5PpGjwyBGE",
+     "name": "Dodge",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/dodge.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": "1/2*@DEX",
+      "skillName": "Dodge",
+      "specialization": "",
+      "adjustments": {
+       "base": "1/2*@DEX",
+       "personal": 5
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.dodge",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "darkAges": true,
+         "darkAgesPulp": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true,
+         "gasLight": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "ux54jY3XjJQL0dZG",
+     "name": "Charm",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/charm.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 15,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Charm",
+      "specialization": "",
+      "adjustments": {
+       "base": 15,
+       "personal": 25
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.charm",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "茶楼跑堂 Teahouse waiter",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "icons/svg/tankard.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "rOECwyKPpdHqS4rb",
+   "name": "宋人茶客 Song tea patron",
+   "type": "npc",
+   "img": "icons/svg/coins.svg",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 40
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 45
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 50
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>GM convenience: an invented cloth seller among the book's mixed Song and Mongol customers. War has thinned the trade, but a good tale still earns a cup of tea. Falls silent when soldiers raise their voices; offers a steadying hand to anyone knocked down. Civilian statistics are invented. No extra clues or hidden loyalties.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "v2U2Hm70xt37hiNf",
+     "name": "Listen",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/listen.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 20,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Listen",
+      "specialization": "",
+      "adjustments": {
+       "base": 20,
+       "personal": 25
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.listen",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "IwR49X5Em4NEYG1m",
+     "name": "Accounting",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/accounting.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Accounting",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 35
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.accounting",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "gTEgJHGwzwjeDvmo",
+     "name": "Persuade",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/persuade.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 10,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Persuade",
+      "specialization": "",
+      "adjustments": {
+       "base": 10,
+       "personal": 25
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.persuade",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "宋人茶客 Song tea patron",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "icons/svg/coins.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "glJJvLlu0b4LT1tU",
+   "name": "蒙古茶客 Mongol tea patron",
+   "type": "npc",
+   "img": "icons/svg/item-bag.svg",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 45
+     },
+     "con": {
+      "value": 50
+     },
+     "siz": {
+      "value": 55
+     },
+     "dex": {
+      "value": 45
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 40
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 10,
+      "max": 10
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>GM convenience: an invented civilian pack trader among the book's mixed Song and Mongol customers, not one of the three soldiers. Sets down a bowl to hear the storyteller's next turn; draws back from the brawl rather than joining it. Civilian statistics are invented. No extra clues or hidden loyalties.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "dTgzhTBTjKoojaqs",
+     "name": "Listen",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/listen.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 20,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Listen",
+      "specialization": "",
+      "adjustments": {
+       "base": 20,
+       "personal": 20
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.listen",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "RWoasMEiKMcH3hM2",
+     "name": "Ride",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/ride.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Ride",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 35
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.ride",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "7FANWM4R36Q0gYEI",
+     "name": "Charm",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/charm.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 15,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Charm",
+      "specialization": "",
+      "adjustments": {
+       "base": 15,
+       "personal": 20
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.charm",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "蒙古茶客 Mongol tea patron",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "icons/svg/item-bag.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
    "_id": "7nbMRwGyBh5fEm2m",
    "name": "渡船 River boat",
    "type": "npc",
@@ -18272,6 +19108,118 @@
      "hidden": true,
      "level": "defaultLevel0000",
      "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "QWD1I768prbrt6cY",
+     "name": "茶楼说书人 Teahouse storyteller",
+     "actorId": "m9wU0RpTDBjn1VbT",
+     "actorLink": true,
+     "texture": {
+      "src": "icons/svg/book.svg"
+     },
+     "x": 768,
+     "y": 256,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "7EPn6eJJxGbn3Vsz",
+     "name": "茶楼跑堂 Teahouse waiter",
+     "actorId": "Pq5DAbYFX52N7dwa",
+     "actorLink": true,
+     "texture": {
+      "src": "icons/svg/tankard.svg"
+     },
+     "x": 1120,
+     "y": 608,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "NPqOGAJxohtYOiLk",
+     "name": "宋人茶客 Song tea patron",
+     "actorId": "rOECwyKPpdHqS4rb",
+     "actorLink": true,
+     "texture": {
+      "src": "icons/svg/coins.svg"
+     },
+     "x": 448,
+     "y": 512,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "sWnCFwf94xRVYeG0",
+     "name": "蒙古茶客 Mongol tea patron",
+     "actorId": "glJJvLlu0b4LT1tU",
+     "actorLink": true,
+     "texture": {
+      "src": "icons/svg/item-bag.svg"
+     },
+     "x": 448,
+     "y": 704,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
      "displayBars": 40,
      "bar1": {
       "attribute": "attribs.hp"
