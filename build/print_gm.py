@@ -101,7 +101,7 @@ BODY = f'''
 <li><b>Scenes & music</b> auto-switch when you activate a scene (Scenes tab → right-click → Activate). Move tokens by dragging; players may touch the TV.</li>
 </ul>
 <h2>Wording 用词</h2>
-<p>Southbright 襄阳 · Fencewall 樊城 · the Han River 汉江 · Marshal Ashu 阿术 · Duan Driftwood 段游衍 · Commander Fan 范天顺 (the general, hanged himself) · Magistrate Fan 范玉楼 (surrendered) · General Niu 牛富 · Captain Liu 刘卿堂 · Doctor Yue 越南柯 · the Hermit of Mount Crag 山阳道人 · Stillwater 止水 · Rainmaster's Ink 雨师墨 · Lightness 轻功 (= Climb/Jump) · Acupoint Strike 点穴.</p>
+<p>Southbright 襄阳 · Fencewall 樊城 · the Han River 汉江 · Marshal Ashu 阿术 · Duan Driftwood 段游衍 · Magistrate Fan 范天顺 (led the defence, hanged himself) · Commander Fan 范玉楼 (his nephew, surrendered) · General Niu 牛富 · Captain Liu 刘卿堂 · Doctor Yue 越南柯 · the Hermit of Mount Crag 山阳道人 · Stillwater 止水 · Rainmaster's Ink 雨师墨 · Lightness 轻功 (= Climb/Jump) · Acupoint Strike 点穴.</p>
 <h2>Dates 日期</h2>
 <p>Late 1267: HO2's convoy, HO3's breakout. 3 Jan 1268: Liu crosses with 800. 4 Jan: Fencewall surrenders. 10 Jan: victory banquet, HO1's strike. <b>11 Jan, midnight: Night Crossing.</b> 12–18 Jan: session 1.</p>
 </div></div>
@@ -135,7 +135,7 @@ BODY = f'''
 {q('“剑上这道黑，是雨师墨。刀饮即腐：伤口烂而不死，逢阴雨便发，一辈子好不了。不可轻率出剑；止水只为一个人出鞘。”', '"That black on the blade is Rainmaster’s Ink 雨师墨. What it cuts, rots: the wound will not kill and will not heal, and every rainy day it opens again for the rest of a man’s life. Do not draw her lightly. Stillwater leaves the sheath for one man only."')}
 {q('“你年轻，能从千军万马里取一颗头。不为那个糊涂皇帝，为汉水两岸的百姓！”', '"You are young; you can take a head out of the middle of an army. Not for that muddle-headed emperor: for the people on the banks of the Han." If you succeed, bring the head to my grave at Tomb-Sweeping with plum wine, loquat wine, beef, a pig&#39;s head, two chickens and three sesame cakes. If not, wander, and come home when the Central Plains are at peace.')}
 <p><b>Getting in:</b> {R('Disguise')} or {R('Luck')} at the gate; {R('Climb')}/{R('Jump')} over the wall. Patrols everywhere, no looting (Ashu's order).</p>
-<p><b>The hall:</b> roast meat, bowls the size of a palm, Song dancers. Ashu on the dais: huge, bearded, felt hat, soft armour, a sabre at hand. Duan 段游衍 one seat to his right. Magistrate Fan grovelling.</p>
+<p><b>The hall:</b> roast meat, bowls the size of a palm, Song dancers. Ashu on the dais: huge, bearded, felt hat, soft armour, a sabre at hand. Duan 段游衍 one seat to his right. Commander Fan grovelling.</p>
 <p><b>The strike:</b> let the player describe it; no roll needed to reach him, or {R('Stealth')} if they sneak. Ashu twists, the blade takes his shoulder, he kicks the table over and swings: {R('Dodge')} or 1D4, a wound to the bone, max HP −1. <i>Ashu's wound will never heal: penalty die on all his rolls from now on.</i></p>
 <p><b>Guards close, bows drawn.</b> One round: fight (Sword 75 vs soldier Dodge 40) or press Ashu again (he Fights Back, Sword 75 with a penalty die). Then Duan steps in:</p>
 {q('“谁敢放箭？元帅在此！元帅快走！有我在，这刺客休想伤你一根头发！天哪，元帅受伤了，快送元帅出去！”', '"Who dares shoot? The Marshal is right here! Marshal, go, go! While I stand here this assassin will not touch a hair of you! Heaven, the Marshal is wounded, get him out!"')}
@@ -148,20 +148,20 @@ BODY = f'''
 <p><b>Run for the gate:</b> {R('DEX')}; fail = 1D3, a wound that never fully heals, max HP −1.</p>
 <p><b>The gate under martial law:</b> {R('Credit Rating')} or {R('Persuade')}. Claim court business → General Niu 牛富 comes down from the wall:</p>
 {q('四十来岁，黝黑精瘦，旧铁甲，背上一把漆黑长弓，弓背缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后看你的脸。', 'Forties, dark, lean and hard as a drawn bowstring, old iron armour, a long black bow across his back, grip wrapped in leather worn pale. Eyes like torches: your hands first, then your carts, then your face.')}
-<p>Garrison commander under Commander Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Fan is hunting a thief in town, and promises help with anything.</p>
-<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Commander Fan 范天顺 hangs himself; 4 Jan his nephew Magistrate Fan 范玉楼 opens the gates to spare the town. Patrols everywhere; Niu refuses to yield → gaol, his promises gone with him. The house in Lin'an 临安 is leaderless; bridge cut, bank guarded, so you buy a boatman. → the reeds after dark.</p>
+<p>Garrison commander under Magistrate Fan; shot Ashu&#39;s nephew dead before the armies met. Blunt, courteous. He tells them Magistrate Fan is hunting a thief in town, and promises help with anything.</p>
+<p><b>Days pass</b> (narrate): gossip of a scarred woman outlaw, a drunk monk, a watchman who is everywhere. Then the assault: 3 Jan Magistrate Fan 范天顺 hangs himself; 4 Jan his nephew Commander Fan 范玉楼 opens the gates to spare the town. Patrols everywhere; Niu refuses to yield → gaol, his promises gone with him. The house in Lin'an 临安 is leaderless; bridge cut, bank guarded, so you buy a boatman. → the reeds after dark.</p>
 </div>
 <div>
 <h2>3 · Magistracy 衙署 — HO3 alone <small>scene: Fencewall Magistracy</small></h2>
-<p><b>Open:</b> named Commissioner; Captain Liu 刘卿堂 (childhood friend) brings 5,000; ambushed, 800 break into Fencewall. Commander Fan's 范天顺 banquet in the hall, nobody has the heart for it: Magistrate Fan 范玉楼 all smiles, Lady Fan silent, Prefect Xu 许德显 soft and shining with sweat, eating for everyone; Niu 牛富 across from you, dark, lean, eyes like torches, touching nothing, watching the door. Toasts to the Emperor and to victory; no one believes the second. Magistrate Fan walks you home with a lantern, flattering, then, as if he wants you to notice: a warm winter, the Han strangely high for the season.</p>
-<p><b>Then:</b> the assault. Fan orders you and Liu to Southbright at noon; your wound keeps you in bed. Liu crosses with the 800. Next day: uproar, the clear sky goes black without rain, servants scatter, Mongol cavalry ride into the compound seizing people.</p>
+<p><b>Open:</b> named Commissioner; Captain Liu 刘卿堂 (childhood friend) brings 5,000; ambushed, 800 break into Fencewall. Magistrate Fan's 范天顺 banquet in the hall, nobody has the heart for it: Commander Fan 范玉楼 all smiles, Fan Yuying silent, Prefect Xu 许德显 soft and shining with sweat, eating for everyone; Niu 牛富 across from you, dark, lean, eyes like torches, touching nothing, watching the door. Toasts to the Emperor and to victory; no one believes the second. Commander Fan walks you home with a lantern, flattering, then, as if he wants you to notice: a warm winter, the Han strangely high for the season.</p>
+<p><b>Then:</b> the assault. Magistrate Fan orders you and Liu to Southbright at noon; your wound keeps you in bed. Liu crosses with the 800. Next day: uproar, the clear sky goes black without rain, servants scatter, Mongol cavalry ride into the compound seizing people.</p>
 <p><b>Escape:</b> {R('Stealth')}, or {R('Luck (Hard)')} with a plausible plan; fail = soldiers who arrest anyone suspicious. Fighting out is allowed (Sword 45 / Bow 75 vs horsemen); a failed fight = another wound.</p>
 <p><b>Out:</b> hiding in town; everything north of the river is Mongol. → the reeds.</p>
 
 <h2>4 · Night Crossing 汉江夜渡 — all <small>scene: Night Crossing of the Han River</small></h2>
-<p><b>Midnight, 11 Jan 1268.</b> No moon, fog, ten metres of sight, watch-fires on the bank, the guard changing. Reed Marsh east of Fencewall, reeds taller than a man. They arrive one by one: <i>let them meet in character; 10 minutes</i>. The boatman is late.</p>
+<p><b>Midnight, 11 Jan 1268.</b> No moon, fog, ten metres of sight, watch-fires on the bank, the guard changing. The reeds east of Fencewall, reeds taller than a man. They arrive one by one: <i>let them meet in character; 10 minutes</i>. The boatman is late.</p>
 <p>{R('Spot Hidden')}: unlit boats offshore, other night-crossers. {R('Idea/INT')}: midwinter midnight is not fog weather.</p>
-<p><b>Boatman Wang 船夫王:</b> hemp, straw hat, one arm, filthy towel. Hates Mongols and court alike. Volunteers: his arm (army cart); Commander Fan ("would suck the pus from a soldier's wound; the court sent him children; he hanged himself"); the fog (the Lady of the Han pities the drowned); the assassin (the whole town praises the nameless wanderer — watch HO1's face).</p>
+<p><b>Boatman Wang 船夫王:</b> hemp, straw hat, one arm, filthy towel. Hates Mongols and court alike. Volunteers: his arm (army cart); Magistrate Fan ("would suck the pus from a soldier's wound; the court sent him children; he hanged himself"); the fog (the Lady of the Han pities the drowned); the assassin (the whole town praises the nameless wanderer — watch HO1's face).</p>
 <p><b>On the water:</b> dead slow, no lamp. A shape ten metres ahead: {R('Spot Hidden, penalty die')}. {R('Listen')}: splitting planks, screams. {R('Spot')}: the boat rocks, armed figures.</p>
 <p><b>The spine:</b> they light a lamp. A twenty-bushel boat run through by a tentacle-like spine, tip soft and curling, hide like iron, barbed; it crushes the hull to splinters in silence. <b>{R('SAN 0/1')}</b>.</p>
 <p><b>The bank hears.</b> Archers: {R('Dodge')} or an arrow 1D3. The boat sinks: {R('Swim')}, fail = keep only three named possessions (weapons and Gear both count; an unnamed purse is lost). {R('CON')}, fail = 1D3 from the cold. Wang abandons them.</p>
@@ -185,8 +185,8 @@ BODY = f'''
 
 <h2>Morning of the 12th — Coffin Shop by day <small>scene: the Coffin Shop</small></h2>
 <p>Millet porridge, flatbread, pickles. Shopfront crammed with funeral goods; finished coffins stand open to dry their lacquer. {R('Spot Hidden')}: hidden compartments in the coffin walls.</p>
-<p><b>Winding Stream 曲流 tells:</b> wartime, everyone needs a coffin; she made Commander Fan's 范天顺. Compartments hold the dead's belongings against thieves and rot; Magistrate Fan 范玉楼 asked for one too.</p>
-<p><b>Planning:</b> name the four districts only: Front Street (shops, HO2's pharmacy branch, playhouse), Back Street (Merchants' Hall where Duan lives, temple), the Magistracy quarter, the riverbank (docks, reed marsh). Whatever they pick for the morning: "you spend it on that; we pick it up next time." → noon.</p>
+<p><b>Winding Stream 曲流 tells:</b> wartime, everyone needs a coffin; she made Magistrate Fan's 范天顺. Compartments hold the dead's belongings against thieves and rot; Commander Fan 范玉楼 asked for one too.</p>
+<p><b>Planning:</b> name the four districts only: Front Street (shops, HO2's pharmacy branch, theatre), Back Street (the Guildhall where Duan lives, temple), the Magistracy quarter, the riverbank (docks, reed marsh). Whatever they pick for the morning: "you spend it on that; we pick it up next time." → noon.</p>
 
 <h2>Noon of the 12th — the Street Crossing 街口 <small>scene: the Street Crossing</small></h2>
 <p>Junction of Front and Back Street; inn, tea stall; the execution ground. Packed crowd, a strange heavy mood. Today's dead man: white-haired, one arm missing, a spear through the throat hoisting the body into the air. <b>HO1 recognises the Hermit of Mount Crag 山阳道人.</b> His face is calm, as if he expected it. If the master mattered: <b>{R('SAN 1/1D3')}</b>. Let the player sit with it.</p>
@@ -198,7 +198,7 @@ BODY = f'''
 <h2>Evening of the 12th — Doctor Yue 越南柯 calls <small>scene: the Coffin Shop</small></h2>
 <p>A wandering healer is chatting with Winding Stream: HO2's foster brother, the Hollow Physician. He fusses over everyone's health, HO2's most. Play the reunion. He gives:</p>
 <p><b>Boats:</b> two unsent letters by Prefect Xu 许德显: one to the Mongol camp offering surrender and his three pleasure-barges and five small boats; one to Governor Lü 吕文焕 in Southbright weeping loyalty. Stolen during a "consultation". Either ruins Xu; together, a lever for his boats.</p>
-<p><b>The poison</b> (Rainmaster's Ink 雨师墨): knows little; a local legend may be in the county gazetteer 地方志 (Library, next session). <b>Scar-faced woman:</b> a disaster, or a condemned criminal. <b>Commander Fan:</b> far-sighted, devoted to the people, executed a man for stealing lamp oil. (Said flat.)</p>
+<p><b>The poison</b> (Rainmaster's Ink 雨师墨): knows little; a local legend may be in the county gazetteer 地方志 (Library, next session). <b>Scar-faced woman:</b> a disaster, or a condemned criminal. <b>Magistrate Fan:</b> far-sighted, devoted to the people, executed a man for stealing lamp oil. (Said flat.)</p>
 
 <h2>Night of the 12th — second Dream-Call <small>scene: Night Crossing, darkness up; HO3 + Liu</small></h2>
 <p>Gla'aki 格拉基 calls HO3 to the bank alone, with a lure of light. Read, then <b>{R('SAN 1/1D3')}</b>:</p>
