@@ -63,8 +63,14 @@ for collection in ('actors', 'scenes'):
     assert len(names) == len(set(names)), collection
 token_ids = [t['_id'] for s in new['scenes'] for t in s['tokens']]
 assert len(token_ids) == len(set(token_ids))
+scene_keys = [s['name'].split(' · ')[0] for s in new['scenes']]
+assert len(scene_keys) == len(set(scene_keys))
+for scene in new['scenes']:
+    names = [t['name'] for t in scene['tokens']]
+    assert len(names) == len(set(names)), scene['name']
 actor_ids = {a['_id'] for a in new['actors']}
 assert all(t['actorId'] in actor_ids for s in added_scenes for t in s['tokens'])
 assert {s['name'].split(' · ')[0] for s in added_scenes} == {'B1', 'B2', 'B3'}
 assert not {'21', '22', '23'} & {s['name'].split(' · ')[0] for s in new['scenes']}
 print('PASS: B1–B3 keys are district-specific; all scene/actor names and IDs and token IDs are unique; actor references resolve.')
+print('PASS: scene keys are unique across all districts; token names are unique within each scene (shared actors may recur across scenes).')

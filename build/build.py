@@ -280,6 +280,18 @@ npc('pharmacy_manager', '药铺掌柜 Pharmacy manager', dict(str=40, con=50, si
     '<p>樊城分号掌柜。对少东家（HO2）百般逢迎：店里的伙计、药材与银钱任她取用。这家分号贪利，价高，伙计看人下菜。从库房翻出两张古方（牵机药、十香软经散）。</p><p>主持人方便：姓名不详，数值为自拟。</p>',
     '<p>Book: Front Street, the pharmacy (p.19). Manager of the Fencewall branch of HO2\'s family house. He fawns on the young master/mistress: HO2 may use the staff, the stock and the cash freely. The branch is grasping: sky-high prices, two clerks who size up a customer\'s purse. He produces the two old recipes from the storeroom (handout "Two old recipes": Bowstring 牵机药 and Ten-Scent Powder 十香软经散).</p><p>GM convenience: the book gives him no name or statistics; these are invented. No secret allegiance.</p>',
     disposition=1)
+for key, name, label, zh, en in (
+    ('xu_sweeper', '许宅仆役 Xu household sweeper', '仆',
+     '在许宅前庭洒扫，可说服或贿赂其引见许德显。',
+     'Sweeps the forecourt. Visitors can talk or bribe the sweepers into admitting them to see Prefect Xu.'),
+    ('xu_maid', '许宅侍女 Xu household maid', '侍',
+     '在书房侍奉赏玩珍宝的许德显。',
+     'Attends Prefect Xu in the study while he admires his curios.'),
+):
+    npc(key, name, dict(str=45, con=45, siz=50, dex=50, app=50, int=50, pow=45, edu=40),
+        [], [], label, (120, 92, 74, 255), f'<p>{zh}</p>',
+        f'<p>{en}</p><p>主持人便利用：外貌与数值为自拟。GM convenience: appearance and civilian stats are illustrative.</p>',
+        disposition=0)
 for key, name, biography_zh, biography_en in BACK_STREET_NPCS:
     ch = dict(str=35, con=45, siz=50, dex=40, app=45, int=55, pow=45, edu=45)
     ACT[key] = actor(name, 'npc', ch, [], [], [], f'modules/{MOD}/assets/tokens/{key}.webp',
@@ -397,7 +409,7 @@ TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·
           ('Temple of the Manes', 'Temple_of_the_Manes.ogg', ('4',), '汉江夜渡 Night Crossing'),
           ('Decline', 'Decline.ogg', ('5',), '棺材铺 Coffin Shop'),
           ('Dark Times', 'Dark_Times.ogg', ('6',), '街口 Street Crossing, the Hermit\'s body'),
-          ('Overheat', 'Overheat.ogg', ('7',), '樊城城图 Town map, action rounds'),
+          ('Overheat', 'Overheat.ogg', ('7', 'M1', 'M2', 'M3'), '樊城城图 Town map, action rounds'),
           ('Guzheng City', 'Guzheng_City.ogg', ('8', '8a', 'B3'), '茶楼·药铺 Teahouse, Pharmacy'),
           ('Nu Flute', 'Nu_Flute.ogg', ('9',), '李家瓦子 Li Family Theatre'),
           ('Himalayan Atmosphere', 'Himalayan_Atmosphere.ogg', ('10',), '寺庙 Temple at night'),
@@ -496,6 +508,40 @@ TREASURES = scene('B3 · 七宝行 Seven Treasures jeweller', 'treasures.webp', 
                   [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17),
                    T(A['jeweller'], 21, 12), T(A['jeweller_hand'], 20, 11)], 0.05,
                   '<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop\'s one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>', w=1536, h=1024)
+# Magistracy visits: the school and its library are two views of the same sandbox stop.
+SC.extend([
+    scene("M1 · 许德显的宅邸 Prefect Xu's mansion", 'xu_residence.webp', 64,
+          [T(A['xu'], 14.5, 6.2),
+           T(A['xu_maid'], 11.3, 6.1, name='许宅侍女一 Xu household maid 1'),
+           T(A['xu_maid'], 18.0, 6.1, name='许宅侍女二 Xu household maid 2'),
+           T(A['xu_sweeper'], 10.8, 11.9, name='许宅仆役一 Xu household sweeper 1'),
+           T(A['xu_sweeper'], 19.0, 11.9, name='许宅仆役二 Xu household sweeper 2')],
+          notes='<p>大门紧闭，仆役在前庭洒扫；许德显与侍女在书房。说服或贿赂仆役以求引见，或翻越后墙。</p>'
+                '<p>The gate is shut. The sweepers work in the forecourt; Prefect Xu and his maids are in the study. '
+                'Talk or bribe your way in through the sweepers, or go over the back wall.</p>'
+                '<p>主持人便利用：布局与人数为示意。GM convenience: the layout and exact token counts are illustrative.</p>',
+          w=1536, h=1024),
+    scene('M2 · 官学 The Academy', 'academy.webp', 64,
+          [T(A['scholar'], 9.4, 7.3, name='官学儒生一 Academy scholar 1'),
+           T(A['scholar'], 19.7, 10.0, name='官学儒生二 Academy scholar 2')],
+          notes='<p>官学无人值守，几名儒生正在整理物品。书阁就在官学内部。</p>'
+                '<p>The Academy is unguarded; a few scholars are packing up. The Library is inside the Academy.</p>'
+                '<p>主持人便利用：布局与人数为示意；切换至藏书阁场景不另耗行动轮。'
+                'GM convenience: the layout and token counts are illustrative. Switch to the Library as part of the same visit.</p>',
+          w=1536, h=1024),
+    scene('M3 · 藏书阁 The Library', 'library.webp', 64,
+          [T(A['scholar'], 11.8, 13.9, name='孔礼岳 Kong Liyue', texture=f'modules/{MOD}/assets/tokens/kong_liyue.webp'),
+           T(A['scholar'], 17.4, 13.9, name='周文通 Zhou Wentong'),
+           T(A['scholar'], 8.8, 8.0, name='藏书阁儒生一 Library scholar 1'),
+           T(A['scholar'], 19.8, 9.2, name='藏书阁儒生二 Library scholar 2'),
+           T(A['fan_yulou'], 17.0, 6.0, hidden=True)],
+          notes='<p>进藏书阁前，孔礼岳拦问来意，周文通出面解围。若安排「素书偶逢」，才显示隐藏的范玉楼。</p>'
+                '<p>Play Kong Liyue’s challenge and Zhou Wentong’s rebuke at the door before the search. '
+                'Reveal Commander Fan only for the optional chance meeting over books.</p>'
+                '<p>主持人便利用：布局、人数与儒生通用数值为示意。'
+                'GM convenience: the layout and counts are illustrative; the scholars use the shared Scholar stats.</p>',
+          w=1536, h=1024),
+])
 for sc_ in (GUILDHALL, BURNING, TREASURES): SC.append(sc_)
 # Title page for the table TV: the scenario's cover re-lettered in English.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
@@ -556,6 +602,9 @@ SCENE_PAGE = {
     '11': (CAMP_, '前街 Front Street', "The Undying family's house"), '12': (CAMP_, '衙署 Magistracy quarter', "Magistrate Fan's residence"),
     '13': (CAMP_, '衙署 Magistracy quarter', "Niu's house"), '14': (CAMP_, '衙署 Magistracy quarter', 'The Gaol'),
     '15': (CAMP_, '汉江沿岸 Riverbank', 'The Mongol warships'), '16': (CAMP_, '汉江沿岸 Riverbank', 'West dock'), '17': (CAMP_, '塔楼 Finale: the Watchtower', 'Preparation'),
+    'M1': (CAMP_, '衙署 Magistracy quarter', "Prefect Xu's mansion"),
+    'M2': (CAMP_, '衙署 Magistracy quarter', 'The School and the Library'),
+    'M3': (CAMP_, '衙署 Magistracy quarter', 'The School and the Library'),
 }
 for sc_ in SC:
     jn_, pn_, hd_ = SCENE_PAGE[sc_['name'].split(' · ')[0]]
@@ -570,7 +619,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.15', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.16', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
