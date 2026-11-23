@@ -583,6 +583,71 @@ SC.extend([
 ])
 for sc_ in (GUILDHALL, BURNING, TREASURES): SC.append(sc_)
 SC.extend((STALLS, WANGWU, LINGS, WINESHOP))
+# ---------------- Street Crossing, 15 January ----------------
+NIU_RESCUE = 'S1 · 街口 The Street Crossing (15 January: Niu’s cage carts)'
+IDNAME.update({NIU_RESCUE: 'crossing:niu-rescue',
+               '囚车 Cage cart': 'crossing:cage-cart', '挽马 Draught horse': 'crossing:draught-horse',
+               '彩楼 Painted gate-tower': 'crossing:gate-tower', '神臂弓 God-Arm Bow': 'crossing:god-arm-bow',
+               '戴镣囚犯 Shackled prisoner': 'crossing:prisoner', '路人 Bystander': 'crossing:bystander'})
+_state = random.getstate()
+for key, name, img, description in (
+        ('cage_cart', '囚车 Cage cart', 'cage_cart', '<p>Holds three shackled prisoners. Use the rescue rules card to reach and open it.</p>'),
+        ('draught_horse', '挽马 Draught horse', 'draught_horse', '<p>Pulls one cage cart. Use the rescue rules card for approaching the horse; no separate stats are supplied in the campaign notes.</p>'),
+        ('gate_tower', '彩楼 Painted gate-tower', 'painted_gate_tower', '<p>A silk-and-timber shopfront gate that can be toppled to block the road.</p>'),
+        ('god_arm_bow', '神臂弓 God-Arm Bow', 'god_arm_bow', '<p>Wrapped and carried by Nameless Fang. After the rescue, Niu has Fang hand it over: damage 1D8+2, range 400 paces.</p>'),
+        ('cage_prisoner', '戴镣囚犯 Shackled prisoner', 'cage_prisoner', '<p>One prisoner per carrier. An anonymous scene marker, not a separate set of combat stats.</p>'),
+        ('crossing_bystander', '路人 Bystander', 'crossing_bystander', '<p>An anonymous scene marker for a bystander; the number and location of markers are GM conveniences.</p>')):
+    prop(key, name, img, '', description)['folder'] = FOLD['f_prop']['_id']
+random.setstate(_state)
+
+for base, key, name, dex, hp in (
+        ('soldier', 'niu_foot', '押送步兵 Escort foot soldier', 40, 11),
+        ('rider', 'niu_rider', '押送骑兵 Escort horseman', 50, 12)):
+    escort = copy.deepcopy(A[base])
+    escort['_id'] = rid(f'actor:crossing:{key}')
+    escort['name'] = escort['prototypeToken']['name'] = name
+    escort['system']['characteristics']['dex']['value'] = dex
+    escort['system']['attribs']['hp'] = {'value': hp, 'max': hp}
+    if base == 'soldier':
+        escort['system']['attribs'].pop('armor')
+    escort['system']['biography']['personalDescription']['value'] = '<p>15 January · Street Crossing escort. See the rescue rules card.</p>'
+    for item_ in escort['items']:
+        item_['_id'] = rid(f"item:crossing:{key}:{item_['_id']}")
+        if _cid(item_) == 'i.skill.dodge':
+            item_['system']['adjustments']['personal'] = 40 - eval_base(item_['system']['base'], {'dex': dex})
+    A[key] = escort
+
+NIU_CARTS = [(8.0, 9.1), (12.0, 9.1), (16.0, 9.1)]
+SC.append(scene(NIU_RESCUE, 'street_niu.webp', 64,
+    [T(A['pc1'], 11.0, 6.9), T(A['pc2'], 15.2, 11.9), T(A['pc3'], 13.0, 12.4),
+     T(A['fang'], 18.0, 6.9, hidden=True), T(A['du'], 15.4, 6.5, hidden=True),
+     T(A['qu'], 10.4, 11.6, hidden=True), T(A['jiang_tower'], 11.4, 12.7, hidden=True),
+     T(A['jiang_loft'], 14.3, 13.5, hidden=True), T(A['ling_xuchun'], 19.0, 11.3, hidden=True),
+     T(A['song'], 21.2, 6.4, hidden=True),
+     T(A['niu'], 14.3, 14.7, hidden=True),
+     T(A['god_arm_bow'], 19.1, 6.9, hidden=True, w=0.75, h=0.75),
+     T(A['gate_tower'], 22.5, 7.5, w=1.5, h=1.0)] +
+    [T(A['cage_cart'], x, y, name=f'囚车 Cage cart {i}', w=2.1, h=1.15)
+     for i, (x, y) in enumerate(NIU_CARTS, 1)] +
+    [T(A['draught_horse'], x + 2.2, y, name=f'挽马 Draught horse {i}', w=1.55, h=1.15)
+     for i, (x, y) in enumerate(NIU_CARTS, 1)] +
+    [T(A['cage_prisoner'], x + 0.17 + 0.63 * j, y + 0.31,
+       name=f'戴镣囚犯 Prisoner {i}.{j+1}', hidden=True, w=0.55, h=0.55)
+     for i, (x, y) in enumerate(NIU_CARTS, 1) for j in range(3)] +
+    [T(A['niu_rider'], x, y, name=f'押送骑兵 Escort horseman {i}', hidden=i > 3)
+     for i, (x, y) in enumerate([(20.0, 9.1), (6.3, 9.2), (14.1, 8.0), (22.0, 9.3), (5.0, 9.0), (18.7, 10.35)], 1)] +
+    [T(A['niu_foot'], x, y, name=f'押送步兵 Escort foot soldier {i}', hidden=i > 5)
+     for i, (x, y) in enumerate([(8.0, 8.0), (10.1, 10.35), (12.0, 8.0), (16.1, 10.35),
+                               (17.0, 8.0), (6.9, 10.35), (12.9, 10.35), (19.5, 8.05)], 1)] +
+    [T(A['crossing_bystander'], x, y, name=f'路人 Bystander {i}', w=0.8, h=0.8)
+     for i, (x, y) in enumerate([(4.9, 8.0), (7.2, 11.1), (23.9, 8.25)], 1)] +
+    [T(A['soldier'], 24.6, 9.5, name='蒙古援军 Mongol reinforcements (group marker)', hidden=True)],
+    notes='<p>一月十五日 · 原书第28页。三辆囚车各载三名戴镣囚犯，每辆由一匹马牵引。只显示调查员已经结识的援手；只有方未名认得牛富。</p>'
+          '<p>15 January · book p.28. Show the players the rescue rules card. Roll 1D4+2 horsemen and 1D4+4 foot soldiers; the minimum is visible, and the extras start hidden. Reveal Fang when he scouts and signals; only he knows Niu’s face. Reveal only the other allies the party has met.</p>'
+          '<p>Secretly roll 1D3 for Niu’s cart. Keep the three anonymous prisoner markers per cart concealed until needed; one marker stands for Niu in the chosen cart. When he is identified, swap that marker for the hidden General Niu waiting down the south lane. Never add him as a tenth prisoner.</p>'
+          '<p>Use the galleries and movable painted gate-tower per the rules card. Reveal the reinforcement group marker after five rounds; it stands for the arriving force, not a single combatant. The hidden bow beside Fang is for the handover after the rescue.</p>'
+          '<p>GM convenience: the cleared crossing art, prop footprints, precise positions, and the number of bystander markers are staging choices. Adjust them to the party’s plan.</p>',
+    w=1536, h=1024))
 # Title page for the table TV: the scenario's cover re-lettered in English.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
               notes='<p>开场画面 / Title page. Activate while players sit down; the title track (Eastern Thought) plays.</p>')
@@ -601,7 +666,7 @@ SC.insert(2, TWIN)
 # Music: every scene plays its own track when activated (scene number -> track, from TRACKS).
 SOUND = {n: PL['sounds'][i]['_id'] for i, (t, f, nums, use) in enumerate(TRACKS) for n in nums}
 SOUND.update({n: next(s['_id'] for s in PL['sounds'] if s['name'].startswith(track + ' — ')) for n, track in
-              [('F1', 'Guzheng City'), ('F2', 'Guzheng City'), ('F3', 'Decline'), ('F4', 'Eastminster')]})
+              [('F1', 'Guzheng City'), ('F2', 'Guzheng City'), ('F3', 'Decline'), ('F4', 'Eastminster'), ('S1', 'Asian Drums')]})
 for sc_ in SC:
     sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[sc_['name'].split(' · ')[0]]
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
@@ -640,6 +705,7 @@ SCENE_PAGE = {
     '1': (RUN_, '流程 Runbook', 'Personal intro HO1'), '2': (RUN_, '流程 Runbook', 'Personal intro HO2'), '3': (RUN_, '流程 Runbook', 'Personal intro HO3'),
     '4': (RUN_, '流程 Runbook', 'Shared intro: Night Crossing'), '5': (CAMP_, '前街 Front Street', 'The Coffin Shop by day'),
     '6': (CAMP_, '街口 Street Crossing', '12 January, noon'), '7': (CAMP_, '沙盒 How the sandbox runs', 'Action rounds'),
+    'S1': (CAMP_, '街口 Street Crossing', '15 January, noon: the rescue of Niu'),
     '8': (CAMP_, '前街 Front Street', 'The Teahouse'), '8a': (CAMP_, '前街 Front Street', 'The pharmacy'), '9': (CAMP_, '前街 Front Street', 'The Li Family Theatre'), '10': (CAMP_, '寺庙 Temple', 'Night at the temple'),
     '11': (CAMP_, '前街 Front Street', "The Undying family's house"), '12': (CAMP_, '衙署 Magistracy quarter', "Magistrate Fan's residence"),
     '13': (CAMP_, '衙署 Magistracy quarter', "Niu's house"), '14': (CAMP_, '衙署 Magistracy quarter', 'The Gaol'),
@@ -666,7 +732,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.19', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.20', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
