@@ -345,16 +345,16 @@ SC = [
 # ---------------- music (Kevin MacLeod, incompetech.com, CC BY 4.0) ----------------
 # One track per scene: (title, file, scene number, what it is for). Lightless Dawn is a spare for any Gla'aki moment.
 TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·庆功宴 Title, idle screen, Banquet'),
-          ('Ishikari Lore', 'Ishikari_Lore.ogg', ('0c',), '汉江两岸 Regional map'),
+          ('River Flute', 'River_Flute.ogg', ('0c',), '汉江两岸 Regional map'),
           ('Teller of the Tales', 'Teller_of_the_Tales.ogg', ('2',), '北门 North Gate'),
           ('Asian Drums', 'Asian_Drums.ogg', ('3',), '衙署 Magistracy raid'),
           ('Temple of the Manes', 'Temple_of_the_Manes.ogg', ('4',), '汉江夜渡 Night Crossing'),
           ('Decline', 'Decline.ogg', ('5',), '棺材铺 Coffin Shop'),
           ('Dark Times', 'Dark_Times.ogg', ('6',), '街口 Street Crossing, the Hermit\'s body'),
-          ('Finding Movement', 'Finding_Movement.ogg', ('7',), '樊城城图 Town map, action rounds'),
+          ('Overheat', 'Overheat.ogg', ('7',), '樊城城图 Town map, action rounds'),
           ('Guzheng City', 'Guzheng_City.ogg', ('8',), '茶楼 Teahouse'),
-          ('Shenyang', 'Shenyang.ogg', ('9',), '李家瓦子 Li Family Theatre'),
-          ('Unseen Horrors', 'Unseen_Horrors.ogg', ('10',), '寺庙 Temple at night'),
+          ('Nu Flute', 'Nu_Flute.ogg', ('9',), '李家瓦子 Li Family Theatre'),
+          ('Himalayan Atmosphere', 'Himalayan_Atmosphere.ogg', ('10',), '寺庙 Temple at night'),
           ('Ghost Story', 'Ghost_Story.ogg', ('11',), '某处民宅 The Undying family\'s house'),
           ('Night Vigil', 'Night_Vigil.ogg', ('12',), '灵堂 Magistrate Fan\'s mourning hall'),
           ('Drums of the Deep', 'Drums_of_the_Deep.ogg', ('13',), '阿术病榻 Ashu\'s sickroom'),
@@ -501,7 +501,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.9', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.11', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
