@@ -19495,7 +19495,7 @@
    "initial": null,
    "description": "<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
-   "playlistSound": "Q01dDxhtHG43Q4DT",
+   "playlistSound": "Xo5ASuaOfkFZVpyC",
    "navOrder": 1200000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
@@ -22568,9 +22568,9 @@
      "description": "Guzheng City Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
-     "_id": "Q01dDxhtHG43Q4DT",
-     "name": "Nu Flute — 李家瓦子 Li Family Theatre",
-     "path": "modules/gongruo-session0/assets/music/Nu_Flute.ogg",
+     "_id": "Xo5ASuaOfkFZVpyC",
+     "name": "Eastminster — 李家瓦子 Li Family Theatre",
+     "path": "modules/gongruo-session0/assets/music/Eastminster.ogg",
      "channel": "music",
      "playing": false,
      "repeat": true,
@@ -22578,7 +22578,7 @@
      "fade": 2000,
      "sort": 9,
      "flags": {},
-     "description": "Nu Flute Kevin MacLeod (incompetech.com) CC BY 4.0"
+     "description": "Eastminster Kevin MacLeod (incompetech.com) CC BY 4.0"
     },
     {
      "_id": "fQYQPIwr3veAVZEc",
