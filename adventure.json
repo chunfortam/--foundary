@@ -14522,6 +14522,436 @@
    }
   },
   {
+   "_id": "oZw7v76qbLTMTeaZ",
+   "name": "许宅仆役 Xu household sweeper",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/xu_sweeper.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 45
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 50
+     },
+     "app": {
+      "value": 50
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 40
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>在许宅前庭洒扫，可说服或贿赂其引见许德显。</p><p>Sweeps the forecourt. Visitors can talk or bribe the sweepers into admitting them to see Prefect Xu.</p><p>主持人便利用：外貌与数值为自拟。GM convenience: appearance and civilian stats are illustrative.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "许宅仆役 Xu household sweeper",
+    "actorLink": false,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/xu_sweeper.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "wjJebjWqaq3I6aFx",
+   "name": "许宅侍女 Xu household maid",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/xu_maid.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 45
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 50
+     },
+     "app": {
+      "value": 50
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 40
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>在书房侍奉赏玩珍宝的许德显。</p><p>Attends Prefect Xu in the study while he admires his curios.</p><p>主持人便利用：外貌与数值为自拟。GM convenience: appearance and civilian stats are illustrative.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "许宅侍女 Xu household maid",
+    "actorLink": false,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/xu_maid.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "oAQ79xefTLF2qurb",
+   "name": "求救老妇 Old woman begging for help",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/fire_aunt.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 45
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>后街失火民宅：老妇求救，侄女一家五口困在屋内，其中两个孩子不到十岁；父亲去年战死，抚恤未至。邻居可告知前街亲属的住址。</p><p>Book: Back Street, The burning house. Her niece's family of five, including two children under ten, are trapped. The father died in the war last year; the pension never came. Neighbours give the Front Street relatives' address.</p><p>GM convenience: civilian statistics, not supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "求救老妇 Old woman begging for help",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/fire_aunt.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "BRkBNpMRs7fVaT5M",
+   "name": "七宝行掌柜 Seven Treasures manager",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/jeweller.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 45
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>七宝行无名掌柜，熟知市井传闻与太湖石往事，以赌石换消息：进行幸运检定。</p><p>Book: Back Street, Seven Treasures jeweller. The unnamed manager knows all the gossip and the Grand Lake Stone story; trades information for a stone-gambling Luck roll. Magistrate Fan ordered the stone with eighty-one holes; green jade grew in the forty-sixth.</p><p>GM convenience: civilian statistics, not supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "七宝行掌柜 Seven Treasures manager",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/jeweller.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "dL9P8MoLXOXuFLpO",
+   "name": "七宝行伙计 Seven Treasures assistant",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/jeweller_hand.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 45
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>七宝行仅有的一名伙计，原书未具名。</p><p>Book: Back Street, Seven Treasures jeweller. The shop has one assistant, unnamed in the book.</p><p>GM convenience: civilian statistics, not supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "七宝行伙计 Seven Treasures assistant",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/jeweller_hand.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
    "_id": "7nbMRwGyBh5fEm2m",
    "name": "渡船 River boat",
    "type": "npc",
@@ -22874,6 +23304,1380 @@
    "journalEntryPage": "g3qrFK2KC9VmqE5X"
   },
   {
+   "_id": "H2rJl445eVO6S59b",
+   "name": "M1 · 许德显的宅邸 Prefect Xu's mansion",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/xu_residence.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "M1 · 许德显的宅邸 Prefect Xu's mansion",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/xu_residence.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "p7NjxoRByh6CPFGo",
+     "name": "许德显 Prefect Xu",
+     "actorId": "iBDZteGcpbau6xeU",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu.webp"
+     },
+     "x": 928,
+     "y": 396,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "qPOZYTmuIkNxQuuY",
+     "name": "许宅侍女一 Xu household maid 1",
+     "actorId": "wjJebjWqaq3I6aFx",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_maid.webp"
+     },
+     "x": 723,
+     "y": 390,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "90A3rSlQTCttvbv8",
+     "name": "许宅侍女二 Xu household maid 2",
+     "actorId": "wjJebjWqaq3I6aFx",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_maid.webp"
+     },
+     "x": 1152,
+     "y": 390,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "xjc3csY5o1e4uwjt",
+     "name": "许宅仆役一 Xu household sweeper 1",
+     "actorId": "oZw7v76qbLTMTeaZ",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_sweeper.webp"
+     },
+     "x": 691,
+     "y": 761,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "zvVxnbiHGE3KIkjD",
+     "name": "许宅仆役二 Xu household sweeper 2",
+     "actorId": "oZw7v76qbLTMTeaZ",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_sweeper.webp"
+     },
+     "x": 1216,
+     "y": 761,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "8WarQ7bvypQPVk2o",
+     "heading": "Prefect Xu's mansion"
+    }
+   },
+   "sort": 2200000,
+   "initial": null,
+   "description": "<p>大门紧闭，仆役在前庭洒扫；许德显与侍女在书房。说服或贿赂仆役以求引见，或翻越后墙。</p><p>The gate is shut. The sweepers work in the forecourt; Prefect Xu and his maids are in the study. Talk or bribe your way in through the sweepers, or go over the back wall.</p><p>主持人便利用：布局与人数为示意。GM convenience: the layout and exact token counts are illustrative.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "1bPiTvYhBY59l52e",
+   "navOrder": 2200000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "8WarQ7bvypQPVk2o"
+  },
+  {
+   "_id": "UJY2J0MIfNBFqct5",
+   "name": "M2 · 官学 The Academy",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/academy.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "M2 · 官学 The Academy",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/academy.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "ZDwNQb2uAH9shoif",
+     "name": "官学儒生一 Academy scholar 1",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 601,
+     "y": 467,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "VXvL46hA0wPXa6Ug",
+     "name": "官学儒生二 Academy scholar 2",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 1260,
+     "y": 640,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "8WarQ7bvypQPVk2o",
+     "heading": "The School and the Library"
+    }
+   },
+   "sort": 2300000,
+   "initial": null,
+   "description": "<p>官学无人值守，几名儒生正在整理物品。书阁就在官学内部。</p><p>The Academy is unguarded; a few scholars are packing up. The Library is inside the Academy.</p><p>主持人便利用：布局与人数为示意；切换至藏书阁场景不另耗行动轮。GM convenience: the layout and token counts are illustrative. Switch to the Library as part of the same visit.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "1bPiTvYhBY59l52e",
+   "navOrder": 2300000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "8WarQ7bvypQPVk2o"
+  },
+  {
+   "_id": "bTzqKNAYdTcAxizb",
+   "name": "M3 · 藏书阁 The Library",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/library.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "M3 · 藏书阁 The Library",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/library.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "DDbsBxGA2rmN9pz6",
+     "name": "孔礼岳 Kong Liyue",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/kong_liyue.webp"
+     },
+     "x": 755,
+     "y": 889,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "y11sIoTE4v0b4MKT",
+     "name": "周文通 Zhou Wentong",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 1113,
+     "y": 889,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "bXbLXQedTXiNPM69",
+     "name": "藏书阁儒生一 Library scholar 1",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 563,
+     "y": 512,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0PuvKX64AHIS9k6Y",
+     "name": "藏书阁儒生二 Library scholar 2",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 1267,
+     "y": 588,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "kPpenHov4c8emNuH",
+     "name": "范玉楼 Commander Fan",
+     "actorId": "vVXMKubzpYyuDjTj",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fan_yulou.webp"
+     },
+     "x": 1088,
+     "y": 384,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "8WarQ7bvypQPVk2o",
+     "heading": "The School and the Library"
+    }
+   },
+   "sort": 2400000,
+   "initial": null,
+   "description": "<p>进藏书阁前，孔礼岳拦问来意，周文通出面解围。若安排「素书偶逢」，才显示隐藏的范玉楼。</p><p>Play Kong Liyue’s challenge and Zhou Wentong’s rebuke at the door before the search. Reveal Commander Fan only for the optional chance meeting over books.</p><p>主持人便利用：布局、人数与儒生通用数值为示意。GM convenience: the layout and counts are illustrative; the scholars use the shared Scholar stats.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "1bPiTvYhBY59l52e",
+   "navOrder": 2400000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "8WarQ7bvypQPVk2o"
+  },
+  {
+   "_id": "bAnlqWx8dt1VdVHi",
+   "name": "B1 · 会馆 The Guildhall",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/guildhall.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "B1 · 会馆 The Guildhall",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/guildhall.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.1,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "rgofZuTBmoIMzHHi",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 832,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "6cyjXUJVuA3nH9Da",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 896,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "7MiHLp8ecX2BOeHU",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 960,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "Ee0r7GckJRVssmbn",
+     "name": "段游衍 Duan Driftwood",
+     "actorId": "E96GK825kFXk3LZk",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/duan.webp"
+     },
+     "x": 960,
+     "y": 320,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "gAKZvmt4eidCXaRs",
+     "name": "卫兵 Guard 1",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 832,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "Q3GZ9cmknP9S8kpa",
+     "name": "卫兵 Guard 2",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 1024,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "hIYtCpUPqkkp0Vzp",
+     "name": "副官 Adjutant",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 1216,
+     "y": 640,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "FAf6fhtFrWbf6T0r",
+     "heading": "The Guildhall"
+    }
+   },
+   "sort": 2500000,
+   "initial": null,
+   "description": "<p>上方是段游衍书房，门外皮毯为记；中庭在中央，大门与街道在下。段游衍为隐藏标记，是否在场由主持人决定；卫兵与副官随他驻此。</p><p>Duan's study is at the top, marked by the fur carpet at its door; courtyard in the middle, gate and street below. Duan is hidden: he may be away. His guards and adjutant lodge here. The desk holds the letter, note and defence map; see the Back Street journal.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "8Ri1YC84YDEREPSd",
+   "navOrder": 2500000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "FAf6fhtFrWbf6T0r"
+  },
+  {
+   "_id": "vbDcWTed64bUquSo",
+   "name": "B2 · 失火民宅 The burning house",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/burning.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "B2 · 失火民宅 The burning house",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/burning.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.4,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "a28lQTgvQYUnKvCh",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 832,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "1Wb7QVbW50uyDeR2",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 896,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0PCsnYIiResVcF4G",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 960,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0jZoGDNezzqoUg3B",
+     "name": "求救老妇 Old woman begging for help",
+     "actorId": "oAQ79xefTLF2qurb",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fire_aunt.webp"
+     },
+     "x": 1088,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "YtcLNw2cj2uuMvG2",
+     "name": "火中亲属 Trapped kin 1",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 320,
+     "y": 384,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "eJZ8Vt8PRmJvmqQi",
+     "name": "火中亲属 Trapped kin 2",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 320,
+     "y": 448,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "qwpTcD6bOr4EpDCX",
+     "name": "火中亲属 Trapped kin 3",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 448,
+     "y": 256,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "UCP4kbxU99Uj9ZpW",
+     "name": "火中亲属 Trapped kin 4",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 448,
+     "y": 320,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "kDqkSfZVrt8eTJ1z",
+     "name": "火中亲属 Trapped kin 5",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 896,
+     "y": 320,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "FAf6fhtFrWbf6T0r",
+     "heading": "The burning house"
+    }
+   },
+   "sort": 2600000,
+   "initial": null,
+   "description": "<p>老妇在下方街道求救。五名亲属（两个孩子不到十岁）是不死仆从，隐藏在床下与柜中；标记位置为主持人便利安排。右侧起火。</p><p>The old woman begs on the street below. Five trapped kin (two children under ten) are hidden Undying Servant tokens in wardrobes and under beds; exact placements are GM convenience. Fire is on the right. DEX to enter or 1D3 damage; STR to drag one out. In firelight it melts and collapses: SAN 1/1D10. The fire drives everyone out; neighbours give the Front Street address.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "ZnpX1D8TizZVFvK8",
+   "navOrder": 2600000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "FAf6fhtFrWbf6T0r"
+  },
+  {
+   "_id": "OT4sfBaSUTWxU9Jc",
+   "name": "B3 · 七宝行 Seven Treasures jeweller",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/treasures.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "B3 · 七宝行 Seven Treasures jeweller",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/treasures.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.05,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "avgO7aZSWh4iajaq",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 832,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "rVL9A47cx3W3QQ7g",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 896,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "CJGA3OO5WUrieURo",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 960,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "ST7BZ5mh5KiWPwlL",
+     "name": "七宝行掌柜 Seven Treasures manager",
+     "actorId": "BRkBNpMRs7fVaT5M",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/jeweller.webp"
+     },
+     "x": 1344,
+     "y": 768,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "KeueARpIrMxf2ft0",
+     "name": "七宝行伙计 Seven Treasures assistant",
+     "actorId": "dL9P8MoLXOXuFLpO",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/jeweller_hand.webp"
+     },
+     "x": 1280,
+     "y": 704,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "FAf6fhtFrWbf6T0r",
+     "heading": "Seven Treasures jeweller"
+    }
+   },
+   "sort": 2700000,
+   "initial": null,
+   "description": "<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop's one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "jJw6DQrbF8UBxonO",
+   "navOrder": 2700000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "FAf6fhtFrWbf6T0r"
+  },
+  {
    "_id": "Szolgq3TqIPZWA0H",
    "name": "F1 · 沿街浮屋 The street stalls",
    "folder": "A5vdDtxm7pu1YoMV",
@@ -23051,12 +24855,12 @@
      "heading": "The street stalls and the old-book seller"
     }
    },
-   "sort": 2200000,
+   "sort": 2800000,
    "initial": null,
    "description": "<p>王见川守着下方书摊。范玉楼初始隐藏，供“因书偶遇”时显示。GM convenience：调查员起点及人物具体站位仅为主持方便。</p><p>Wang Jianchuan tends the book stall below. Reveal Commander Fan for \"A chance meeting over books\". GM convenience: investigator starting points and exact token positions.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "jJw6DQrbF8UBxonO",
-   "navOrder": 2200000,
+   "navOrder": 2800000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -23434,12 +25238,12 @@
      "heading": "Wang Wu's Restaurant"
     }
    },
-   "sort": 2300000,
+   "sort": 2900000,
    "initial": null,
    "description": "<p>左侧为一楼大厅与上方厨房；右侧是二楼第三间雅室。十二日歇业，十三日起营业。陈寻忠扮作跑堂，初始隐藏，认出刘卿堂时显示。脱欢只在每日中午来：届时显示他及四名亲卫（屋内两名、门口两名）；门卫先尝菜。</p><p>Left: ground-floor hall and kitchen above. Right: upstairs, third private room. Shut on the 12th; open from the 13th. Chen is disguised as a waiter; reveal him when he approaches Liu. Toghan visits only at noon: reveal him and four guards then (two inside, two at the door); the door guards taste the food.</p><p>GM convenience：调查员与刘卿堂起点、卫兵及其余人物的具体站位。GM convenience: starting points for the PCs and Liu, and exact guard and other token positions.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "jJw6DQrbF8UBxonO",
-   "navOrder": 2300000,
+   "navOrder": 2900000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -23649,12 +25453,12 @@
      "heading": "The pharmacy"
     }
    },
-   "sort": 2400000,
+   "sort": 3000000,
    "initial": null,
    "description": "<p>凌代秋卧病在右上床榻，凌序春在旁；调查员从下方巷门来。来访段落在药铺标题之下。杀死秋筠才会解除绿腐。</p><p>Ling Daiqiu lies on the bed top-right, Ling Xuchun beside him; the investigators arrive at the lane door below. The visit is a paragraph under the pharmacy heading. Killing Autumn ends Green Rot.</p><p>GM convenience：调查员起点与具体站位。GM convenience: investigator starting points and exact token positions.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "oGl7nfENhiJWpH9c",
-   "navOrder": 2400000,
+   "navOrder": 3000000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -23892,12 +25696,12 @@
      "heading": "The Wineshop (hidden; no round)"
     }
    },
-   "sort": 2500000,
+   "sort": 3100000,
    "initial": null,
    "description": "<p>隐藏地点，得知地址后才开放；来此不耗行动轮。杜观山在左上柜台后，怀德在右上蒲团，方未名在桌边。和尚每日斗酒：连续三次体质成功可赢金袈裟。</p><p>A hidden place: offer it only after the party learns the address; visiting costs no round. Du is behind the counter top-left, Huaide on the meditation cushion top-right, Fang at a table. The monk offers a daily drinking contest: three consecutive CON successes win the golden kasaya.</p><p>GM convenience：调查员起点与具体站位。GM convenience: investigator starting points and exact token positions.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Q01dDxhtHG43Q4DT",
-   "navOrder": 2500000,
+   "navOrder": 3100000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   }
