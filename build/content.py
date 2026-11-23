@@ -21,23 +21,23 @@ GLOSSARY = [
   ("岘山 / 岘首山", "Mount Crag", "the hermit's mountain"),
   ("大理", "Dali", "the south-western kingdom; real place, keeps its name"),
   ("解佩亭", "the Pavilion of the Untied Pendant", "riverside pavilion where the stone was kept"),
-  ("芦苇荡", "the Reed Marsh", "east of Fencewall, where the boats leave"),
+  ("芦苇荡", "the reeds", "east of Fencewall, where the boats leave"),
   ("前街 / 后街", "Front Street / Back Street", ""),
   ("衙署", "the Magistracy", "the government compound"),
-  ("李家瓦子", "the Plum Playhouse", "李 = plum; a ruined theatre"),
-  ("王五分茶", "Old Five's Teahouse", "the big restaurant run by Old Five Wang"),
+  ("李家瓦子", "the Li Family Theatre", "a ruined theatre"),
+  ("王五分茶", "Wang Wu's Restaurant", "the biggest eating-house in town, closed on the 12th"),
   ("酒肆", "the Wineshop", "where the knights-errant meet"),
   ("棺材铺", "the Coffin Shop", "your safe house"),
   ("塔楼", "the Watchtower", "the 50 m wooden tower on the bank"),
-  ("会馆", "the Merchants' Hall", "now the Mongol officers' lodging"),
+  ("会馆", "the Guildhall", "now the Mongol officers' lodging"),
  ]),
  ("人物 · People", [
   ("兀良哈·阿术", "Marshal Ashu of the Uriankhai", "Mongol commander-in-chief (Mongol name kept)"),
-  ("兀良哈·脱欢", "Toghan", "Ashu's brutal deputy; killed HO2's father"),
+  ("兀良哈·脱欢", "General Toghan", "Ashu's brutal deputy; killed HO2's father"),
   ("段游衍", "Duan Driftwood", "Song turncoat general, HO1's old classmate (游衍 = drifting)"),
-  ("范天顺", "Commander Fan", "Fencewall's late commander, hanged himself"),
-  ("范玉楼", "Magistrate Fan", "his nephew, now runs the city"),
-  ("范玉莹", "Lady Fan", "the commander's daughter"),
+  ("范天顺", "Magistrate Fan", "Fencewall's late magistrate, led its defence, hanged himself"),
+  ("范玉楼", "Commander Fan", "his nephew, now commands the city for the Mongols"),
+  ("范玉莹", "Fan Yuying", "Magistrate Fan's daughter"),
   ("牛富", "General Niu", "the famous bowman, now in the gaol"),
   ("刘卿堂", "Captain Liu", "HO3's childhood friend"),
   ("越南柯", "Doctor Yue, the Hollow Physician", "空空郎中; HO2's foster brother, con-man thief"),
@@ -47,10 +47,10 @@ GLOSSARY = [
   ("姜楼 / 姜阁", "the Jiang twins, Tower and Loft", "identical twins, strong swimmers"),
   ("曲流", "Winding Stream", "the coffin-maker, your host"),
   ("秋筠", "Autumn", "the scarred woman (a bandit, now undying)"),
-  ("凌代秋 / 凌序春", "Ling the Elder / Ling the Younger", "fisher siblings; he is called the Wave-Breaking Dragon"),
-  ("杜观山", "Du Mountain-Gazer", "wineshop keeper"),
-  ("王五条", "Old Five Wang", "teahouse owner"),
-  ("宋择一", "Song the Tea Master", ""),
+  ("凌代秋 / 凌序春", "Ling Daiqiu / Ling Xuchun", "fisher siblings; he is called the Wave-Breaking Dragon"),
+  ("杜观山", "Du Guanshan", "wineshop keeper"),
+  ("王五条", "Wang Wu", "restaurant owner"),
+  ("宋择一", "tea master Song", ""),
   ("赤松子", "Red Pine, the Rain Master", "legendary immortal"),
   ("汉江神女", "the Lady of the Han", "river goddess of legend"),
   ("忽必烈 / 贾似道 / 吕文焕", "Kublai Khan / Chancellor Jia / General Lü", "historical figures"),
@@ -61,7 +61,7 @@ GLOSSARY = [
   ("格拉基", "Gla'aki", "the thing in the river (Mythos name kept)"),
   ("何罗鱼", "the Many-Headed Fish", "its name in old travel books / 山海经"),
   ("不死仆从", "the Undying Servants", "Gla'aki's thralls"),
-  ("绿腐术", "the Green Decay", "a curse delivered with a green leaf"),
+  ("绿腐术", "Green Rot", "a curse delivered with a green leaf"),
   ("梦引", "the Dream-Call", "Gla'aki's nightly POW contest"),
   ("点穴", "Acupoint Strike", "custom skill; kills an Undying Servant outright"),
   ("轻功", "Lightness", "in this scenario = Climb and Jump"),
@@ -109,7 +109,7 @@ def primer_html():
     s += bi("汉江两岸有一对双城：北岸的樊城，南岸的襄阳。它们是南方的大门。襄阳三面环水，易守难攻；樊城易攻难守。两城之间原有一座浮桥，围城时已被元军截断。",
             "Two cities face each other across the Han River: Fencewall on the north bank and Southbright on the south. They are the gate to the whole south. Southbright is ringed by water and nearly impregnable; Fencewall is not. A pontoon bridge once joined them; the Mongols cut it.")
     s += bi("一二六八年一月三日，元军总攻樊城。守将范天顺自缢殉国；他的侄子范玉楼献城投降。蒙古统帅兀良哈·阿术下令不得劫掠，城里百姓照常过日子——只是街上到处是巡逻兵。元军准备六日后渡江攻打襄阳。",
-            "On 3 January 1268 the Mongols stormed Fencewall. Commander Fan hanged himself rather than surrender; his nephew, Magistrate Fan, opened the gates. Marshal Ashu forbade looting, so life goes on, except for the patrols on every street. In six days the army crosses to attack Southbright.")
+            "On 3 January 1268 the Mongols stormed Fencewall. Magistrate Fan hanged himself rather than surrender; his nephew, Commander Fan, opened the gates. Marshal Ashu forbade looting, so life goes on, except for the patrols on every street. In six days the army crosses to attack Southbright.")
     s += bi("就在此时，汉江起了反常的浓雾。百姓说梦见了汉江神女；关于雨师赤松子的旧传说又流传开来。",
             "And now an unnatural fog has settled on the river. Townsfolk dream of the Lady of the Han; old tales of Red Pine the Rain Master are told again.")
     s += h("你们是谁", "Who you are")
@@ -131,7 +131,7 @@ def primer_html():
 OPENING = [
  "Listen.",
  "There is a river in the middle of China called the Han 汉江. In winter it runs grey and wide and slow, and for a thousand years it has been the line between north and south. On its two banks stand two walled cities, close enough that on a clear day a man on one wall can watch the sentries pace on the other: Fencewall 樊城 to the north, Southbright 襄阳 to the south. Between them, until last week, there was a bridge.",
- "The year is 1268. The empire of the Song 宋 is old and gold and soft, and it has forgotten how to fight. Out of the north have come the Mongols, who have never forgotten. They have broken kingdoms from the Yellow Sea to the gates of Europe, and now their horses stand on the north bank of the Han, and their marshal, a man called Ashu 阿术 of the Uriankhai, has taken Fencewall in three days. The commander of the garrison hanged himself. The magistrate opened the gates. The bridge is gone. Across the water Southbright still holds, its watch-fires small and stubborn in the dark, and everyone in Fencewall who has somewhere else to be is looking at those fires and wondering how to reach them.",
+ "The year is 1268. The empire of the Song 宋 is old and gold and soft, and it has forgotten how to fight. Out of the north have come the Mongols, who have never forgotten. They have broken kingdoms from the Yellow Sea to the gates of Europe, and now their horses stand on the north bank of the Han, and their marshal, a man called Ashu 阿术 of the Uriankhai, has taken Fencewall in three days. The magistrate who led the defence hanged himself. His nephew opened the gates. The bridge is gone. Across the water Southbright still holds, its watch-fires small and stubborn in the dark, and everyone in Fencewall who has somewhere else to be is looking at those fires and wondering how to reach them.",
  "This is not a world of monsters. This is a world of people: of soldiers and merchants and officials, and of another kind of people who live in the cracks between them, in what is called the jianghu 江湖, the rivers and lakes. Wanderers. Swordsmen who owe nothing to the emperor and everything to their masters. People who can run up a wall and down the other side, who can put a finger on your neck and stop your arm, who carry old grudges and older swords. If you have seen a film where two fighters duel on the roof of a teahouse, you know them.",
  "Three of those people are in Fencewall tonight.",
  "One of you is a wanderer 游侠, young and fast and poor, with a sword that does not belong to you and a thing you did ten nights ago that the whole city is whispering about.",
@@ -165,11 +165,11 @@ def extended_html():
     s += bi("粟米粥、白面饼子、咸菜。铺面不大，殡葬用品堆得拥挤；几台完工的棺材掀着盖晾漆。侦查：棺材内壁有放置物品的暗格。",
             "Millet porridge, flatbread, pickles. The shopfront is small and crammed with funeral goods; a few finished coffins stand open to dry their lacquer. Spot Hidden: the inner walls have hidden compartments for grave goods.")
     s += ul([
-      ("棺材：战时死人多，家家用得上。她手艺高，范天顺的棺材也是她做的。", "Coffins: in wartime every family needs one. She is good; she made Commander Fan's 范天顺 coffin too."),
-      ("暗格：有人把死者随身物放进暗格，防偷防腐；范玉楼也提过同样的要求。", "Compartments: people put the dead's belongings inside against thieves and rot. Magistrate Fan 范玉楼 asked for one as well."),
+      ("棺材：战时死人多，家家用得上。她手艺高，范天顺的棺材也是她做的。", "Coffins: in wartime every family needs one. She is good; she made Magistrate Fan's 范天顺 coffin too."),
+      ("暗格：有人把死者随身物放进暗格，防偷防腐；范玉楼也提过同样的要求。", "Compartments: people put the dead's belongings inside against thieves and rot. Commander Fan 范玉楼 asked for one as well."),
     ])
     s += bi("然后让他们商量今天去哪里：主持人只需简述四区——前街（商铺、药行分号、瓦子）、后街（会馆、寺庙）、衙署一带、江岸（码头、芦苇荡）。本加时只跑午时街口；其余留给第一次正式聚会。",
-            "Then let them plan the day. You only need to name the four districts: Front Street (shops, HO2's pharmacy branch, the playhouse), Back Street (the Merchants' Hall where Duan lives, the temple), the Magistracy quarter, the riverbank (docks, reed marsh). This extension only plays the noon event at the Street Crossing; whatever else they choose, say \"you spend the morning on it; we pick it up next time\" and move to noon.")
+            "Then let them plan the day. You only need to name the four districts: Front Street (shops, HO2's pharmacy branch, the theatre), Back Street (the Guildhall where Duan lives, the temple), the Magistracy quarter, the riverbank (docks, reed marsh). This extension only plays the noon event at the Street Crossing; whatever else they choose, say \"you spend the morning on it; we pick it up next time\" and move to noon.")
     s += h("十二日午：街口固定事件（场景：街口）", "Noon of the 12th: the Street Crossing 街口 (scene: the Street Crossing)")
     s += bi("前街后街的交汇口，必经之地。行脚店、茶摊；死刑犯在此弃市，午时三刻问斩，尸体挂到子时。",
             "The junction of Front and Back Street; everyone passes here. An inn, a tea stall; this is where the condemned are executed, at a quarter past noon, and left hanging until midnight.")
@@ -189,7 +189,7 @@ def extended_html():
       ("船只：两封未寄出的信，都是荆湖通判许德显写的。一封给蒙古军营，表投诚之心，说家里还有三艘画舫、五艘小船愿双手奉上；一封给襄阳吕文焕，字字泣血表忠心。越南柯借看诊之名偷来，可用来胁迫许德显。", "Boats: two unsent letters, both by Prefect Xu 许德显. One to the Mongol camp offering to surrender and hand over his three pleasure-barges and five small boats; one to Governor Lü 吕文焕 in Southbright, weeping loyalty to the Song. Yue stole them during a 'consultation'. Either letter would ruin Xu; together they are a lever to get his boats."),
       ("解毒：他懂得不多，但若是本地传说中的毒，地方图志上没准有记述。", "The poison (Rainmaster's Ink 雨师墨, if HO1 asks): he knows little, but if it is a local legend the county gazetteer 地方志 may record it. (Library 官学&书阁, next session.)"),
       ("疤脸女子：满脸疤痕，要么遭了不测，要么是该处死刑的囚犯。", "The scar-faced woman the town gossips about: a face like that means either a disaster or a condemned criminal."),
-      ("范天顺：高瞻远瞩，对百姓尽心尽力，连偷几两灯油的人都要处以极刑。", "Commander Fan: far-sighted, devoted to the people; had a man executed for stealing a few ounces of lamp oil. (Said flat. Let them wonder.)"),
+      ("范天顺：高瞻远瞩，对百姓尽心尽力，连偷几两灯油的人都要处以极刑。", "Magistrate Fan: far-sighted, devoted to the people; had a man executed for stealing a few ounces of lamp oil. (Said flat. Let them wonder.)"),
     ])
     s += h("十二日夜：第二次梦引（场景：汉江夜渡，调暗）", "Night of the 12th: the second Dream-Call (scene: Night Crossing, darkness up)")
     s += bi("格拉基再次梦引HO3，驱其独自前往江岸，并以光亮幻象引诱。梦中：", "Gla'aki 格拉基 calls HO3 again, drawing them alone to the riverbank with a lure of light. The dream (read aloud to HO3, SAN 1/1D3):")
@@ -257,7 +257,7 @@ HO[3] = dict(
     bi("你有一位名叫刘卿堂的发小，急公好义，颇具江湖豪气。听闻你督军，他主动请缨同往，率五千兵马随你出发。",
        "Your childhood friend Liu Qingtang 刘卿堂, hot-blooded and generous, volunteered to come with you and led your five thousand men.") +
     bi("宋军疲软，蒙古兵精粮足。你们直至一二六七年末方奋力突围进入樊城，仅余八百人，损失惨重。次年一月元军大举攻城，范天顺要求你们先撤往襄阳暂避。但你突围时受伤未愈（伤势自行拟定），难耐奔波，只得暂缓。一月三日，刘卿堂先率八百余人渡江赴襄阳。次日，范玉楼主事，樊城开城投降。",
-       "The Mongols cut you to pieces. By the end of 1267 you broke through into Fencewall with eight hundred men left. In January the assault began and Commander Fan ordered you across to Southbright. You were still carrying a wound from the breakout (you decide what) and could not travel. On 3 January Liu took the eight hundred across the river. The next day Magistrate Fan surrendered the city.") +
+       "The Mongols cut you to pieces. By the end of 1267 you broke through into Fencewall with eight hundred men left. In January the assault began and Magistrate Fan ordered you across to Southbright. You were still carrying a wound from the breakout (you decide what) and could not travel. On 3 January Liu took the eight hundred across the river. The next day Commander Fan surrendered the city.") +
     bi("汉江以北已尽入蒙古之手。你必须渡江南返，与同袍会合。",
        "Everything north of the river is Mongol now. You must cross to Southbright and rejoin your men.")),
   build=ul([
@@ -391,7 +391,7 @@ def runbook_html():
     s += bi("今晚是犒赏三军的庆功宴，鸡鸭牛羊和美酒一车车运进衙署。宴会厅由宋官操办，却处处迎合蒙古口味：烤肉代替精致菜肴，酒盏换成手掌大的瓷碗，宋女歌舞，蒙古人看直了眼。",
             "Tonight is the victory feast; carts of poultry, beef, mutton and wine roll into the Magistracy. The hall was laid out by Song officials to Mongol taste: roast meat instead of delicacies, palm-sized bowls instead of wine cups, Song dancers the Mongols cannot stop staring at.")
     s += bi("阿术坐上首：身高八尺，体格健壮，皮肤粗糙，留胡须，戴毡帽，穿软甲，手边一把厚重马刀。段游衍坐在他右手下一位。范玉楼、许德显等宋官在座，范玉楼的吹捧尤其夸张。",
-            "Ashu sits on the dais: well over six feet, heavy-built, weathered skin, bearded, in a felt hat and soft armour, a huge sabre at his hand. Duan Driftwood sits one seat down on his right. Song officials are present, Magistrate Fan and Prefect Xu among them; Fan's flattery is embarrassing.")
+            "Ashu sits on the dais: well over six feet, heavy-built, weathered skin, bearded, in a felt hat and soft armour, a huge sabre at his hand. Duan Driftwood sits one seat down on his right. Song officials are present, Commander Fan and Prefect Xu among them; Commander Fan's flattery is embarrassing.")
     s += bi("<b>出剑：</b><b>▶ 播放音效「战 Battle」（循环）</b>。HO1趁阿术不备拔剑，他避过要害，剑刃落在惯用手肩膀。阿术踢开案几，抄起马刀劈来：闪避成功则躲开，否则受1D4伤害，伤口深可见骨，生命值上限-1。",
             "<b>The strike:</b> <b>▶ Start the 战 Battle sound effect (loops).</b> Ashu twists so the blade takes his sword-arm shoulder instead of his throat, kicks the table over and swings the sabre. Dodge to avoid it; otherwise 1D4 damage, a wound to the bone, and max HP -1.")
     s += bi("止水上的雨师墨使阿术的伤口无法愈合：整个模组中他的所有检定都带一个惩罚骰。",
@@ -417,17 +417,17 @@ def runbook_html():
     s += bi("HO2只能逃入樊城：敏捷检定判断是否受伤，失败扣1D3且本模组内无法痊愈，生命值上限-1。",
             "You run for Fencewall. DEX roll: on a failure take 1D3, a wound that will not fully heal in this scenario, and max HP -1.")
     s += bi("城门戒严：守门的是宋兵，吊桥半起，城头弓弩对着城外。信誉/交涉说服卫兵放行。若表明是药行少东家领朝廷指令而来，巡视城门的牛富会上前交谈；即使不说，HO2也能注意到这位身背漆黑强弓的将军。牛富可告知樊城近况与范天顺在城中捉贼的消息，并答应HO2提出的任何合理请求。",
-            "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, General Niu, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Commander Fan is hunting a thief in town) and promises to help with anything you ask.")
+            "The gate is under martial law: Song soldiers hold it, the drawbridge is half up, crossbows on the wall point outward. Credit Rating or Persuade to get in. If you say you are the pharmacy heir on court business, General Niu, inspecting the gate, comes to talk; even if not, you notice the general with the black bow on his back. He tells you the news (Magistrate Fan is hunting a thief in town) and promises to help with anything you ask.")
     s += '<blockquote>' + bi("<b>牛富（读给玩家）：</b>城头走下来一个人。四十来岁，黝黑精瘦，披一身旧铁甲，背上斜挂一把漆黑的长弓，比常人的弓长出一截，弓背上缠着磨白的皮条。目光如炬：先看你的手，再看你的车，最后才看你的脸。守门兵见了他都往后让半步。他只报了名号：牛富，樊城钤辖，范将军麾下掌兵。",
-            "<b>General Niu (read aloud):</b> A man comes down from the wall. Forties, dark-skinned, lean and hard as a drawn bowstring, in old iron armour. Slung across his back is a long black bow, a hand longer than any you have seen, its grip wrapped in leather worn pale. Eyes like torches: he looks at your hands first, then at your carts, and only then at your face. The gate guards step back half a pace as he passes. He gives only his name and office: Niu, garrison commander of Fencewall, under Commander Fan.") + '</blockquote>'
+            "<b>General Niu (read aloud):</b> A man comes down from the wall. Forties, dark-skinned, lean and hard as a drawn bowstring, in old iron armour. Slung across his back is a long black bow, a hand longer than any you have seen, its grip wrapped in leather worn pale. Eyes like torches: he looks at your hands first, then at your carts, and only then at your face. The gate guards step back half a pace as he passes. He gives only his name and office: Niu, garrison commander of Fencewall, under Magistrate Fan.") + '</blockquote>'
     s += bi("（牛富是樊城钤辖，范天顺之下掌兵马。两军对阵前他一箭射死了阿术的侄子，蒙古人记着这笔账。他对HO2直率、客气，说到做到——只要他还自由。）",
-            "(Niu is the garrison commander under Commander Fan. Before the armies met he shot Ashu's nephew dead with a single arrow; the Mongols have not forgotten. With HO2 he is blunt, courteous, and keeps his word, for as long as he is free.)")
+            "(Niu is the garrison commander under Magistrate Fan. Before the armies met he shot Ashu's nephew dead with a single arrow; the Mongols have not forgotten. With HO2 he is blunt, courteous, and keeps his word, for as long as he is free.)")
     s += bi("（这副可射四百步的神臂弓，不久后牛富入狱时会交到打更少年方未名手里。）",
             "(That bow shoots four hundred paces. When Niu is thrown in the gaol it will pass to Nameless Fang, the watchman boy.)")
     s += bi("住客栈或被百姓收留可听到街头琐碎情报：穷凶极恶的疤脸女亡命徒（秋筠）、寺庙的醉和尚、神出鬼没的打更人。",
             "At an inn or a townsman's house you pick up gossip: a scarred woman outlaw (Autumn), a drunk monk at the temple, a night watchman who is everywhere.")
     s += bi("<b>数日后（叙述）：</b>没安歇几天，元军总攻。一月三日，守将范天顺不肯降，在衙署自缢殉国；次日他的侄子范玉楼开城献降，以保全城中几万百姓。阿术下令不得劫掠，街上却到处是蒙古巡逻兵。牛富拒降，被下了大狱——他答应你的事，也就随他的自由一起没了。父亲身死的消息不知有没有传到江对岸，你家在临安府的偌大产业如今群龙无首：你必须回去。",
-            "<b>Days later (narrate):</b> You have barely rested when the assault comes. On 3 January Commander Fan 范天顺 refuses to surrender and hangs himself in the Magistracy; the next day his nephew, Magistrate Fan 范玉楼, opens the gates to spare the tens of thousands inside. Marshal Ashu forbids looting, but Mongol patrols now walk every street. Niu refused to surrender and is in the gaol; his promises to you died with his freedom. Nobody knows if word of your father's death has reached the far bank, and your family's great house in the capital, Lin'an 临安, is leaderless. You have to get home.")
+            "<b>Days later (narrate):</b> You have barely rested when the assault comes. On 3 January Magistrate Fan 范天顺 refuses to surrender and hangs himself in the Magistracy; the next day his nephew, Commander Fan 范玉楼, opens the gates to spare the tens of thousands inside. Marshal Ashu forbids looting, but Mongol patrols now walk every street. Niu refused to surrender and is in the gaol; his promises to you died with his freedom. Nobody knows if word of your father's death has reached the far bank, and your family's great house in the capital, Lin'an 临安, is leaderless. You have to get home.")
     s += bi("可汉江上连通襄樊的浮桥已被截断，江岸日夜有兵把守，城里的人很难和对岸通上消息。好在只要钱到位，总有人愿意铤而走险。你四处打听，入夜后带着全副身家，来到江岸边一处不引人注目的芦苇丛——别的想过河的人，也都聚在了那里。→ 公共导入。",
             "But the floating bridge between the two cities has been cut, soldiers watch the bank day and night, and no one in town can get word across. Still, where there is money there is someone willing to risk it. You ask around, and after dark you come, with everything you own, to an unremarkable clump of reeds on the riverbank, where the other people who mean to cross tonight have gathered too. → Night Crossing.")
     # HO3 intro
@@ -435,13 +435,13 @@ def runbook_html():
     s += bi("朝廷命你为宣抚使发兵救援襄樊。刘卿堂请缨，率五千人随行。蒙古人以樊城为饵伏击，你们几乎毫无还手之力，幸得刘卿堂指挥，余八百人突入樊城。",
             "The court names you Commissioner and sends you to relieve the twin cities. Captain Liu volunteers and brings five thousand men. The Mongols ambush you outside Fencewall; only Liu's handling saves eight hundred, who break into the city.")
     s += '<blockquote>' + bi("<b>衙署夜宴（读给玩家）：</b>范天顺在衙署大堂设宴接你——朝廷的宣抚使到了，不能不接；可满桌没有一个人有心思吃。蒙古人离城只有一天的路。陪坐的有他的侄子范玉楼，一脸笑；他的女儿范玉莹，一言不发；还有通判许德显，一个肥胖松软的人，满脸油光，替所有人吃喝。坐在你对面的是樊城钤辖牛富：黝黑精瘦，紧得像一张拉满的弓，目光如炬，酒菜不动，眼睛盯着门。举杯敬皇上，敬大捷；第二杯没人信。",
-            "<b>Dinner at the Magistracy (read aloud):</b> Commander Fan 范天顺 receives you with a banquet in the Magistracy hall, because that is what one does for an imperial Commissioner, and nobody at the table has the heart for it. The Mongols are a day's march away. At the Commander's side sit his nephew, Magistrate Fan 范玉楼, all smiles; his daughter, Lady Fan 范玉莹, who says nothing; and Prefect Xu 许德显, a soft, heavy man whose face shines with sweat and lamp oil and who eats and drinks for everyone. Across from you is the garrison commander, Niu 牛富: dark, lean, hard as a drawn bowstring, with eyes like torches; he touches neither wine nor food and watches the door. Toasts are drunk to the Emperor and to victory. No one believes the second.")
+            "<b>Dinner at the Magistracy (read aloud):</b> Magistrate Fan 范天顺 receives you with a banquet in the Magistracy hall, because that is what one does for an imperial Commissioner, and nobody at the table has the heart for it. The Mongols are a day's march away. At Magistrate Fan's side sit his nephew, Commander Fan 范玉楼, all smiles; his daughter, Fan Yuying 范玉莹, who says nothing; and Prefect Xu 许德显, a soft, heavy man whose face shines with sweat and lamp oil and who eats and drinks for everyone. Across from you is the garrison commander, Niu 牛富: dark, lean, hard as a drawn bowstring, with eyes like torches; he touches neither wine nor food and watches the door. Toasts are drunk to the Emperor and to victory. No one believes the second.")
     s += bi("宴罢，范玉楼亲自提灯送你去住所，一路夸赞：你的家世、你的学问、樊城何其有幸。夸赞之间，他像是故意要你留意似的，说起几句闲话：今年冬天真暖和；汉江的水，这个时节怎么这么大；怪事。",
-            "Afterwards Magistrate Fan himself walks you to your lodging, lantern in hand, flattering you all the way: your family, your learning, how lucky Fencewall is to have you. Between the compliments he drops odd remarks, as if he wanted you to notice them: how warm this winter has been; how high the Han is running for the season; how strange that is.") + '</blockquote>'
+            "Afterwards Commander Fan himself walks you to your lodging, lantern in hand, flattering you all the way: your family, your learning, how lucky Fencewall is to have you. Between the compliments he drops odd remarks, as if he wanted you to notice them: how warm this winter has been; how high the Han is running for the season; how strange that is.") + '</blockquote>'
     s += bi("（范玉楼的闲话是河神线的伏笔，不要解释。牛富、许德显的样子让玩家记住：牛富之后守北门、入狱；许德显的两封信是弄到船的筹码。）",
-            "(Magistrate Fan's remarks are the book's plant for the River God; don't explain them. The portraits of Niu and Xu are for later: Niu will hold the North Gate and end in the gaol; Xu's two letters are the lever for the boats.)")
+            "(Commander Fan's remarks are the book's plant for the River God; don't explain them. The portraits of Niu and Xu are for later: Niu will hold the North Gate and end in the gaol; Xu's two letters are the lever for the boats.)")
     s += bi("未几蒙古全面攻城。范天顺请你与刘卿堂带余兵先往襄阳。出发定在中午；你因伤未愈留下休息。刚过午后，衙署外骚乱，晴天骤然阴沉如夜却无雨。仆役四散，蒙古骑兵闯入官邸抄家捉人。",
-            "Then the full assault. Commander Fan orders you and Liu across to Southbright at noon; your wound keeps you in bed. Just past noon: uproar outside, the clear sky goes dark as night without a drop of rain, servants scatter, and Mongol cavalry ride into the compound seizing people.")
+            "Then the full assault. Magistrate Fan orders you and Liu across to Southbright at noon; your wound keeps you in bed. Just past noon: uproar outside, the clear sky goes dark as night without a drop of rain, servants scatter, and Mongol cavalry ride into the compound seizing people.")
     s += bi("<b>检定：</b>用合理方式潜行/困难幸运离开衙署；失败则接受蒙古士兵不讲道理的盘问，任何可疑之处都会被抓。强行逃离也可以，失败可能添新伤。",
             "<b>Roll:</b> Stealth, or Hard Luck, to get out with some plausible plan; fail and you face soldiers who arrest anyone suspicious. Fighting your way out is allowed; a failure means another wound.")
     s += bi("之后HO3在城中暂时落脚。浮桥已断，江岸有兵，你必须马上到对岸与同袍汇合。好在只要钱到位……→ 公共导入。",
@@ -449,7 +449,7 @@ def runbook_html():
     # Common intro
     s += h("公共导入：夜渡汉水（场景：汉江夜渡）", "Shared intro: Night Crossing (scene: Night Crossing of the Han River)")
     s += bi("一二六八年一月十一日子时。无星无月，浓雾遮天，远处只有近岸几点灯火——蒙古军日夜驻守。襄樊间河段宽四百五十丈，今夜能见度约十米。你们陆续来到樊城东的芦苇荡，守军三个时辰换岗，此刻正交接。芦苇一人多高，足以藏船。船夫来得稍迟；等候的有三人——今夜的旅客不止一位。",
-            "Midnight, 11 January 1268. No stars, no moon, fog over everything; only a few watch-fires on the bank, where the Mongols keep guard day and night. The river is 1.5 km wide; tonight you can see ten metres. You arrive one by one at the Reed Marsh east of Fencewall. The guards change every six hours, and this is the change. The reeds stand taller than a man. The boatman is late; three of you are waiting. You are not the only passenger tonight.")
+            "Midnight, 11 January 1268. No stars, no moon, fog over everything; only a few watch-fires on the bank, where the Mongols keep guard day and night. The river is 1.5 km wide; tonight you can see ten metres. You arrive one by one at the The reeds east of Fencewall. The guards change every six hours, and this is the change. The reeds stand taller than a man. The boatman is late; three of you are waiting. You are not the only passenger tonight.")
     s += ul([
       ("<b>侦查：</b>离岸不远有几只小船，均未点灯，行得极慢——其他趁夜渡河的人。", "<b>Spot Hidden:</b> several small boats offshore, unlit, barely moving: other night-crossers."),
       ("<b>灵感：</b>寒冬深夜，不是起雾的天气。", "<b>Idea:</b> midwinter, midnight; this is not fog weather."),
@@ -458,7 +458,7 @@ def runbook_html():
             "The boatman is called Wang: coarse hemp, a straw hat, one arm, a filthy towel at his belt. He can tell you are not local and that HO3 is somebody. He curses the Mongols and the court. He will tell you:")
     s += ul([
       ("断臂：世代打渔，被征作民夫搬运粮草时被马车压断。", "The arm: fisherman for generations; crushed by an army cart when he was pressed as a porter."),
-      ("范天顺：勤政爱民，治军严苛，能为卒吮脓；朝廷却尽派小娃娃领兵，害他自缢。", "Commander Fan: a man who would suck the pus from a soldier's wound; the court sent him children to command, and he hanged himself for it."),
+      ("范天顺：勤政爱民，治军严苛，能为卒吮脓；朝廷却尽派小娃娃领兵，害他自缢。", "Magistrate Fan: a man who would suck the pus from a soldier's wound; the court sent him children to command, and he hanged himself for it."),
       ("江上异象：汉水女神显灵，她温和自持，必会怜悯将士魂灵。", "The fog: the Lady of the Han, who is gentle and modest and surely pities the drowned soldiers."),
       ("刺杀阿术：他主动提起，游侠的美名传遍全城，只是生死不明。", "The assassination: he brings it up himself; the whole town praises the nameless wanderer, nobody knows if he lives."),
     ])
@@ -492,16 +492,16 @@ def runbook_html():
             "<b>Stop here.</b> Next session: reveal the Fencewall map and begin the free investigation rounds (three a day).")
     s += h("名词注释", "Terms")
     s += ul([
-      ("沿街浮屋：百姓自支的小摊。分茶：大食楼。会馆：外商歇脚的宾馆，现为蒙古人占用。瓦子：表演娱乐场所。", "Street stalls; a 分茶 is a big restaurant; the Merchants' Hall is an inn now used by the Mongols; a 瓦子 is a playhouse."),
+      ("沿街浮屋：百姓自支的小摊。分茶：大食楼。会馆：外商歇脚的宾馆，现为蒙古人占用。瓦子：表演娱乐场所。", "Street stalls; a 分茶 is a big restaurant; the Guildhall is an inn now used by the Mongols; a 瓦子 is a playhouse."),
     ])
     return s
 
 def timeline_html():
     s = h("主持人：时间线", "GM: Timeline", 1)
     s += table(["日期 Date", "事件", "Event"], [
-      ("1266", "范天顺购得太湖石，内嵌格拉基碎片，置于解佩亭。", "Commander Fan buys the Grand Lake Stone with Gla'aki's shard and sets it in the Pavilion of the Untied Pendant."),
+      ("1266", "范天顺购得太湖石，内嵌格拉基碎片，置于解佩亭。", "Magistrate Fan buys the Grand Lake Stone with Gla'aki's shard and sets it in the Pavilion of the Untied Pendant."),
       ("1267 末 late", "蒙古进攻襄樊。HO2只身逃入樊城；HO3与刘卿堂退守樊城。", "The Mongols attack the twin cities. HO2 flees alone into Fencewall; HO3 and Captain Liu retreat into it."),
-      ("1268-01-03", "元军总攻；范天顺在汉江召唤格拉基；刘卿堂船队全军覆没。", "Full assault; Fan summons Gla'aki in the river; Liu's flotilla is wiped out."),
+      ("1268-01-03", "元军总攻；范天顺在汉江召唤格拉基；刘卿堂船队全军覆没。", "Full assault; Magistrate Fan summons Gla'aki in the river; Liu's flotilla is wiped out."),
       ("1268-01-04", "樊城投降。", "Fencewall surrenders."),
       ("1268-01-10", "HO1刺杀阿术未果。", "HO1 fails to kill Ashu."),
       ("1268-01-11", "公共导入：夜渡汉水失败。", "Shared intro: the night crossing fails."),
@@ -511,7 +511,7 @@ def timeline_html():
     ])
     s += h("真相速览（仅主持人）", "The truth in brief (GM only)")
     s += bi("范天顺1266年买下一块八十一孔太湖石，第四十六孔内嵌的青玉其实是旧日支配者格拉基的碎片（游记称“何罗鱼”，能在梦中引人走向水体）。他打算在危急时用它阻断元军渡江。元军总攻当日，他以死囚为祭在汉水中召唤格拉基，却因越南柯误触仪式提前发动，刘卿堂的八百人船队被毁，幸存者沦为不死仆从，刘卿堂成为逃脱控制的不死者。范天顺自缢。如今不死仆从昼伏夜出，混迹城中，把人诱到江边变成同类。元军无法渡江——但汉水里的东西比侵略者更可怕。",
-            "In 1266 Commander Fan bought an 81-holed Grand Lake Stone; the green jade in hole 46 is a shard of the Great Old One Gla'aki (the \"Many-Headed Fish\" of old travel books, which lures people to water in dreams). He meant to use it to block a Mongol crossing. On the day of the assault he summoned it in the river with condemned prisoners as sacrifices, but Doctor Yue blundered into the rite and it fired early: Captain Liu's eight hundred were destroyed, the survivors became Undying Servants, and Liu himself became an undying man outside Gla'aki's control. Fan hanged himself. Now the Servants move by night through the town, luring victims to the bank. The Mongols cannot cross, but the thing in the river is worse than the invaders.")
+            "In 1266 Magistrate Fan bought an 81-holed Grand Lake Stone; the green jade in hole 46 is a shard of the Great Old One Gla'aki (the \"Many-Headed Fish\" of old travel books, which lures people to water in dreams). He meant to use it to block a Mongol crossing. On the day of the assault he summoned it in the river with condemned prisoners as sacrifices, but Doctor Yue blundered into the rite and it fired early: Captain Liu's eight hundred were destroyed, the survivors became Undying Servants, and Liu himself became an undying man outside Gla'aki's control. Magistrate Fan hanged himself. Now the Servants move by night through the town, luring victims to the bank. The Mongols cannot cross, but the thing in the river is worse than the invaders.")
     return s
 
 def npc_ref_html():
@@ -536,7 +536,7 @@ import re as _re
 NAMES = [("Lu Bluecliff", "陆青崖"), ("Shen Pearl", "沈怀珠"), ("Xie Cloudmane", "谢云骧"),
          ("Fencewall", "樊城"), ("Southbright", "襄阳"), ("Han River", "汉江"), ("the Han", "汉江"),
          ("Marshal Ashu", "阿术"), ("Ashu", "阿术"), ("Duan Driftwood", "段游衍"), ("General Toghan", "脱欢"), ("Toghan", "脱欢"),
-         ("Commander Fan", "范天顺"), ("Magistrate Fan", "范玉楼"), ("General Niu", "牛富"), ("Prefect Xu", "许德显"),
+         ("Magistrate Fan", "范天顺"), ("Commander Fan", "范玉楼"), ("General Niu", "牛富"), ("Prefect Xu", "许德显"),
          ("Captain Liu", "刘卿堂"), ("Liu Qingtang", "刘卿堂"), ("Doctor Yue", "越南柯"), ("Yue Nanke", "越南柯"), ("Winding Stream", "曲流"),
          ("Boatman Wang", "船夫王"), ("the Jiang twins", "姜楼、姜阁"), ("Autumn", "秋筠"), ("Nameless Fang", "无名方"),
          ("Hermit of Mount Crag", "山阳道人"), ("Mount Crag", "岘山"), ("Stillwater", "止水"), ("Rainmaster's Ink", "雨师墨"),
@@ -569,7 +569,7 @@ def player(html):
 # ---------------- THE STORY SO FAR (player page) ----------------
 STORY = [
  "The year is 1268. The Song 宋 empire is old and rich and dying, and the Mongols under Kublai Khan 忽必烈 have come south to finish it. In the middle of China two walled cities face each other across the Han River 汉江: <b>Fencewall 樊城</b> on the north bank and <b>Southbright 襄阳</b> on the south. Whoever holds them holds the road to the Yangtze and to the capital, Lin'an 临安. A floating bridge used to join them.",
- "Two weeks ago, after a three-day assault, Fencewall fell. Its commander, <b>Commander Fan 范天顺</b>, hanged himself rather than surrender; his nephew, <b>Magistrate Fan 范玉楼</b>, opened the gates to spare the forty thousand people inside. The famous archer of the garrison, <b>Niu 牛富</b>, refused to surrender and sits in the gaol. The Mongol commander, <b>Marshal Ashu 阿术</b>, keeps his army on a tight leash: no looting, no burning. But patrols walk every street, the bridge has been cut, and soldiers watch the riverbank day and night. Across the water Southbright still holds. In a few days the Mongols mean to cross and take it.",
+ "Two weeks ago, after a three-day assault, Fencewall fell. Its magistrate, <b>Magistrate Fan 范天顺</b>, hanged himself rather than surrender; his nephew, <b>Commander Fan 范玉楼</b>, opened the gates to spare the forty thousand people inside. The famous archer of the garrison, <b>Niu 牛富</b>, refused to surrender and sits in the gaol. The Mongol commander, <b>Marshal Ashu 阿术</b>, keeps his army on a tight leash: no looting, no burning. But patrols walk every street, the bridge has been cut, and soldiers watch the riverbank day and night. Across the water Southbright still holds. In a few days the Mongols mean to cross and take it.",
  "Then a fog came down on the river. In January, when the Han never makes fog. Boats go out and do not come back. Townsfolk say they dream of the Lady of the Han 汉江神女 calling them to the water.",
  "Everyone in this town who matters wants the same thing: to get across that river. You are three such people, strangers to one another, who will meet tonight in the reeds east of the city, where a one-armed boatman has promised, for a price, to row passengers over in the dark.",
  "<b>A wandering swordsman 游侠</b> who walked into the marshal's victory feast ten nights ago, tried to kill him, cut only his shoulder, and is now the most hunted man in Fencewall.",
@@ -592,9 +592,9 @@ CAST = [
    ('pc_wanderer.webp', 'Lu Bluecliff 陆青崖', 'HO1 The Wanderer 游侠', '24. A wandering swordsman from Mount Crag 岘山; plain clothes, a sabre at his hip and a wrapped sword on his back he never shows. Says little, misses nothing.',
     'Tried to kill Ashu at the banquet with the poisoned sword Stillwater 止水; only cut his shoulder (Ashu now has a penalty die on everything). Duan Driftwood is his old classmate and covered his escape. His master wants Ashu\'s head.'),
    ('pc_merchant.webp', 'Shen Pearl 沈怀珠', 'HO2 The Merchant Heir 商贾', '20. Heir to a great pharmacy house of the capital; silk under a plain coat, soft hands, a medicine chest. Clever, quick-tongued, used to money solving things.',
-    'Her father was beheaded by Toghan\'s detachment outside the North Gate. Her foster brother is Doctor Yue 越南柯 (fraud, thief, the man who wrecked Fan\'s rite). Family art: Acupoint Strike 点穴.'),
+    'Her father was beheaded by Toghan\'s detachment outside the North Gate. Her foster brother is Doctor Yue 越南柯 (fraud, thief, the man who wrecked Magistrate Fan\'s rite). Family art: Acupoint Strike 点穴.'),
    ('pc_official.webp', 'Xie Cloudmane 谢云骧', 'HO3 The Commissioner 命官', '22. Youngest son of a great family and the court\'s Commissioner, seal and all. Handsome, educated, raised to be obeyed; the best archer at the table; carries a wound that will not close.',
-    'His army was destroyed; his oldest friend Captain Liu 刘卿堂 led the last 800 across the river on 3 January and was caught in Fan\'s rite. Gla\'aki calls him in dreams (first Dream-Call on the night of the 11th).'),
+    'His army was destroyed; his oldest friend Captain Liu 刘卿堂 led the last 800 across the river on 3 January and was caught in Magistrate Fan\'s rite. Gla\'aki calls him in dreams (first Dream-Call on the night of the 11th).'),
  ]),
  ("The Mongols · 蒙古", [
    ('ashu.webp', 'Marshal Ashu 阿术', 'Mongol commander-in-chief', 'Of the Uriankhai; Kublai\'s right arm. A brilliant general and a terrifying fighter: well over six feet, bearded, a huge sabre. Took Fencewall in three days; forbids looting. Wounded in the shoulder at his own victory feast.',
@@ -606,9 +606,9 @@ CAST = [
    ('soldier.webp', 'Mongol soldiers 蒙古兵', 'Patrols and guards', 'Foot and horse. Everywhere in town after dark; they carry weapons, tokens, money and written orders.', 'Armour 2. Sleight of Hand to lift tokens or papers.'),
  ]),
  ("The Song · 宋", [
-   ('', 'Commander Fan 范天顺', 'Late commander of Fencewall', 'Beloved, hard-working, harsh with wrongdoers. Refused to surrender and hanged himself in the Magistracy on the night of 3 January.',
+   ('', 'Magistrate Fan 范天顺', 'Late magistrate of Fencewall, led its defence', 'Beloved, hard-working, harsh with wrongdoers. Refused to surrender and hanged himself in the Magistracy on the night of 3 January.',
     'Bought the Grand Lake Stone with Gla\'aki\'s shard in 1266; summoned the thing in the river with condemned prisoners as sacrifices to stop a Mongol crossing. It fired early and destroyed Liu\'s flotilla. Asked Winding Stream for a coffin with a hidden compartment.'),
-   ('', 'Magistrate Fan 范玉楼', 'Fan\'s nephew; runs the town for the Mongols', 'Opened the gates the morning after his uncle\'s death to spare the people. Now flatters Ashu at banquets. Embarrassing to watch; perhaps not a coward.',
+   ('', 'Commander Fan 范玉楼', 'Magistrate Fan\'s nephew; commands the town for the Mongols', 'Opened the gates the morning after his uncle\'s death to spare the people. Now flatters Ashu at banquets. Embarrassing to watch; perhaps not a coward.',
     'Knows more of his uncle\'s plan than he says. The Library holds the county gazetteer with the poison.'),
    ('niu.webp', 'General Niu 牛富', 'Garrison commander, in the gaol', 'Forties, dark, lean as a bowstring, eyes like torches. His God-Arm Bow 神臂弓 shoots four hundred paces; before the siege he shot Ashu\'s nephew dead. Refused to surrender; the Mongols cut his hand-tendons and locked him up.',
     'To be beheaded at noon on the 15th. His bow passes to Nameless Fang, the watchman boy: a finale prerequisite.'),
@@ -618,31 +618,31 @@ CAST = [
     'The flotilla was destroyed by Gla\'aki. Liu came out of the water undying but with his own mind: no pulse, immune to poison and disease, a red web-mark on his back. The Servants attack him first. Joins the party on the night of the 12th.'),
  ]),
  ("The Song · 宋 (continued)", [
-   ('fan_yulou.webp', 'Magistrate Fan 范玉楼', 'Fan\'s nephew; runs the town for the Mongols', 'Late twenties, pale, refined, tired eyes. Opened the gates the morning after his uncle\'s death to spare the people. Now flatters Ashu at banquets; found at the Magistracy, sometimes at the book stall.', 'Knows his uncle\'s plan and continues it. Admires HO3 (met once in the capital). Will demand the assassination of Ashu when the coffin\'s secret is found; beheaded afterwards, his head hung on the Watchtower.'),
+   ('fan_yulou.webp', 'Commander Fan 范玉楼', 'Magistrate Fan\'s nephew; commands the town for the Mongols', 'Late twenties, pale, refined, tired eyes. Opened the gates the morning after his uncle\'s death to spare the people. Now flatters Ashu at banquets; found at the Magistracy, sometimes at the book stall.', 'Knows his uncle\'s plan and continues it. Admires HO3 (met once in the capital). Will demand the assassination of Ashu when the coffin\'s secret is found; beheaded afterwards, his head hung on the Watchtower.'),
    ('yuying.webp', 'Fan Yuying 范玉莹', 'The Commander\'s daughter', 'Kept as a servant in Ashu\'s quarters since the city fell. Composed, silent.', 'Takes one blow for the party in the sickroom and slips HO2 a dagger.'),
    ('hermit.webp', 'The Hermit of Mount Crag 山阳道人', 'HO1\'s master', 'Chen Yangshan 陈阳山, seventy-odd, one arm, the greatest sword of the Jinghu country, a recluse on Mount Crag.', 'Gave HO1 Stillwater and sent him to kill Ashu; stayed to be taken. Killed by Ashu and hung at the Street Crossing on the 12th. Duan raised him a cenotaph and kept his effects (Red Pine\'s pages, the Fire-Cloak).'),
-   ('scholar.webp', 'The scholars 儒生', 'Zhou Wentong 周文通, Kong Liyue 孔礼岳 and the rest', 'Young Confucians of the town school, furious at the Mongols and the court and useless in a fight.', 'Fan\'s kindling: they riot at Ashu\'s gate on the assassination day and many die.'),
+   ('scholar.webp', 'The scholars 儒生', 'Zhou Wentong 周文通, Kong Liyue 孔礼岳 and the rest', 'Young Confucians of the town school, furious at the Mongols and the court and useless in a fight.', 'Magistrate Fan\'s kindling: they riot at Ashu\'s gate on the assassination day and many die.'),
  ]),
  ("People of Fencewall · 樊城人", [
    ('du.webp', 'Du Guanshan 杜观山', 'Keeper of the hidden Wineshop', 'Forties, homely, hearty; knows every lane. His wineshop in a lane off Front Street is where the town\'s wanderers meet; going there costs no round.', 'Proposes the Jiangzhou-style rescue of Niu and draws the plan.'),
    ('fang.webp', 'Nameless Fang 方未名', 'The night watchman', 'A boy of sixteen with a copper gong and mallet, strong as an ox, who cannot talk to people. Niu looks after him; so do the wanderers.', 'Carries the God-Arm Bow wrapped in cloth and does not know what it is. Killed four gaol guards with his mallet looking for Niu. Only he knows Niu\'s face.'),
    ('ling_xuchun.webp', 'Ling Xuchun 凌序春', 'A swordswoman in red', 'Nineteen, two curved sabres, a temper. Her brother is dying of a strange poison; she wants medicine and revenge.', 'Her family\'s embroidery needles are the Acupoint tool of the scenario; Autumn stole them. Cure her brother and the fishermen follow; avenge him and the needles are the party\'s.'),
    ('ling_daiqiu.webp', 'Ling Daiqiu 凌代秋', 'The fishermen\'s leader', '"The dragon that beats the waves and splits the clouds": open-handed, trusted by every fisherman on the Han. Lying sick in a lane off Front Street.', 'Under Autumn\'s Green Rot (a fresh leaf in his hand, mould at the wound); cured when she dies. Without him the fishermen will not join the raid.'),
-   ('wangwu.webp', 'Wang Wu 王五条', 'Owner of the big restaurant', 'Kind, generous, a former staff-fighter; feeds the poor; caught a thief and let him go with money.', 'Fan\'s old friend; knows the whole plan and tells it when pressed. Shelters Chen out of guilt. Lends the delivery carts for the warship raid — unless HO2 poisons Toghan in his house first.'),
-   ('song.webp', 'Song Zeyi 宋择一', 'Tea master at the Teahouse', '"瓯面弄泉": paints pictures in tea foam that the emperor praised. Thin, goateed, smiling, slippery as a loach.', 'Helped Fan gather the sacrifices and hides it (Psychology). Takes no part against Gla\'aki. Gives the Wineshop address to those who stood up to the soldiers.'),
-   ('autumn.webp', 'Autumn 秋筠', 'A veiled young woman at the Li Theatre', 'Says her husband is in Southbright and that soldiers cut her face; begs to be taken across. Good with disguises (she offers to help once a day).', 'The outlaw of a thousand faces, sacrificed by Fan; an Undying who is still a thief. Stole the Ling needles, Green-Rotted Ling Daiqiu. Tattooed convict under the scars. Kill her and the needles and the cure follow.'),
+   ('wangwu.webp', 'Wang Wu 王五条', 'Owner of the big restaurant', 'Kind, generous, a former staff-fighter; feeds the poor; caught a thief and let him go with money.', 'Magistrate Fan\'s old friend; knows the whole plan and tells it when pressed. Shelters Chen out of guilt. Lends the delivery carts for the warship raid — unless HO2 poisons Toghan in his house first.'),
+   ('song.webp', 'Song Zeyi 宋择一', 'Tea master at the Teahouse', '"瓯面弄泉": paints pictures in tea foam that the emperor praised. Thin, goateed, smiling, slippery as a loach.', 'Helped Magistrate Fan gather the sacrifices and hides it (Psychology). Takes no part against Gla\'aki. Gives the Wineshop address to those who stood up to the soldiers.'),
+   ('autumn.webp', 'Autumn 秋筠', 'A veiled young woman at the Li Theatre', 'Says her husband is in Southbright and that soldiers cut her face; begs to be taken across. Good with disguises (she offers to help once a day).', 'The outlaw of a thousand faces, sacrificed by Magistrate Fan; an Undying who is still a thief. Stole the Ling needles, Green-Rotted Ling Daiqiu. Tattooed convict under the scars. Kill her and the needles and the cure follow.'),
    ('chen.webp', 'Chen Xunzhong 陈寻忠', 'A waiter at Wang Wu\'s', 'Pale, eager, tearful; a former soldier who says he served under Captain Liu.', 'Liu\'s standard-bearer, drowned and Undying. Poisons Liu\'s noodles, meets him at the Street Crossing, lures him into the Temple ambush.'),
    ('monk.webp', 'Huaide 怀德, the Pagoda Arhat', 'A drinking monk', 'Shaven, enormous, flushed with wine; Iron Shirt and Golden Bell — "press his acupoints and it\'s like pressing cotton". Lives at the Wineshop, not his temple.', 'Three CON wins in a row at his drinking game earn the golden kasaya (armour 2, fire-immune). Comes to the Temple fight if told about the locked hall.'),
-   ('bookseller.webp', 'Wang Jianchuan 王见川', 'The old-book seller', 'Thirty, built like a porter, dressed like a scholar, voice like a bell. Novels, poems, tales of the strange.', 'His stall has The Lost Pendant and The Rain Master; Magistrate Fan browses here.'),
+   ('bookseller.webp', 'Wang Jianchuan 王见川', 'The old-book seller', 'Thirty, built like a porter, dressed like a scholar, voice like a bell. Novels, poems, tales of the strange.', 'His stall has The Lost Pendant and The Rain Master; Commander Fan browses here.'),
    ('mistress_wang.webp', 'Mistress Wang 王氏', 'Owner of the ruined Li Theatre', 'Fifty-odd; husband and son pressed for labour; lives in the dead theatre with her small daughter and "a homeless young woman".', 'Lends the black-awning boat in the dry pool. The lodger is Autumn.'),
    ('physician.webp', 'The Song physician 宋人郎中', 'Ashu\'s doctor', 'An old, careful Chinese physician in the Mongol marshal\'s household.', 'Checks everything handed to Ashu; can tell tampered medicine — and says nothing. Hides during the fight.'),
    ('turncoat.webp', 'Song turncoats 降卒', 'Soldiers who changed sides with their general', 'Farmers, fishermen and pedlars in Song jackets and Mongol belts, left to guard the warships; homesick and resentful.', 'HP 10, no armour. Below half HP they run to raise the alarm; one escape dooms Duan and the fishermen.'),
 
    ('qu.webp', 'Winding Stream 曲流', 'Owner of the coffin shop by the river', 'About fifty, tall and heavily built, an ex-caravan guard with a big blade on her back. Gentle with guests; makes the best coffins in town. Your shelter after the crossing.',
-    'Killed her cheating husband with one cut ten years ago. Built Commander Fan\'s coffin, with a hidden compartment: a planted clue.'),
+    'Killed her cheating husband with one cut ten years ago. Built Magistrate Fan\'s coffin, with a hidden compartment: a planted clue.'),
    ('boatman.webp', 'Boatman Wang 船夫王', 'The one-armed boatman', 'Curses the Mongols and the court in the same breath. For a price he will row you across tonight.', 'Abandons the passengers when the boat sinks.'),
    ('jiang_tower.webp', 'The Jiang twins 姜楼、姜阁', 'Fishermen brothers', 'Strong swimmers who know every reed-bed. Jiang Tower is the steady elder, Jiang Loft the reckless younger.', 'They pull the investigators out of the river and lead them to Winding Stream.'),
-   ('yue.webp', 'Doctor Yue 越南柯', 'A wandering healer', 'Handsome, charming, hands like a conjurer\'s; turns up where he is least expected and gives money to the poor.', 'HO2\'s foster brother. Cannot fight and cannot heal: fakes medicine and steals. Blundered into Fan\'s rite; carries Prefect Xu\'s letters. Calls at the coffin shop on the evening of the 12th.'),
+   ('yue.webp', 'Doctor Yue 越南柯', 'A wandering healer', 'Handsome, charming, hands like a conjurer\'s; turns up where he is least expected and gives money to the poor.', 'HO2\'s foster brother. Cannot fight and cannot heal: fakes medicine and steals. Blundered into Magistrate Fan\'s rite; carries Prefect Xu\'s letters. Calls at the coffin shop on the evening of the 12th.'),
    ('', 'Autumn 秋筠', 'A scar-faced woman outlaw', 'Town gossip: hides somewhere in the back streets, hunted by both sides.', 'Helps the investigators later in the sandbox; her help costs no action round.'),
    ('glaaki.webp', 'The thing in the river 江中之物', 'What the fog is', 'Boats go out and do not come back; people dream of the Lady of the Han and wake at the water\'s edge.', 'Gla\'aki 格拉基, the Many-Headed Fish of the old books: a vast spined slug with three eye-stalks on the river-bed, calling in dreams, making the drowned walk. ~50 HP for the table; −8 per severed spine; fears fire and light.'),
    ('servant.webp', 'The drowned 溺者', 'What the fog brings', 'Boats go out and do not come back. Some townsfolk are found at the bank at dawn, soaked, remembering nothing.', 'Undying Servants: Liu\'s drowned men, puppets of Gla\'aki, moving by night and luring people to the water. Hit on the injection scar on the spine kills outright.'),
@@ -675,19 +675,19 @@ def ho_html(n):
 
 # ---------------- THE WHOLE STORY (GM one page) ----------------
 GM_STORY = [
- "<b>What Commander Fan did.</b> In 1266 Commander Fan 范天顺 bought an ornamental Grand Lake Stone 太湖石 with eighty-one holes. The green jade set in hole 46 is a shard of Gla'aki 格拉基, the \"Many-Headed Fish\" of old travel books: a thing that calls people into water in their dreams and makes the drowned walk again. Fan, dutiful and clear-eyed, knew Fencewall could not hold, and kept the stone as a last weapon: wake the thing in the river and no army could cross.",
- "<b>The night of 3 January.</b> As the Mongol assault began, Fan took condemned prisoners to the bank as sacrifices and began the rite. Doctor Yue 越南柯, hiding nearby, blundered into it, and it fired early: into the river just as Captain Liu 刘卿堂's flotilla, HO3's last eight hundred men ordered across to Southbright, was in midstream. The boats were smashed. The men drowned. Some climbed back out with a red web-mark on their backs and no pulse: Undying Servants 不死仆从, puppets of the thing in the river. Liu alone came out with his own mind. Fan, seeing what he had done, hanged himself that night; his nephew Magistrate Fan 范玉楼 opened the gates in the morning.",
+ "<b>What Magistrate Fan did.</b> In 1266 Magistrate Fan 范天顺 bought an ornamental Grand Lake Stone 太湖石 with eighty-one holes. The green jade set in hole 46 is a shard of Gla'aki 格拉基, the \"Many-Headed Fish\" of old travel books: a thing that calls people into water in their dreams and makes the drowned walk again. Magistrate Fan, dutiful and clear-eyed, knew Fencewall could not hold, and kept the stone as a last weapon: wake the thing in the river and no army could cross.",
+ "<b>The night of 3 January.</b> As the Mongol assault began, Magistrate Fan took condemned prisoners to the bank as sacrifices and began the rite. Doctor Yue 越南柯, hiding nearby, blundered into it, and it fired early: into the river just as Captain Liu 刘卿堂's flotilla, HO3's last eight hundred men ordered across to Southbright, was in midstream. The boats were smashed. The men drowned. Some climbed back out with a red web-mark on their backs and no pulse: Undying Servants 不死仆从, puppets of the thing in the river. Liu alone came out with his own mind. Magistrate Fan, seeing what he had done, hanged himself that night; his nephew Commander Fan 范玉楼 opened the gates in the morning.",
  "<b>Now.</b> The fog is Gla'aki's. The Mongols cannot cross (their assault on Southbright slips from the 9th to the 18th). The Servants move through the town by night and lure people to the bank; the thing calls in dreams, HO3 first (POW each night). General Niu 牛富 waits in the gaol for his beheading at noon on the 15th. Prefect Xu 许德显 has boats and two incriminating letters. Ashu 阿术 nurses a shoulder wound from Stillwater 止水 that will never heal.",
- "<b>Session 0</b> is the three personal intros and the Night Crossing: the boat is wrecked by a spine from the river, the Jiang twins pull the party out, and they wake in Winding Stream 曲流's coffin shop. <b>Day One</b> (12 Jan) adds the Street Crossing, Doctor Yue's visit with Xu's letters, and Liu joining the party. <b>The sandbox</b> (12–15 Jan, three action rounds a day) is about the gaol, Xu's boats, the gazetteer's poison and the Ling needles. <b>The finale</b> is at the Watchtower 塔楼: with Niu's God-Arm Bow 神臂弓, the needles and a fire signal the investigators can end what Fan started, and decide whether Ashu lives.",
+ "<b>Session 0</b> is the three personal intros and the Night Crossing: the boat is wrecked by a spine from the river, the Jiang twins pull the party out, and they wake in Winding Stream 曲流's coffin shop. <b>Day One</b> (12 Jan) adds the Street Crossing, Doctor Yue's visit with Xu's letters, and Liu joining the party. <b>The sandbox</b> (12–15 Jan, three action rounds a day) is about the gaol, Xu's boats, the gazetteer's poison and the Ling needles. <b>The finale</b> is at the Watchtower 塔楼: with Niu's God-Arm Bow 神臂弓, the needles and a fire signal the investigators can end what Magistrate Fan started, and decide whether Ashu lives.",
 ]
 def timeline_html():
     s = h("主持人：故事全貌与时间线", "GM: The whole story, and the timeline", 1)
     s += ''.join(f'<p class="narr">{p}</p>' for p in GM_STORY)
     s += h("时间线", "Timeline")
     s += table(["日期 Date", "事件", "Event"], [
-      ("1266", "范天顺购得太湖石，内嵌格拉基碎片，置于解佩亭。", "Commander Fan buys the Grand Lake Stone with Gla'aki's shard and sets it in the Pavilion of the Untied Pendant."),
+      ("1266", "范天顺购得太湖石，内嵌格拉基碎片，置于解佩亭。", "Magistrate Fan buys the Grand Lake Stone with Gla'aki's shard and sets it in the Pavilion of the Untied Pendant."),
       ("1267 末 late", "蒙古进攻襄樊。HO2只身逃入樊城；HO3与刘卿堂退守樊城。", "The Mongols attack the twin cities. HO2 flees alone into Fencewall; HO3 and Captain Liu retreat into it."),
-      ("1268-01-03", "元军总攻；范天顺在汉江召唤格拉基；刘卿堂船队全军覆没。", "Full assault; Fan summons Gla'aki in the river; Liu's flotilla is wiped out."),
+      ("1268-01-03", "元军总攻；范天顺在汉江召唤格拉基；刘卿堂船队全军覆没。", "Full assault; Magistrate Fan summons Gla'aki in the river; Liu's flotilla is wiped out."),
       ("1268-01-04", "樊城投降。", "Fencewall surrenders."),
       ("1268-01-10", "HO1刺杀阿术未果。", "HO1 fails to kill Ashu."),
       ("1268-01-11", "公共导入：夜渡汉水失败。", "Shared intro: the night crossing fails."),
