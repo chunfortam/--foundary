@@ -391,11 +391,11 @@ TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·
           ('Decline', 'Decline.ogg', ('5',), '棺材铺 Coffin Shop'),
           ('Dark Times', 'Dark_Times.ogg', ('6',), '街口 Street Crossing, the Hermit\'s body'),
           ('Overheat', 'Overheat.ogg', ('7',), '樊城城图 Town map, action rounds'),
-          ('Guzheng City', 'Guzheng_City.ogg', ('8',), '茶楼 Teahouse'),
+          ('Guzheng City', 'Guzheng_City.ogg', ('8', '23'), '茶楼 Teahouse'),
           ('Nu Flute', 'Nu_Flute.ogg', ('9',), '李家瓦子 Li Family Theatre'),
           ('Himalayan Atmosphere', 'Himalayan_Atmosphere.ogg', ('10',), '寺庙 Temple at night'),
-          ('Ghost Story', 'Ghost_Story.ogg', ('11',), '某处民宅 The Undying family\'s house'),
-          ('Night Vigil', 'Night_Vigil.ogg', ('12',), '灵堂 Magistrate Fan\'s mourning hall'),
+          ('Ghost Story', 'Ghost_Story.ogg', ('11', '22'), '某处民宅 The Undying family\'s house'),
+          ('Night Vigil', 'Night_Vigil.ogg', ('12', '21'), '灵堂 Magistrate Fan\'s mourning hall'),
           ('Drums of the Deep', 'Drums_of_the_Deep.ogg', ('13',), '阿术病榻 Ashu\'s sickroom'),
           ('Land of Phantoms', 'Land_of_Phantoms.ogg', ('14',), '监牢 Gaol'),
           ('Mountain Emperor', 'Mountain_Emperor.ogg', ('15',), '东码头 Warship raid'),
@@ -503,7 +503,7 @@ SC.insert(2, TWIN)
 # Music: every scene plays its own track when activated (scene number -> track, from TRACKS).
 SOUND = {n: PL['sounds'][i]['_id'] for i, (t, f, nums, use) in enumerate(TRACKS) for n in nums}
 for sc_ in SC:
-    sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[{'21': '12', '22': '11', '23': '8'}.get(sc_['name'].split(' · ')[0], sc_['name'].split(' · ')[0])]
+    sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[sc_['name'].split(' · ')[0]]
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
 def portrait_macro(key, img, title):
     src = f'modules/{MOD}/assets/portraits/{img}'
