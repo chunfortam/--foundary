@@ -14694,6 +14694,264 @@
    }
   },
   {
+   "_id": "oAQ79xefTLF2qurb",
+   "name": "求救老妇 Old woman begging for help",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/fire_aunt.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 45
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>后街失火民宅：老妇求救，侄女一家五口困在屋内，其中两个孩子不到十岁；父亲去年战死，抚恤未至。邻居可告知前街亲属的住址。</p><p>Book: Back Street, The burning house. Her niece's family of five, including two children under ten, are trapped. The father died in the war last year; the pension never came. Neighbours give the Front Street relatives' address.</p><p>GM convenience: civilian statistics, not supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "求救老妇 Old woman begging for help",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/fire_aunt.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "BRkBNpMRs7fVaT5M",
+   "name": "七宝行掌柜 Seven Treasures manager",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/jeweller.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 45
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>七宝行无名掌柜，熟知市井传闻与太湖石往事，以赌石换消息：进行幸运检定。</p><p>Book: Back Street, Seven Treasures jeweller. The unnamed manager knows all the gossip and the Grand Lake Stone story; trades information for a stone-gambling Luck roll. Magistrate Fan ordered the stone with eighty-one holes; green jade grew in the forty-sixth.</p><p>GM convenience: civilian statistics, not supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "七宝行掌柜 Seven Treasures manager",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/jeweller.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "dL9P8MoLXOXuFLpO",
+   "name": "七宝行伙计 Seven Treasures assistant",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/jeweller_hand.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 35
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 55
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 45
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>七宝行仅有的一名伙计，原书未具名。</p><p>Book: Back Street, Seven Treasures jeweller. The shop has one assistant, unnamed in the book.</p><p>GM convenience: civilian statistics, not supplied by the book.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "七宝行伙计 Seven Treasures assistant",
+    "actorLink": true,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/jeweller_hand.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
    "_id": "7nbMRwGyBh5fEm2m",
    "name": "渡船 River boat",
    "type": "npc",
@@ -24627,6 +24885,819 @@
    "navOrder": 2600000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
+  },
+  {
+   "_id": "bAnlqWx8dt1VdVHi",
+   "name": "B1 · 会馆 The Guildhall",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/guildhall.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "B1 · 会馆 The Guildhall",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/guildhall.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.1,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "rgofZuTBmoIMzHHi",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 832,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "6cyjXUJVuA3nH9Da",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 896,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "7MiHLp8ecX2BOeHU",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 960,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "Ee0r7GckJRVssmbn",
+     "name": "段游衍 Duan Driftwood",
+     "actorId": "E96GK825kFXk3LZk",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/duan.webp"
+     },
+     "x": 960,
+     "y": 320,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "gAKZvmt4eidCXaRs",
+     "name": "卫兵 Guard 1",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 832,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "Q3GZ9cmknP9S8kpa",
+     "name": "卫兵 Guard 2",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 1024,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "hIYtCpUPqkkp0Vzp",
+     "name": "副官 Adjutant",
+     "actorId": "b6vHHCpCU4LXDaEa",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/soldier.webp"
+     },
+     "x": 1216,
+     "y": 640,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "FAf6fhtFrWbf6T0r",
+     "heading": "The Guildhall"
+    }
+   },
+   "sort": 2700000,
+   "initial": null,
+   "description": "<p>上方是段游衍书房，门外皮毯为记；中庭在中央，大门与街道在下。段游衍为隐藏标记，是否在场由主持人决定；卫兵与副官随他驻此。</p><p>Duan's study is at the top, marked by the fur carpet at its door; courtyard in the middle, gate and street below. Duan is hidden: he may be away. His guards and adjutant lodge here. The desk holds the letter, note and defence map; see the Back Street journal.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "8Ri1YC84YDEREPSd",
+   "navOrder": 2700000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "FAf6fhtFrWbf6T0r"
+  },
+  {
+   "_id": "vbDcWTed64bUquSo",
+   "name": "B2 · 失火民宅 The burning house",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/burning.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "B2 · 失火民宅 The burning house",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/burning.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.4,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "a28lQTgvQYUnKvCh",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 832,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "1Wb7QVbW50uyDeR2",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 896,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0PCsnYIiResVcF4G",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 960,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0jZoGDNezzqoUg3B",
+     "name": "求救老妇 Old woman begging for help",
+     "actorId": "oAQ79xefTLF2qurb",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fire_aunt.webp"
+     },
+     "x": 1088,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "YtcLNw2cj2uuMvG2",
+     "name": "火中亲属 Trapped kin 1",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 320,
+     "y": 384,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "eJZ8Vt8PRmJvmqQi",
+     "name": "火中亲属 Trapped kin 2",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 320,
+     "y": 448,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "qwpTcD6bOr4EpDCX",
+     "name": "火中亲属 Trapped kin 3",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 448,
+     "y": 256,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "UCP4kbxU99Uj9ZpW",
+     "name": "火中亲属 Trapped kin 4",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 448,
+     "y": 320,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "kDqkSfZVrt8eTJ1z",
+     "name": "火中亲属 Trapped kin 5",
+     "actorId": "6cuZ2fchw56oQwoe",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/servant.webp"
+     },
+     "x": 896,
+     "y": 320,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "FAf6fhtFrWbf6T0r",
+     "heading": "The burning house"
+    }
+   },
+   "sort": 2800000,
+   "initial": null,
+   "description": "<p>老妇在下方街道求救。五名亲属（两个孩子不到十岁）是不死仆从，隐藏在床下与柜中；标记位置为主持人便利安排。右侧起火。</p><p>The old woman begs on the street below. Five trapped kin (two children under ten) are hidden Undying Servant tokens in wardrobes and under beds; exact placements are GM convenience. Fire is on the right. DEX to enter or 1D3 damage; STR to drag one out. In firelight it melts and collapses: SAN 1/1D10. The fire drives everyone out; neighbours give the Front Street address.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "ZnpX1D8TizZVFvK8",
+   "navOrder": 2800000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "FAf6fhtFrWbf6T0r"
+  },
+  {
+   "_id": "OT4sfBaSUTWxU9Jc",
+   "name": "B3 · 七宝行 Seven Treasures jeweller",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/treasures.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "B3 · 七宝行 Seven Treasures jeweller",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/treasures.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.05,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "avgO7aZSWh4iajaq",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 832,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "rVL9A47cx3W3QQ7g",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 896,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "CJGA3OO5WUrieURo",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 960,
+     "y": 1088,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "ST7BZ5mh5KiWPwlL",
+     "name": "七宝行掌柜 Seven Treasures manager",
+     "actorId": "BRkBNpMRs7fVaT5M",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/jeweller.webp"
+     },
+     "x": 1344,
+     "y": 768,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "KeueARpIrMxf2ft0",
+     "name": "七宝行伙计 Seven Treasures assistant",
+     "actorId": "dL9P8MoLXOXuFLpO",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/jeweller_hand.webp"
+     },
+     "x": 1280,
+     "y": 704,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "FAf6fhtFrWbf6T0r",
+     "heading": "Seven Treasures jeweller"
+    }
+   },
+   "sort": 2900000,
+   "initial": null,
+   "description": "<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop's one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "jJw6DQrbF8UBxonO",
+   "navOrder": 2900000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "FAf6fhtFrWbf6T0r"
   }
  ],
  "folders": [
