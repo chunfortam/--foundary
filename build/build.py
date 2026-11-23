@@ -262,6 +262,21 @@ TEAHOUSE_NPCS = [
 for key, name, image, ch, sk, biography in TEAHOUSE_NPCS:
     ACT[key] = actor(name, 'npc', ch, [skill(c, v, ch) for c, v in sk], [], [], image,
                      bio_en=biography, disposition=0, link=True)
+BACK_STREET_NPCS = [
+    ('fire_aunt', '求救老妇 Old woman begging for help',
+     '<p>后街失火民宅：老妇求救，侄女一家五口困在屋内，其中两个孩子不到十岁；父亲去年战死，抚恤未至。邻居可告知前街亲属的住址。</p>',
+     '<p>Book: Back Street, The burning house. Her niece\'s family of five, including two children under ten, are trapped. The father died in the war last year; the pension never came. Neighbours give the Front Street relatives\' address.</p>'),
+    ('jeweller', '七宝行掌柜 Seven Treasures manager',
+     '<p>七宝行无名掌柜，熟知市井传闻与太湖石往事，以赌石换消息：进行幸运检定。</p>',
+     '<p>Book: Back Street, Seven Treasures jeweller. The unnamed manager knows all the gossip and the Grand Lake Stone story; trades information for a stone-gambling Luck roll. Magistrate Fan ordered the stone with eighty-one holes; green jade grew in the forty-sixth.</p>'),
+    ('jeweller_hand', '七宝行伙计 Seven Treasures assistant',
+     '<p>七宝行仅有的一名伙计，原书未具名。</p>',
+     '<p>Book: Back Street, Seven Treasures jeweller. The shop has one assistant, unnamed in the book.</p>'),
+]
+for key, name, biography_zh, biography_en in BACK_STREET_NPCS:
+    ch = dict(str=35, con=45, siz=50, dex=40, app=45, int=55, pow=45, edu=45)
+    ACT[key] = actor(name, 'npc', ch, [], [], [], f'modules/{MOD}/assets/tokens/{key}.webp',
+                     bio_zh=biography_zh, bio_en=biography_en + '<p>GM convenience: civilian statistics, not supplied by the book.</p>', disposition=0, link=True)
 # ---------------- journals ----------------
 # Scene props as tokens (no sheet of interest, bars off) so the GM can show a before/after on the map.
 def prop(key, name, tok_file, notes_zh, notes_en):
@@ -456,6 +471,20 @@ TOWER = scene('17 · 塔楼 The Watchtower (the last night)', 'tower.webp', 64,
               [T(A['soldier'], x, y, name=f'塔楼守兵 Tower guard {i+1}') for i, (x, y) in enumerate([(10.4, 12.6), (13.4, 12.6)])], 0.8,
               '<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla\'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla\'aki.</p>', w=1536, h=1024, weather='fog')
 for sc_ in (PAVILION, TOWER): SC.append(sc_)
+GUILDHALL = scene('21 · 会馆 The Guildhall', 'guildhall.webp', 64,
+                  [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17),
+                   T(A['duan'], 15, 5, hidden=True), T(A['soldier'], 13, 13, name='卫兵 Guard 1'),
+                   T(A['soldier'], 16, 13, name='卫兵 Guard 2'), T(A['soldier'], 19, 10, name='副官 Adjutant')], 0.1,
+                  '<p>上方是段游衍书房，门外皮毯为记；中庭在中央，大门与街道在下。段游衍为隐藏标记，是否在场由主持人决定；卫兵与副官随他驻此。</p><p>Duan\'s study is at the top, marked by the fur carpet at its door; courtyard in the middle, gate and street below. Duan is hidden: he may be away. His guards and adjutant lodge here. The desk holds the letter, note and defence map; see the Back Street journal.</p>', w=1536, h=1024)
+BURNING = scene('22 · 失火民宅 The burning house', 'burning.webp', 64,
+                [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17), T(A['fire_aunt'], 17, 17)] +
+                [T(A['servant'], x, y, hidden=True, name=f'火中亲属 Trapped kin {i+1}') for i, (x, y) in enumerate([(5, 6), (5, 7), (7, 4), (7, 5), (14, 5)])], 0.4,
+                '<p>老妇在下方街道求救。五名亲属（两个孩子不到十岁）是不死仆从，隐藏在床下与柜中；标记位置为主持人便利安排。右侧起火。</p><p>The old woman begs on the street below. Five trapped kin (two children under ten) are hidden Undying Servant tokens in wardrobes and under beds; exact placements are GM convenience. Fire is on the right. DEX to enter or 1D3 damage; STR to drag one out. In firelight it melts and collapses: SAN 1/1D10. The fire drives everyone out; neighbours give the Front Street address.</p>', w=1536, h=1024)
+TREASURES = scene('23 · 七宝行 Seven Treasures jeweller', 'treasures.webp', 64,
+                  [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17),
+                   T(A['jeweller'], 21, 12), T(A['jeweller_hand'], 20, 11)], 0.05,
+                  '<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop\'s one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>', w=1536, h=1024)
+for sc_ in (GUILDHALL, BURNING, TREASURES): SC.append(sc_)
 # Title page for the table TV: the scenario's cover re-lettered in English.
 TITLE = scene('0 · 公若渡河 Crossing the Han (title screen)', '../cover.webp', 128, [], w=1536, h=1024,
               notes='<p>开场画面 / Title page. Activate while players sit down; the title track (Eastern Thought) plays.</p>')
@@ -474,7 +503,7 @@ SC.insert(2, TWIN)
 # Music: every scene plays its own track when activated (scene number -> track, from TRACKS).
 SOUND = {n: PL['sounds'][i]['_id'] for i, (t, f, nums, use) in enumerate(TRACKS) for n in nums}
 for sc_ in SC:
-    sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[sc_['name'].split(' · ')[0]]
+    sc_['playlist'] = PL['_id']; sc_['playlistSound'] = SOUND[{'21': '12', '22': '11', '23': '8'}.get(sc_['name'].split(' · ')[0], sc_['name'].split(' · ')[0])]
 # Hotbar macros: one click opens an HO portrait full-screen for the GM and pushes it to every player (the TV).
 def portrait_macro(key, img, title):
     src = f'modules/{MOD}/assets/portraits/{img}'
@@ -505,6 +534,8 @@ for i_, sc_ in enumerate(SC): sc_['sort'] = sc_['navOrder'] = (i_ + 1) * 100000
 # for the "Open this scene's journal" macro (scripts/update.mjs).
 RUN_, CAMP_ = '主持人 · GM: Session 0 Runbook', '主持人 · GM: Campaign (Days 1–6)'
 SCENE_PAGE = {
+    '21': (CAMP_, '后街 Back Street', 'The Guildhall'), '22': (CAMP_, '后街 Back Street', 'The burning house'),
+    '23': (CAMP_, '后街 Back Street', 'Seven Treasures jeweller'),
     '0': (RUN_, '流程 Runbook', 'Agenda'), '0a': (RUN_, '流程 Runbook', 'Agenda'), '0c': (RUN_, '故事全貌 The whole story & timeline', ''),
     '1': (RUN_, '流程 Runbook', 'Personal intro HO1'), '2': (RUN_, '流程 Runbook', 'Personal intro HO2'), '3': (RUN_, '流程 Runbook', 'Personal intro HO3'),
     '4': (RUN_, '流程 Runbook', 'Shared intro: Night Crossing'), '5': (CAMP_, '前街 Front Street', 'The Coffin Shop by day'),
@@ -527,7 +558,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.12', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.13', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
