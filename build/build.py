@@ -312,6 +312,10 @@ def dims(tok_file, long_side):
     return (long_side, round(long_side / r, 2)) if r >= 1 else (round(long_side * r, 2), long_side)
 WAGON_W, WAGON_H = dims('wagon', 3.2); WAGON_WRECK_W, WAGON_WRECK_H = dims('wagon_wreck', 3.6)
 ACT['wagon']['prototypeToken']['width'] = WAGON_W; ACT['wagon']['prototypeToken']['height'] = WAGON_H
+_state = random.getstate()
+npc('fisherman', '渔民 Fisherman', dict(str=45, con=50, siz=55, dex=50, app=45, int=50, pow=45, edu=35), [('i.skill.swim', 55), ('驾船|Boat handling', 50), ('i.skill.listen', 40), ('i.skill.fighting-brawl', 25)], [FIST()], '渔', (70, 110, 90, 255),
+    '<p>主持人便利用：渔民群像标记，数值为方便主持临时拟定，原书未提供。贫困而热情，以茶和咸鱼待客；听从凌代秋。无额外线索。</p>', '<p>GM convenience: a crowd token for the book\'s fishermen. Modest civilian statistics are invented; the book gives none. Poor but hospitable, offering tea and salt fish; follows Ling Daiqiu. No extra clues.</p>', disposition=0)
+random.setstate(_state)
 # handout page ids were seeded from the names they first shipped with (stray backslashes, bare "Fan's")
 IDNAME.update({n: n.replace("(Magistrate Fan's", "(Fan's").replace("'", "\\'") for n, _ in CP.HANDOUTS if "'" in n})
 def journal(name, pages, default_perm=0, folder=None):
@@ -403,7 +407,7 @@ SC = [
 # ---------------- music (Kevin MacLeod, incompetech.com, CC BY 4.0) ----------------
 # One track per scene: (title, file, scene number, what it is for). Lightless Dawn is a spare for any Gla'aki moment.
 TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·庆功宴 Title, idle screen, Banquet'),
-          ('River Flute', 'River_Flute.ogg', ('0c',), '汉江两岸 Regional map'),
+          ('River Flute', 'River_Flute.ogg', ('0c', 'R1'), '汉江两岸·渔民棚屋 Regional map, fishermen\'s huts'),
           ('Teller of the Tales', 'Teller_of_the_Tales.ogg', ('2',), '北门 North Gate'),
           ('Asian Drums', 'Asian_Drums.ogg', ('3',), '衙署 Magistracy raid'),
           ('Temple of the Manes', 'Temple_of_the_Manes.ogg', ('4',), '汉江夜渡 Night Crossing'),
@@ -420,7 +424,7 @@ TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·
           ('Mountain Emperor', 'Mountain_Emperor.ogg', ('15',), '东码头 Warship raid'),
           ('Ripples', 'Ripples.ogg', ('16',), '解佩亭 Ruined Pavilion'),
           ('Clash Defiant', 'Clash_Defiant.ogg', ('17',), '塔楼 Watchtower, the last night'),
-          ('Lightless Dawn', 'Lightless_Dawn.ogg', (), '备用 · 格拉基 Spare: Gla\'aki dread')]
+          ('Lightless Dawn', 'Lightless_Dawn.ogg', ('R2',), '芦苇荡 · 格拉基 The reeds, Gla\'aki dread')]
 PL = {'_id': rid('playlist:session0'), 'name': '公若渡河 · Music', 'description': 'Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0', 'mode': 0, 'playing': False, 'fade': 2000, 'channel': 'music', 'sort': 0, 'seed': 0, 'flags': {}, 'folder': None,
       'sounds': [{'_id': rid('sound:' + f), 'name': f'{t} — {use}', 'path': f'modules/{MOD}/assets/music/{f}', 'channel': 'music', 'playing': False, 'repeat': True, 'volume': 0.5, 'fade': 2000, 'sort': i, 'flags': {}, 'description': f'{t} Kevin MacLeod (incompetech.com) CC BY 4.0'} for i, (t, f, nums, use) in enumerate(TRACKS)]}
 # Extended session 0: the Street Crossing at noon on the 12th (1536x1024 map, 24x16 squares).
@@ -484,6 +488,13 @@ DOCK = scene('15 · 东码头·蒙古战船 The East dock and the warships (the 
              [T(A['turncoat'], x, y, name=f'守船兵 Ship guard {i+1}') for i, (x, y) in enumerate([(7.0, 11.0), (9.4, 10.6), (11.6, 11.2), (6.6, 13.4), (12.8, 13.4), (4.8, 10.6), (15.4, 8.2), (6.4, 4.6)])], 0.7,
              '<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen\'s huts on the right.</p>', w=1536, h=1024)
 for sc_ in (MOURNING, SICKROOM, GAOL, DOCK): SC.append(sc_)
+HUTS = scene('R1 · 渔民棚屋 The fishermen\'s huts (East dock)', 'huts.webp', 64,
+             [T(A['pc1'], 22.0, 9.3), T(A['pc2'], 23.3, 9.3), T(A['pc3'], 24.6, 9.3),
+              T(A['jiang_tower'], 12.0, 11.0), T(A['jiang_loft'], 14.0, 11.0),
+              T(A['liu'], 6.2, 4.3, hidden=True), T(A['ling_daiqiu'], 15.0, 6.3, hidden=True)] +
+             [T(A['fisherman'], x, y, name=f'渔民 Fisherman {i+1}') for i, (x, y) in enumerate([(10.8, 8.7), (15.0, 11.3), (11.7, 12.1), (17.0, 7.1)])], 0.2,
+             '<p>原书第36页：姜楼、姜阁在火旁，渔民以茶和咸鱼待客。调查员从码头小路进入。刘卿堂隐藏于棚屋内，供重现渔民救起并照料他的情景时显示；通常他已随HO3同行。凌代秋起初病倒在前街江边巷内，痊愈后来此才显示。渔民群像标记及数值为主持人便利用，非原书人物数值。</p><p>Book p.36: Jiang Tower and Jiang Loft by the fire; the fishermen offer tea and salt fish. PCs enter along the jetty lane. Liu is hidden inside a hut: reveal to stage his rescue and nursing by the fishermen; normally he already accompanies HO3. Ling Daiqiu starts dying in a lane off Front Street: reveal here only after he is cured and arrives. The fisherman crowd tokens and statistics are GM convenience, not book statistics.</p>', w=1536, h=1024)
+SC.append(HUTS)
 PAVILION = scene('16 · 解佩亭 The ruined Pavilion (west dock)', 'pavilion.webp', 64,
                  [T(A['pc1'], 8.6, 14.4), T(A['pc2'], 10.0, 14.8), T(A['pc3'], 11.4, 14.4), T(A['liu'], 12.8, 14.8), T(A['spine'], 17.6, 7.0, hidden=True, w=2, h=2)], 0.75,
                  '<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners\' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank "The goddess comes in dreams" can fire (the spine is a hidden token).</p>', w=1536, h=1024, weather='fog')
@@ -513,6 +524,16 @@ LINGS = scene("F3 · 凌家 The Lings' house", 'lings.webp', 64,
 WINESHOP = scene('F4 · 酒肆 The Wineshop', 'wineshop.webp', 64,
                  [T(A['du'], 8.5, 5), T(A['monk'], 22.7, 4.6), T(A['fang'], 16, 7), T(A['pc1'], 13, 16), T(A['pc2'], 14.5, 16), T(A['pc3'], 16, 16)],
                  notes='<p>隐藏地点，得知地址后才开放；来此不耗行动轮。杜观山在左上柜台后，怀德在右上蒲团，方未名在桌边。和尚每日斗酒：连续三次体质成功可赢金袈裟。</p><p>A hidden place: offer it only after the party learns the address; visiting costs no round. Du is behind the counter top-left, Huaide on the meditation cushion top-right, Fang at a table. The monk offers a daily drinking contest: three consecutive CON successes win the golden kasaya.</p><p>GM convenience：调查员起点与具体站位。GM convenience: investigator starting points and exact token positions.</p>', w=1536, h=1024)
+REEDS = scene('R2 · 芦苇荡 The reeds (forcing the crossing)', 'reeds.webp', 64,
+              [T(A['boat'], 14.0, 8.6, name='渡船 The ferry', w=3.8, h=1.3),
+               T(A['pc1'], 12.7, 7.0, w=0.8, h=0.8), T(A['pc2'], 17.1, 7.0, w=0.8, h=0.8),
+               T(A['pc3'], 12.7, 10.3, w=0.8, h=0.8), T(A['boatman'], 17.1, 10.3, name='船夫 The boatman', w=0.8, h=0.8),
+               T(A['glaaki'], 19.0, 3.5, name='河伯冯夷 River Lord He Bo', hidden=True, texture=f'modules/{MOD}/assets/tokens/hebo.webp', w=2, h=2),
+               T(A['glaaki'], 20.0, 8.2, name='汉水女神 The Lady of the Han', hidden=True, texture=f'modules/{MOD}/assets/tokens/goddess.webp', w=2, h=2),
+               T(A['glaaki'], 21.2, 11.8, name='何罗鱼 The Many-Headed Fish', hidden=True, w=3, h=3)] +
+              [T(A['spine'], x, y, name=f'脊刺 Spine {i+1}', hidden=True) for i, (x, y) in enumerate([(12.5, 7.8), (18.7, 7.8), (15.6, 10.5)])], 0.6,
+              '<p>原书第38–39页：三名调查员与一名未具名船夫强渡。依次显示河伯冯夷、汉水女神、何罗鱼，一次只显示一个梦象；三者均为格拉基的梦中诱饵。河伯与女神标记仅为主持人便利用的梦象美术，并非独立人物。梦境破裂时隐藏梦象、倾覆渡船和失踪的船夫，显示环船脊刺，游泳与战斗一轮后进入下一梦。第三梦攻击何罗鱼后冲上襄阳岸。</p><p>Book pp.38–39: three PCs and one unnamed boatman force the crossing. Reveal the River Lord, the Lady of the Han, then the Many-Headed Fish, one dream image at a time; all three are Gla\'aki\'s lures. He Bo and goddess tokens are GM-convenience art for dream images, not separate people. When a temptation breaks, hide its image, the capsized ferry and missing boatman; reveal the circling spines and swim/fight for one round before the next dream. Attack the fish in the third dream to wash up on the Southbright shore.</p>', w=1536, h=1024, weather='fog')
+SC.insert(SC.index(PAVILION) + 1, REEDS)
 GUILDHALL = scene('B1 · 会馆 The Guildhall', 'guildhall.webp', 64,
                   [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17),
                    T(A['duan'], 15, 5, hidden=True), T(A['soldier'], 13, 13, name='卫兵 Guard 1'),
@@ -627,6 +648,7 @@ SCENE_PAGE = {
     'F2': (CAMP_, '前街 Front Street', "Wang Wu's Restaurant"),
     'F3': (CAMP_, '前街 Front Street', 'The pharmacy'),
     'F4': (CAMP_, '前街 Front Street', 'The Wineshop (hidden; no round)'),
+    'R1': (CAMP_, '汉江沿岸 Riverbank', "East dock: the fishermen's huts"), 'R2': (CAMP_, '汉江沿岸 Riverbank', 'The reeds: forcing the crossing'),
     'M1': (CAMP_, '衙署 Magistracy quarter', "Prefect Xu's mansion"),
     'M2': (CAMP_, '衙署 Magistracy quarter', 'The School and the Library'),
     'M3': (CAMP_, '衙署 Magistracy quarter', 'The School and the Library'),
@@ -644,7 +666,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.18', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.19', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
