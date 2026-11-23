@@ -14148,6 +14148,380 @@
    }
   },
   {
+   "_id": "zephvlXlHuQJveDE",
+   "name": "药铺掌柜 Pharmacy manager",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/pharmacy_manager.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 40
+     },
+     "con": {
+      "value": 50
+     },
+     "siz": {
+      "value": 65
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 65
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 60
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 11,
+      "max": 11
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>樊城分号掌柜。对少东家（HO2）百般逢迎：店里的伙计、药材与银钱任她取用。这家分号贪利，价高，伙计看人下菜。从库房翻出两张古方（牵机药、十香软经散）。</p><p>主持人方便：姓名不详，数值为自拟。</p><p>Book: Front Street, the pharmacy (p.19). Manager of the Fencewall branch of HO2's family house. He fawns on the young master/mistress: HO2 may use the staff, the stock and the cash freely. The branch is grasping: sky-high prices, two clerks who size up a customer's purse. He produces the two old recipes from the storeroom (handout \"Two old recipes\": Bowstring 牵机药 and Ten-Scent Powder 十香软经散).</p><p>GM convenience: the book gives him no name or statistics; these are invented. No secret allegiance.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "iI82i9yTCF7ikQCr",
+     "name": "Accounting",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/accounting.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Accounting",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 60
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.accounting",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "frWxO1oPPMnF29eV",
+     "name": "Appraise",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/appraise.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Appraise",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 55
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.appraise",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "ZNFuYtcm2yXMhFRf",
+     "name": "Science (Pharmacy)",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/science_pharmacy.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 1,
+      "properties": {
+       "special": true,
+       "push": true
+      },
+      "skillName": "Pharmacy",
+      "specialization": "Science",
+      "adjustments": {
+       "base": 1,
+       "personal": 49
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.science-pharmacy",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "IREqwVmFD1BTNLRp",
+     "name": "Medicine",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/medicine.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 1,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Medicine",
+      "specialization": "",
+      "adjustments": {
+       "base": 1,
+       "personal": 29
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.medicine",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "XtaCNOfFN92fDWRw",
+     "name": "Fast Talk",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/fast_talk.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Fast Talk",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 50
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.fast-talk",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "eQt5I1ZQ0SmFhcFu",
+     "name": "Psychology",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/psychology.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 10,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Psychology",
+      "specialization": "",
+      "adjustments": {
+       "base": 10,
+       "personal": 40
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.psychology",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "yR0ToUTdrqOpaLZO",
+     "name": "Credit Rating",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/credit_rating.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 0,
+      "properties": {
+       "noxpgain": true,
+       "push": true
+      },
+      "skillName": "Credit Rating",
+      "specialization": "",
+      "adjustments": {
+       "base": 0,
+       "personal": 45
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.credit-rating",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "Tx4BcHEhww8Gfhkj",
+     "name": "拳脚 Fists",
+     "type": "weapon",
+     "img": "icons/weapons/swords/sword-guard-steel.webp",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "skill": {
+       "main": {
+        "name": "i.skill.fighting-brawl"
+       }
+      },
+      "range": {
+       "normal": {
+        "damage": "1D3"
+       }
+      },
+      "properties": {
+       "rngd": false,
+       "addb": true,
+       "ahdb": false
+      }
+     },
+     "flags": {},
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "药铺掌柜 Pharmacy manager",
+    "actorLink": false,
+    "disposition": 1,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/pharmacy_manager.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 50,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
    "_id": "7nbMRwGyBh5fEm2m",
    "name": "渡船 River boat",
    "type": "npc",
@@ -19514,6 +19888,221 @@
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
   {
+   "_id": "gvFWVQkFynNa3kJO",
+   "name": "8a · 药铺 The Pharmacy (HO2's house)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/pharmacy.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "8a · 药铺 The Pharmacy (HO2's house)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/pharmacy.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.05,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "6JqPvnYIDsh7VIme",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 864,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "TX9juSHBGIrL2mHz",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 960,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "fVjE6Qh0KoVwpuYU",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 1056,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "kFQO7hgRNxnZGAE1",
+     "name": "药铺掌柜 Pharmacy manager",
+     "actorId": "zephvlXlHuQJveDE",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pharmacy_manager.webp"
+     },
+     "x": 1088,
+     "y": 550,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "d8QqRMJlRNvICGa6",
+     "name": "凌序春 Ling Xuchun",
+     "actorId": "eSQXsGFRLRPvcwGB",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/ling_xuchun.webp"
+     },
+     "x": 768,
+     "y": 486,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "H9X8rF5SGazT0nIG",
+     "heading": "The pharmacy"
+    }
+   },
+   "sort": 1200000,
+   "initial": null,
+   "description": "<p>前街上HO2家的分号：初访时关着门，两个伙计在里面忙。掌柜在柜台后；凌序春在柜台前为药价争吵（「求药」，初访时）。左侧是诊脉桌，左上是库房（两张古方），右侧是药炉与晾药架。</p><p>HO2's family branch on Front Street: shut on the first visit, two clerks busy inside. The manager is behind the counter; Ling Xuchun argues over prices in front of it (\"A plea for medicine\", first visit). Pulse-taking table on the left, storeroom top-left (the two old recipes), stove and drying racks on the right. GM convenience: the shop layout is our own; the book only names who is there.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "jJw6DQrbF8UBxonO",
+   "navOrder": 1200000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "H9X8rF5SGazT0nIG"
+  },
+  {
    "_id": "L2kH9prksDxcJeVS",
    "name": "9 · 李家瓦子 The Li Family Theatre",
    "folder": "A5vdDtxm7pu1YoMV",
@@ -19747,12 +20336,12 @@
      "heading": "The Li Family Theatre"
     }
    },
-   "sort": 1200000,
+   "sort": 1300000,
    "initial": null,
    "description": "<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Q01dDxhtHG43Q4DT",
-   "navOrder": 1200000,
+   "navOrder": 1300000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -20046,12 +20635,12 @@
      "heading": "Night at the temple"
     }
    },
-   "sort": 1300000,
+   "sort": 1400000,
    "initial": null,
    "description": "<p>偏殿在右，门从内锁；伏击的不死仆从（1D4+2）隐藏其中。黑暗中HO3与刘卿堂检定−20，直到后门打开。</p><p>Side hall on the right, locked from inside; the ambushers (1D4+2) are hidden tokens there. In the dark HO3 and Liu roll at −20 until the back door is opened.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "fQYQPIwr3veAVZEc",
-   "navOrder": 1300000,
+   "navOrder": 1400000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "cdYjgimCWhJXo8Gv"
   },
@@ -20289,12 +20878,12 @@
      "heading": "The Undying family's house"
     }
    },
-   "sort": 1400000,
+   "sort": 1500000,
    "initial": null,
    "description": "<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "ZnpX1D8TizZVFvK8",
-   "navOrder": 1400000,
+   "navOrder": 1500000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -20616,12 +21205,12 @@
      "heading": "Magistrate Fan's residence"
     }
    },
-   "sort": 1500000,
+   "sort": 1600000,
    "initial": null,
    "description": "<p>棺材空的，内侧暗格藏残页。书房在左。发现秘密后范玉楼提灯出现，卫兵（隐藏）围住宅邸。</p><p>The coffin is empty; the torn pages are in the compartment inside. The study is on the left. When the secret is found Commander Fan appears with a lantern and his guards (hidden tokens) close the house.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "8Ri1YC84YDEREPSd",
-   "navOrder": 1500000,
+   "navOrder": 1600000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -20999,12 +21588,12 @@
      "heading": "Niu's house"
     }
    },
-   "sort": 1600000,
+   "sort": 1700000,
    "initial": null,
    "description": "<p>床边马刀在阿术左手；门边墙上蒙古弓与三支白羽箭。屋内两名亲卫、门外两名。五回合后副将到场。</p><p>The sabre lies by Ashu's left hand; the bow and three white arrows hang by the door. Two guards inside, two outside; after five rounds the deputy arrives.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "yeM8FaUxpPZcDEMP",
-   "navOrder": 1600000,
+   "navOrder": 1700000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -21354,12 +21943,12 @@
      "heading": "The Gaol"
     }
    },
-   "sort": 1700000,
+   "sort": 1800000,
    "initial": null,
    "description": "<p>右侧铁门后是深牢（牛富）。离开时阿术（隐藏）与范玉楼从深处走出。</p><p>Beyond the iron door on the right are the deep cells (Niu). Ashu (hidden) and Commander Fan come out from the depths as the party leaves.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "ql0ggNwiHY9pXZCc",
-   "navOrder": 1700000,
+   "navOrder": 1800000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -21821,12 +22410,12 @@
      "heading": "The Mongol warships"
     }
    },
-   "sort": 1800000,
+   "sort": 1900000,
    "initial": null,
    "description": "<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen's huts on the right.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "JXErpDPruypAZUjP",
-   "navOrder": 1800000,
+   "navOrder": 1900000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -22204,12 +22793,12 @@
      "heading": "East dock: the fishermen's huts"
     }
    },
-   "sort": 1900000,
+   "sort": 2000000,
    "initial": null,
    "description": "<p>原书第36页：姜楼、姜阁在火旁，渔民以茶和咸鱼待客。调查员从码头小路进入。刘卿堂隐藏于棚屋内，供重现渔民救起并照料他的情景时显示；通常他已随HO3同行。凌代秋起初病倒在前街江边巷内，痊愈后来此才显示。渔民群像标记及数值为主持人便利用，非原书人物数值。</p><p>Book p.36: Jiang Tower and Jiang Loft by the fire; the fishermen offer tea and salt fish. PCs enter along the jetty lane. Liu is hidden inside a hut: reveal to stage his rescue and nursing by the fishermen; normally he already accompanies HO3. Ling Daiqiu starts dying in a lane off Front Street: reveal here only after he is cured and arrives. The fisherman crowd tokens and statistics are GM convenience, not book statistics.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Vd2wAPVTStkSCOFW",
-   "navOrder": 1900000,
+   "navOrder": 2000000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -22419,12 +23008,12 @@
      "heading": "West dock"
     }
    },
-   "sort": 2000000,
+   "sort": 2100000,
    "initial": null,
    "description": "<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank \"The goddess comes in dreams\" can fire (the spine is a hidden token).</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "4JK2dLkxGu39iTLY",
-   "navOrder": 2000000,
+   "navOrder": 2100000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -22514,10 +23103,10 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
      },
-     "x": 902,
-     "y": 556,
-     "width": 1,
-     "height": 1,
+     "x": 812,
+     "y": 448,
+     "width": 0.8,
+     "height": 0.8,
      "disposition": 1,
      "hidden": false,
      "level": "defaultLevel0000",
@@ -22542,10 +23131,10 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
      },
-     "x": 979,
-     "y": 556,
-     "width": 1,
-     "height": 1,
+     "x": 1094,
+     "y": 448,
+     "width": 0.8,
+     "height": 0.8,
      "disposition": 1,
      "hidden": false,
      "level": "defaultLevel0000",
@@ -22570,10 +23159,10 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
      },
-     "x": 1056,
-     "y": 556,
-     "width": 1,
-     "height": 1,
+     "x": 812,
+     "y": 659,
+     "width": 0.8,
+     "height": 0.8,
      "disposition": 1,
      "hidden": false,
      "level": "defaultLevel0000",
@@ -22598,10 +23187,10 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/boatman.webp"
      },
-     "x": 1132,
-     "y": 556,
-     "width": 1,
-     "height": 1,
+     "x": 1094,
+     "y": 659,
+     "width": 0.8,
+     "height": 0.8,
      "disposition": 0,
      "hidden": false,
      "level": "defaultLevel0000",
@@ -22626,8 +23215,8 @@
      "texture": {
       "src": "modules/gongruo-session0/assets/tokens/hebo.webp"
      },
-     "x": 1024,
-     "y": 332,
+     "x": 1216,
+     "y": 224,
      "width": 2,
      "height": 2,
      "disposition": -1,
@@ -22802,12 +23391,12 @@
      "heading": "The reeds: forcing the crossing"
     }
    },
-   "sort": 2100000,
+   "sort": 2200000,
    "initial": null,
    "description": "<p>原书第38–39页：三名调查员与一名未具名船夫强渡。依次显示河伯冯夷、汉水女神、何罗鱼，一次只显示一个梦象；三者均为格拉基的梦中诱饵。河伯与女神标记仅为主持人便利用的梦象美术，并非独立人物。梦境破裂时隐藏梦象、倾覆渡船和失踪的船夫，显示环船脊刺，游泳与战斗一轮后进入下一梦。第三梦攻击何罗鱼后冲上襄阳岸。</p><p>Book pp.38–39: three PCs and one unnamed boatman force the crossing. Reveal the River Lord, the Lady of the Han, then the Many-Headed Fish, one dream image at a time; all three are Gla'aki's lures. He Bo and goddess tokens are GM-convenience art for dream images, not separate people. When a temptation breaks, hide its image, the capsized ferry and missing boatman; reveal the circling spines and swim/fight for one round before the next dream. Attack the fish in the third dream to wash up on the Southbright shore.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "S1Bt8Gk3GiksGYAk",
-   "navOrder": 2100000,
+   "navOrder": 2200000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -23297,12 +23886,12 @@
      "heading": "Preparation"
     }
    },
-   "sort": 2200000,
+   "sort": 2300000,
    "initial": null,
    "description": "<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla'aki.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "AoDfe0SzpOOiMH5X",
-   "navOrder": 2200000,
+   "navOrder": 2300000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "g3qrFK2KC9VmqE5X"
   }
@@ -23578,7 +24167,7 @@
     },
     {
      "_id": "jJw6DQrbF8UBxonO",
-     "name": "Guzheng City — 茶楼 Teahouse",
+     "name": "Guzheng City — 茶楼·药铺 Teahouse, Pharmacy",
      "path": "modules/gongruo-session0/assets/music/Guzheng_City.ogg",
      "channel": "music",
      "playing": false,
