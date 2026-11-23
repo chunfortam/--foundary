@@ -1,14 +1,16 @@
-"""Verify Front Street scenes and preservation against a git revision (default HEAD)."""
+"""Verify Front Street scenes and preservation against a git revision (default origin/main)."""
+import hashlib
 import json
 import re
 import subprocess
+import string
 import sys
 from pathlib import Path
 
 from PIL import Image
 
 root = Path(__file__).resolve().parents[1]
-base = sys.argv[1] if len(sys.argv) > 1 else 'HEAD'
+base = sys.argv[1] if len(sys.argv) > 1 else 'origin/main'
 old = json.loads(subprocess.check_output(['git', 'show', f'{base}:adventure.json'], cwd=root))
 new = json.loads((root / 'adventure.json').read_text())
 for key, value in old.items():
@@ -19,7 +21,15 @@ after = {s['_id']: s for s in new['scenes']}
 for sid, scene in before.items():
     assert after[sid] == scene, f'Existing scene changed: {scene["name"]}'
 added = [s for s in new['scenes'] if s['_id'] not in before]
-assert [s['name'].split(' · ')[0] for s in added] == ['18', '19', '20', '21']
+assert [s['name'].split(' · ')[0] for s in added] == ['F1', 'F2', 'F3', 'F4']
+assert new['scenes'][-4:] == added
+assert any(s['name'].startswith('8a · ') for s in before.values())
+assert [s['sort'] for s in new['scenes']] == [s['navOrder'] for s in new['scenes']] == list(range(100000, (len(new['scenes']) + 1) * 100000, 100000))
+assert len(after) == len(new['scenes']), 'Duplicate scene IDs'
+for scene, key in zip(added, ['stalls', 'wangwu', 'lings', 'wineshop']):
+    alphabet = string.ascii_letters + string.digits
+    expected_id = ''.join(alphabet[b % len(alphabet)] for b in hashlib.sha256(f'scene:front:{key}'.encode()).digest()[:16])
+    assert scene['_id'] == expected_id
 expected = [4, 11, 5, 6]
 sounds = {s['_id']: s['name'] for p in new['playlists'] for s in p['sounds']}
 for scene, count in zip(added, expected):
@@ -45,3 +55,4 @@ assert sum(t['hidden'] for t in added[0]['tokens']) == 1
 assert sum(t['hidden'] for t in added[1]['tokens']) == 6
 print(f'PASS: {len(before)} existing scenes and all other adventure data unchanged (including all existing IDs and pc1).')
 print('PASS: four new scenes, 26 tokens, valid journal headings, maps and existing playlist sounds.')
+print('PASS: F1–F4 have front-namespaced IDs and ordered sort/navOrder at the end; Pharmacy 8a intact.')
