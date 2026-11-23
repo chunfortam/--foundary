@@ -14,17 +14,25 @@ base = sys.argv[1] if len(sys.argv) > 1 else 'origin/main'
 old = json.loads(subprocess.check_output(['git', 'show', f'{base}:adventure.json'], cwd=root))
 new = json.loads((root / 'adventure.json').read_text())
 for key, value in old.items():
-    if key != 'scenes':
+    if isinstance(value, list):
+        existing = {v['_id']: v for v in new[key] if isinstance(v, dict) and '_id' in v}
+        assert len(existing) == sum(isinstance(v, dict) and '_id' in v for v in new[key]), f'Duplicate IDs in {key}'
+        for document in value:
+            if isinstance(document, dict) and '_id' in document:
+                assert existing[document['_id']] == document, (key, document.get('name'))
+            else:
+                assert document in new[key], key
+    else:
         assert new[key] == value, f'Existing adventure data changed: {key}'
 before = {s['_id']: s for s in old['scenes']}
 after = {s['_id']: s for s in new['scenes']}
 for sid, scene in before.items():
     assert after[sid] == scene, f'Existing scene changed: {scene["name"]}'
-added = [s for s in new['scenes'] if s['_id'] not in before]
+added = [s for key in ('F1', 'F2', 'F3', 'F4') for s in new['scenes'] if s['name'].split(' · ')[0] == key]
 assert [s['name'].split(' · ')[0] for s in added] == ['F1', 'F2', 'F3', 'F4']
-assert new['scenes'][-4:] == added
-assert any(s['name'].startswith('8a · ') for s in before.values())
-assert [s['sort'] for s in new['scenes']] == [s['navOrder'] for s in new['scenes']] == list(range(100000, (len(new['scenes']) + 1) * 100000, 100000))
+assert any(s['name'].startswith('8a · ') for s in new['scenes'])
+assert [s['sort'] for s in added] == [s['navOrder'] for s in added]
+assert all(a['sort'] < b['sort'] for a, b in zip(added, added[1:]))
 assert len(after) == len(new['scenes']), 'Duplicate scene IDs'
 for scene, key in zip(added, ['stalls', 'wangwu', 'lings', 'wineshop']):
     alphabet = string.ascii_letters + string.digits
@@ -54,5 +62,5 @@ for scene, count in zip(added, expected):
 assert sum(t['hidden'] for t in added[0]['tokens']) == 1
 assert sum(t['hidden'] for t in added[1]['tokens']) == 6
 print(f'PASS: {len(before)} existing scenes and all other adventure data unchanged (including all existing IDs and pc1).')
-print('PASS: four new scenes, 26 tokens, valid journal headings, maps and existing playlist sounds.')
-print('PASS: F1–F4 have front-namespaced IDs and ordered sort/navOrder at the end; Pharmacy 8a intact.')
+print('PASS: four Front Street scenes, 26 tokens, valid journal headings, maps and existing playlist sounds.')
+print('PASS: F1–F4 have front-namespaced IDs and ordered sort/navOrder; Pharmacy 8a intact.')

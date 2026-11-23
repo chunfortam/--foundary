@@ -34,9 +34,12 @@ for key, values in old.items():
     else:
         assert new[key] == values, key
 print('PASS: every existing document is byte-for-byte equivalent as parsed JSON, including pc1 and all skills.')
-added_actors = [a for a in new['actors'] if a['_id'] not in {a['_id'] for a in old['actors']}]
-added_scenes = [s for s in new['scenes'] if s['_id'] not in {s['_id'] for s in old['scenes']}]
+actor_names = {'求救老妇 Old woman begging for help', '七宝行掌柜 Seven Treasures manager', '七宝行伙计 Seven Treasures assistant'}
+added_actors = [a for a in new['actors'] if a['name'] in actor_names]
+scene_keys = ('B1', 'B2', 'B3')
+added_scenes = [s for key in scene_keys for s in new['scenes'] if s['name'].split(' · ')[0] == key]
 assert len(added_actors) == len(added_scenes) == 3
+assert {a['name'] for a in added_actors} == actor_names
 for actor in added_actors:
     assert 'GM convenience' in actor['system']['biography']['personalDescription']['value']
     assert actor['items'] == []
@@ -53,7 +56,7 @@ for scene, number, count, heading in zip(added_scenes, ('B1', 'B2', 'B3'), (7, 9
     for token in scene['tokens']:
         assert 192 <= token['x'] < 1728 and 128 <= token['y'] < 1152
 assert added_scenes[1]['environment']['darknessLevel'] == 0.4
-print(f'PASS: {len(after) - len(before)} new documents: 3 actors, 3 scenes, 3 scene levels, 21 tokens.')
+print('PASS: Back Street documents: 3 actors, 3 scenes, 3 scene levels, 21 tokens.')
 print('PASS: scene dimensions, token counts/visibility/bounds, assets, empty inventories and Back Street journal headings verified.')
 
 for collection in ('actors', 'scenes'):
