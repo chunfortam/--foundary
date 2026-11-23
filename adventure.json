@@ -14148,6 +14148,178 @@
    }
   },
   {
+   "_id": "oZw7v76qbLTMTeaZ",
+   "name": "许宅仆役 Xu household sweeper",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/xu_sweeper.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 45
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 50
+     },
+     "app": {
+      "value": 50
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 40
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>在许宅前庭洒扫，可说服或贿赂其引见许德显。</p><p>Sweeps the forecourt. Visitors can talk or bribe the sweepers into admitting them to see Prefect Xu.</p><p>主持人便利用：外貌与数值为自拟。GM convenience: appearance and civilian stats are illustrative.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "许宅仆役 Xu household sweeper",
+    "actorLink": false,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/xu_sweeper.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
+   "_id": "wjJebjWqaq3I6aFx",
+   "name": "许宅侍女 Xu household maid",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/xu_maid.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 45
+     },
+     "con": {
+      "value": 45
+     },
+     "siz": {
+      "value": 50
+     },
+     "dex": {
+      "value": 50
+     },
+     "app": {
+      "value": 50
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 40
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 9,
+      "max": 9
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>在书房侍奉赏玩珍宝的许德显。</p><p>Attends Prefect Xu in the study while he admires his curios.</p><p>主持人便利用：外貌与数值为自拟。GM convenience: appearance and civilian stats are illustrative.</p>"
+     }
+    }
+   },
+   "items": [],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "许宅侍女 Xu household maid",
+    "actorLink": false,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/xu_maid.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
    "_id": "7nbMRwGyBh5fEm2m",
    "name": "渡船 River boat",
    "type": "npc",
@@ -22283,6 +22455,567 @@
    "navOrder": 2000000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "g3qrFK2KC9VmqE5X"
+  },
+  {
+   "_id": "H2rJl445eVO6S59b",
+   "name": "M1 · 许德显的宅邸 Prefect Xu's mansion",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/xu_residence.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "M1 · 许德显的宅邸 Prefect Xu's mansion",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/xu_residence.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "p7NjxoRByh6CPFGo",
+     "name": "许德显 Prefect Xu",
+     "actorId": "iBDZteGcpbau6xeU",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu.webp"
+     },
+     "x": 928,
+     "y": 396,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "qPOZYTmuIkNxQuuY",
+     "name": "许宅侍女一 Xu household maid 1",
+     "actorId": "wjJebjWqaq3I6aFx",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_maid.webp"
+     },
+     "x": 723,
+     "y": 390,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "90A3rSlQTCttvbv8",
+     "name": "许宅侍女二 Xu household maid 2",
+     "actorId": "wjJebjWqaq3I6aFx",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_maid.webp"
+     },
+     "x": 1152,
+     "y": 390,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "xjc3csY5o1e4uwjt",
+     "name": "许宅仆役一 Xu household sweeper 1",
+     "actorId": "oZw7v76qbLTMTeaZ",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_sweeper.webp"
+     },
+     "x": 691,
+     "y": 761,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "zvVxnbiHGE3KIkjD",
+     "name": "许宅仆役二 Xu household sweeper 2",
+     "actorId": "oZw7v76qbLTMTeaZ",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/xu_sweeper.webp"
+     },
+     "x": 1216,
+     "y": 761,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "8WarQ7bvypQPVk2o",
+     "heading": "Prefect Xu's mansion"
+    }
+   },
+   "sort": 2100000,
+   "initial": null,
+   "description": "<p>大门紧闭，仆役在前庭洒扫；许德显与侍女在书房。说服或贿赂仆役以求引见，或翻越后墙。</p><p>The gate is shut. The sweepers work in the forecourt; Prefect Xu and his maids are in the study. Talk or bribe your way in through the sweepers, or go over the back wall.</p><p>主持人便利用：布局与人数为示意。GM convenience: the layout and exact token counts are illustrative.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "1bPiTvYhBY59l52e",
+   "navOrder": 2100000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "8WarQ7bvypQPVk2o"
+  },
+  {
+   "_id": "UJY2J0MIfNBFqct5",
+   "name": "M2 · 官学 The Academy",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/academy.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "M2 · 官学 The Academy",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/academy.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "ZDwNQb2uAH9shoif",
+     "name": "官学儒生一 Academy scholar 1",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 601,
+     "y": 467,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "VXvL46hA0wPXa6Ug",
+     "name": "官学儒生二 Academy scholar 2",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 1260,
+     "y": 640,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "8WarQ7bvypQPVk2o",
+     "heading": "The School and the Library"
+    }
+   },
+   "sort": 2200000,
+   "initial": null,
+   "description": "<p>官学无人值守，几名儒生正在整理物品。书阁就在官学内部。</p><p>The Academy is unguarded; a few scholars are packing up. The Library is inside the Academy.</p><p>主持人便利用：布局与人数为示意；切换至藏书阁场景不另耗行动轮。GM convenience: the layout and token counts are illustrative. Switch to the Library as part of the same visit.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "1bPiTvYhBY59l52e",
+   "navOrder": 2200000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "8WarQ7bvypQPVk2o"
+  },
+  {
+   "_id": "bTzqKNAYdTcAxizb",
+   "name": "M3 · 藏书阁 The Library",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/library.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "M3 · 藏书阁 The Library",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/library.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.0,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "DDbsBxGA2rmN9pz6",
+     "name": "孔礼岳 Kong Liyue",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/kong_liyue.webp"
+     },
+     "x": 755,
+     "y": 889,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "y11sIoTE4v0b4MKT",
+     "name": "周文通 Zhou Wentong",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 1113,
+     "y": 889,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "bXbLXQedTXiNPM69",
+     "name": "藏书阁儒生一 Library scholar 1",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 563,
+     "y": 512,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "0PuvKX64AHIS9k6Y",
+     "name": "藏书阁儒生二 Library scholar 2",
+     "actorId": "IcJQyhhHQkSaKosP",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/scholar.webp"
+     },
+     "x": 1267,
+     "y": 588,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "kPpenHov4c8emNuH",
+     "name": "范玉楼 Commander Fan",
+     "actorId": "vVXMKubzpYyuDjTj",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fan_yulou.webp"
+     },
+     "x": 1088,
+     "y": 384,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "8WarQ7bvypQPVk2o",
+     "heading": "The School and the Library"
+    }
+   },
+   "sort": 2300000,
+   "initial": null,
+   "description": "<p>进藏书阁前，孔礼岳拦问来意，周文通出面解围。若安排「素书偶逢」，才显示隐藏的范玉楼。</p><p>Play Kong Liyue’s challenge and Zhou Wentong’s rebuke at the door before the search. Reveal Commander Fan only for the optional chance meeting over books.</p><p>主持人便利用：布局、人数与儒生通用数值为示意。GM convenience: the layout and counts are illustrative; the scholars use the shared Scholar stats.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "1bPiTvYhBY59l52e",
+   "navOrder": 2300000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "8WarQ7bvypQPVk2o"
   }
  ],
  "folders": [
