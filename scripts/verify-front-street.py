@@ -16,6 +16,7 @@ new = json.loads((root / 'adventure.json').read_text())
 for key, value in old.items():
     if isinstance(value, list):
         existing = {v['_id']: v for v in new[key] if isinstance(v, dict) and '_id' in v}
+        assert len(existing) == sum(isinstance(v, dict) and '_id' in v for v in new[key]), f'Duplicate IDs in {key}'
         for document in value:
             if isinstance(document, dict) and '_id' in document:
                 assert existing[document['_id']] == document, (key, document.get('name'))
