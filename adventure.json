@@ -14148,6 +14148,380 @@
    }
   },
   {
+   "_id": "zephvlXlHuQJveDE",
+   "name": "药铺掌柜 Pharmacy manager",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/pharmacy_manager.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 40
+     },
+     "con": {
+      "value": 50
+     },
+     "siz": {
+      "value": 65
+     },
+     "dex": {
+      "value": 40
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 65
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 60
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 11,
+      "max": 11
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>樊城分号掌柜。对少东家（HO2）百般逢迎：店里的伙计、药材与银钱任她取用。这家分号贪利，价高，伙计看人下菜。从库房翻出两张古方（牵机药、十香软经散）。</p><p>主持人方便：姓名不详，数值为自拟。</p><p>Book: Front Street, the pharmacy (p.19). Manager of the Fencewall branch of HO2's family house. He fawns on the young master/mistress: HO2 may use the staff, the stock and the cash freely. The branch is grasping: sky-high prices, two clerks who size up a customer's purse. He produces the two old recipes from the storeroom (handout \"Two old recipes\": Bowstring 牵机药 and Ten-Scent Powder 十香软经散).</p><p>GM convenience: the book gives him no name or statistics; these are invented. No secret allegiance.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "iI82i9yTCF7ikQCr",
+     "name": "Accounting",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/accounting.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Accounting",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 60
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.accounting",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "frWxO1oPPMnF29eV",
+     "name": "Appraise",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/appraise.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Appraise",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 55
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.appraise",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "ZNFuYtcm2yXMhFRf",
+     "name": "Science (Pharmacy)",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/science_pharmacy.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 1,
+      "properties": {
+       "special": true,
+       "push": true
+      },
+      "skillName": "Pharmacy",
+      "specialization": "Science",
+      "adjustments": {
+       "base": 1,
+       "personal": 49
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.science-pharmacy",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "IREqwVmFD1BTNLRp",
+     "name": "Medicine",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/medicine.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 1,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Medicine",
+      "specialization": "",
+      "adjustments": {
+       "base": 1,
+       "personal": 29
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.medicine",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "XtaCNOfFN92fDWRw",
+     "name": "Fast Talk",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/fast_talk.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 5,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Fast Talk",
+      "specialization": "",
+      "adjustments": {
+       "base": 5,
+       "personal": 50
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.fast-talk",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "eQt5I1ZQ0SmFhcFu",
+     "name": "Psychology",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/psychology.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 10,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Psychology",
+      "specialization": "",
+      "adjustments": {
+       "base": 10,
+       "personal": 40
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.psychology",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "yR0ToUTdrqOpaLZO",
+     "name": "Credit Rating",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/credit_rating.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 0,
+      "properties": {
+       "noxpgain": true,
+       "push": true
+      },
+      "skillName": "Credit Rating",
+      "specialization": "",
+      "adjustments": {
+       "base": 0,
+       "personal": 45
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.credit-rating",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "Tx4BcHEhww8Gfhkj",
+     "name": "拳脚 Fists",
+     "type": "weapon",
+     "img": "icons/weapons/swords/sword-guard-steel.webp",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "skill": {
+       "main": {
+        "name": "i.skill.fighting-brawl"
+       }
+      },
+      "range": {
+       "normal": {
+        "damage": "1D3"
+       }
+      },
+      "properties": {
+       "rngd": false,
+       "addb": true,
+       "ahdb": false
+      }
+     },
+     "flags": {},
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "药铺掌柜 Pharmacy manager",
+    "actorLink": false,
+    "disposition": 1,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/pharmacy_manager.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 50,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
+  },
+  {
    "_id": "oAQ79xefTLF2qurb",
    "name": "求救老妇 Old woman begging for help",
    "type": "npc",
@@ -19516,6 +19890,221 @@
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
   {
+   "_id": "gvFWVQkFynNa3kJO",
+   "name": "8a · 药铺 The Pharmacy (HO2's house)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/pharmacy.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "8a · 药铺 The Pharmacy (HO2's house)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/pharmacy.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.05,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "6JqPvnYIDsh7VIme",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 864,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "TX9juSHBGIrL2mHz",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 960,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "fVjE6Qh0KoVwpuYU",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 1056,
+     "y": 832,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "kFQO7hgRNxnZGAE1",
+     "name": "药铺掌柜 Pharmacy manager",
+     "actorId": "zephvlXlHuQJveDE",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pharmacy_manager.webp"
+     },
+     "x": 1088,
+     "y": 550,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "d8QqRMJlRNvICGa6",
+     "name": "凌序春 Ling Xuchun",
+     "actorId": "eSQXsGFRLRPvcwGB",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/ling_xuchun.webp"
+     },
+     "x": 768,
+     "y": 486,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "H9X8rF5SGazT0nIG",
+     "heading": "The pharmacy"
+    }
+   },
+   "sort": 1200000,
+   "initial": null,
+   "description": "<p>前街上HO2家的分号：初访时关着门，两个伙计在里面忙。掌柜在柜台后；凌序春在柜台前为药价争吵（「求药」，初访时）。左侧是诊脉桌，左上是库房（两张古方），右侧是药炉与晾药架。</p><p>HO2's family branch on Front Street: shut on the first visit, two clerks busy inside. The manager is behind the counter; Ling Xuchun argues over prices in front of it (\"A plea for medicine\", first visit). Pulse-taking table on the left, storeroom top-left (the two old recipes), stove and drying racks on the right. GM convenience: the shop layout is our own; the book only names who is there.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "jJw6DQrbF8UBxonO",
+   "navOrder": 1200000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "H9X8rF5SGazT0nIG"
+  },
+  {
    "_id": "L2kH9prksDxcJeVS",
    "name": "9 · 李家瓦子 The Li Family Theatre",
    "folder": "A5vdDtxm7pu1YoMV",
@@ -19749,12 +20338,12 @@
      "heading": "The Li Family Theatre"
     }
    },
-   "sort": 1200000,
+   "sort": 1300000,
    "initial": null,
    "description": "<p>干涸水池里的乌篷船可借。秋筠藏在右下角的房间，被点破时上屋顶。</p><p>The boat in the dry pool can be borrowed. Autumn lodges in the room bottom-right and takes to the roof when exposed.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "Q01dDxhtHG43Q4DT",
-   "navOrder": 1200000,
+   "navOrder": 1300000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -20048,12 +20637,12 @@
      "heading": "Night at the temple"
     }
    },
-   "sort": 1300000,
+   "sort": 1400000,
    "initial": null,
    "description": "<p>偏殿在右，门从内锁；伏击的不死仆从（1D4+2）隐藏其中。黑暗中HO3与刘卿堂检定−20，直到后门打开。</p><p>Side hall on the right, locked from inside; the ambushers (1D4+2) are hidden tokens there. In the dark HO3 and Liu roll at −20 until the back door is opened.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "fQYQPIwr3veAVZEc",
-   "navOrder": 1300000,
+   "navOrder": 1400000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "cdYjgimCWhJXo8Gv"
   },
@@ -20291,12 +20880,12 @@
      "heading": "The Undying family's house"
     }
    },
-   "sort": 1400000,
+   "sort": 1500000,
    "initial": null,
    "description": "<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "ZnpX1D8TizZVFvK8",
-   "navOrder": 1400000,
+   "navOrder": 1500000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "H9X8rF5SGazT0nIG"
   },
@@ -20618,12 +21207,12 @@
      "heading": "Magistrate Fan's residence"
     }
    },
-   "sort": 1500000,
+   "sort": 1600000,
    "initial": null,
    "description": "<p>棺材空的，内侧暗格藏残页。书房在左。发现秘密后范玉楼提灯出现，卫兵（隐藏）围住宅邸。</p><p>The coffin is empty; the torn pages are in the compartment inside. The study is on the left. When the secret is found Commander Fan appears with a lantern and his guards (hidden tokens) close the house.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "8Ri1YC84YDEREPSd",
-   "navOrder": 1500000,
+   "navOrder": 1600000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -21001,12 +21590,12 @@
      "heading": "Niu's house"
     }
    },
-   "sort": 1600000,
+   "sort": 1700000,
    "initial": null,
    "description": "<p>床边马刀在阿术左手；门边墙上蒙古弓与三支白羽箭。屋内两名亲卫、门外两名。五回合后副将到场。</p><p>The sabre lies by Ashu's left hand; the bow and three white arrows hang by the door. Two guards inside, two outside; after five rounds the deputy arrives.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "yeM8FaUxpPZcDEMP",
-   "navOrder": 1600000,
+   "navOrder": 1700000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -21356,12 +21945,12 @@
      "heading": "The Gaol"
     }
    },
-   "sort": 1700000,
+   "sort": 1800000,
    "initial": null,
    "description": "<p>右侧铁门后是深牢（牛富）。离开时阿术（隐藏）与范玉楼从深处走出。</p><p>Beyond the iron door on the right are the deep cells (Niu). Ashu (hidden) and Commander Fan come out from the depths as the party leaves.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "ql0ggNwiHY9pXZCc",
-   "navOrder": 1700000,
+   "navOrder": 1800000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -21823,12 +22412,12 @@
      "heading": "The Mongol warships"
     }
    },
-   "sort": 1800000,
+   "sort": 1900000,
    "initial": null,
    "description": "<p>十七日晚犒赏：岸上1D10+5名士兵（多为宋人降卒）围着篝火吃喝；渔民从酒肉车上溜下水凿船，游侠登船。右侧是渔民棚屋。</p><p>Feast night: 1D10+5 soldiers (mostly Song turncoats) eat round the fire; the fishermen slip off the carts into the water to hole the hulls while the wanderers board. Fishermen's huts on the right.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "JXErpDPruypAZUjP",
-   "navOrder": 1800000,
+   "navOrder": 1900000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -22038,12 +22627,12 @@
      "heading": "West dock"
     }
    },
-   "sort": 1900000,
+   "sort": 2000000,
    "initial": null,
    "description": "<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank \"The goddess comes in dreams\" can fire (the spine is a hidden token).</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "4JK2dLkxGu39iTLY",
-   "navOrder": 1900000,
+   "navOrder": 2000000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -22533,18 +23122,18 @@
      "heading": "Preparation"
     }
    },
-   "sort": 2000000,
+   "sort": 2100000,
    "initial": null,
    "description": "<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla'aki.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "AoDfe0SzpOOiMH5X",
-   "navOrder": 2000000,
+   "navOrder": 2100000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "g3qrFK2KC9VmqE5X"
   },
   {
-   "_id": "QLBurY2yHDL1FkhL",
-   "name": "21 · 会馆 The Guildhall",
+   "_id": "bAnlqWx8dt1VdVHi",
+   "name": "B1 · 会馆 The Guildhall",
    "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/guildhall.webp"
@@ -22552,7 +23141,7 @@
    "levels": [
     {
      "_id": "defaultLevel0000",
-     "name": "21 · 会馆 The Guildhall",
+     "name": "B1 · 会馆 The Guildhall",
      "background": {
       "src": "modules/gongruo-session0/assets/maps/guildhall.webp"
      },
@@ -22593,7 +23182,7 @@
    },
    "tokens": [
     {
-     "_id": "2FrYZYOkGinbIHI8",
+     "_id": "rgofZuTBmoIMzHHi",
      "name": "陆青崖 Lu Bluecliff",
      "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
@@ -22621,7 +23210,7 @@
      "flags": {}
     },
     {
-     "_id": "CVaD7S7pnInHUccz",
+     "_id": "6cyjXUJVuA3nH9Da",
      "name": "沈怀珠 Shen Pearl",
      "actorId": "oRmSv0KvVnzXP8kV",
      "actorLink": true,
@@ -22649,7 +23238,7 @@
      "flags": {}
     },
     {
-     "_id": "OQikwAX6cIEA7df7",
+     "_id": "7MiHLp8ecX2BOeHU",
      "name": "谢云骧 Xie Cloudmane",
      "actorId": "VmvhocFAZXbtTNxc",
      "actorLink": true,
@@ -22677,7 +23266,7 @@
      "flags": {}
     },
     {
-     "_id": "FFCmxBv0puee2FuF",
+     "_id": "Ee0r7GckJRVssmbn",
      "name": "段游衍 Duan Driftwood",
      "actorId": "E96GK825kFXk3LZk",
      "actorLink": true,
@@ -22705,7 +23294,7 @@
      "flags": {}
     },
     {
-     "_id": "9hufpFW6TeR685Dc",
+     "_id": "gAKZvmt4eidCXaRs",
      "name": "卫兵 Guard 1",
      "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
@@ -22733,7 +23322,7 @@
      "flags": {}
     },
     {
-     "_id": "7UyQJyyRz6f8xYba",
+     "_id": "Q3GZ9cmknP9S8kpa",
      "name": "卫兵 Guard 2",
      "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
@@ -22761,7 +23350,7 @@
      "flags": {}
     },
     {
-     "_id": "o0p5XlZKHedav51H",
+     "_id": "hIYtCpUPqkkp0Vzp",
      "name": "副官 Adjutant",
      "actorId": "b6vHHCpCU4LXDaEa",
      "actorLink": false,
@@ -22804,18 +23393,18 @@
      "heading": "The Guildhall"
     }
    },
-   "sort": 2100000,
+   "sort": 2200000,
    "initial": null,
    "description": "<p>上方是段游衍书房，门外皮毯为记；中庭在中央，大门与街道在下。段游衍为隐藏标记，是否在场由主持人决定；卫兵与副官随他驻此。</p><p>Duan's study is at the top, marked by the fur carpet at its door; courtyard in the middle, gate and street below. Duan is hidden: he may be away. His guards and adjutant lodge here. The desk holds the letter, note and defence map; see the Back Street journal.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "8Ri1YC84YDEREPSd",
-   "navOrder": 2100000,
+   "navOrder": 2200000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "FAf6fhtFrWbf6T0r"
   },
   {
-   "_id": "k2hmwYSAtiHsqzap",
-   "name": "22 · 失火民宅 The burning house",
+   "_id": "vbDcWTed64bUquSo",
+   "name": "B2 · 失火民宅 The burning house",
    "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/burning.webp"
@@ -22823,7 +23412,7 @@
    "levels": [
     {
      "_id": "defaultLevel0000",
-     "name": "22 · 失火民宅 The burning house",
+     "name": "B2 · 失火民宅 The burning house",
      "background": {
       "src": "modules/gongruo-session0/assets/maps/burning.webp"
      },
@@ -22864,7 +23453,7 @@
    },
    "tokens": [
     {
-     "_id": "2uJEoAvr9Zh9deDV",
+     "_id": "a28lQTgvQYUnKvCh",
      "name": "陆青崖 Lu Bluecliff",
      "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
@@ -22892,7 +23481,7 @@
      "flags": {}
     },
     {
-     "_id": "tKa7rh7R8OTtzWlu",
+     "_id": "1Wb7QVbW50uyDeR2",
      "name": "沈怀珠 Shen Pearl",
      "actorId": "oRmSv0KvVnzXP8kV",
      "actorLink": true,
@@ -22920,7 +23509,7 @@
      "flags": {}
     },
     {
-     "_id": "G1esR0JSiYfUpXXj",
+     "_id": "0PCsnYIiResVcF4G",
      "name": "谢云骧 Xie Cloudmane",
      "actorId": "VmvhocFAZXbtTNxc",
      "actorLink": true,
@@ -22948,7 +23537,7 @@
      "flags": {}
     },
     {
-     "_id": "6B27gZrOKUFnaF3Q",
+     "_id": "0jZoGDNezzqoUg3B",
      "name": "求救老妇 Old woman begging for help",
      "actorId": "oAQ79xefTLF2qurb",
      "actorLink": true,
@@ -22976,7 +23565,7 @@
      "flags": {}
     },
     {
-     "_id": "ID9k1bVxeHciPPPD",
+     "_id": "YtcLNw2cj2uuMvG2",
      "name": "火中亲属 Trapped kin 1",
      "actorId": "6cuZ2fchw56oQwoe",
      "actorLink": false,
@@ -23004,7 +23593,7 @@
      "flags": {}
     },
     {
-     "_id": "RhmyIGqq9WSotJjy",
+     "_id": "eJZ8Vt8PRmJvmqQi",
      "name": "火中亲属 Trapped kin 2",
      "actorId": "6cuZ2fchw56oQwoe",
      "actorLink": false,
@@ -23032,7 +23621,7 @@
      "flags": {}
     },
     {
-     "_id": "teU8iktLUeXPeYoN",
+     "_id": "qwpTcD6bOr4EpDCX",
      "name": "火中亲属 Trapped kin 3",
      "actorId": "6cuZ2fchw56oQwoe",
      "actorLink": false,
@@ -23060,7 +23649,7 @@
      "flags": {}
     },
     {
-     "_id": "l3FsuOYq9fMl9ZtU",
+     "_id": "UCP4kbxU99Uj9ZpW",
      "name": "火中亲属 Trapped kin 4",
      "actorId": "6cuZ2fchw56oQwoe",
      "actorLink": false,
@@ -23088,7 +23677,7 @@
      "flags": {}
     },
     {
-     "_id": "QuscO73EfFRDTcDd",
+     "_id": "kDqkSfZVrt8eTJ1z",
      "name": "火中亲属 Trapped kin 5",
      "actorId": "6cuZ2fchw56oQwoe",
      "actorLink": false,
@@ -23131,18 +23720,18 @@
      "heading": "The burning house"
     }
    },
-   "sort": 2200000,
+   "sort": 2300000,
    "initial": null,
    "description": "<p>老妇在下方街道求救。五名亲属（两个孩子不到十岁）是不死仆从，隐藏在床下与柜中；标记位置为主持人便利安排。右侧起火。</p><p>The old woman begs on the street below. Five trapped kin (two children under ten) are hidden Undying Servant tokens in wardrobes and under beds; exact placements are GM convenience. Fire is on the right. DEX to enter or 1D3 damage; STR to drag one out. In firelight it melts and collapses: SAN 1/1D10. The fire drives everyone out; neighbours give the Front Street address.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "ZnpX1D8TizZVFvK8",
-   "navOrder": 2200000,
+   "navOrder": 2300000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "FAf6fhtFrWbf6T0r"
   },
   {
-   "_id": "7byK1Jl9AA2rBtqL",
-   "name": "23 · 七宝行 Seven Treasures jeweller",
+   "_id": "OT4sfBaSUTWxU9Jc",
+   "name": "B3 · 七宝行 Seven Treasures jeweller",
    "folder": "A5vdDtxm7pu1YoMV",
    "background": {
     "src": "modules/gongruo-session0/assets/maps/treasures.webp"
@@ -23150,7 +23739,7 @@
    "levels": [
     {
      "_id": "defaultLevel0000",
-     "name": "23 · 七宝行 Seven Treasures jeweller",
+     "name": "B3 · 七宝行 Seven Treasures jeweller",
      "background": {
       "src": "modules/gongruo-session0/assets/maps/treasures.webp"
      },
@@ -23191,7 +23780,7 @@
    },
    "tokens": [
     {
-     "_id": "DhZagHFZet2PtCHv",
+     "_id": "avgO7aZSWh4iajaq",
      "name": "陆青崖 Lu Bluecliff",
      "actorId": "P3bXoyW19h7TmI25",
      "actorLink": true,
@@ -23219,7 +23808,7 @@
      "flags": {}
     },
     {
-     "_id": "nh6ipzr885UiZVNk",
+     "_id": "rVL9A47cx3W3QQ7g",
      "name": "沈怀珠 Shen Pearl",
      "actorId": "oRmSv0KvVnzXP8kV",
      "actorLink": true,
@@ -23247,7 +23836,7 @@
      "flags": {}
     },
     {
-     "_id": "6kx1ewY4qReO7XA1",
+     "_id": "CJGA3OO5WUrieURo",
      "name": "谢云骧 Xie Cloudmane",
      "actorId": "VmvhocFAZXbtTNxc",
      "actorLink": true,
@@ -23275,7 +23864,7 @@
      "flags": {}
     },
     {
-     "_id": "8MWQoBXxy86gHI5t",
+     "_id": "ST7BZ5mh5KiWPwlL",
      "name": "七宝行掌柜 Seven Treasures manager",
      "actorId": "BRkBNpMRs7fVaT5M",
      "actorLink": true,
@@ -23303,7 +23892,7 @@
      "flags": {}
     },
     {
-     "_id": "Cxjcu4DRrjaP9OBS",
+     "_id": "KeueARpIrMxf2ft0",
      "name": "七宝行伙计 Seven Treasures assistant",
      "actorId": "dL9P8MoLXOXuFLpO",
      "actorLink": true,
@@ -23346,12 +23935,12 @@
      "heading": "Seven Treasures jeweller"
     }
    },
-   "sort": 2300000,
+   "sort": 2400000,
    "initial": null,
    "description": "<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop's one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "jJw6DQrbF8UBxonO",
-   "navOrder": 2300000,
+   "navOrder": 2400000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "FAf6fhtFrWbf6T0r"
   }
@@ -23627,7 +24216,7 @@
     },
     {
      "_id": "jJw6DQrbF8UBxonO",
-     "name": "Guzheng City — 茶楼 Teahouse",
+     "name": "Guzheng City — 茶楼·药铺 Teahouse, Pharmacy",
      "path": "modules/gongruo-session0/assets/music/Guzheng_City.ogg",
      "channel": "music",
      "playing": false,

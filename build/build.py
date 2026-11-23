@@ -273,6 +273,13 @@ BACK_STREET_NPCS = [
      '<p>七宝行仅有的一名伙计，原书未具名。</p>',
      '<p>Book: Back Street, Seven Treasures jeweller. The shop has one assistant, unnamed in the book.</p>'),
 ]
+# The Pharmacy branch manager: the book gives no name or statistics, only his manner.
+npc('pharmacy_manager', '药铺掌柜 Pharmacy manager', dict(str=40, con=50, siz=65, dex=40, app=45, int=65, pow=45, edu=60),
+    [('i.skill.accounting', 65), ('i.skill.appraise', 60), ('i.skill.science-pharmacy', 50), ('i.skill.medicine', 30), ('i.skill.fast-talk', 55), ('i.skill.psychology', 50), ('i.skill.credit-rating', 45)],
+    [FIST()], '掌', (60, 70, 110, 255),
+    '<p>樊城分号掌柜。对少东家（HO2）百般逢迎：店里的伙计、药材与银钱任她取用。这家分号贪利，价高，伙计看人下菜。从库房翻出两张古方（牵机药、十香软经散）。</p><p>主持人方便：姓名不详，数值为自拟。</p>',
+    '<p>Book: Front Street, the pharmacy (p.19). Manager of the Fencewall branch of HO2\'s family house. He fawns on the young master/mistress: HO2 may use the staff, the stock and the cash freely. The branch is grasping: sky-high prices, two clerks who size up a customer\'s purse. He produces the two old recipes from the storeroom (handout "Two old recipes": Bowstring 牵机药 and Ten-Scent Powder 十香软经散).</p><p>GM convenience: the book gives him no name or statistics; these are invented. No secret allegiance.</p>',
+    disposition=1)
 for key, name, biography_zh, biography_en in BACK_STREET_NPCS:
     ch = dict(str=35, con=45, siz=50, dex=40, app=45, int=55, pow=45, edu=45)
     ACT[key] = actor(name, 'npc', ch, [], [], [], f'modules/{MOD}/assets/tokens/{key}.webp',
@@ -302,7 +309,7 @@ FOLD = {k: {'_id': rid('folder:' + k), 'name': n, 'type': t, 'folder': None, 'so
     'f_pc': ('调查员 Investigators', 'Actor', '#3b5a8c'), 'f_npc': ('人物 NPCs', 'Actor', '#8c3b3b'), 'f_mon': ('怪物 Creatures', 'Actor', '#3b6b5a'), 'f_prop': ('道具 Props', 'Actor', '#5a5a3b'),
     'f_player': ('玩家手册 Player handouts', 'JournalEntry', '#3b5a8c'), 'f_gm': ('主持人 GM only', 'JournalEntry', '#8c3b3b'), 'f_scene': ('第零次聚会 Session 0', 'Scene', '#5a5a3b')}.items()}
 for k in ('pc1', 'pc2', 'pc3'): ACT[k]['folder'] = FOLD['f_pc']['_id']
-for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft', 'fan_yulou', 'xu', 'du', 'fang', 'ling_xuchun', 'ling_daiqiu', 'wangwu', 'song', 'autumn', 'chen', 'monk', 'yuying', 'hermit', 'bookseller', 'mistress_wang', 'glaaki'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
+for k in ('pc1', 'pc2', 'pc3', 'ashu', 'toghan', 'duan', 'niu', 'liu', 'yue', 'boatman', 'qu', 'jiang_tower', 'jiang_loft', 'fan_yulou', 'xu', 'du', 'fang', 'ling_xuchun', 'ling_daiqiu', 'wangwu', 'song', 'autumn', 'chen', 'monk', 'yuying', 'hermit', 'bookseller', 'mistress_wang', 'glaaki', 'pharmacy_manager'): ACT[k]['prototypeToken']['displayName'] = 50  # ALWAYS
 for k in ('spine', 'servant', 'glaaki'): ACT[k]['folder'] = FOLD['f_mon']['_id']
 for k in ('boat', 'wagon'): ACT[k]['folder'] = FOLD['f_prop']['_id']
 for k in ACT:
@@ -391,11 +398,11 @@ TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·
           ('Decline', 'Decline.ogg', ('5',), '棺材铺 Coffin Shop'),
           ('Dark Times', 'Dark_Times.ogg', ('6',), '街口 Street Crossing, the Hermit\'s body'),
           ('Overheat', 'Overheat.ogg', ('7',), '樊城城图 Town map, action rounds'),
-          ('Guzheng City', 'Guzheng_City.ogg', ('8', '23'), '茶楼 Teahouse'),
+          ('Guzheng City', 'Guzheng_City.ogg', ('8', '8a', 'B3'), '茶楼·药铺 Teahouse, Pharmacy'),
           ('Nu Flute', 'Nu_Flute.ogg', ('9',), '李家瓦子 Li Family Theatre'),
           ('Himalayan Atmosphere', 'Himalayan_Atmosphere.ogg', ('10',), '寺庙 Temple at night'),
-          ('Ghost Story', 'Ghost_Story.ogg', ('11', '22'), '某处民宅 The Undying family\'s house'),
-          ('Night Vigil', 'Night_Vigil.ogg', ('12', '21'), '灵堂 Magistrate Fan\'s mourning hall'),
+          ('Ghost Story', 'Ghost_Story.ogg', ('11', 'B2'), '某处民宅 The Undying family\'s house'),
+          ('Night Vigil', 'Night_Vigil.ogg', ('12', 'B1'), '灵堂 Magistrate Fan\'s mourning hall'),
           ('Drums of the Deep', 'Drums_of_the_Deep.ogg', ('13',), '阿术病榻 Ashu\'s sickroom'),
           ('Land of Phantoms', 'Land_of_Phantoms.ogg', ('14',), '监牢 Gaol'),
           ('Mountain Emperor', 'Mountain_Emperor.ogg', ('15',), '东码头 Warship raid'),
@@ -441,7 +448,12 @@ HOUSE = scene('11 · 某处民宅 The Undying family\'s house (night)', 'house.w
               [T(A['pc2'], 9.6, 10.6), T(A['liu'], 8.2, 4.2), T(A['pc1'], 11.4, 15.4, hidden=True), T(A['pc3'], 12.8, 15.4, hidden=True),
                T(A['servant'], 10.6, 7.2, name='少女·不死 The girl, undying', hidden=True), T(A['servant'], 12.6, 7.0, name='死囚·不死 The brother, undying', hidden=True)], 0.7,
               '<p>后院水槽泛绿光；少女与其兄在门廊现出原形。刘卿堂是他们的首要目标。</p><p>The trough in the back yard glows green; the girl and her brother change on the porch. Liu is their first target.</p>', w=1536, h=1024)
-for sc_ in (TOWN, TEAHOUSE, THEATRE, TEMPLE, HOUSE): SC.append(sc_)
+PHARMACY = scene('8a · 药铺 The Pharmacy (HO2\'s house)', 'pharmacy.webp', 64,
+                 # positions include the padding (map origin at 3, 2 squares)
+                 [T(A['pc1'], 13.5, 13), T(A['pc2'], 15, 13), T(A['pc3'], 16.5, 13),
+                  T(A['pharmacy_manager'], 17, 8.6), T(A['ling_xuchun'], 12, 7.6)], 0.05,
+                 '<p>前街上HO2家的分号：初访时关着门，两个伙计在里面忙。掌柜在柜台后；凌序春在柜台前为药价争吵（「求药」，初访时）。左侧是诊脉桌，左上是库房（两张古方），右侧是药炉与晾药架。</p><p>HO2\'s family branch on Front Street: shut on the first visit, two clerks busy inside. The manager is behind the counter; Ling Xuchun argues over prices in front of it ("A plea for medicine", first visit). Pulse-taking table on the left, storeroom top-left (the two old recipes), stove and drying racks on the right. GM convenience: the shop layout is our own; the book only names who is there.</p>', w=1536, h=1024)
+for sc_ in (TOWN, TEAHOUSE, PHARMACY, THEATRE, TEMPLE, HOUSE): SC.append(sc_)
 MOURNING = scene('12 · 范天顺灵堂 Magistrate Fan\'s mourning hall', 'mourning.webp', 64,
                  [T(A['pc1'], 9.2, 14.6), T(A['pc2'], 10.6, 14.6), T(A['pc3'], 12, 14.6), T(A['liu'], 13.4, 14.6), T(A['fan_yulou'], 12.0, 12.6, hidden=True)] +
                  [T(A['soldier'], x, y, name=f'范家卫兵 Commander Fan\'s guard {i+1}', hidden=True) for i, (x, y) in enumerate([(2.2, 9.2), (21.6, 9.2), (7.4, 15.4), (16.2, 15.4)])], 0.55,
@@ -471,16 +483,16 @@ TOWER = scene('17 · 塔楼 The Watchtower (the last night)', 'tower.webp', 64,
               [T(A['soldier'], x, y, name=f'塔楼守兵 Tower guard {i+1}') for i, (x, y) in enumerate([(10.4, 12.6), (13.4, 12.6)])], 0.8,
               '<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla\'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla\'aki.</p>', w=1536, h=1024, weather='fog')
 for sc_ in (PAVILION, TOWER): SC.append(sc_)
-GUILDHALL = scene('21 · 会馆 The Guildhall', 'guildhall.webp', 64,
+GUILDHALL = scene('B1 · 会馆 The Guildhall', 'guildhall.webp', 64,
                   [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17),
                    T(A['duan'], 15, 5, hidden=True), T(A['soldier'], 13, 13, name='卫兵 Guard 1'),
                    T(A['soldier'], 16, 13, name='卫兵 Guard 2'), T(A['soldier'], 19, 10, name='副官 Adjutant')], 0.1,
                   '<p>上方是段游衍书房，门外皮毯为记；中庭在中央，大门与街道在下。段游衍为隐藏标记，是否在场由主持人决定；卫兵与副官随他驻此。</p><p>Duan\'s study is at the top, marked by the fur carpet at its door; courtyard in the middle, gate and street below. Duan is hidden: he may be away. His guards and adjutant lodge here. The desk holds the letter, note and defence map; see the Back Street journal.</p>', w=1536, h=1024)
-BURNING = scene('22 · 失火民宅 The burning house', 'burning.webp', 64,
+BURNING = scene('B2 · 失火民宅 The burning house', 'burning.webp', 64,
                 [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17), T(A['fire_aunt'], 17, 17)] +
                 [T(A['servant'], x, y, hidden=True, name=f'火中亲属 Trapped kin {i+1}') for i, (x, y) in enumerate([(5, 6), (5, 7), (7, 4), (7, 5), (14, 5)])], 0.4,
                 '<p>老妇在下方街道求救。五名亲属（两个孩子不到十岁）是不死仆从，隐藏在床下与柜中；标记位置为主持人便利安排。右侧起火。</p><p>The old woman begs on the street below. Five trapped kin (two children under ten) are hidden Undying Servant tokens in wardrobes and under beds; exact placements are GM convenience. Fire is on the right. DEX to enter or 1D3 damage; STR to drag one out. In firelight it melts and collapses: SAN 1/1D10. The fire drives everyone out; neighbours give the Front Street address.</p>', w=1536, h=1024)
-TREASURES = scene('23 · 七宝行 Seven Treasures jeweller', 'treasures.webp', 64,
+TREASURES = scene('B3 · 七宝行 Seven Treasures jeweller', 'treasures.webp', 64,
                   [T(A['pc1'], 13, 17), T(A['pc2'], 14, 17), T(A['pc3'], 15, 17),
                    T(A['jeweller'], 21, 12), T(A['jeweller_hand'], 20, 11)], 0.05,
                   '<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop\'s one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>', w=1536, h=1024)
@@ -534,13 +546,13 @@ for i_, sc_ in enumerate(SC): sc_['sort'] = sc_['navOrder'] = (i_ + 1) * 100000
 # for the "Open this scene's journal" macro (scripts/update.mjs).
 RUN_, CAMP_ = '主持人 · GM: Session 0 Runbook', '主持人 · GM: Campaign (Days 1–6)'
 SCENE_PAGE = {
-    '21': (CAMP_, '后街 Back Street', 'The Guildhall'), '22': (CAMP_, '后街 Back Street', 'The burning house'),
-    '23': (CAMP_, '后街 Back Street', 'Seven Treasures jeweller'),
+    'B1': (CAMP_, '后街 Back Street', 'The Guildhall'), 'B2': (CAMP_, '后街 Back Street', 'The burning house'),
+    'B3': (CAMP_, '后街 Back Street', 'Seven Treasures jeweller'),
     '0': (RUN_, '流程 Runbook', 'Agenda'), '0a': (RUN_, '流程 Runbook', 'Agenda'), '0c': (RUN_, '故事全貌 The whole story & timeline', ''),
     '1': (RUN_, '流程 Runbook', 'Personal intro HO1'), '2': (RUN_, '流程 Runbook', 'Personal intro HO2'), '3': (RUN_, '流程 Runbook', 'Personal intro HO3'),
     '4': (RUN_, '流程 Runbook', 'Shared intro: Night Crossing'), '5': (CAMP_, '前街 Front Street', 'The Coffin Shop by day'),
     '6': (CAMP_, '街口 Street Crossing', '12 January, noon'), '7': (CAMP_, '沙盒 How the sandbox runs', 'Action rounds'),
-    '8': (CAMP_, '前街 Front Street', 'The Teahouse'), '9': (CAMP_, '前街 Front Street', 'The Li Family Theatre'), '10': (CAMP_, '寺庙 Temple', 'Night at the temple'),
+    '8': (CAMP_, '前街 Front Street', 'The Teahouse'), '8a': (CAMP_, '前街 Front Street', 'The pharmacy'), '9': (CAMP_, '前街 Front Street', 'The Li Family Theatre'), '10': (CAMP_, '寺庙 Temple', 'Night at the temple'),
     '11': (CAMP_, '前街 Front Street', "The Undying family's house"), '12': (CAMP_, '衙署 Magistracy quarter', "Magistrate Fan's residence"),
     '13': (CAMP_, '衙署 Magistracy quarter', "Niu's house"), '14': (CAMP_, '衙署 Magistracy quarter', 'The Gaol'),
     '15': (CAMP_, '汉江沿岸 Riverbank', 'The Mongol warships'), '16': (CAMP_, '汉江沿岸 Riverbank', 'West dock'), '17': (CAMP_, '塔楼 Finale: the Watchtower', 'Preparation'),
@@ -558,7 +570,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.13', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.15', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
