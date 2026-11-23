@@ -411,7 +411,7 @@ TRACKS = [('Eastern Thought', 'Eastern_Thought.ogg', ('0', '0a', '1'), '标题·
           ('Dark Times', 'Dark_Times.ogg', ('6',), '街口 Street Crossing, the Hermit\'s body'),
           ('Overheat', 'Overheat.ogg', ('7', 'M1', 'M2', 'M3'), '樊城城图 Town map, action rounds'),
           ('Guzheng City', 'Guzheng_City.ogg', ('8', '8a', 'B3'), '茶楼·药铺 Teahouse, Pharmacy'),
-          ('Nu Flute', 'Nu_Flute.ogg', ('9',), '李家瓦子 Li Family Theatre'),
+          ('Eastminster', 'Eastminster.ogg', ('9',), '李家瓦子 Li Family Theatre'),
           ('Himalayan Atmosphere', 'Himalayan_Atmosphere.ogg', ('10',), '寺庙 Temple at night'),
           ('Ghost Story', 'Ghost_Story.ogg', ('11', 'B2'), '某处民宅 The Undying family\'s house'),
           ('Night Vigil', 'Night_Vigil.ogg', ('12', 'B1'), '灵堂 Magistrate Fan\'s mourning hall'),
@@ -619,7 +619,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.16', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.17', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
