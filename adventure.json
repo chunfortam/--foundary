@@ -15122,6 +15122,262 @@
      "attribute": "attribs.hp"
     }
    }
+  },
+  {
+   "_id": "4AvJMUQvqwTQlsxi",
+   "name": "渔民 Fisherman",
+   "type": "npc",
+   "img": "modules/gongruo-session0/assets/portraits/fisherman.webp",
+   "system": {
+    "characteristics": {
+     "str": {
+      "value": 45
+     },
+     "con": {
+      "value": 50
+     },
+     "siz": {
+      "value": 55
+     },
+     "dex": {
+      "value": 50
+     },
+     "app": {
+      "value": 45
+     },
+     "int": {
+      "value": 50
+     },
+     "pow": {
+      "value": 45
+     },
+     "edu": {
+      "value": 35
+     }
+    },
+    "attribs": {
+     "hp": {
+      "value": 10,
+      "max": 10
+     },
+     "mp": {
+      "value": 9,
+      "max": 9
+     },
+     "lck": {
+      "value": 50
+     },
+     "san": {
+      "value": 45,
+      "max": 99,
+      "dailyLimit": 10
+     }
+    },
+    "infos": {
+     "occupation": "",
+     "age": ""
+    },
+    "flags": {
+     "locked": true
+    },
+    "biography": {
+     "personalDescription": {
+      "value": "<p>主持人便利用：渔民群像标记，数值为方便主持临时拟定，原书未提供。贫困而热情，以茶和咸鱼待客；听从凌代秋。无额外线索。</p><p>GM convenience: a crowd token for the book's fishermen. Modest civilian statistics are invented; the book gives none. Poor but hospitable, offering tea and salt fish; follows Ling Daiqiu. No extra clues.</p>"
+     }
+    }
+   },
+   "items": [
+    {
+     "_id": "C1e0VAQdlycIUW7i",
+     "name": "Swim",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/swim.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 20,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Swim",
+      "specialization": "",
+      "adjustments": {
+       "base": 20,
+       "personal": 35
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.swim",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "q5CTb6zcRgMmf7hE",
+     "name": "Listen",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/listen.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 20,
+      "properties": {
+       "push": true
+      },
+      "skillName": "Listen",
+      "specialization": "",
+      "adjustments": {
+       "base": 20,
+       "personal": 20
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.listen",
+        "lang": "en",
+        "eras": {
+         "standard": true,
+         "modern": true,
+         "modernPulp": true,
+         "pulp": true,
+         "downDarkerTrails": true,
+         "downDarkerTrailsPulp": true,
+         "gasLight": true,
+         "regency": true,
+         "regencyPulp": true,
+         "reignOfTerror": true
+        },
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "YKAqq5rdeHjzPf6i",
+     "name": "Fighting (Brawl)",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 25,
+      "properties": {
+       "fighting": true,
+       "special": true
+      },
+      "skillName": "Brawl",
+      "specialization": "Fighting",
+      "adjustments": {
+       "base": 25,
+       "personal": 0
+      }
+     },
+     "flags": {
+      "CoC7": {
+       "cocidFlag": {
+        "id": "i.skill.fighting-brawl",
+        "lang": "en",
+        "priority": 0
+       }
+      }
+     },
+     "effects": []
+    },
+    {
+     "_id": "kSnpOzOK8svT1MjC",
+     "name": "Boat handling 驾船",
+     "type": "skill",
+     "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "base": 0,
+      "adjustments": {
+       "base": 0,
+       "personal": 50
+      },
+      "skillName": "Boat handling 驾船",
+      "specialization": "",
+      "properties": {
+       "push": true
+      }
+     },
+     "flags": {},
+     "effects": []
+    },
+    {
+     "_id": "PM2M943F88KJhu3i",
+     "name": "拳脚 Fists",
+     "type": "weapon",
+     "img": "icons/weapons/swords/sword-guard-steel.webp",
+     "system": {
+      "description": {
+       "value": ""
+      },
+      "skill": {
+       "main": {
+        "name": "i.skill.fighting-brawl"
+       }
+      },
+      "range": {
+       "normal": {
+        "damage": "1D3"
+       }
+      },
+      "properties": {
+       "rngd": false,
+       "addb": true,
+       "ahdb": false
+      }
+     },
+     "flags": {},
+     "effects": []
+    }
+   ],
+   "effects": [],
+   "flags": {},
+   "folder": "oE2Glm5x0CYp65sn",
+   "prototypeToken": {
+    "name": "渔民 Fisherman",
+    "actorLink": false,
+    "disposition": 0,
+    "texture": {
+     "src": "modules/gongruo-session0/assets/tokens/fisherman.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "sight": {
+     "enabled": false
+    },
+    "displayName": 30,
+    "displayBars": 40,
+    "bar1": {
+     "attribute": "attribs.hp"
+    }
+   }
   }
  ],
  "journal": [
@@ -22594,6 +22850,389 @@
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
   {
+   "_id": "CbMlWddoRRN6zLlp",
+   "name": "R1 · 渔民棚屋 The fishermen's huts (East dock)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/huts.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "R1 · 渔民棚屋 The fishermen's huts (East dock)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/huts.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "",
+   "environment": {
+    "darknessLevel": 0.2,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "nLqac77fBLuhk9p8",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 1408,
+     "y": 595,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "i9t8aXgwtarPTw8p",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 1491,
+     "y": 595,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "4hxXKAzOgLogS3MQ",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 1574,
+     "y": 595,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "wzJbpV7be6LyRDsa",
+     "name": "姜楼 Tower Jiang",
+     "actorId": "TXjrjBcnzeKJ1zb6",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/jiang_tower.webp"
+     },
+     "x": 768,
+     "y": 704,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "xd5pn0VTjtp71qwn",
+     "name": "姜阁 Loft Jiang",
+     "actorId": "KhKQL7eZEmUZbKGu",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/jiang_loft.webp"
+     },
+     "x": 896,
+     "y": 704,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "O4eb6Aqhl0pgDiwi",
+     "name": "刘卿堂 Captain Liu",
+     "actorId": "eEm8g9KvTGvXOaTY",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/liu.webp"
+     },
+     "x": 396,
+     "y": 275,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "fz7jcwKuhtY6shmo",
+     "name": "凌代秋 Ling Daiqiu",
+     "actorId": "oe1JpqfEP9yQfPxe",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/ling_daiqiu.webp"
+     },
+     "x": 960,
+     "y": 403,
+     "width": 1,
+     "height": 1,
+     "disposition": 1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "O0b5cyxsEvM3trzN",
+     "name": "渔民 Fisherman 1",
+     "actorId": "4AvJMUQvqwTQlsxi",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fisherman.webp"
+     },
+     "x": 691,
+     "y": 556,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "EStcfIEHAL9phxeA",
+     "name": "渔民 Fisherman 2",
+     "actorId": "4AvJMUQvqwTQlsxi",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fisherman.webp"
+     },
+     "x": 960,
+     "y": 723,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "z5nPFalzdgaLfS9H",
+     "name": "渔民 Fisherman 3",
+     "actorId": "4AvJMUQvqwTQlsxi",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fisherman.webp"
+     },
+     "x": 748,
+     "y": 774,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "j1Vy8SblhVEimrOb",
+     "name": "渔民 Fisherman 4",
+     "actorId": "4AvJMUQvqwTQlsxi",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/fisherman.webp"
+     },
+     "x": 1088,
+     "y": 454,
+     "width": 1,
+     "height": 1,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "KGxqIYPHIjpgy29s",
+     "heading": "East dock: the fishermen's huts"
+    }
+   },
+   "sort": 2000000,
+   "initial": null,
+   "description": "<p>原书第36页：姜楼、姜阁在火旁，渔民以茶和咸鱼待客。调查员从码头小路进入。刘卿堂隐藏于棚屋内，供重现渔民救起并照料他的情景时显示；通常他已随HO3同行。凌代秋起初病倒在前街江边巷内，痊愈后来此才显示。渔民群像标记及数值为主持人便利用，非原书人物数值。</p><p>Book p.36: Jiang Tower and Jiang Loft by the fire; the fishermen offer tea and salt fish. PCs enter along the jetty lane. Liu is hidden inside a hut: reveal to stage his rescue and nursing by the fishermen; normally he already accompanies HO3. Ling Daiqiu starts dying in a lane off Front Street: reveal here only after he is cured and arrives. The fisherman crowd tokens and statistics are GM convenience, not book statistics.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "Vd2wAPVTStkSCOFW",
+   "navOrder": 2000000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "KGxqIYPHIjpgy29s"
+  },
+  {
    "_id": "xdz729UwK8W7jxHn",
    "name": "16 · 解佩亭 The ruined Pavilion (west dock)",
    "folder": "A5vdDtxm7pu1YoMV",
@@ -22799,12 +23438,395 @@
      "heading": "West dock"
     }
    },
-   "sort": 2000000,
+   "sort": 2100000,
    "initial": null,
    "description": "<p>废墟下是太湖石与刺字囚犯的尸体；底座有「七宝行」印。夜间江边任意处可触发「神女入梦来」（脊刺为隐藏标记）。</p><p>Under the rubble: the Grand Lake Stone and the tattooed prisoners' bodies; the base bears the Seven Treasures seal. At night anywhere on the bank \"The goddess comes in dreams\" can fire (the spine is a hidden token).</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "4JK2dLkxGu39iTLY",
-   "navOrder": 2000000,
+   "navOrder": 2100000,
+   "journal": "n6hVi1oDQh4No8h9",
+   "journalEntryPage": "KGxqIYPHIjpgy29s"
+  },
+  {
+   "_id": "IfPDDys8Ev4umDal",
+   "name": "R2 · 芦苇荡 The reeds (forcing the crossing)",
+   "folder": "A5vdDtxm7pu1YoMV",
+   "background": {
+    "src": "modules/gongruo-session0/assets/maps/reeds.webp"
+   },
+   "levels": [
+    {
+     "_id": "defaultLevel0000",
+     "name": "R2 · 芦苇荡 The reeds (forcing the crossing)",
+     "background": {
+      "src": "modules/gongruo-session0/assets/maps/reeds.webp"
+     },
+     "elevation": {
+      "bottom": 0,
+      "top": null
+     },
+     "sort": 0,
+     "flags": {}
+    }
+   ],
+   "initialLevel": "defaultLevel0000",
+   "width": 1536,
+   "height": 1024,
+   "padding": 0.1,
+   "navigation": true,
+   "active": false,
+   "grid": {
+    "type": 1,
+    "size": 64,
+    "style": "solidLines",
+    "thickness": 1,
+    "color": "#000000",
+    "alpha": 0.08,
+    "distance": 1.5,
+    "units": "m"
+   },
+   "tokenVision": false,
+   "fog": {
+    "exploration": false
+   },
+   "weather": "fog",
+   "environment": {
+    "darknessLevel": 0.6,
+    "globalLight": {
+     "enabled": true
+    }
+   },
+   "tokens": [
+    {
+     "_id": "SkTPbrakCBnSAJZP",
+     "name": "渡船 The ferry",
+     "actorId": "7nbMRwGyBh5fEm2m",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/boat.webp"
+     },
+     "x": 896,
+     "y": 550,
+     "width": 3.8,
+     "height": 1.3,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 0,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "b3X16UW4NLmg8ZgK",
+     "name": "陆青崖 Lu Bluecliff",
+     "actorId": "P3bXoyW19h7TmI25",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_wanderer.webp"
+     },
+     "x": 812,
+     "y": 448,
+     "width": 0.8,
+     "height": 0.8,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "OnRr4yCYWczq9dsv",
+     "name": "沈怀珠 Shen Pearl",
+     "actorId": "oRmSv0KvVnzXP8kV",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_merchant.webp"
+     },
+     "x": 1094,
+     "y": 448,
+     "width": 0.8,
+     "height": 0.8,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "cbOtAqpua5pFwPM3",
+     "name": "谢云骧 Xie Cloudmane",
+     "actorId": "VmvhocFAZXbtTNxc",
+     "actorLink": true,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/pc_official.webp"
+     },
+     "x": 812,
+     "y": 659,
+     "width": 0.8,
+     "height": 0.8,
+     "disposition": 1,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 50,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": true
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "mhR2BztYoOYEWPcL",
+     "name": "船夫 The boatman",
+     "actorId": "L0rdXChlWKWBchIC",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/boatman.webp"
+     },
+     "x": 1094,
+     "y": 659,
+     "width": 0.8,
+     "height": 0.8,
+     "disposition": 0,
+     "hidden": false,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "eEj3HECOZlJSVIwt",
+     "name": "河伯冯夷 River Lord He Bo",
+     "actorId": "MePffH6ohtXusUWT",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/hebo.webp"
+     },
+     "x": 1216,
+     "y": 224,
+     "width": 2,
+     "height": 2,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "hfubhjZEUOZIGxbl",
+     "name": "汉水女神 The Lady of the Han",
+     "actorId": "MePffH6ohtXusUWT",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/goddess.webp"
+     },
+     "x": 1280,
+     "y": 524,
+     "width": 2,
+     "height": 2,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "vzxWdjz0X0IIkyof",
+     "name": "何罗鱼 The Many-Headed Fish",
+     "actorId": "MePffH6ohtXusUWT",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/glaaki.webp"
+     },
+     "x": 1356,
+     "y": 755,
+     "width": 3,
+     "height": 3,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 50,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "IaxKX0LdqzzAtF0r",
+     "name": "脊刺 Spine 1",
+     "actorId": "GWjWiX7DTF0B365I",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/spine.webp"
+     },
+     "x": 800,
+     "y": 499,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "4iZL0Rh6EM9Of4ey",
+     "name": "脊刺 Spine 2",
+     "actorId": "GWjWiX7DTF0B365I",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/spine.webp"
+     },
+     "x": 1196,
+     "y": 499,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    },
+    {
+     "_id": "IufTf4kmcv5XKL8e",
+     "name": "脊刺 Spine 3",
+     "actorId": "GWjWiX7DTF0B365I",
+     "actorLink": false,
+     "texture": {
+      "src": "modules/gongruo-session0/assets/tokens/spine.webp"
+     },
+     "x": 998,
+     "y": 672,
+     "width": 1,
+     "height": 1,
+     "disposition": -1,
+     "hidden": true,
+     "level": "defaultLevel0000",
+     "displayName": 30,
+     "displayBars": 40,
+     "bar1": {
+      "attribute": "attribs.hp"
+     },
+     "sight": {
+      "enabled": false
+     },
+     "elevation": 0,
+     "rotation": 0,
+     "alpha": 1,
+     "flags": {}
+    }
+   ],
+   "walls": [],
+   "lights": [],
+   "notes": [],
+   "drawings": [],
+   "sounds": [],
+   "templates": [],
+   "tiles": [],
+   "regions": [],
+   "flags": {
+    "gongruo-session0": {
+     "journal": "n6hVi1oDQh4No8h9",
+     "page": "KGxqIYPHIjpgy29s",
+     "heading": "The reeds: forcing the crossing"
+    }
+   },
+   "sort": 2200000,
+   "initial": null,
+   "description": "<p>原书第38–39页：三名调查员与一名未具名船夫强渡。依次显示河伯冯夷、汉水女神、何罗鱼，一次只显示一个梦象；三者均为格拉基的梦中诱饵。河伯与女神标记仅为主持人便利用的梦象美术，并非独立人物。梦境破裂时隐藏梦象、倾覆渡船和失踪的船夫，显示环船脊刺，游泳与战斗一轮后进入下一梦。第三梦攻击何罗鱼后冲上襄阳岸。</p><p>Book pp.38–39: three PCs and one unnamed boatman force the crossing. Reveal the River Lord, the Lady of the Han, then the Many-Headed Fish, one dream image at a time; all three are Gla'aki's lures. He Bo and goddess tokens are GM-convenience art for dream images, not separate people. When a temptation breaks, hide its image, the capsized ferry and missing boatman; reveal the circling spines and swim/fight for one round before the next dream. Attack the fish in the third dream to wash up on the Southbright shore.</p>",
+   "playlist": "YpCxBKaF2V5yJedP",
+   "playlistSound": "S1Bt8Gk3GiksGYAk",
+   "navOrder": 2200000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "KGxqIYPHIjpgy29s"
   },
@@ -23294,12 +24316,12 @@
      "heading": "Preparation"
     }
    },
-   "sort": 2100000,
+   "sort": 2300000,
    "initial": null,
    "description": "<p>决战：格拉基画在江心雾中。HO1乘船在江上（拖动小船标记），HO2守塔下（每轮1D3+2不死仆从，隐藏标记逐个显示），HO3与刘卿堂在塔顶。每砍断一根脊刺格拉基−8。</p><p>The finale: Gla'aki is painted into the fog at mid-river. HO1 is in the boat (drag it), HO2 holds the foot of the tower (reveal 1D3+2 Undying a round), HO3 and Liu are on top. Each severed spine takes 8 off Gla'aki.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "AoDfe0SzpOOiMH5X",
-   "navOrder": 2100000,
+   "navOrder": 2300000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "g3qrFK2KC9VmqE5X"
   },
@@ -23509,12 +24531,12 @@
      "heading": "Prefect Xu's mansion"
     }
    },
-   "sort": 2200000,
+   "sort": 2400000,
    "initial": null,
    "description": "<p>大门紧闭，仆役在前庭洒扫；许德显与侍女在书房。说服或贿赂仆役以求引见，或翻越后墙。</p><p>The gate is shut. The sweepers work in the forecourt; Prefect Xu and his maids are in the study. Talk or bribe your way in through the sweepers, or go over the back wall.</p><p>主持人便利用：布局与人数为示意。GM convenience: the layout and exact token counts are illustrative.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "1bPiTvYhBY59l52e",
-   "navOrder": 2200000,
+   "navOrder": 2400000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -23640,12 +24662,12 @@
      "heading": "The School and the Library"
     }
    },
-   "sort": 2300000,
+   "sort": 2500000,
    "initial": null,
    "description": "<p>官学无人值守，几名儒生正在整理物品。书阁就在官学内部。</p><p>The Academy is unguarded; a few scholars are packing up. The Library is inside the Academy.</p><p>主持人便利用：布局与人数为示意；切换至藏书阁场景不另耗行动轮。GM convenience: the layout and token counts are illustrative. Switch to the Library as part of the same visit.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "1bPiTvYhBY59l52e",
-   "navOrder": 2300000,
+   "navOrder": 2500000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -23855,12 +24877,12 @@
      "heading": "The School and the Library"
     }
    },
-   "sort": 2400000,
+   "sort": 2600000,
    "initial": null,
    "description": "<p>进藏书阁前，孔礼岳拦问来意，周文通出面解围。若安排「素书偶逢」，才显示隐藏的范玉楼。</p><p>Play Kong Liyue’s challenge and Zhou Wentong’s rebuke at the door before the search. Reveal Commander Fan only for the optional chance meeting over books.</p><p>主持人便利用：布局、人数与儒生通用数值为示意。GM convenience: the layout and counts are illustrative; the scholars use the shared Scholar stats.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "1bPiTvYhBY59l52e",
-   "navOrder": 2400000,
+   "navOrder": 2600000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "8WarQ7bvypQPVk2o"
   },
@@ -24126,12 +25148,12 @@
      "heading": "The Guildhall"
     }
    },
-   "sort": 2500000,
+   "sort": 2700000,
    "initial": null,
    "description": "<p>上方是段游衍书房，门外皮毯为记；中庭在中央，大门与街道在下。段游衍为隐藏标记，是否在场由主持人决定；卫兵与副官随他驻此。</p><p>Duan's study is at the top, marked by the fur carpet at its door; courtyard in the middle, gate and street below. Duan is hidden: he may be away. His guards and adjutant lodge here. The desk holds the letter, note and defence map; see the Back Street journal.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "8Ri1YC84YDEREPSd",
-   "navOrder": 2500000,
+   "navOrder": 2700000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "FAf6fhtFrWbf6T0r"
   },
@@ -24453,12 +25475,12 @@
      "heading": "The burning house"
     }
    },
-   "sort": 2600000,
+   "sort": 2800000,
    "initial": null,
    "description": "<p>老妇在下方街道求救。五名亲属（两个孩子不到十岁）是不死仆从，隐藏在床下与柜中；标记位置为主持人便利安排。右侧起火。</p><p>The old woman begs on the street below. Five trapped kin (two children under ten) are hidden Undying Servant tokens in wardrobes and under beds; exact placements are GM convenience. Fire is on the right. DEX to enter or 1D3 damage; STR to drag one out. In firelight it melts and collapses: SAN 1/1D10. The fire drives everyone out; neighbours give the Front Street address.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "ZnpX1D8TizZVFvK8",
-   "navOrder": 2600000,
+   "navOrder": 2800000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "FAf6fhtFrWbf6T0r"
   },
@@ -24668,12 +25690,12 @@
      "heading": "Seven Treasures jeweller"
     }
    },
-   "sort": 2700000,
+   "sort": 2900000,
    "initial": null,
    "description": "<p>掌柜在右下柜台后，伙计在旁；中央为赌石桌，上方为库房与庭院。以幸运检定赌石，换取传闻和太湖石消息。</p><p>The manager stands behind the lower-right counter, with the shop's one assistant nearby. Stone-gambling table in the centre; storeroom and courtyard above. Trade a stone-gambling Luck roll for gossip and the Grand Lake Stone story; consult Back Street for the result table.</p>",
    "playlist": "YpCxBKaF2V5yJedP",
    "playlistSound": "jJw6DQrbF8UBxonO",
-   "navOrder": 2700000,
+   "navOrder": 2900000,
    "journal": "n6hVi1oDQh4No8h9",
    "journalEntryPage": "FAf6fhtFrWbf6T0r"
   }
@@ -24858,7 +25880,7 @@
     },
     {
      "_id": "Vd2wAPVTStkSCOFW",
-     "name": "River Flute — 汉江两岸 Regional map",
+     "name": "River Flute — 汉江两岸·渔民棚屋 Regional map, fishermen's huts",
      "path": "modules/gongruo-session0/assets/music/River_Flute.ogg",
      "channel": "music",
      "playing": false,
@@ -25079,7 +26101,7 @@
     },
     {
      "_id": "S1Bt8Gk3GiksGYAk",
-     "name": "Lightless Dawn — 备用 · 格拉基 Spare: Gla'aki dread",
+     "name": "Lightless Dawn — 芦苇荡 · 格拉基 The reeds, Gla'aki dread",
      "path": "modules/gongruo-session0/assets/music/Lightless_Dawn.ogg",
      "channel": "music",
      "playing": false,
