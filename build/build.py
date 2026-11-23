@@ -28,6 +28,7 @@ def token_img(name, ch, color):
     f = ImageFont.truetype(CJK, 150); d.text((128,120), ch, font=f, fill=(255,248,230,255), anchor='mm')
     im.save(p, quality=90); return f'modules/{MOD}/assets/tokens/{name}.webp'
 def portrait(tok):
+    if not tok.startswith(f'modules/{MOD}/'): return tok
     p = tok.replace('/tokens/', '/portraits/')
     return p if os.path.exists(f'{ROOT}/' + p.split(f'{MOD}/')[1]) else tok
 def eval_base(base, ch):
@@ -234,6 +235,28 @@ npc('spine', '格拉基脊刺 Gla\'aki\'s spine', dict(str=200, con=100, siz=450
 npc('servant', '不死仆从 Undying Servant', dict(str=50, con=105, siz=65, dex=15, app=30, int=50, pow=50, edu=30), [('i.skill.fighting-brawl', 40), ('i.skill.dodge', 10)],
     [weapon('生前武器 Weapon from life', '1D6', 'i.skill.fighting-brawl', addb=True)], '仆', (70, 110, 60, 255),
     '<p>格拉基之仆。人形时生命首次降至一半即显露不死形态（理智1/1D8；目睹分解1/1D10）。弱点：脊背注入点，点穴命中即死；强光使其绿腐。</p>', '<p>Gla\'aki\'s thrall. In human form until first dropped to half HP, then reveals the undying shape (SAN 1/1D8; watching it dissolve 1/1D10). Weak point: the injection scar on the spine; an Acupoint Strike hit kills it outright. Sunlight brings on the Green Decay. Not used in session 0; included for later.</p>', atype='creature', hp=17, sanloss=('1', '1D8'))
+# Civilian roles from the Teahouse scene; invented details are labelled in each biography.
+TEAHOUSE_NPCS = [
+    ('storyteller', 'The Teahouse Storyteller (茶楼说书人)', 'icons/svg/book.svg',
+     dict(str=35, con=45, siz=50, dex=45, app=55, int=65, pow=50, edu=65),
+     [('i.skill.persuade', 55), ('i.skill.listen', 50), ('i.skill.history', 40)],
+     '<p>Book: Front Street, The Teahouse (p.20–21). The unnamed storyteller is on the dais, telling how the Liangshan outlaws rescued Song Jiang from the execution ground at Jiangzhou (江州劫法场). Let the tale plant the seed of General Niu\'s rescue; do not give away the coming scene.</p><p>GM convenience: civilian statistics. No personal name or secret allegiance is supplied by the book.</p>'),
+    ('tea_server', 'Teahouse Server (茶楼跑堂)', 'icons/svg/tankard.svg',
+     dict(str=40, con=50, siz=50, dex=60, app=45, int=50, pow=45, edu=40),
+     [('i.skill.listen', 50), ('i.skill.dodge', 35), ('i.skill.charm', 40)],
+     '<p>Book: Front Street, The Teahouse (p.20–21). The waiter recommends Song the Tea Master (宋择一), whose pictures in tea foam won imperial praise and Commander Fan\'s admiration. Customers and the waiter can pass on the rumour of Niu\'s God-Arm Bow. The soldiers kick the waiter down over weak tea.</p><p>GM convenience: civilian statistics; keep this unnamed server out of the fighting once helped to safety.</p>'),
+    ('tea_patron_song', 'Song Tea Patron (宋人茶客)', 'icons/svg/coins.svg',
+     dict(str=40, con=45, siz=50, dex=45, app=45, int=55, pow=45, edu=50),
+     [('i.skill.listen', 45), ('i.skill.accounting', 40), ('i.skill.persuade', 35)],
+     '<p>GM convenience: an invented cloth seller among the book\'s mixed Song and Mongol customers. War has thinned the trade, but a good tale still earns a cup of tea. Falls silent when soldiers raise their voices; offers a steadying hand to anyone knocked down. Civilian statistics are invented. No extra clues or hidden loyalties.</p>'),
+    ('tea_patron_mongol', 'Mongol Tea Patron (蒙古茶客)', 'icons/svg/item-bag.svg',
+     dict(str=45, con=50, siz=55, dex=45, app=45, int=50, pow=45, edu=40),
+     [('i.skill.listen', 40), ('i.skill.ride', 40), ('i.skill.charm', 35)],
+     '<p>GM convenience: an invented civilian pack trader among the book\'s mixed Song and Mongol customers, not one of the three soldiers. Sets down a bowl to hear the storyteller\'s next turn; draws back from the brawl rather than joining it. Civilian statistics are invented. No extra clues or hidden loyalties.</p>'),
+]
+for key, name, image, ch, sk, biography in TEAHOUSE_NPCS:
+    ACT[key] = actor(name, 'npc', ch, [skill(c, v, ch) for c, v in sk], [], [], image,
+                     bio_en=biography, disposition=0, link=True)
 # ---------------- journals ----------------
 # Scene props as tokens (no sheet of interest, bars off) so the GM can show a before/after on the map.
 def prop(key, name, tok_file, notes_zh, notes_en):
@@ -381,7 +404,9 @@ for key_, zh_, en_, cx_, cy_, red_, shown_, group_, when_ in TL.PLACES:
 TEAHOUSE = scene('8 · 茶楼 The Teahouse', 'teahouse.webp', 64,
                  [T(A['pc1'], 10.2, 13.2), T(A['pc2'], 11.6, 13.2), T(A['pc3'], 13, 13.2)] +
                  [T(A['soldier'], x, y, name=f'蒙古兵 Mongol soldier {i+1}') for i, (x, y) in enumerate([(14.2, 7.6), (16.2, 7.0), (15.6, 8.9)])] +
-                 [T(A['song'], 20.6, 8.6), T(A['scholar'], 12.4, 8.4, name='周文通 Zhou Wentong'), T(A['duan'], 12, 15.2, hidden=True)], 0.05,
+                 [T(A['song'], 20.6, 8.6), T(A['scholar'], 12.4, 8.4, name='周文通 Zhou Wentong'), T(A['duan'], 12, 15.2, hidden=True)] +
+                 [T(A['storyteller'], 12, 4), T(A['tea_server'], 17.5, 9.5),
+                  T(A['tea_patron_song'], 7, 8), T(A['tea_patron_mongol'], 7, 11)], 0.05,
                  '<p>说书台在上，茶博士宋择一在右侧屏风后。三名蒙古兵闹事；段游衍（隐藏）事后从门口经过。</p><p>Storyteller\'s dais at the top; tea master Song behind the screen on the right. Three Mongol soldiers make trouble; Duan (hidden) rides past the door afterwards.</p>', w=1536, h=1024)
 THEATRE = scene('9 · 李家瓦子 The Li Family Theatre', 'theatre.webp', 64,
                 [T(A['pc1'], 10.6, 14.4), T(A['pc2'], 12, 14.4), T(A['pc3'], 13.4, 14.4), T(A['mistress_wang'], 14.6, 11.4), T(A['autumn'], 21.6, 12.6, hidden=True), T(A['servant'], 22.5, 3.5, name='秋筠·不死 Autumn, undying form', hidden=True)], 0.1,
@@ -495,7 +520,7 @@ adv['_key'] = f"!adventures!{adv['_id']}"
 # Shipped as plain JSON (no LevelDB pack): scripts/update.mjs imports it directly, so `git pull` always delivers the content.
 json.dump(adv, open(f'{ROOT}/adventure.json', 'w'), ensure_ascii=False, indent=1)
 modj = {'id': MOD, 'title': '公若渡河 Session 0 (CoC7, bilingual)', 'description': 'Session-0 kit for the wuxia Call of Cthulhu scenario 公若渡河 by 江涔: pre-built investigators, scenes, GM runbook and bilingual Chinese/English handouts. For private use at your own table.',
-        'version': '0.6.10', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
+        'version': '0.6.11', 'esmodules': ['scripts/update.mjs'], 'url': 'https://github.com/chunfortam/--foundary', 'compatibility': {'minimum': '12', 'verified': '14'}, 'authors': [{'name': 'Devin for chunfortam'}],
         'relationships': {'systems': [{'id': 'CoC7', 'type': 'system', 'compatibility': {'minimum': '8'}}]},
         'styles': ['styles/gongruo.css']}
 json.dump(modj, open(f'{ROOT}/module.json', 'w'), ensure_ascii=False, indent=2)
